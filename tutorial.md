@@ -4,6 +4,7 @@
 _______________________________________________________________________________
 
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+- http://git-scm.com/book/en/v2
 - https://blog.osteele.com/2008/05/my-git-workflow/
 - https://tomayko.com/blog/2008/the-thing-about-git
 - https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
@@ -186,6 +187,26 @@ consider when evaluating a Git workflow are:
 ### Feature Branch Workflow
 ### Gitflow Workflow
 ### Forking Workflow
+
+## Git Definitions
+_______________________________________________________________________________
+
+### Pull Request
+
+When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to GitHub**. They provide 
+a simple, web-based way to submit your work (often called “patches”) to a project. It's called a pull request 
+because you're asking the project to pull changes from your fork.
+
+A "pull request" is you requesting the target repository to accept your changes. When you send a pull request, 
+you're asking (requesting) the official repo owner to pull some changes from your own repo. Hence "pull request".
+
+Pull Requests are the heart of collaboration on GitHub. When you open a pull request, you're proposing your changes 
+and requesting that someone review and pull in your contribution and merge them into their branch. Pull requests 
+show diffs, or differences, of the content from both branches.
+
+### Push Request
+A "push request" would be the target repository requesting you to push your changes.
+
 
 ## Git Commands
 _______________________________________________________________________________
