@@ -1,157 +1,175 @@
 # Git Tutorial
 
-## References
-_______________________________________________________________________________
-
-- https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
-- http://git-scm.com/book/en/v2
-- https://blog.osteele.com/2008/05/my-git-workflow/
-- https://tomayko.com/blog/2008/the-thing-about-git
-- https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
-- https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
-- https://www.thomas-krenn.com/en/wiki/Git_Basic_Terms
-- https://workingcopyapp.com/manual/clone-catalog
-
-## Version Control Systems
+## Git Overview
 _______________________________________________________________________________
 
 - Code is secured against system failure
 - Code changes are orginized and can be traced
-- Changes can be commited after reviewing process
-- Source code can be tagged, branched and merged
+- Changes can be first reviewed and then commited
+- Source code can easily  be tagged, branched and merged
 
-## Basic Git
+## Git Dataflow
 ______________________________________________________________________________
 
 ![Inline-style link to an image](assets/git_data_flow_02.png)
 
-### Repository
+### Workspace
 
-The repository is a storage place for files and the changes made to the files. Usually the project folder is also 
-the repository folder. The repository can be either local or remote and as for distributed systems both types of 
-repositories are absolutely equivalent.
+When you work on your project and make some changes, you are dealing with your project's working directory. This 
+project directory is available on your computer's filesystem. All the changes you make will remain in the working 
+directory until you add them to the staging area.
 
 ### Index
 
-The staging area or also index is the place where the developer gathers the changes before commit. It is like an 
-additional layer of security between the working copy of the project and the local repository.
+The staging area or also index is the place where the developer gathers the changes before commit. It is the place 
+where the developer can review the changes before transferring the data to the local repository and acts as an 
+additional layer of security.
 
-### Working Copy
+### Repository
 
-The working copy is the source code which the developer is currently working on.
+Repository is a data structure to store metadata for project files. It contains 
+the the files as well as the history of the changes made to those files. A repository has all the project-related 
+data and distinct projects have distinct repositories. The repository can be either **local** or **remote** and for 
+distributed systems both types of repositories are absolutely equivalent.
 
-## Advanced Git
+
+### Exercise
+
+#### 1. Create project folder
+    $ mkdir test
+
+#### 2. Create the local repository in the project folder
+    $ cd test
+    $ git init
+
+#### 3. Add some files
+    $ echo 123 > test.txt
+
+#### 4. Transfer the changes to the index
+    $ git add  *
+
+#### 5. Go to the repository
+    $ cd .git
+
+#### 6. Check the index file
+    $ notepad index
+
+#### 7. Commit the changes to the local repository
+    $ cd ..
+    $ git commit -m 'First commit'
+
+#### 8. Create the remote repository
+    $ cd ..
+    $ git init --bare --shared=all test.git
+
+#### 9. Connect the local repository to the remote repository
+    $ cd test
+    $ git remote add origin ./test.git
+
+#### 10. Push the changes to the remote repository
+    $ git push --set-upstream origin master
+
+#### 11. Pull changes from the remote repository to the workspace
+    $ git pull
+
+
+## Git Objects
 _______________________________________________________________________________
 
-### Objects
+https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
 
-- Git uses the SHA-1 hash of content to create references to commits, trees and blobs.
-- A commit object stores the metadata about a commit, such as the parent, the author, timestamps and references to 
-  the file tree of this commit.
-- **Tree** object is a collection of references to either child trees or blob objects.
-- **Blob** objects are compressed collections of files; usually, the set of files in a particular directory inside the 
-  tree.
-- git rev-parse will translate a short hash into a long hash.
-- git cat-file will show you the pertinent metadata about an object.
+Git uses the SHA-1 hash of content to create references to commits, trees and blobs.
 
-```
-##############################################################################
-# Get the 5 last logs
-##############################################################################
+### Commit object
+Store the metadata about a commit, such as the parent, the author, timestamps and references to the file tree of 
+this commit.
 
-PS C:\Workspace\Tutorials\Git> git log -5 --oneline 
-a6cc877 (HEAD -> master) [#####] - Name refactoring of some assets;
-d5d064a (origin/master, origin/HEAD) [#####] - Cheat sheet added to assets;
-269a11d [#####] - New asset;
-4b760d2 [#####] - Git branching model;
-d80d7b0 Initial commit
+### Tree object
+A collection of references to either child trees or blob objects.
 
-##############################################################################
-# Get the long hash
-##############################################################################
+### Blob objects
+Compressed files and the end of the tree structure.
 
-PS C:\Workspace\Tutorials\Git> git rev-parse a6cc877
-a6cc8772b152ab7c2e40fd87dc944eab3ffb1e7d
+### Exercises
 
-##############################################################################
-# Got to the .git directory and show content with dir
-##############################################################################
+#### 1. Get the 5 last logs
 
-PS C:\Workspace\Tutorials\Git> cd .git
-PS C:\Workspace\Tutorials\Git> dir
-Mode                 LastWriteTime         Length Name
-d-----      8.12.2021 г.     10:50                hooks
-d-----      8.12.2021 г.     10:50                info
-d-----      8.12.2021 г.     10:50                logs
-d-----      8.12.2021 г.     14:41                objects
-d-----      8.12.2021 г.     10:50                refs
-
-##############################################################################
-# Show the commit object using the hash. The first two digits are the 
-# directory, last digits the commpressed file.
-##############################################################################
-
-PS C:\Workspace\Tutorials\Git> cd objects
-PS C:\Workspace\Tutorials\Git> dir
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
-d-----      8.12.2021 г.     12:00                26
-d-----      8.12.2021 г.     10:52                33
-d-----      8.12.2021 г.     10:53                39
-d-----      8.12.2021 г.     13:55                3b
-d-----      8.12.2021 г.     10:53                4b
-d-----      8.12.2021 г.     11:57                5a
-d-----      8.12.2021 г.     13:55                63
-d-----      8.12.2021 г.     11:57                6d
-d-----      8.12.2021 г.     13:49                6f
-d-----      8.12.2021 г.     13:55                80
-d-----      8.12.2021 г.     12:10                82
-d-----      8.12.2021 г.     12:42                85
-d-----      8.12.2021 г.     12:10                86
-d-----      8.12.2021 г.     11:15                89
-d-----      8.12.2021 г.     10:50                a1
-d-----      8.12.2021 г.     13:55                a6
-d-----      8.12.2021 г.     10:50                b2
-d-----      8.12.2021 г.     11:56                c4
-d-----      8.12.2021 г.     14:41                cc
-d-----      8.12.2021 г.     12:10                d5
-d-----      8.12.2021 г.     10:53                d7
-d-----      8.12.2021 г.     10:50                d8
-d-----      8.12.2021 г.     11:11                e6
-d-----      8.12.2021 г.     11:56                f0
-d-----      8.12.2021 г.     12:04                ff
-d-----      8.12.2021 г.     10:50                info
-d-----      8.12.2021 г.     10:50                pack
-
-PS C:\Workspace\Tutorials\Git> cd a6 
-PS C:\Workspace\Tutorials\Git> dir
-
-Mode                 LastWriteTime         Length Name
-----                 -------------         ------ ----
--ar---      8.12.2021 г.     13:55            181 cc8772b152ab7c2e40fd87dc944eab3ffb1e7d
+    $ git log -5 --oneline 
+    a6cc877 (HEAD -> master) [#####] - Name refactoring of some assets;
+    d5d064a (origin/master, origin/HEAD) [#####] - Cheat sheet added to assets;
+    269a11d [#####] - New asset;
+    4b760d2 [#####] - Git branching model;
+    d80d7b0 Initial commit
 
 
-##############################################################################
-# Decompress the commit object using the short or long hash
-##############################################################################
+#### 2. Get the long hash
 
-PS C:\Workspace\Tutorials\Git> git cat-file -p a6cc877
+    $ git rev-parse a6cc877
+    a6cc8772b152ab7c2e40fd87dc944eab3ffb1e7d
 
-tree 3b9ab3a0ee2124dd51d91161ab18c284c279c927
-parent d5d064a947ac9df07ed2113768f6ae894e102c0f
-author braboj <braboj@googlemail.com> 1638964501 +0200
-committer braboj <braboj@googlemail.com> 1638964501 +0200
+#### 3. Got to the .git directory and show content with dir
 
-[#####] - Name refactoring of some assets;
+    $ cd .git
+    $ dir
+    Mode                 LastWriteTime         Length Name
+    d-----      8.12.2021 г.     10:50                hooks
+    d-----      8.12.2021 г.     10:50                info
+    d-----      8.12.2021 г.     10:50                logs
+    d-----      8.12.2021 г.     14:41                objects
+    d-----      8.12.2021 г.     10:50                refs
 
-```
+#### 4. Show the commit object using the hash
+The first two digits are the directory, last digits the commpressed file.
 
-### Branching
-### Merge
-### Stashes
-### Rebasing
-### Revert
+    $ cd objects
+    $ dir
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    d-----      8.12.2021 г.     12:00                26
+    d-----      8.12.2021 г.     10:52                33
+    d-----      8.12.2021 г.     10:53                39
+    d-----      8.12.2021 г.     13:55                3b
+    d-----      8.12.2021 г.     10:50                info
+    d-----      8.12.2021 г.     10:50                pack
+
+    $ cd a6 
+    $ dir
+
+    Mode                 LastWriteTime         Length Name
+    ----                 -------------         ------ ----
+    -ar---      8.12.2021 г.     13:55            181 cc8772b152ab7c2e40fd87dc944eab3ffb1e7d
+
+
+#### 5. Decompress the commit object using the short or long hash
+
+    $ git cat-file -p a6cc877
+    tree 3b9ab3a0ee2124dd51d91161ab18c284c279c927
+    parent d5d064a947ac9df07ed2113768f6ae894e102c0f
+    author braboj <braboj@googlemail.com> 1638964501 +0200
+    committer braboj <braboj@googlemail.com> 1638964501 +0200
+
+
+## Git Operations
+
+### Stage changes
+The staging are is a place for grouping changes before commit. For example a developer can work on several features
+at the same time and want to commit changes specific to a feature. The **git add** command allows specific files 
+to be added to the index.
+
+### Commit changes
+
+### Update workspace
+The workspace can be updated by using the **git pull** command.
+
+### Merge changes
+
+### Create branches
+A branch is a version of the repository that diverges from the main working project.
+
+### Stash changes
+### Rebase history
+### Revert changes
+
 
 ## Git Workflows
 _______________________________________________________________________________
@@ -166,31 +184,134 @@ consider when evaluating a Git workflow are:
 
 ### Centralized Workflow
 
-#### Organization
+This workflow is good for small teams or teams migrating from SVN. There is one central repository which allows only 
+push and pull operations. Each user will have a local copy of the central repository and changes will be made there. 
+The developers can stage and commit freely in their local repositories. 
 
- - Good for small teams and teams transitioning from SVN
- - One central and many local repositories
- - No other branches except main (trunk)
- - Each developer has his own isolated copy of the repository
- - Robust branching and merging model
+The changes can then be commited to the 
+master branch. If there are changes made by other users, the developer must pull them first and merge them with the 
+local copy. After both master branches of the remote and local repositories are equal, the developers are permitted to 
+commit their changes.
 
-#### Operations
+```
+###############################################################################
+# Create a cental repository
+###############################################################################
 
-  1. Create bare central repository on a remote server
-  2. Clone the central repository
-  3. Make changes and commit
-  4. Pull changes before a new push
-  5. Resolve any conflicts if necessary
-  6. Push new commits to the central repository
-  7. 
+> git init --bare --shared=all project.git
+
+###############################################################################
+# Clone the central repository
+###############################################################################
+
+> git clone project.git
+
+###############################################################################
+# Create a new file
+###############################################################################
+
+> cd project
+> echo Hello world! > README.txt
+
+###############################################################################
+# Commit changes to the central repository
+###############################################################################
+
+> git add *
+> git commit -m 'First Change'
+
+###############################################################################
+# Push changes to the remote repository
+###############################################################################
+
+> git push
+
+##############################################################################
+# Test changes by cloning to a new local repository
+###############################################################################
+
+> cd ..
+> git clone project.git test
+
+###############################################################################
+# Check the content of the new local repository
+###############################################################################
+
+> cd test
+> dir 
+
+Directory: C:\Workspace\Tutorials\Git\test
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----      9.12.2021 г.     14:06             30 README.md
+
+###############################################################################
+# Simulate merge conflict
+###############################################################################
+
+> echo 'REAMDE changed in the test folder.' > README.txt
+> git add *
+> git commit -m 'Tester changed the README file'
+> git push
+> cd ..\project
+> echo 'README changed in the project folder.' > README.txt
+> git add *
+> git commit -m 'Project lead changed the README file'
+> git push
+
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'C:/Workspace/Tutorials/Git/.\project.git\'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+###############################################################################
+# Resolve merge conflict
+###############################################################################
+
+> git pull
+
+
+```
 
 ### Feature Branch Workflow
 ### Gitflow Workflow
 ### Forking Workflow
 
-## Git Definitions
+## Git Commands
 _______________________________________________________________________________
 
+#### add
+#### blame
+#### branch
+#### checkout
+#### clean
+#### clone
+#### commit
+#### config
+#### diff
+#### fetch
+#### init
+#### merge
+#### pull
+#### push
+#### rebase
+#### reset
+#### revert
+#### rm
+#### stash
+#### tag
+
+## Git Terms
+_______________________________________________________________________________
+
+### Origin
+### Cherry-Picking
+### Upstream
+### Downstream
 ### Pull Request
 
 When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to GitHub**. They provide 
@@ -208,27 +329,63 @@ show diffs, or differences, of the content from both branches.
 A "push request" would be the target repository requesting you to push your changes.
 
 
-## Git Commands
+## Git Hosting
+
+### Hosting Services
+- https://github.com/
+- https://bitbucket.org/
+- https://about.gitlab.com/
+
+### Comparison
+- https://jelvix.com/blog/bitbucket-vs-github-vs-gitlab
+- https://www.geeksforgeeks.org/difference-between-bitbucket-and-github/
+- https://medium.com/geekculture/bitbucket-vs-github-vs-gitlab-detailed-comparison-a02dfbe7a624
+- https://www.g2.com/products/github/competitors/alternatives
+- https://www.g2.com/compare/bitbucket-vs-github-vs-gitlab
+- https://disbug.io/en/blog/github-vs-gitlab-vs-bitbucket
+
+### Migration
+- https://rushabhshah065.medium.com/lets-move-repository-from-bitbucket-to-github-with-all-branches-and-commitsf93c7d3bda67
+
+
+## Git Notes
 _______________________________________________________________________________
 
-#### init
-#### clone
-#### config
-#### add
-#### commit
-#### push
-#### pull
-#### diff
-#### stash
-#### fetch
-#### checkout
-#### tag
-#### branch
-#### merge
-#### blame
-#### clean
-#### revert
-#### reset
-#### rm
-#### rebase
-#### reflog
+In Git, you cannot commit empty folders, because Git does not actually save folders, only files. You'll have to 
+create some placeholder file inside those directories if you actually want them to be "empty" (i.e. you have no committable content).
+
+
+## References
+_______________________________________________________________________________
+
+
+### Git Clients
+- https://www.sourcetreeapp.com/
+- https://desktop.github.com/
+- https://workingcopyapp.com/manual/clone-catalog
+
+### Git Tutorials
+- https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
+- https://www.w3schools.com/git/
+- https://www.javatpoint.com/git-init
+- https://blog.osteele.com/2008/05/my-git-workflow/
+- https://tomayko.com/blog/2008/the-thing-about-git
+- https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
+- https://mincong.io/2018/04/28/git-index/
+- https://opensource.com/article/20/4/git-merge-conflict
+
+### Git Books
+- http://git-scm.com/book/en/v2
+- https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
+
+### Git Terms
+- https://www.thomas-krenn.com/en/wiki/Git_Basic_Terms
+
+### Git Workflow
+- https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow
+- https://nvie.com/posts/a-successful-git-branching-model/
+- https://gist.github.com/bryanbraun/8c93e154a93a08794291df1fcdce6918
+- https://gist.github.com/jbenet/ee6c9ac48068889b0912
+
+### Git Tools
+- https://www.diagrams.net/
