@@ -285,7 +285,6 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 _______________________________________________________________________________
 
 #### add
-#### blame
 #### branch
 #### checkout
 #### clean
@@ -373,6 +372,7 @@ _______________________________________________________________________________
 - https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
 - https://mincong.io/2018/04/28/git-index/
 - https://opensource.com/article/20/4/git-merge-conflict
+- https://backlog.com/git-tutorial/reference/commands/
 
 ### Git Books
 - http://git-scm.com/book/en/v2
