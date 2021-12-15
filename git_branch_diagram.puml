@@ -1,0 +1,14 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+title "Git Branch Diagram"
+
+participant Master
+participant Branch
+
+Master o-> Branch   : branch <Branch>
+Master ->o Branch   : switch <Branch>
+Branch ->o Branch   : add / commit
+Branch ->o Branch   : add / commit
+Branch ->o Master   : merge
+@enduml
