@@ -291,13 +291,13 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ## Git Commands
 _______________________________________________________________________________
 
-#### add
-#### branch
-#### checkout
-#### clean
+#### init
 #### clone
-#### commit
 #### config
+#### add
+#### restore
+#### checkout
+#### commit
 #### diff
 #### fetch
 #### init
