@@ -4,8 +4,8 @@
 _______________________________________________________________________________
 
 - Code is secured against system failure
-- Code changes are orginized and can be traced
-- Changes can be first reviewed and then commited
+- Code changes are organized and can be traced
+- Changes can be first reviewed and then committed
 - Source code can easily  be tagged, branched and merged
 
 ## Git Dataflow
@@ -15,22 +15,26 @@ ______________________________________________________________________________
 
 ### Workspace
 
-When you work on your project and make some changes, you are dealing with your project's working directory. This 
-project directory is available on your computer's filesystem. All the changes you make will remain in the working 
+When you work on your project and make some changes, you are dealing with 
+your project's working directory. This project directory is available on 
+your computer's filesystem. All the changes you make will remain in the working 
 directory until you add them to the staging area.
 
 ### Index
 
-The staging area or also index is the place where the developer gathers the changes before commit. It is the place 
-where the developer can review the changes before transferring the data to the local repository and acts as an 
+The staging area or also index is the place where the developer gathers the 
+changes before commit. It is the place where the developer can review the 
+changes before transferring the data to the local repository and acts as an 
 additional layer of security.
 
 ### Repository
 
 Repository is a data structure to store metadata for project files. It contains 
-the the files as well as the history of the changes made to those files. A repository has all the project-related 
-data and distinct projects have distinct repositories. The repository can be either **local** or **remote** and for 
-distributed systems both types of repositories are absolutely equivalent.
+the files as well as the history of the changes made to those files. A 
+repository has all the project-related data and distinct projects have 
+distinct repositories. The repository can be either **local** or **remote** 
+and for distributed systems both types of repositories are absolutely 
+equivalent.
 
 
 ### Exercise
@@ -73,16 +77,18 @@ distributed systems both types of repositories are absolutely equivalent.
     $ git pull
 
 
+## Git Index
+
 ## Git Objects
 _______________________________________________________________________________
 
 https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
 
-Git uses the SHA-1 hash of content to create references to commits, trees and blobs.
+Git uses the SHA-1 hash of content to create references to commit, trees and blobs.
 
 ### Commit object
-Store the metadata about a commit, such as the parent, the author, timestamps and references to the file tree of 
-this commit.
+Store the metadata about a commit, such as the parent, the author, 
+timestamps and references to the file tree of this commit.
 
 ### Tree object
 A collection of references to either child trees or blob objects.
@@ -119,7 +125,7 @@ Compressed files and the end of the tree structure.
     d-----      8.12.2021 г.     10:50                refs
 
 #### 4. Show the commit object using the hash
-The first two digits are the directory, last digits the commpressed file.
+The first two digits are the directory, last digits the compressed file.
 
     $ cd objects
     $ dir
@@ -152,9 +158,9 @@ The first two digits are the directory, last digits the commpressed file.
 ## Git Operations
 
 ### Stage changes
-The staging are is a place for grouping changes before commit. For example a developer can work on several features
-at the same time and want to commit changes specific to a feature. The **git add** command allows specific files 
-to be added to the index.
+The staging are is a place for grouping changes before commit. For example a developer can work 
+on several features at the same time and want to commit changes specific to a feature. The **git 
+add** command allows specific files to be added to the index.
 
 ### Commit changes
 
@@ -174,9 +180,9 @@ A branch is a version of the repository that diverges from the main working proj
 ## Git Workflows
 _______________________________________________________________________________
 
-When evaluating a workflow for your team, it's most important that you consider your team’s culture. You want the 
-workflow to enhance the effectiveness of your team and not be a burden that limits productivity. Some things to 
-consider when evaluating a Git workflow are:
+When evaluating a workflow for your team, it's most important that you consider your team’s 
+culture. You want the workflow to enhance the effectiveness of your team and not be a burden 
+that limits productivity. Some things to consider when evaluating a Git workflow are:
 
 - Does this workflow scale with team size?
 - Is it easy to undo mistakes and errors with this workflow?
@@ -184,13 +190,14 @@ consider when evaluating a Git workflow are:
 
 ### Centralized Workflow
 
-This workflow is good for small teams or teams migrating from SVN. There is one central repository which allows only 
-push and pull operations. Each user will have a local copy of the central repository and changes will be made there. 
-The developers can stage and commit freely in their local repositories. 
+This workflow is good for small teams or teams migrating from SVN. There is one central 
+repository which allows only push and pull operations. Each user will have a local copy of the 
+central repository and changes will be made there. The developers can stage and commit freely in 
+their local repositories. 
 
-The changes can then be commited to the 
-master branch. If there are changes made by other users, the developer must pull them first and merge them with the 
-local copy. After both master branches of the remote and local repositories are equal, the developers are permitted to 
+The changes can then be committed to the master branch. If there are changes made by other users,
+the developer must pull them first and merge them with the local copy. After both master 
+branches of the remote and local repositories are equal, the developers are permitted to 
 commit their changes.
 
 ```
@@ -313,16 +320,19 @@ _______________________________________________________________________________
 ### Downstream
 ### Pull Request
 
-When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to GitHub**. They provide 
-a simple, web-based way to submit your work (often called “patches”) to a project. It's called a pull request 
-because you're asking the project to pull changes from your fork.
+When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to 
+GitHub**. They provide a simple, web-based way to submit your work (often called “patches”) to a 
+project. It's called a pull request because you're asking the project to pull changes from your 
+fork.
 
-A "pull request" is you requesting the target repository to accept your changes. When you send a pull request, 
-you're asking (requesting) the official repo owner to pull some changes from your own repo. Hence "pull request".
+A "pull request" is you requesting the target repository to accept your changes. When you send a 
+pull request, you're asking (requesting) the official repo owner to pull some changes from your 
+own repo. Hence, "pull request".
 
-Pull Requests are the heart of collaboration on GitHub. When you open a pull request, you're proposing your changes 
-and requesting that someone review and pull in your contribution and merge them into their branch. Pull requests 
-show diffs, or differences, of the content from both branches.
+Pull Requests are the heart of collaboration on GitHub. When you open a pull request, you're 
+proposing your changes and requesting that someone review and pull in your contribution and 
+merge them into their branch. Pull requests show diffs, or differences, of the content from both 
+branches.
 
 ### Push Request
 A "push request" would be the target repository requesting you to push your changes.
@@ -350,8 +360,9 @@ A "push request" would be the target repository requesting you to push your chan
 ## Git Notes
 _______________________________________________________________________________
 
-In Git, you cannot commit empty folders, because Git does not actually save folders, only files. You'll have to 
-create some placeholder file inside those directories if you actually want them to be "empty" (i.e. you have no committable content).
+In Git, you cannot commit empty folders, because Git does not actually save folders, only files. 
+You'll have to create a placeholder file inside those directories if you actually want them 
+to be "empty" (i.e. you have no committable content).
 
 
 ## References
@@ -364,6 +375,7 @@ _______________________________________________________________________________
 - https://workingcopyapp.com/manual/clone-catalog
 
 ### Git Tutorials
+- http://guides.beanstalkapp.com/
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 - https://www.w3schools.com/git/
 - https://www.javatpoint.com/git-init
