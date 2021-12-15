@@ -13,6 +13,14 @@ ________________________________________________________________________________
 
 ![Inline-style link to an image](assets/git_data_flow_02.png)
 
+> **TODO**: Remove commit -a
+> 
+> **TODO**: Add -m to commit
+> 
+> **TODO**: Show that git pull is **git fetch** + **git merge** 
+> 
+> **TODO**: Remove diff and diff HEAD
+
 ### Workspace
 
 When you work on your project and make some changes, you are dealing with 
@@ -302,12 +310,18 @@ ________________________________________________________________________________
 ## Git Terms
 ___________________________________________________________________________________________________
 
-### Origin
-### Cherry-Picking
-### Upstream
-### Downstream
-### Pull Request
+### HEAD
+Current branch
 
+### Origin
+The link to the remote repository for pull
+
+### Upstream
+The link to the remote repository for push
+
+### Cherry-Picking
+
+### Pull Request
 When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to 
 GitHub**. They provide a simple, web-based way to submit your work (often called “patches”) to a 
 project. It's called a pull request because you're asking the project to pull changes from your 
