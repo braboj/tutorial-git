@@ -1,7 +1,7 @@
 # Git Tutorial
 
 ## Git Overview
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
 - Code is secured against system failure
 - Code changes are organized and can be traced
@@ -9,7 +9,7 @@ _______________________________________________________________________________
 - Source code can easily  be tagged, branched and merged
 
 ## Git Dataflow
-______________________________________________________________________________
+___________________________________________________________________________________________________
 
 ![Inline-style link to an image](assets/git_data_flow_02.png)
 
@@ -80,7 +80,7 @@ equivalent.
 ## Git Index
 
 ## Git Objects
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
 https://git-scm.com/book/en/v2/Git-Internals-Git-Objects
 
@@ -178,7 +178,7 @@ A branch is a version of the repository that diverges from the main working proj
 
 
 ## Git Workflows
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
 When evaluating a workflow for your team, it's most important that you consider your team’s 
 culture. You want the workflow to enhance the effectiveness of your team and not be a burden 
@@ -289,7 +289,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ### Forking Workflow
 
 ## Git Commands
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
 #### init
 #### clone
@@ -298,21 +298,9 @@ _______________________________________________________________________________
 #### restore
 #### checkout
 #### commit
-#### diff
-#### fetch
-#### init
-#### merge
-#### pull
-#### push
-#### rebase
-#### reset
-#### revert
-#### rm
-#### stash
-#### tag
 
 ## Git Terms
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
 ### Origin
 ### Cherry-Picking
@@ -338,7 +326,22 @@ branches.
 A "push request" would be the target repository requesting you to push your changes.
 
 
+## Git Notes
+___________________________________________________________________________________________________
+
+- In Git, you cannot commit empty folders, because Git does not actually save folders, only files. 
+You'll have to create a placeholder file inside those directories if you actually want them 
+to be "empty" (i.e. you have no committable content).
+
+- If you’ve used SVN the past, it’s important not to confuse the git add command with svn add. 
+With the svn add command, you can add a file to a repository. Instead, the git add command 
+itself does not directly impact the repository at all. It isn’t until you use the git commit 
+command that the changes are recorded in your repo. You’ll need to use git add each time you 
+update a file.
+
+
 ## Git Hosting
+___________________________________________________________________________________________________
 
 ### Hosting Services
 - https://github.com/
@@ -354,30 +357,20 @@ A "push request" would be the target repository requesting you to push your chan
 - https://disbug.io/en/blog/github-vs-gitlab-vs-bitbucket
 
 ### Migration
-- https://rushabhshah065.medium.com/lets-move-repository-from-bitbucket-to-github-with-all-branches-and-commitsf93c7d3bda67
+https://rushabhshah065.medium.com/lets-move-repository-from-bitbucket-to-github-with-all-branches-and-commits-f93c7d3bda67
 
+## Git Clients
+___________________________________________________________________________________________________
+- https://desktop.github.com/
+- https://www.sourcetreeapp.com/
+- https://tortoisegit.org/
+- https://www.gitkraken.com/
+- https://aurees.com/
 
-## Git Notes
-_______________________________________________________________________________
-
-- In Git, you cannot commit empty folders, because Git does not actually save folders, only files. 
-You'll have to create a placeholder file inside those directories if you actually want them 
-to be "empty" (i.e. you have no committable content).
-
-- If you’ve used SVN the past, it’s important not to confuse the git add command with svn add. 
-With the svn add command, you can add a file to a repository. Instead, the git add command 
-itself does not directly impact the repository at all. It isn’t until you use the git commit 
-command that the changes are recorded in your repo. You’ll need to use git add each time you 
-update a file.
 
 ## References
-_______________________________________________________________________________
+___________________________________________________________________________________________________
 
-
-### Git Clients
-- https://www.sourcetreeapp.com/
-- https://desktop.github.com/
-- https://workingcopyapp.com/manual/clone-catalog
 
 ### Git Tutorials
 - http://guides.beanstalkapp.com/
