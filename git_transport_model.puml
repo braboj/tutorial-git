@@ -1,19 +1,20 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
+title "Git Transport Model"
+
 participant Worktree
 participant Index
 participant "Local Repository" as Local
 participant "Remote Repository" as Remote
 
-Worktree -> Index  : add
-Index -> Worktree  : restore --staged
+Worktree -> Index   : add
+Index -> Worktree   : restore --staged
 Index -> Local      : commit
-Local -> Worktree  : restore --source
-Local -> Worktree  : switch
+Local -> Worktree   : restore --source
 Local -> Remote     : push
 Remote -> Local     : fetch
-Local -> Worktree  : merge
-Remote -> Worktree : pull
+Local -> Worktree   : merge
+Remote -> Worktree  : pull
 
 @enduml
