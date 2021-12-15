@@ -1,0 +1,25 @@
+@startuml
+title "Git Basic Workflow Diagram"
+
+participant Develop
+participant Master
+participant Hotfix
+
+[-> Master:tag
+note right: 1.0.0
+
+Master  o-> Develop  : branch
+Master  ->o Develop  : switch
+Develop ->o Develop  : add / commit
+Develop ->o Master   : merge
+[-> Master: tag
+note right: 1.1.0
+
+Master o-> Hotfix   : branch
+Master ->o Hotfix   : switch
+Hotfix -->o Hotfix  : add / commit
+Hotfix ->o Master   : merge
+[-> Master: tag
+note right: 1.1.1
+
+@enduml

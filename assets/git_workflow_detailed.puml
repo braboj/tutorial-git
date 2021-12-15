@@ -1,0 +1,57 @@
+@startuml
+title "Git Advanced Workflow Diagram"
+skinparam lifelineStrategy solid
+
+participant Develop
+participant Master
+participant Hotfix
+
+== Development ==
+Master ->o Develop: branch
+Develop ->o Develop: commit
+
+[-> Develop: tag
+note right: 0.0.0.1
+
+Develop ->o Develop: commit
+[-> Develop: tag
+note right: 0.0.0.2
+
+== Test ==
+
+[-> Develop
+note right: 0.0.0.2.A
+Develop -->o Develop: test
+Develop ->o Develop: commit
+[-> Develop: tag
+note right: 0.0.0.2.B
+Develop -->o Develop: test
+
+== Release ==
+Develop ->o Master: merge
+[-> Master: tag
+note right: 1.0.0
+
+== Development ==
+
+Master ->o Develop: branch
+Develop ->o Develop: commit
+
+== Hotfix ==
+Develop ->o Develop: commit
+[-> Develop: tag
+note right: 1.0.0.1
+
+Master ->o Hotfix: branch
+Hotfix ->o Hotfix: commit
+Develop ->o Develop: commit
+Hotfix ->o Master: merge
+[-> Master: tag
+note right: 1.0.1
+Master ->o Develop: merge
+[-> Develop: tag
+note right: 1.0.1.2
+Develop --> Develop: commit
+Develop --> Develop: commit
+
+@enduml

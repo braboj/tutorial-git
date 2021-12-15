@@ -1,6 +1,4 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
 title "Git Transport Diagram"
 
 participant Worktree
@@ -18,3 +16,4 @@ Local -> Worktree   : merge
 Remote -> Worktree  : pull
 
 @enduml
+
