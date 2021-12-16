@@ -11,6 +11,7 @@ note right: 1.0.0
 Master  o-> Develop  : branch
 Master  ->o Develop  : switch
 Develop ->o Develop  : add / commit
+Develop ->o Master   : switch
 Develop ->o Master   : merge
 [-> Master: tag
 note right: 1.1.0
@@ -18,6 +19,7 @@ note right: 1.1.0
 Master o-> Hotfix   : branch
 Master ->o Hotfix   : switch
 Hotfix -->o Hotfix  : add / commit
+Hotfix ->o Master   : switch
 Hotfix ->o Master   : merge
 [-> Master: tag
 note right: 1.1.1
