@@ -7,9 +7,9 @@ participant "Local Repository" as Local
 participant "Remote Repository" as Remote
 
 Workspace -> Index  : add
-Index -> Workspace  : restore --staged
+Index -> Workspace  : reset
 Index -> Local      : commit
-Local -> Workspace  : restore --source
+Local -> Workspace  : restore
 Local -> Remote     : push
 Remote -> Local     : fetch
 Local -> Workspace  : merge
