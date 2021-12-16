@@ -1,31 +1,23 @@
 @startuml
-title "Git Branching Diagram"
 
-participant Develop
+'Configuration
+skinparam lifelineStrategy solid
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+
+'Participants
 participant Master
-participant Hotfix
+participant Branch
 
-[-> Master:tag
-note right: 1.0.0
+'Diagram
+[-> Branch          : branch
+Master ->o Branch   : switch
+Branch -->o Branch  : add
+Branch -->o Branch  : test
+Branch -->o Branch  : commit
+Branch ->o Master   : switch
+Branch ->o Master   : merge
 
-Master  o-> Develop  : branch
-Master  ->o Develop  : switch
-Develop ->o Develop  : add / commit
-Develop ->o Master   : switch
-Develop ->o Master   : merge
-[-> Master: tag
-note right: 1.1.0
-
-Master o-> Hotfix   : branch
-Master ->o Hotfix   : switch
-Hotfix -->o Hotfix  : add / commit
-Hotfix ->o Master   : switch
-Hotfix ->o Master   : merge
-[-> Master: tag
-note right: 1.1.1
-
-Master  o-> Develop  : branch
-Master  ->o Develop  : switch
-Develop ->o Develop  : add / commit
+...
 
 @enduml

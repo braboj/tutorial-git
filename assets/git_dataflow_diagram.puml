@@ -1,5 +1,7 @@
 @startuml
-title "Git Transport Diagram"
+skinparam lifelineStrategy solid
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
 
 participant Workspace
 participant Index
