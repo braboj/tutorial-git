@@ -13,21 +13,19 @@ ________________________________________________________________________________
 ___________________________________________________________________________________________________
 
 ```
-                                      Git Transport Diagram                                
-                                                                                          
      ┌─────────┐          ┌─────┐          ┌────────────────┐          ┌─────────────────┐
      │Workspace│          │Index│          │Local Repository│          │Remote Repository│
      └────┬────┘          └──┬──┘          └───────┬────────┘          └────────┬────────┘
           │       add        │                     │                            │         
           │─────────────────>│                     │                            │         
           │                  │                     │                            │         
-          │restore --staged  │                     │                            │         
+          │      reset       │                     │                            │         
           │<─────────────────│                     │                            │         
           │                  │                     │                            │         
           │                  │       commit        │                            │         
           │                  │────────────────────>│                            │         
           │                  │                     │                            │         
-          │           restore --source             │                            │         
+          │                restore                 │                            │         
           │<───────────────────────────────────────│                            │         
           │                  │                     │                            │         
           │                  │                     │            push            │         
@@ -44,6 +42,7 @@ ________________________________________________________________________________
      ┌────┴────┐          ┌──┴──┐          ┌───────┴────────┐          ┌────────┴────────┐
      │Workspace│          │Index│          │Local Repository│          │Remote Repository│
      └─────────┘          └─────┘          └────────────────┘          └─────────────────┘
+
 
 ```
 ### Workspace
@@ -74,64 +73,48 @@ equivalent.
 ___________________________________________________________________________________________________
 
 ```
-                     Git Branching Diagram                      
-                                                                
-     ┌───────┐          ┌──────┐          ┌──────┐              
-     │Develop│          │Master│          │Hotfix│              
-     └───┬───┘          └──┬───┘          └──┬───┘              
-         │  tag            │  ╔═══════╗      │                  
- ──────────────────────────>  ║1.0.0 ░║      │                  
-         │                 │  ╚═══════╝      │                  
-         │     branch      │                 │                  
-         │<────────────────│                 │                  
-         │                 │                 │                  
-         │     switch      │                 │                  
-         │<────────────────│                 │                  
-         │                 │                 │                  
-         ────┐             │                 │                  
-             │ add / commit│                 │                  
-         <───┘             │                 │                  
-         │                 │                 │                  
-         │     merge       │                 │                  
-         │────────────────>│                 │                  
-         │                 │                 │                  
-         │  tag            │  ╔═══════╗      │                  
- ──────────────────────────>  ║1.1.0 ░║      │                  
-         │                 │  ╚═══════╝      │                  
-         │                 │      branch     │                  
-         │                 │ ────────────────>                  
-         │                 │                 │                  
-         │                 │      switch     │                  
-         │                 │ ────────────────>                  
-         │                 │                 │                  
-         │                 │                 │─ ─ ┐             
-         │                 │                 │    | add / commit
-         │                 │                 │< ─ ┘             
-         │                 │                 │                  
-         │                 │      merge      │                  
-         │                 │ <────────────────                  
-         │                 │                 │                  
-         │  tag            │  ╔═══════╗      │                  
- ──────────────────────────>  ║1.1.1 ░║      │                  
-         │                 │  ╚═══════╝      │                  
-         │     branch      │                 │                  
-         │<────────────────│                 │                  
-         │                 │                 │                  
-         │     switch      │                 │                  
-         │<────────────────│                 │                  
-         │                 │                 │                  
-         ────┐             │                 │                  
-             │ add / commit│                 │                  
-         <───┘             │                 │                  
-     ┌───┴───┐          ┌──┴───┐          ┌──┴───┐              
-     │Develop│          │Master│          │Hotfix│              
-     └───────┘          └──────┘          └──────┘              
+     ┌──────┐          ┌──────┐        
+     │Master│          │Branch│        
+     └──┬───┘          └──┬───┘        
+        │ branch          │            
+ ─────────────────────────>            
+        │                 │            
+        │      switch     │            
+        │ ────────────────>            
+        │                 │            
+        │                 │─ ─ ┐       
+        │                 │    | add   
+        │                 │< ─ ┘       
+        │                 │            
+        │                 │─ ─ ┐       
+        │                 │    | test  
+        │                 │< ─ ┘       
+        │                 │            
+        │                 │─ ─ ┐       
+        │                 │    | commit
+        │                 │< ─ ┘       
+        │                 │            
+        │      switch     │            
+        │ <────────────────            
+        │                 │            
+        │      merge      │            
+        │ <────────────────            
+        │                 │            
+        .                 .            
+        .                 .            
+        .                 .            
+     ┌──┴───┐          ┌──┴───┐        
+     │Master│          │Branch│        
+     └──────┘          └──────┘        
+          
 
 ```
 
 
 ## Git Objects
 ___________________________________________________________________________________________________
+
+![Git Objects](assets/objects-example.png)
 
 Git uses the SHA-1 hash of content to create references to commit, trees and blobs.
 
@@ -143,40 +126,25 @@ timestamps and references to the file tree of this commit.
 A collection of references to either child trees or blob objects.
 
 #### Blob objects
-Compressed files and the end of the tree structure.
+Binary large objects or BLOBS are compressed files and the end of the tree structure.
 
 
 ## Git Terms
 ___________________________________________________________________________________________________
 
 ### HEAD
-Current branch
+Current branch.
 
 ### Origin
-The link to the remote repository for pull
+The name of the link to the remote repository for pull operations.
 
 ### Upstream
-The link to the remote repository for push
-
-### Cherry-Picking
+The name of the link to the remote repository for push operations.
 
 ### Pull Request
-When you're ready for feedback, submit a pull request. Pull requests are a **feature specific to 
-GitHub**. They provide a simple, web-based way to submit your work (often called “patches”) to a 
-project. It's called a pull request because you're asking the project to pull changes from your 
-fork.
-
-A "pull request" is you requesting the target repository to accept your changes. When you send a 
-pull request, you're asking (requesting) the official repo owner to pull some changes from your 
-own repo. Hence, "pull request".
-
-Pull Requests are the heart of collaboration on GitHub. When you open a pull request, you're 
-proposing your changes and requesting that someone review and pull in your contribution and 
-merge them into their branch. Pull requests show diffs, or differences, of the content from both 
-branches.
-
-### Push Request
-A "push request" would be the target repository requesting you to push your changes.
+Originally a github specific term for merge requests from the side of view of the owner of the 
+repository. Someone has pushed commits and want you to check them and merge them with the 
+repository.
 
 
 ## Git Notes
@@ -192,6 +160,9 @@ itself does not directly impact the repository at all. It isn’t until you use 
 command that the changes are recorded in your repo. You’ll need to use git add each time you 
 update a file.
 
+- Check your commit history in GitHub with https://github.com/<user>/<repository>/commits
+
+- Browse repositories in BitBucket with https://bitbucket.org/repo/all
 
 ## Git Hosting
 ___________________________________________________________________________________________________
