@@ -7,42 +7,43 @@ ________________________________________________________________________________
 - Code changes are organized and can be traced
 - Changes can be first reviewed and then committed
 - Source code can easily  be tagged, branched and merged
+- Planning and management of software projects
 
 ## Git Dataflow
 ___________________________________________________________________________________________________
 
 ```
-                                    Git Transport Diagram                                
-                                                                                         
-     ┌────────┐          ┌─────┐          ┌────────────────┐          ┌─────────────────┐
-     │Worktree│          │Index│          │Local Repository│          │Remote Repository│
-     └───┬────┘          └──┬──┘          └───────┬────────┘          └────────┬────────┘
-         │       add        │                     │                            │         
-         │ ────────────────>│                     │                            │         
-         │                  │                     │                            │         
-         │ restore --staged │                     │                            │         
-         │ <────────────────│                     │                            │         
-         │                  │                     │                            │         
-         │                  │       commit        │                            │         
-         │                  │────────────────────>│                            │         
-         │                  │                     │                            │         
-         │            restore --source            │                            │         
-         │ <───────────────────────────────────────                            │         
-         │                  │                     │                            │         
-         │                  │                     │            push            │         
-         │                  │                     │ ──────────────────────────>│         
-         │                  │                     │                            │         
-         │                  │                     │           fetch            │         
-         │                  │                     │ <──────────────────────────│         
-         │                  │                     │                            │         
-         │                  merge                 │                            │         
-         │ <───────────────────────────────────────                            │         
-         │                  │                     │                            │         
-         │                  │             pull    │                            │         
-         │ <───────────────────────────────────────────────────────────────────│         
-     ┌───┴────┐          ┌──┴──┐          ┌───────┴────────┐          ┌────────┴────────┐
-     │Worktree│          │Index│          │Local Repository│          │Remote Repository│
-     └────────┘          └─────┘          └────────────────┘          └─────────────────┘
+                                      Git Transport Diagram                                
+                                                                                          
+     ┌─────────┐          ┌─────┐          ┌────────────────┐          ┌─────────────────┐
+     │Workspace│          │Index│          │Local Repository│          │Remote Repository│
+     └────┬────┘          └──┬──┘          └───────┬────────┘          └────────┬────────┘
+          │       add        │                     │                            │         
+          │─────────────────>│                     │                            │         
+          │                  │                     │                            │         
+          │restore --staged  │                     │                            │         
+          │<─────────────────│                     │                            │         
+          │                  │                     │                            │         
+          │                  │       commit        │                            │         
+          │                  │────────────────────>│                            │         
+          │                  │                     │                            │         
+          │           restore --source             │                            │         
+          │<───────────────────────────────────────│                            │         
+          │                  │                     │                            │         
+          │                  │                     │            push            │         
+          │                  │                     │ ──────────────────────────>│         
+          │                  │                     │                            │         
+          │                  │                     │           fetch            │         
+          │                  │                     │ <──────────────────────────│         
+          │                  │                     │                            │         
+          │                 merge                  │                            │         
+          │<───────────────────────────────────────│                            │         
+          │                  │                     │                            │         
+          │                  │             pull    │                            │         
+          │<────────────────────────────────────────────────────────────────────│         
+     ┌────┴────┐          ┌──┴──┐          ┌───────┴────────┐          ┌────────┴────────┐
+     │Workspace│          │Index│          │Local Repository│          │Remote Repository│
+     └─────────┘          └─────┘          └────────────────┘          └─────────────────┘
 
 ```
 ### Workspace
@@ -219,6 +220,7 @@ ________________________________________________________________________________
 - https://tortoisegit.org/
 - https://www.gitkraken.com/
 - https://aurees.com/
+- https://gitextensions.github.io/
 
 
 ## References
@@ -230,12 +232,18 @@ ________________________________________________________________________________
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 - https://www.w3schools.com/git/
 - https://www.javatpoint.com/git-init
+- http://think-like-a-git.net/
 - https://blog.osteele.com/2008/05/my-git-workflow/
 - https://tomayko.com/blog/2008/the-thing-about-git
 - https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
 - https://mincong.io/2018/04/28/git-index/
 - https://opensource.com/article/20/4/git-merge-conflict
 - https://backlog.com/git-tutorial/reference/commands/
+
+## Criticism
+- https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
+- https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
+- 
 
 ### Books
 - http://git-scm.com/book/en/v2
@@ -248,5 +256,5 @@ ________________________________________________________________________________
 - https://gist.github.com/jbenet/ee6c9ac48068889b0912
 - https://www.toptal.com/software/trunk-based-development-git-flow
 
-### Tools
+### Others
 - https://www.diagrams.net/
