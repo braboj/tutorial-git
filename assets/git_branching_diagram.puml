@@ -1,5 +1,5 @@
 @startuml
-title "Git Basic Workflow Diagram"
+title "Git Branching Diagram"
 
 participant Develop
 participant Master
@@ -21,5 +21,9 @@ Hotfix -->o Hotfix  : add / commit
 Hotfix ->o Master   : merge
 [-> Master: tag
 note right: 1.1.1
+
+Master  o-> Develop  : branch
+Master  ->o Develop  : switch
+Develop ->o Develop  : add / commit
 
 @enduml
