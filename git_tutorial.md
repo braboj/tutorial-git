@@ -140,7 +140,7 @@ ________________________________________________________________________________
 ## Git Objects
 ___________________________________________________________________________________________________
 
-![Git Objects](assets/objects-example.png)
+![Git Objects](assets/images/objects-example.png)
 
 Git uses the SHA-1 hash of content to create references to commit, trees and blobs.
 
