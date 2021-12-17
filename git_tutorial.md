@@ -16,6 +16,13 @@ ________________________________________________________________________________
      ┌─────────┐          ┌─────┐          ┌────────────────┐          ┌─────────────────┐
      │Workspace│          │Index│          │Local Repository│          │Remote Repository│
      └────┬────┘          └──┬──┘          └───────┬────────┘          └────────┬────────┘
+          │                  │                     │                            ────┐     
+          │                  │                     │                                │ init
+          │                  │                     │                            <───┘     
+          │                  │                     │                            │         
+          │                  │                     │           clone            │         
+          │                  │                     │ <──────────────────────────│         
+          │                  │                     │                            │         
           │       add        │                     │                            │         
           │─────────────────>│                     │                            │         
           │                  │                     │                            │         
@@ -42,9 +49,8 @@ ________________________________________________________________________________
      ┌────┴────┐          ┌──┴──┐          ┌───────┴────────┐          ┌────────┴────────┐
      │Workspace│          │Index│          │Local Repository│          │Remote Repository│
      └─────────┘          └─────┘          └────────────────┘          └─────────────────┘
-
-
 ```
+
 ### Workspace
 
 When you work on your project and make some changes, you are dealing with 
@@ -73,41 +79,35 @@ equivalent.
 ___________________________________________________________________________________________________
 
 ```
-     ┌──────┐          ┌──────┐        
-     │Master│          │Branch│        
-     └──┬───┘          └──┬───┘        
-        │ branch          │            
- ─────────────────────────>            
-        │                 │            
-        │      switch     │            
-        │ ────────────────>            
-        │                 │            
-        │                 │─ ─ ┐       
-        │                 │    | add   
-        │                 │< ─ ┘       
-        │                 │            
-        │                 │─ ─ ┐       
-        │                 │    | test  
-        │                 │< ─ ┘       
-        │                 │            
-        │                 │─ ─ ┐       
-        │                 │    | commit
-        │                 │< ─ ┘       
-        │                 │            
-        │      switch     │            
-        │ <────────────────            
-        │                 │            
-        │      merge      │            
-        │ <────────────────            
-        │                 │            
-        .                 .            
-        .                 .            
-        .                 .            
-     ┌──┴───┐          ┌──┴───┐        
-     │Master│          │Branch│        
-     └──────┘          └──────┘        
-          
-
+     ┌──────┐          ┌───────┐       
+     │Master│          │Develop│       
+     └──┬───┘          └───┬───┘       
+        │ branch           │           
+ ─────────────────────────>│           
+        │                  │           
+        │      switch      │           
+        │ ────────────────>│           
+        │                  │           
+        │                  ────┐       
+        │                      │ add   
+        │                  <───┘       
+        │                  │           
+        │                  ────┐       
+        │                      │ commit
+        │                  <───┘       
+        │                  │           
+        │      switch      │           
+        │ <────────────────│           
+        │                  │           
+        │      merge       │           
+        │ <────────────────│           
+        │                  │           
+        .                  .           
+        .                  .           
+        .                  .           
+     ┌──┴───┐          ┌───┴───┐       
+     │Master│          │Develop│       
+     └──────┘          └───────┘          
 ```
 
 
@@ -133,7 +133,10 @@ Binary large objects or BLOBS are compressed files and the end of the tree struc
 ___________________________________________________________________________________________________
 
 ### HEAD
-Current branch.
+- https://careerkarma.com/blog/what-is-a-git-head/
+
+The HEAD is a pointer to a commit object. Usually it points to the most recent commit in the 
+current branch, but the HEAD can also point to any particular commit from the commit history.
 
 ### Origin
 The name of the link to the remote repository for pull operations.
@@ -142,7 +145,7 @@ The name of the link to the remote repository for pull operations.
 The name of the link to the remote repository for push operations.
 
 ### Pull Request
-Originally a github specific term for merge requests from the side of view of the owner of the 
+Originally a GitHub specific term for merge requests from the side of view of the owner of the 
 repository. Someone has pushed commits and want you to check them and merge them with the 
 repository.
 
@@ -211,7 +214,7 @@ ________________________________________________________________________________
 - https://opensource.com/article/20/4/git-merge-conflict
 - https://backlog.com/git-tutorial/reference/commands/
 
-## Criticism
+### Criticism
 - https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
 - https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
 - 
