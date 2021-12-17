@@ -135,8 +135,9 @@ ________________________________________________________________________________
 ### HEAD
 - https://careerkarma.com/blog/what-is-a-git-head/
 
-The HEAD is a pointer to a commit object. Usually it points to the most recent commit in the 
-current branch, but the HEAD can also point to any particular commit from the commit history.
+The HEAD is a pointer to a commit object we are working on. Usually it points to the most recent 
+commit in the current branch, but the HEAD can also point to any particular commit from the 
+commit history. 
 
 ### Origin
 The name of the link to the remote repository for pull operations.
