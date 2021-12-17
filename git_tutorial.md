@@ -111,6 +111,32 @@ ________________________________________________________________________________
 ```
 
 
+## Git Commands
+___________________________________________________________________________________________________
+
+### git init
+    git init --bare
+
+### git clone
+    git clone https://github.com/user/project/repo.git
+
+### git config
+    git config --global user.name "user"
+    git config --global user.email "user@mail.com"
+    git config --global core.editor ".../editor.exe [options]"
+    git config --list
+
+### git add
+### git commit
+### git push
+### git pull
+### git branch
+### git merge
+### git remote
+### git status
+### git log
+
+
 ## Git Objects
 ___________________________________________________________________________________________________
 
@@ -133,22 +159,26 @@ Binary large objects or BLOBS are compressed files and the end of the tree struc
 ___________________________________________________________________________________________________
 
 ### HEAD
-- https://careerkarma.com/blog/what-is-a-git-head/
-
-The HEAD is a pointer to a commit object we are working on. Usually it points to the most recent 
-commit in the current branch, but the HEAD can also point to any particular commit from the 
-commit history. 
+The HEAD is a pointer to a commit object in a branch we are working on. Usually it points to the 
+most recent commit in the current branch, but the HEAD can also point to any particular commit 
+from the commit history. In this case the HEAD is ***detached***.
 
 ### Origin
-The name of the link to the remote repository for pull operations.
+The name or alias of the link to the remote repository for pull operations. For example the 
+clone of the remote link is usually something like https://github.com/user/project/repo.git. 
+Internally git replaces this link with ***origin***. 
+
+### Downstream
+The flow of data from the the original repository to the cloned repository.
 
 ### Upstream
-The name of the link to the remote repository for push operations.
+The flow of data from the cloned repository to the original repository.
 
-### Pull Request
+### Pull/Merge Request
 Originally a GitHub specific term for merge requests from the side of view of the owner of the 
 repository. Someone has pushed commits and want you to check them and merge them with the 
-repository.
+repository. Other hosting platforms like GitLab prefer to use the more meaningful name ***Merge 
+Request***.
 
 
 ## Git Notes
