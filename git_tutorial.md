@@ -14,6 +14,12 @@ ________________________________________________________________________________
 
 ![Git Dataflow](assets/images/git_dataflow_diagram.png)
 
+### Repository
+
+This is the **.git** directory in the project folder. It contains the files as well as the
+history of the changes made to those files. The repository can be either **local** or **remote**,
+whereby for git both types of repositories are absolutely equivalent.
+
 ### Workspace
 
 When you work on your project and make some changes, you are dealing with 
@@ -27,11 +33,7 @@ changes before commit. It is the place where the developer can review the
 changes before transferring the data to the local repository and acts as an 
 additional layer of security.
 
-### Repository
 
-This is the **.git** directory in the project folder. It contains the files as well as the 
-history of the changes made to those files. The repository can be either **local** or **remote**, 
-whereby for git both types of repositories are absolutely equivalent.
 
 ## Git Branching
 ___________________________________________________________________________________________________
