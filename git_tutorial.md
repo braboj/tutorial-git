@@ -177,11 +177,7 @@ ________________________________________________________________________________
 - https://mincong.io/2018/04/28/git-index/
 - https://opensource.com/article/20/4/git-merge-conflict
 - https://backlog.com/git-tutorial/reference/commands/
-
-### Criticism
-- https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
-- https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
-- 
+- https://stackoverflow.com/questions/35979642/what-is-git-tag-how-to-create-tags-how-to-checkout-git-remote-tags/35979751#35979751
 
 ### Books
 - http://git-scm.com/book/en/v2
@@ -193,6 +189,10 @@ ________________________________________________________________________________
 - https://gist.github.com/bryanbraun/8c93e154a93a08794291df1fcdce6918
 - https://gist.github.com/jbenet/ee6c9ac48068889b0912
 - https://www.toptal.com/software/trunk-based-development-git-flow
+
+### Criticism
+- https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
+- https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
 
 ### Others
 - https://www.diagrams.net/

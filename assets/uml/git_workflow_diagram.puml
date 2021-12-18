@@ -57,7 +57,7 @@ Local -> Remote: push
 Remote -> Local: pull
 ...
 
-[-> Hotfix: branch
+[-> Hotfix: branch from tag 1.0.0
 Local ->o Hotfix: switch
 Hotfix ->o Hotfix: add
 Hotfix -->o Hotfix: test
