@@ -2,7 +2,7 @@
 
 'Configuration
 skinparam lifelineStrategy solid
-skinparam backgroundColor #EEEBDC
+'skinparam backgroundColor #EEEBDC
 skinparam handwritten true
 
 'Participants

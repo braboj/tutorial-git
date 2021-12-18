@@ -1,10 +1,14 @@
 @startuml
 skinparam lifelineStrategy solid
-skinparam backgroundColor #EEEBDC
+'skinparam backgroundColor #EEEBDC
 skinparam handwritten true
 participant "Local Master" as Local
 participant "Remote Master" as Remote
 participant "Local Hotfix" as Hotfix
+
+== Setup ==
+Remote -> Remote: init
+Remote -> Local: clone
 
 == Development ==
 Remote -> Local: pull
