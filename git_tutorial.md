@@ -8,7 +8,6 @@ ________________________________________________________________________________
 - Changes can be first reviewed and then committed
 - Source code can easily  be tagged, branched and merged
 - Planning and management of software projects
-- New thing from 1.1.0
 
 ## Git Dataflow
 ___________________________________________________________________________________________________
