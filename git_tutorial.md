@@ -17,9 +17,8 @@ ________________________________________________________________________________
 ### Workspace
 
 When you work on your project and make some changes, you are dealing with 
-your project's working directory. This project directory is available on 
-your computer's filesystem. All the changes you make will remain in the working 
-directory until you add them to the staging area.
+your project's working directory on your computer's filesystem. All the changes you make will 
+remain in the working directory until you add them to the staging area.
 
 ### Index
 
@@ -30,13 +29,9 @@ additional layer of security.
 
 ### Repository
 
-Repository is a data structure to store metadata for project files. It contains 
-the files as well as the history of the changes made to those files. A 
-repository has all the project-related data and distinct projects have 
-distinct repositories. The repository can be either **local** or **remote** 
-and for distributed systems both types of repositories are absolutely 
-equivalent.
-
+This is the **.git** directory in the project folder. It contains the files as well as the 
+history of the changes made to those files. The repository can be either **local** or **remote**, 
+whereby for git both types of repositories are absolutely equivalent.
 
 ## Git Branching
 ___________________________________________________________________________________________________
@@ -102,7 +97,7 @@ clone of the remote link is usually something like https://github.com/user/proje
 Internally git replaces this link with ***origin***. 
 
 ### Downstream
-The flow of data from the the original repository to the cloned repository.
+The flow of data from the original repository to the cloned repository.
 
 ### Upstream
 The flow of data from the cloned repository to the original repository.

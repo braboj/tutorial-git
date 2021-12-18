@@ -7,16 +7,22 @@ skinparam handwritten true
 
 'Participants
 participant Master
-participant Develop
+participant Branch
+participant Tag
 
 'Diagram
-[-> Develop             : branch
-Master ->o Develop      : switch
-Develop ->o Develop     : add
-Develop ->o Develop     : commit
-Develop ->o Master      : switch
-Develop ->o Master      : merge
-
+[-> Branch             : branch
+Master  ->o Branch     : switch
+Master  ->o Tag        : switch
+Branch  ->o Branch     : add
+Tag     ->o Tag        : add
+Branch  ->o Branch     : commit
+Tag     ->o Tag        : commit
+Tag     ->o Tag        : tag
+Branch  ->o Master     : switch
+Tag     ->o Master     : switch
+Branch  ->o Master     : merge
+Tag     ->o Master     : merge
 ...
 
 @enduml

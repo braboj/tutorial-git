@@ -13,6 +13,7 @@ Remote -> Local     : clone
 Workspace -> Index  : add
 Index -> Workspace  : reset
 Index -> Local      : commit
+Local -> Local      : tag
 Local -> Workspace  : restore
 Local -> Remote     : push
 Remote -> Local     : fetch
