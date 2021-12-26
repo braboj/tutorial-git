@@ -666,7 +666,7 @@ git checkout -b beta-test
 
 #### Q80. Consider the following Git workflow:
 
-![image](assets/images/Git-WorkFlow.png)
+![image](../images/Git-WorkFlow.png)
 Which of the following options is correct ?
 
 - [ ] `1. Develop 2. Release 3. Hotfix 4. Feature 5. Master`
