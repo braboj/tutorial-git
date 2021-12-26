@@ -1,7 +1,5 @@
 ## Git Overview
 
-________________________________________________________________________________
-
 - Code is secured against system failure
 - Code changes are organized and can be traced
 - Changes can be first reviewed and then saved

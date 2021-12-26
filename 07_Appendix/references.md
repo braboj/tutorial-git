@@ -29,12 +29,26 @@ ________________________________________________________________________________
 - https://gist.github.com/bryanbraun/8c93e154a93a08794291df1fcdce6918
 - https://gist.github.com/jbenet/ee6c9ac48068889b0912
 - https://www.toptal.com/software/trunk-based-development-git-flow
+- https://buddy.works/blog/5-types-of-git-workflows
 
 ### Criticism
 
 - https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
 - https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
 
-### Others
 
+### Hosting Services
+- https://jelvix.com/blog/bitbucket-vs-github-vs-gitlab
+- https://www.geeksforgeeks.org/difference-between-bitbucket-and-github/
+- https://medium.com/geekculture/bitbucket-vs-github-vs-gitlab-detailed-comparison-a02dfbe7a624
+- https://www.g2.com/categories/version-control-hosting
+- https://www.g2.com/products/github/competitors/alternatives
+- https://www.g2.com/compare/bitbucket-vs-github-vs-gitlab
+- https://disbug.io/en/blog/github-vs-gitlab-vs-bitbucket
+- https://github.com/atlassian/github-for-jira
+- https://about.gitlab.com/pricing/saas/feature-comparison/
+- https://kreuzwerker.de/en/post/bye-bye-server
+- https://www.atlassian.com/migration/assess/journey-to-cloud
+
+### Others
 - https://www.diagrams.net/
