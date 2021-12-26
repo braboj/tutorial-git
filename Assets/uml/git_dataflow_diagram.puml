@@ -8,17 +8,79 @@ participant Index
 participant "Local Repository" as Local
 participant "Remote Repository" as Remote
 
+'Initialization
 Remote -> Remote    : init
-Remote -> Local     : clone
+note left
+    Creates the git folder
+end note
+
+'Cloning
+Remote -> Workspace : clone
+note right
+    Copies the git folder
+    and populates the project
+    folder with the latest
+    version of the project files
+end note
+
+'Staging
 Workspace -> Index  : add
+note left
+    Add files or changes
+    to the staging area
+end note
+
+'Unstaging
 Index -> Workspace  : reset
+note right
+    Removes files or changes
+    from the staging area
+end note
+
+'Commit
 Index -> Local      : commit
-Local -> Local      : tag
+note left
+    Save the changes to the
+    local repository
+end note
+
+'Reverting
 Local -> Workspace  : restore
+note right
+    Revert a change by
+    replacing it with the
+    version stored in the
+    repository
+end note
+
+'Pushing
 Local -> Remote     : push
+note left
+    Copy the commit history
+    from the local repository
+    to the remote repository
+end note
+
+'Fetching
 Remote -> Local     : fetch
+note right
+    Copy the commit history
+    from the remote repository
+    to the local repository
+end note
+
+'Update
 Local -> Workspace  : merge
+note right
+    Update the working files
+    using the commit history
+end note
+
+'Pulling
 Remote -> Workspace : pull
+note right
+   Fetch and update
+end note
 
 @enduml
 
