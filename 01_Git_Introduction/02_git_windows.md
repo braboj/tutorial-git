@@ -1,4 +1,9 @@
 ## Install on Windows
 
-- [ ] Download and install Git
-- [ ] Download and install a git client
+1. Browse to the official Git website: https://git-scm.com/downloads
+2. Click the download link for Windows and allow the download to complete.
+3. Browse to the download location
+4. Double-click the file to launch the installer.
+5. Follow the installation steps with the default options
+6. Open PowerShell after the installation
+7. Type ***git --version*** to test the installation
