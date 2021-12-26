@@ -41,7 +41,7 @@ end note
 Index -> Local      : commit
 note left
     Save the changes to the
-    local repository
+    commit history
 end note
 
 'Reverting
