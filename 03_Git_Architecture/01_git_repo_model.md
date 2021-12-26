@@ -1,4 +1,4 @@
-## Repository Layout
+## Repository Model
 
 ### Bare Repository
 
@@ -43,6 +43,13 @@ C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT
         └───tags
 ```
 
-### Notes
 The latest versions of git support non-bare repositories to be used as 
 remote repositories.
+
+### Practice
+1. Create a bare repository
+2. Clone the bare repository
+3. Commit a readme file to the local repository
+4. Push the commit history
+5. Delete the readme file
+6. Pull the commit history

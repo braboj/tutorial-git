@@ -1,8 +1,6 @@
-## Configuration Layout
+## Configuration Model
 
-> TODO: Maybe a picture will be better here. It should show the typical
-> use cases for local (aliases, coloring), global (user) and system (editor)
-> configuration scenarios.
+![Configuration Model](../Assets/images/git_configuration_model.png)
 
 ### Local configuration
 
@@ -82,5 +80,11 @@ PS C:\Program Files\Git\etc\type gitconfig
 [init]
 	defaultBranch = master
 ```
-## References
+
+### Practice
+1. Configure the username and email globally
+2. Configure the editor globally
+3. Configure the coloration locally
+
+### References
 - <https://git-scm.com/docs/git-config>

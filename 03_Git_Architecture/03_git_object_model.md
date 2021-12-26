@@ -1,4 +1,4 @@
-## Git Objects
+## Object Model
 ________________________________________________________________________________
 
 ![Git Objects](../Assets/images/objects-example.png)
@@ -19,3 +19,5 @@ A collection of references to either child trees or blob objects.
 
 Binary large objects or BLOBS are compressed files and the end of the tree
 structure.
+
+### Practice
