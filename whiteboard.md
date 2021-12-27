@@ -78,3 +78,14 @@ https://gist.github.com/rvl/c3f156e117e22a25f242
 git remote set-url --add --push origin "httos://github.com/braboj/git-tutorial.git"
 git remote set-url --add --push origin "https://gitlab.com/braboj/git-tutorial.git"
 ```
+
+#### Alias
+
+    PS> git config --global alias.<alias> <command>
+    PS> git config --global alias.unstage 'reset --HEAD --'
+
+#### Editor
+
+    PS> git config --global core.editor <editor + options>
+
+

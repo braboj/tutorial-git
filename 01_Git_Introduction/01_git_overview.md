@@ -17,5 +17,5 @@ system:
 - Open Source
 - Distributed
 - Multiple workflows
+- Non-linear development
 - Small and fast
-- Staging commits
