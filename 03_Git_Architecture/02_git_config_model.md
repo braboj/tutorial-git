@@ -84,7 +84,7 @@ PS C:\Program Files\Git\etc\type gitconfig
 ### Practice
 1. Configure the username and email globally
 2. Configure the editor globally
-3. Configure the coloration locally
+3. Configure the 
 
 ### References
 - <https://git-scm.com/docs/git-config>
