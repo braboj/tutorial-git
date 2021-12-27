@@ -15,7 +15,6 @@
 -------------------------------------------------------------------------------
 
 #### Show
-
     # Show local configuration
     git config --list --local
 
@@ -28,12 +27,11 @@
 -------------------------------------------------------------------------------
 
 #### Query
-
-    # Single value
+    # Single value key
     git config remote.origin.url
     git config --get remote.origin.url
     
-    # Multiple values
+    # Multiple value key
     git config --get-all remote.origin.url
 
     # List all keys of section remote.origin
@@ -42,23 +40,31 @@
 -------------------------------------------------------------------------------
 
 #### Add
+    # Add the url key with a value to the 'remote.origin' section
     git config --add remote.origin.url https://github.com/braboj/demo.git
 
 -------------------------------------------------------------------------------
 
 #### Set
+    # Set a new value for the url key in the remote.origin section
     git config remote.origin.url https://github.com/braboj/demo.git
 
 -------------------------------------------------------------------------------
 
 #### Unset
+    # Delete a key name url from the remote.origin section 
     git config --unset remote.origin.url
+    
+    # Delete multiple value url from the remote.origin section
     git config --unset-all remote.origin.url
 
 -------------------------------------------------------------------------------
 
 #### Replace
+    # Replace the url key in the remote.origin section
     git config --replace remote.origin.url https://gitlab.com/braboj/demo.git
+    
+    # Replace all keys with the name url in the remote.origin section
     git config --replace-all remote.origin.url https://gitlab.com/braboj/demo.git
 
 -------------------------------------------------------------------------------
