@@ -71,5 +71,10 @@
 
 #### Popular configuration variables
 - core.editor
+- core.pager
+- core.excludesfile
 - user.name
 - user.email
+- color
+- merge
+- diff
