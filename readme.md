@@ -1,5 +1,6 @@
 # Git Tutorial
 ![Git](./Assets/images/git_data_transport_commands.png)
+> TODO: Ask for official permission from the author or make a similar one
 
 ## Table of contents
 
@@ -45,8 +46,9 @@
 
 
 ## Contributors
-All the contributors to this project.
+ - [Branimir Georgiev](https://github.com/braboj)
+ - [Karim...](https://github.com/)
+ - [Simeon...](https://github.com/)
 
-## License
-Choose license
+
 
