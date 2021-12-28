@@ -8,3 +8,6 @@
     git init <project>
     cd project
     cd .git
+
+#### Create a shared repository
+    git init <project> --shared=all
