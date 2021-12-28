@@ -1,4 +1,6 @@
-![Git](Assets/banners/atlassian-getting-git-right.png)
+<p align='center'>
+ <img src='Assets/banners/git_illustration.png' />
+</p>
 
 # Table of contents
 
