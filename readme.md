@@ -47,8 +47,8 @@
 
 ## Contributors
  - [Branimir Georgiev](https://github.com/braboj)
- - [Karim...](https://github.com/)
- - [Simeon...](https://github.com/)
+ - [Karim...](https://github.com/Karim06V)
+ - [Simeon...](https://github.com/3SGK3)
 
 
 
