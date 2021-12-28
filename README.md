@@ -2,7 +2,7 @@
 
 > TODO: Improve banner
 
-![Git](./Assets/images/git-dataflow-diagram.png)
+![Git](./Assets/images/banner.png)
 
 ## Table of contents
 
