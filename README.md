@@ -2,6 +2,8 @@
  <img src='Assets/banners/git_illustration.png' />
 </p>
 
+<p align="center"> (source: https://davidenunes.com/git-good/) </p>
+
 # Table of contents
 
 ### Introduction
