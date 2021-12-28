@@ -79,7 +79,7 @@ end note
 'Pulling
 Remote -> Workspace : pull
 note right
-   Fetch and update
+   Fetch and merge
 end note
 
 @enduml
