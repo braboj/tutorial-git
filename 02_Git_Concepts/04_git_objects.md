@@ -1,5 +1,4 @@
 ## Object Model
-________________________________________________________________________________
 
 ![Git Objects](../Assets/images/objects-example.png)
 
