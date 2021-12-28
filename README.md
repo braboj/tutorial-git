@@ -22,7 +22,7 @@
 
 #### Operations
 - [Help](03-Operations/01-Help/readme.md)
-- [Setup](03-Operations/02-Create/readme.md)
+- [Create](03-Operations/02-Create/readme.md)
 - [Configure](03-Operations/03-Configure/readme.md)
 - [Save](03-Operations/04-Save/readme.md)
 - [Sync](03-Operations/05-Sync/readme.md)
