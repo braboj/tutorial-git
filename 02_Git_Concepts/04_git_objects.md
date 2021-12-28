@@ -1,5 +1,7 @@
 ## Object Model
 
+> TODO: Ask for permission to use this image or create a new one
+
 ![Git Objects](../Assets/images/objects-example.png)
 
 Git uses the SHA-1 hash of content to create references to commit, trees and
