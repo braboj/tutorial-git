@@ -1,6 +1,6 @@
 # Git Tutorial
 
-![Git](./Assets/images/banner.png)
+![Git](Assets/banners/atlassian-getting-git-right.png)
 
 ## Table of contents
 
