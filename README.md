@@ -7,10 +7,10 @@
 # Table of contents
 
 ### Introduction
-- [Git Overview](/01-Introduction/01-git-overview.md)
-- [Git Installation for Windows](/01-Introduction/02-git-windows.md)
-- [Git Installation for Linux](/01-Introduction/03-git-linux.md)
-- [Git Hosting Services](/01-Introduction/04-git-hosting.md)
+- [Overview](/01-Introduction/01-git-overview.md)
+- [Installation for Windows](/01-Introduction/02-git-windows.md)
+- [Installation for Linux](/01-Introduction/03-git-linux.md)
+- [Hosting Services](/01-Introduction/04-git-hosting.md)
 
 ### Concepts
 - [Dataflow](02-Concepts/01-git-dataflow.md)
