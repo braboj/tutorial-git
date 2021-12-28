@@ -1,7 +1,5 @@
 # Git Tutorial
 
-> TODO: Improve banner
-
 ![Git](./Assets/images/git-dataflow-diagram.png)
 
 ## Table of contents
