@@ -1,6 +1,6 @@
 # Git Tutorial
+
 ![Git](./Assets/images/git_data_transport_commands.png)
-> TODO: Ask for official permission from the author or make a similar one
 
 ## Table of contents
 
