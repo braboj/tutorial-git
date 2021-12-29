@@ -2,6 +2,8 @@
 Tags a commit with a suitable name. Git supports lightweight and annotated 
 tags. 
 
+-------------------------------------------------------------------------------
+
 ### Syntax
 ```shell
 # Options
@@ -15,6 +17,7 @@ $ git tag <tagname> <object>
 $ git tag <tagname> <object> -a -m <message>
 ```
 
+-------------------------------------------------------------------------------
 
 ### Examples
 ```shell

@@ -4,6 +4,8 @@
 - Can be performed multiple times before a commit.
 - Ignored files are not added by default
 
+-------------------------------------------------------------------------------
+
 ### Syntax
 ```shell
 # Options
@@ -14,6 +16,8 @@
 
 $ git add <pathspec>     
 ```
+
+-------------------------------------------------------------------------------
 
 ### Examples
 ```shell
