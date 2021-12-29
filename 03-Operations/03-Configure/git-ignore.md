@@ -5,11 +5,14 @@
 # Ignore folders
 dist/
 
-# Ignore log files
+# Ignore all log files
 *.log
 
-# Ignore files with reg-ex
+# Ignore .pyc, .pyo and .pyd files
 *.py[cod]
+
+# Ignore .mp3 and .mp4 files
+*.mp?
 
 ```
 
