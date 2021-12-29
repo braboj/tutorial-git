@@ -1,14 +1,22 @@
 ## git init
 Creates a new repository in a given project folder. 
 
-#### Create a bare repository
-    git init --bare <project>.git
-    cd project.git
+-------------------------------------------------------------------------------
+### Syntax
+```shell
+$ git init <repo> --bare        # Create a repo folder
+$ git init <project>            # Create .git in the project folder
+```
 
-#### Create a non-bare repository
-    git init <project>
-    cd project
-    cd .git
+-------------------------------------------------------------------------------
+### Examples
+```shell
+$ git init --bare project.git   # Bare folder names by convention
+$ cd project.git                # Folder is visible
 
-#### Create a shared repository
-    git init <project> --shared=all
+$ git init project              # Create .git in the project folder
+$ cd project/.git               # Folder is hidden
+
+$ git init                      # Create .git in the current folder
+$ cd .git
+```

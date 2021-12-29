@@ -2,13 +2,21 @@
 Copies an existing repository on the local machine. The cloning process 
 supports several protocols such as Git, HTTP and HTTPS.
 
-#### Copy repository as a bare repository
+-------------------------------------------------------------------------------
+### Syntax
+```shell
+$ git clone --bare <repo-url>   # Copy repo as bare
+$ git clone <repo-url>          # Copy repo and create worktree
+```
 
-    git clone --bare <https://github.com/user/project.git>
-    cd project.git
-    dir
+-------------------------------------------------------------------------------
+### Examples
+```shell
+$ git clone --bare <https://github.com/user/project.git>
+$ cd project.git
+$ dir
 
-#### Copy repository and create project files
-    git clone <https://github.com/user/project.git>
-    cd project
-    dir
+$ git clone <https://github.com/user/project.git>
+$ cd project
+$ dir
+```
