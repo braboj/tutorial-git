@@ -1,4 +1,5 @@
 ## git init
+Creates a new repository in a given project folder. 
 
 #### Create a bare repository
     git init --bare <project>.git

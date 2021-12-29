@@ -1,6 +1,8 @@
 ## git clone
+Copies an existing repository on the local machine. The cloning process 
+supports several protocols such as Git, HTTP and HTTPS.
 
-#### Copy a bare repository to a git server
+#### Copy repository as a bare repository
 
     git clone --bare <https://github.com/user/project.git>
     cd project.git
