@@ -20,6 +20,7 @@ https://learngitbranching.js.org/
 - https://backlog.com/git-tutorial/reference/commands/
 - https://stackoverflow.com/questions/35979642/what-is-git-tag-how-to-create-tags-how-to-checkout-git-remote-tags/35979751#35979751
 - http://shafiul.github.io/gitbook/1_the_git_object_model.html
+- https://mincong.io/2018/04/28/git-index/
 
 ### Books
 
