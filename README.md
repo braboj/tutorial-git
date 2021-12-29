@@ -25,7 +25,7 @@
 - [Create](03-Operations/02-Create/readme.md)
 - [Configure](03-Operations/03-Configure/readme.md)
 - [Track](03-Operations/04-Track/readme.md)
-- [Sync](03-Operations/05-Collaborate/readme.md)
+- [Collaborate](03-Operations/05-Collaborate/readme.md)
 - [Revert](03-Operations/06-Revert/readme.md)
 - [Inspect](03-Operations/09-Inspect/readme.md)
 - [Branch](03-Operations/07-Branch/readme.md)
