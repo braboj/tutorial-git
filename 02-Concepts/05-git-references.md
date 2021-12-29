@@ -1,3 +1,2 @@
-# What are git references?
-
-# Relative references?
+> TODO: Describe the location of the references, how are they used, etc.
+> 

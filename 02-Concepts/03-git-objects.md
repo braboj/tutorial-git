@@ -14,23 +14,22 @@ and references to the file tree of this commit.
 
 ### Tree object
 
-A collection of references to either child trees or blob objects.
+A collection of references to either child trees or blob objects. Trees in 
+git represent directories of the operating system.
 
 ### Blob objects
 
 Binary large objects or BLOBS are compressed files and the end of the tree
-structure.
+structure. They are the snapshots of a given file after a change has been 
+added to the index.
 
 ### Practice
 
-1. Create a bare repository
-2. Clone the bare repository
-3. Add a readme file
-4. Commit the changes
-5. Get the last commit log
-6. Get the long hash of the commit
-7. Got to the .git directory and show its content
-8. Trace the commit object
-9. Decompress the commit object
-10. Follow the tree and blob objects
-11. Make a diagram of the git objects
+1. Create a git repo
+2. Check if the .git folder exists
+3. Create a new file
+4. Add the file to the index
+5. Check if a blob object was created
+6. Commit the file
+7. Check if a tree and commit objects were created
+8. Make a diagram of the object tree

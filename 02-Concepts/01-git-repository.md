@@ -1,4 +1,7 @@
 ## Repository Model
+The repository is a special folder with the name ***.git***, where git stores 
+files and the history of the changes, special files called references and 
+the repository configuration files. 
 
 ### Bare Repository
 
