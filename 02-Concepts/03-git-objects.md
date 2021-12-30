@@ -7,22 +7,26 @@
 Git uses the SHA-1 hash of content to create references to commit, trees and
 blobs.
 
+-------------------------------------------------------------------------------
 ### Commit object
 
 Store the metadata about a commit, such as the parent, the author, timestamps
 and references to the file tree of this commit.
 
+-------------------------------------------------------------------------------
 ### Tree object
 
 A collection of references to either child trees or blob objects. Trees in 
 git represent directories of the operating system.
 
+-------------------------------------------------------------------------------
 ### Blob objects
 
 Binary large objects or BLOBS are compressed files and the end of the tree
 structure. They are the snapshots of a given file after a change has been 
 added to the index.
 
+-------------------------------------------------------------------------------
 ### Practice
 
 1. Create a git repo

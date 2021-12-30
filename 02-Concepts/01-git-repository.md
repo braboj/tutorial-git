@@ -1,8 +1,10 @@
 ## Repository
+
 The repository is a special folder with the name ***.git***, where git stores 
 files and the history of the changes, special files called references and 
 the repository configuration files. 
 
+-------------------------------------------------------------------------------
 ### Bare Repository
 
 The remote repository is often called a **bare repository**. It is
@@ -24,6 +26,7 @@ C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT.GIT
 └───tags
 ```
 
+-------------------------------------------------------------------------------
 ### Non-bare Repository
 
 The command ***git clone <project.git>*** will copy the bare repository
@@ -49,7 +52,9 @@ C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT
 The latest versions of git support non-bare repositories to be used as 
 remote repositories.
 
+-------------------------------------------------------------------------------
 ### Practice
+
 1. Create a bare repository
 2. Clone the bare repository
 3. Commit a readme file to the local repository
