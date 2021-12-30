@@ -26,10 +26,10 @@ git remote remove origin
 # Add anew the reference origin
 git remote add origin https://github.com/braboj/demo.git
 
-# Add a new remote repository for pushing
+# Add a new remote repo for pushing
 git remote set-url --add origin https://gitlab.com/braboj/demo.git
 
-# Remnote
+# Remove a remote repo for pushing
 git remote set-url --delete https://gitlab.com/braboj/demo.git
 ```
 
