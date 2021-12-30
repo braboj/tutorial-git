@@ -28,5 +28,5 @@ $ git branch test -m demo         # Move test to demo
 $ git branch demo -c test         # Copy demo to test
 $ git branch demo -d              # Delete branch demo
 $ git branch test -u origin/test  # Track remote branch origin/test
+$ git branch -f test main         # Move tip of test to main
 ```
-    
