@@ -4,6 +4,11 @@
 What is a merge conflict? Show how to simulate a merge conflict...
 
 ### Merge strategies
-Fast-forward, 3-Way, Recursive, Octopus, etc...
+
+#### Linear history
+    Fast-forward
+
+#### Non-lineare history
+    3-Way, Recursive, Octopus, etc...
 
 
