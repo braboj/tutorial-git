@@ -22,7 +22,7 @@ $ git branch <this branch> <-c, -m, -u> <other branch>
 ### Examples
 
 ```shell
-$ git branch                      # Show branches
+$ git branch                      # Show branches and HEAD status
 $ git branch test                 # Create new branch test
 $ git branch test -m demo         # Move test to demo
 $ git branch demo -c test         # Copy demo to test
