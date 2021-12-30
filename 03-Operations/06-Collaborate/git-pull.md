@@ -5,18 +5,18 @@ fetch and git merge.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-$ git pull                         # Fetch origin
-$ git pull <remote repo>           # Fetch remote repo
-$ git pull <remote repo> <branch>  # Fetch a branch of the remote repo
+$ git pull <remote repo> <branch>
 ```
 
 -------------------------------------------------------------------------------
 ### Examples
 ```shell
-# Get the history of the remote repo and merge
+# Get the history of the default remote repo
 $ git pull
 
-# 
+# Get the commit history and branches of the remote repo
 $ git pull origin test
 
+# Get the history of a specific branch of the remote repo 
+$ git pull origin test
 ```
