@@ -1,4 +1,4 @@
-## Configuration Model
+## Configuration
 
 ![Configuration Model](../Assets/images/git-configuration-model.png)
 

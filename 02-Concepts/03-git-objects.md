@@ -1,4 +1,4 @@
-## Object Model
+## Objects
 
 > TODO: Ask for permission to use this image or create a new one
 

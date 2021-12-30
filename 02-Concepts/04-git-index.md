@@ -1,4 +1,4 @@
-## Index Model
+## Index
 
 The index is a binary file (generally kept in .git/index) containing a sorted
 list of path names, each with permissions and the hashcode of a blob object; 
