@@ -27,8 +27,14 @@ point to the tip of a branch or to a previous commit. In the latter
 case the HEAD is detached.
 
 ```shell
+# HEAD points to a tip of a branch
 $ type .git/HEAD
 ref: refs/heads/main
+
+# Detach HEAD
+$ git checkout 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
+$ type .git/HEAD
+$ 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
 ```
 
 -------------------------------------------------------------------------------
