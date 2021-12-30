@@ -18,7 +18,7 @@
 - [Configuration](02-Concepts/02-git-configuration.md)
 - [Objects](02-Concepts/03-git-objects.md)
 - [References](02-Concepts/05-git-references.md)
-- [Hooks](02-Concepts/08-git-hooks.md)
+- [Hooks](02-Concepts/09-git-hooks.md)
 
 ### Operations
 - [Help](03-Operations/01-Help/readme.md)
