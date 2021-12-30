@@ -1,6 +1,6 @@
 ## References
 References are files, which store the git hash of the referenced 
-object. The location of the references is in ***.git / refs***.
+object.
 
 ```
 $ tree .git /f          
@@ -43,9 +43,9 @@ $ type .git/refs/heads/main
 
 -------------------------------------------------------------------------------
 ### remotes
-Git stores the references to remote branches here. The remote branch has 
-also a HEAD reference. If the hash value in the file ***origin / main*** are 
-the same, then both branches are in sync.
+This folder is used to store the remote branches. The remote branch has 
+also a HEAD reference. If the hash value in the file ***origin / main*** 
+are is the same as the one in ***main***, then both branches are in sync.
 
 ```shell
 $ type .git/refs/remotes/origin/main
@@ -54,6 +54,9 @@ $ type .git/refs/remotes/origin/main
 
 -------------------------------------------------------------------------------
 ### tags
+Tags are static labels for commit objects. Unlike the branches, they don't 
+change and are used as snapshots of the project in progress. 
+
 ```shell
 $ type .git/refs/tags/V1.0.0.0
 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
