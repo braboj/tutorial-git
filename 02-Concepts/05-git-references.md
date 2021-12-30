@@ -8,7 +8,7 @@ $ tree .git /f
 C:.
 │   HEAD                # Current commit object
 │
-├───heads               # Branches
+├───heads               # Local branches
 │       main            # Tip of the main branch
 │
 ├───remotes             # Remote branches
@@ -23,15 +23,15 @@ C:.
 -------------------------------------------------------------------------------
 ### HEAD
 This is a file with a reference to the latest commit object. The head can 
-point to the tip of a branch or to a previous commit. In the latter 
-case the HEAD is detached.
+point to the tip of a branch (attached) or to a tag or a commit object 
+(detached). 
 
 ```shell
-# HEAD points to a tip of a branch
+# HEAD is attached (points to a tip of a branch)
 $ type .git/HEAD
 ref: refs/heads/main
 
-# Detach HEAD
+# HEAD is detached (points to a commit object)
 $ git checkout 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
 $ type .git/HEAD
 $ 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
