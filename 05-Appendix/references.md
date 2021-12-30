@@ -1,12 +1,15 @@
 ## References
 
 ________________________________________________________________________________
+### Description
+- https://en.wikipedia.org/wiki/Git
 
+________________________________________________________________________________
 ### Visualization
 - https://learngitbranching.js.org/
 
+________________________________________________________________________________
 ### Tutorials
-
 - http://guides.beanstalkapp.com/
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 - https://www.w3schools.com/git/
@@ -22,13 +25,13 @@ ________________________________________________________________________________
 - http://shafiul.github.io/gitbook/1_the_git_object_model.html
 - https://mincong.io/2018/04/28/git-index/
 
+________________________________________________________________________________
 ### Books
-
 - http://git-scm.com/book/en/v2
 - https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
 
+________________________________________________________________________________
 ### Workflows
-
 - https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow
 - https://nvie.com/posts/a-successful-git-branching-model/
 - https://gist.github.com/bryanbraun/8c93e154a93a08794291df1fcdce6918
@@ -36,12 +39,12 @@ ________________________________________________________________________________
 - https://www.toptal.com/software/trunk-based-development-git-flow
 - https://buddy.works/blog/5-types-of-git-workflows
 
+________________________________________________________________________________
 ### Criticism
-
 - https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
 - https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
 
-
+________________________________________________________________________________
 ### Hosting Services
 - https://jelvix.com/blog/bitbucket-vs-github-vs-gitlab
 - https://www.geeksforgeeks.org/difference-between-bitbucket-and-github/
@@ -54,6 +57,3 @@ ________________________________________________________________________________
 - https://about.gitlab.com/pricing/saas/feature-comparison/
 - https://kreuzwerker.de/en/post/bye-bye-server
 - https://www.atlassian.com/migration/assess/journey-to-cloud
-
-### Others
-- https://www.diagrams.net/
