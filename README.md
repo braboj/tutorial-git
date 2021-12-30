@@ -25,13 +25,13 @@
 - [Create](03-Operations/02-Create/readme.md)
 - [Configure](03-Operations/03-Configure/readme.md)
 - [Track](03-Operations/04-Track/readme.md)
-- [Collaborate](03-Operations/05-Collaborate/readme.md)
-- [Revert](03-Operations/06-Revert/readme.md)
+- [Collaborate](03-Operations/07-Collaborate/readme.md)
+- [Revert](03-Operations/08-Revert/readme.md)
 - [Inspect](03-Operations/09-Inspect/readme.md)
-- [Branch](03-Operations/07-Branch/readme.md)
-- [Merge](03-Operations/08-Merge/readme.md)
+- [Branch](03-Operations/05-Branch/readme.md)
+- [Merge](03-Operations/06-Merge/readme.md)
 - [Rewrite](03-Operations/10-Rewrite/readme.md)
-- [Hook](03-Operations/11-Hook/readme.md)
+- [Hook](03-Operations/11-Automate/readme.md)
 
 ### Workflows
 - [Trunk](04-Workflows/01-trunk.md)

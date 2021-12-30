@@ -3,7 +3,7 @@
 ________________________________________________________________________________
 
 ### Visualization
-https://learngitbranching.js.org/
+- https://learngitbranching.js.org/
 
 ### Tutorials
 
