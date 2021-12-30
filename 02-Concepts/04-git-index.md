@@ -1,9 +1,7 @@
 ## Index
 
 The index is a binary file (generally kept in .git/index) containing a sorted
-list of path names, each with permissions and the hashcode of a blob object; 
-
-The content of the index can be inspected with the ***git ls-files*** command.
+list of path names, each with permissions and the hashcode of a blob object. 
 
 ```shell
 $ git ls-files --stage
