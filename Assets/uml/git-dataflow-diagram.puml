@@ -31,10 +31,10 @@ note left
 end note
 
 'Unstaging
-Index -> Workspace  : reset
+Index -> Workspace  : restore
 note right
-    Removes files or changes
-    from the staging area
+    Revert changes to files
+    in the working tree
 end note
 
 'Commit
@@ -45,12 +45,10 @@ note left
 end note
 
 'Reverting
-Local -> Workspace  : restore
+Local -> Index  :  restore --staged
 note right
-    Revert a change by
-    replacing it with the
-    version stored in the
-    repository
+    Revert changes in
+    the index file
 end note
 
 'Pushing

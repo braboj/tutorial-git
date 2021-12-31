@@ -2,6 +2,7 @@
 Copies the local history to the remote repo. The default remote repository 
 is ***origin***.
 
+-------------------------------------------------------------------------------
 ### Syntax
 ```shell
 # Options
@@ -9,6 +10,8 @@ is ***origin***.
 
 $ git push <remote> <branch> <options>
 ```
+
+-------------------------------------------------------------------------------
 ### Examples
 ```shell
 # Push commit history and branches
