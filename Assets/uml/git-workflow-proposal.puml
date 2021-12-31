@@ -17,28 +17,28 @@ Local --> Local: test
 Local -> Local: commit
 
 [-> Local: tag
-note right: 0.0.0.Issue
+note right: V0.0.0.Milestone
 ...
-Local -> Remote: push
+Local -> Remote: push --tags
 
 == Test ==
 
 [-> Local: tag
-note right: 1.0.0.A
+note right: V1.0.0.A
 Remote -> Local: pull
 Local --> Local: test
 Local -> Local: commit
 Local -> Remote: push
 
 [-> Local: tag
-note right: 1.0.0.B
+note right: V1.0.0.B
 Remote -> Local: pull
 Local --> Local: test
 Local -> Remote: push
 
 == Release ==
 [-> Local: tag
-note right: 1.0.0
+note right: V1.0.0
 Local -> Remote: push
 
 == Development ==
@@ -48,7 +48,7 @@ Local -> Local: test
 Local -> Local: commit
 
 [-> Local: tag
-note right: 1.0.0.Issue
+note right: V1.0.0.Milestone
 ...
 Local -> Remote: push
 
@@ -65,13 +65,13 @@ Hotfix ->o Hotfix: commit
 Hotfix ->o Local: switch
 Hotfix ->o Local: merge
 [-> Local: tag
-note right: 1.0.1
+note right: V1.0.1
 
 Local -> Local: add
 Local --> Local: test
 Local -> Local: commit
 ...
 [-> Local: tag
-note right: 1.0.1.Issue
+note right: V1.0.1.Milestone
 Local -> Remote: push
 @enduml
