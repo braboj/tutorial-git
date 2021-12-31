@@ -10,6 +10,5 @@ time to configure git on a server.
 - https://about.gitlab.com/
 
 ### Comparison
-> TODO: Elaborate the comparison criteria
 
 ![Git Hosting Comparison](../Assets/images/git-hosting-comparison.png)
