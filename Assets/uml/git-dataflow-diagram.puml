@@ -9,13 +9,13 @@ participant "Local Repository" as Local
 participant "Remote Repository" as Remote
 
 'Initialization
-Remote -> Remote    : init
+Remote -> Remote    : git init --bare demo.git
 note left
     Creates the git folder
 end note
 
 'Cloning
-Remote -> Workspace : clone
+Remote -> Workspace : git clone demo.git
 note right
     Copies the git folder
     and populates the project
@@ -23,36 +23,43 @@ note right
     version of the project files
 end note
 
+'Work in progress
+Workspace -> Workspace : Create files
+note left
+    The developer works
+    in the project folder
+end note
+
 'Staging
-Workspace -> Index  : add
+Workspace -> Index  : git add *
 note left
     Add files or changes
     to the staging area
 end note
 
 'Unstaging
-Index -> Workspace  : restore
+Index -> Workspace  : git restore *
 note right
     Revert changes to files
     in the working tree
 end note
 
 'Commit
-Index -> Local      : commit
+Index -> Local      : git commit -m 'Message'
 note left
     Save the changes to the
     commit history
 end note
 
 'Reverting
-Local -> Index  :  restore --staged
+Local -> Index  :  restore * --staged
 note right
     Revert changes in
     the index file
 end note
 
 'Pushing
-Local -> Remote     : push
+Local -> Remote     : git push
 note left
     Copy the commit history
     from the local repository
@@ -60,7 +67,7 @@ note left
 end note
 
 'Fetching
-Remote -> Local     : fetch
+Remote -> Local     : git fetch
 note right
     Copy the commit history
     from the remote repository
@@ -68,14 +75,14 @@ note right
 end note
 
 'Update
-Local -> Workspace  : merge
+Local -> Workspace  : git merge
 note right
     Update the working files
     using the commit history
 end note
 
 'Pulling
-Remote -> Workspace : pull
+Remote -> Workspace : git pull
 note right
    Fetch and merge
 end note
