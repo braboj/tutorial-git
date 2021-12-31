@@ -35,4 +35,9 @@ $ git tag V1* -l
 
 # Delete all tags with PowerShell
 $ git tag | foreach-object -process { git tag -d $_ }
+
+# Rename a tag
+$ git tag V1
+$ git tag V1 V1.0
+$ git tag -d V1
 ```
