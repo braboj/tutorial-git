@@ -1,8 +1,13 @@
 ## git branch
+Use git branch to inspect the branches of the local and remote repos.
 
+### Syntax
 ```shell
-git branch -a
-git branch -r
-git branch -v
+# Options
+# -a (--all)        : Show all branches
+# -r (--remote)     : Show remote branches
+# -v (--verbose)    : Verbose information
+
+$ git branch <options>
 ```
     

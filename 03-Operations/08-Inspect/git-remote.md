@@ -1,10 +1,14 @@
-### Show all remote references and their URLs
+## git remote
+Show info about remote references.
+
+-------------------------------------------------------------------------------
+### Syntax
 ```shell
-git remote --verbose (or -v)
 ```
 
-
-### Show tracking information
+-------------------------------------------------------------------------------
+### Examples
 ```shell
+git remote --verbose (or -v)
 git remote show <alias>
 ```

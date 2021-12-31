@@ -1,4 +1,16 @@
-#git ls-files
-Show the state of the index
+## git ls-files
+Show the status of the index.
 
-    git ls-files --stage
+-------------------------------------------------------------------------------
+### Syntax
+```shell
+```
+
+-------------------------------------------------------------------------------
+### Examples
+```shell
+$ git ls-files --stage
+```
+
+
+
