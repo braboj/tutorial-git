@@ -5,7 +5,7 @@
 -------------------------------------------------------------------------------
 ### 1. Help
 Get help about any given command, guide or configuration 
-
+Debug
 ```shell
 $ git help
 $ git help --guides
