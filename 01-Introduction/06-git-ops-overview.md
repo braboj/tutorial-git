@@ -3,43 +3,43 @@
 ![Git Dataflow](../Assets/images/git-ops-overview.png)
 
 -------------------------------------------------------------------------------
-### Help
+### 1. Help
 Get help about any given command.
 
 -------------------------------------------------------------------------------
-### Create
+### 2. Create
 Create a local or remote repository.
 
 -------------------------------------------------------------------------------
-### Config
+### 3. Config
 Configure the local repository.
 
 -------------------------------------------------------------------------------
-### Track
-Save and track changes.
+### 4. Track
+Save, track and label changes.
 
 -------------------------------------------------------------------------------
-### Branch
+### 5. Branch
 Branch, switch and merge branches.
 
 -------------------------------------------------------------------------------
-### Sync
+### 6. Sync
 Collaborate with other developers.
 
 -------------------------------------------------------------------------------
-### Revert
+### 7. Revert
 Revert changes to the project files using the index or the local commit history.
 
 -------------------------------------------------------------------------------
-### Inspect
+### 8. Inspect
 Inspect the commit history, check the author of the modifications, get the 
 repository status and other operations.
 
 -------------------------------------------------------------------------------
-### Rewrite
+### 9. Rewrite
 Delete, modify or filter out parts of the commit history.
 
 -------------------------------------------------------------------------------
-### Automate
+### 10. Automate
 Use advanced techniques to automate some of the git operations.
 

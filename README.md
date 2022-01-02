@@ -32,7 +32,7 @@
 - [Configure](03-Operations/03-Configure/readme.md)
 - [Track](03-Operations/04-Track/readme.md)
 - [Branch](03-Operations/05-Branch/readme.md)
-- [Collaborate](03-Operations/06-Collaborate/readme.md)
+- [Collaborate](03-Operations/06-Sync/readme.md)
 - [Revert](03-Operations/07-Revert/readme.md)
 - [Inspect](03-Operations/08-Inspect/readme.md)
 - [Rewrite](03-Operations/09-Rewrite/readme.md)
