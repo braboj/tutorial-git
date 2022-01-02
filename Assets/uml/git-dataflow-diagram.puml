@@ -1,21 +1,22 @@
 @startuml
 skinparam lifelineStrategy solid
-'skinparam backgroundColor #EEEBDC
 skinparam handwritten false
-'skinparam SequenceMessageAlign center
 skinparam ParticipantPadding 10
 skinparam BoxPadding 5
+'skinparam SequenceMessageAlign center
+'skinparam backgroundColor #EEEBDC
+
 
 '#############################################################################
 
-box Local Machine #LightGrey
-    participant "Workspace\n C:\demo" as Workspace
-    participant "Index\n C:\demo\.git\index" as Index
-    participant "Local Repository\n C:\demo\.git" as Local
+box \nLocal Machine\n #LightYellow
+    participant "<size:18>**Workspace**</size>\n C:\demo" as Workspace #White
+    participant "<size:18>**Index**</size>\n C:\demo\.git\index" as Index #White
+    participant "<size:18>**Local Repo**</size>\n C:\demo\.git" as Local #White
 end box
 
-box Remote Server #LightGreen
-    participant "Remote Repo\n GitHub/demo.git" as Remote
+box \nRemote Server\n #LightGreen
+    participant "<size:18>**Remote Repo**</size>\n GitHub / demo.git" as Remote #White
 end box
 
 '#############################################################################
