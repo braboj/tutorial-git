@@ -23,12 +23,12 @@ groups the changes before commit.
 -------------------------------------------------------------------------------
 ### Practice
 
-1. Create a remote repository
+1. Create a remote repository on GitHub
 2. Clone the remote repository
-3. Create a new file and add it to the index
+3. Create a new file test.txt and add it to the index
 4. Add the file to the index
 5. Commit the file to the local repo
 6. Push the file to the remote repo
-7. Simulate a change from another developer
+7. Change the file test.txt on GitHub
 8. Pull the changes from the remote repo
-9. Check the contents of hello.txt
+9. Check the contents of the file test.txt
