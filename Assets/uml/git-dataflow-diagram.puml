@@ -1,89 +1,94 @@
 @startuml
 skinparam lifelineStrategy solid
 'skinparam backgroundColor #EEEBDC
-skinparam handwritten true
+skinparam handwritten false
+'skinparam SequenceMessageAlign center
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
 
-participant Workspace
-participant Index
-participant "Local Repository" as Local
-participant "Remote Repository" as Remote
+'#############################################################################
 
-'Initialization
-Remote -> Remote    : git init --bare demo.git
-note left
-    Creates the git folder
-end note
+box Local Machine #LightGrey
+    participant "Workspace\n C:\demo" as Workspace
+    participant "Index\n C:\demo\.git\index" as Index
+    participant "Local Repository\n C:\demo\.git" as Local
+end box
+
+box Remote Server #LightGreen
+    participant "Remote Repo\n GitHub/demo.git" as Remote
+end box
+
+'#############################################################################
 
 'Cloning
-Remote -> Workspace : git clone demo.git
-note right
-    Copies the git folder
-    and populates the project
-    folder with the latest
-    version of the project files
+Remote o-> Workspace : git clone https://github.com/user/demo.git
+note left
+    Copy the repo folder to a
+    hidden .git folder and
+    create the project files.
 end note
 
 'Work in progress
-Workspace -> Workspace : Create files
+Workspace o-> Workspace : Change files
 note left
     The developer works
     in the project folder
 end note
 
 'Staging
-Workspace -> Index  : git add *
+Workspace o-> Index  : git add *
 note left
     Add files or changes
     to the staging area
 end note
 
 'Unstaging
-Index -> Workspace  : git restore *
-note right
-    Revert changes to files
-    in the working tree
+Index o-> Workspace  : git restore *
+note left
+    Restore project files
+    using the index
 end note
 
 'Commit
-Index -> Local      : git commit -m 'Message'
+Index o-> Local      : git commit -m 'Message'
 note left
-    Save the changes to the
-    commit history
+    Copy changes from the
+    index to the repository
 end note
 
 'Reverting
-Local -> Index  :  restore * --staged
-note right
-    Revert changes in
-    the index file
+Local o-> Index  :  restore * --staged
+note left
+    Restore the index
+    using the repository
 end note
 
 'Pushing
-Local -> Remote     : git push
+Local o-> Remote     : git push
 note left
-    Copy the commit history
-    from the local repository
-    to the remote repository
+    Copy the **local**
+    commit history to the
+    **remote** repo.
 end note
 
 'Fetching
-Remote -> Local     : git fetch
-note right
-    Copy the commit history
-    from the remote repository
-    to the local repository
+Remote o-> Local     : git fetch
+note left
+    Copy the **remote**
+    commit history to the
+    **local** repo.
 end note
 
 'Update
-Local -> Workspace  : git merge
-note right
+Local o-> Workspace  : git merge
+note left
     Update the working files
     using the commit history
 end note
 
 'Pulling
-Remote -> Workspace : git pull
-note right
+Remote o-> Workspace : git pull
+note left
    Fetch and merge
 end note
 
