@@ -1,4 +1,4 @@
-## Inspecting the repository
+## Commands for inspecting and troubleshooting
 
 - [git bisect](git-bisect.md)
 - [git blame](git-blame.md)

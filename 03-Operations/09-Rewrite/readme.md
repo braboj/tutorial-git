@@ -1,4 +1,4 @@
-## Rewrite history commands
+## Commands for history manipulation
 
 - [git commit](git-commit.md)
 - [git reset](git-reset.md)

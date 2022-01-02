@@ -1,4 +1,4 @@
-## Branching commands
+## Commands for branching and merging
 
 - [git branch](git-branch.md)
 - [git checkout](git-checkout.md)

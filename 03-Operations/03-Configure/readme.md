@@ -1,4 +1,4 @@
-## Configuration commands
+## Commands for repository configuration
 
 
 - [git config](git-config.md)
