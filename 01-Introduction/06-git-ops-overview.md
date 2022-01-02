@@ -4,7 +4,7 @@
 
 -------------------------------------------------------------------------------
 ### 1. Help
-Get help about any given command.
+Get help about any given command, guide or configuration 
 
 ```shell
 $ git help
@@ -24,6 +24,7 @@ Configure the local repository.
 
 ```shell
 $ git config --global user.email "user@mail.com"
+$ git config user.email
 ```
 
 -------------------------------------------------------------------------------
@@ -31,42 +32,67 @@ $ git config --global user.email "user@mail.com"
 Save, track and label changes.
 
 ```shell
+# Create a new file
 $ echo 123 > README.md
+$ git status
+
+# Start tracking
 $ git add *
 $ git status
+
+# Save the changes
 $ git commit -m 'Commit message'
 $ git status
+
+# Label a specific change
 $ git tag V1.0
 $ git tag
+
+# Show history
 $ git log
 ```
 
 -------------------------------------------------------------------------------
 ### 5. Branch
-Branch, switch and merge branches.
+Branch, stash and merge branches.
 
 ```shell
-$ git branch test_branch
+# Create branch and switch to it
+$ git branch test
 $ git branch
-$ git switch test_branch
+$ git switch test
 $ git branch
 
-$ echo 3 >> README.md
+# Do some work
+$ echo 1 > README.md
+$ git add *
+$ git commit
+$ echo 2 > README.md
+$ git add *
+
+# Try to switch to main before commit
 $ git switch main
+
+# Save changes
 $ git stash
 $ git stash list
+$ git stash show
+
+# Switch to main, restore changes and commit
 $ git switch main
-$ git switch test_branch
+$ git switch test
 $ git stash pop
-
-$ git add *
 $ git commit -m 'File changed in branch'
-$ git switch main
-$ git merge test_branch
 
-$ git checkout V1.0
-$ git status
+# Merge changes from test
 $ git switch main
+$ git merge test
+
+# Go to V1.0 and switch back
+$ git checkout V1.0
+$ git branch
+$ git switch main
+$ git branch
 ```
 
 -------------------------------------------------------------------------------
@@ -75,10 +101,10 @@ Collaborate with other developers.
 
 ```shell
 $ git push
-$ git push origin test_branch
+$ git push origin test
 
 $ git pull
-$ git pull origin test_branch
+$ git pull origin test
 ```
 
 -------------------------------------------------------------------------------
@@ -86,11 +112,16 @@ $ git pull origin test_branch
 Revert changes to the project files using the index or the local commit history.
 
 ```shell
+# Restore file from index
 $ del README.md
 $ git status
-$ git restore
+$ git restore *
 $ git status
+
+# Restore index from commit history
 $ echo ABCD > README.md
+$ git add *
+$ git status
 $ git restore --staged
 $ git status
 ```
