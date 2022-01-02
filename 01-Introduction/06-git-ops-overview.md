@@ -39,6 +39,7 @@ repository status and other operations.
 ### Rewrite
 Delete, modify or filter out parts of the commit history.
 
+-------------------------------------------------------------------------------
 ### Automate
 Use advanced techniques to automate some of the git operations.
 
