@@ -12,8 +12,8 @@
 - [Installation for Linux](/01-Introduction/03-git-linux.md)
 - [Hosting Services](/01-Introduction/04-git-hosting.md)
 - [Dataflow Diagram](01-Introduction/05-git-dataflow.md)
-- [GitOps Train](01-Introduction/06-git-ops-train.md)
-- 
+- [Operations Overview](01-Introduction/06-git-ops-overview.md)
+
 ### Concepts
 - [Repository](02-Concepts/01-git-repository.md)
 - [Configuration](02-Concepts/02-git-configuration.md)
