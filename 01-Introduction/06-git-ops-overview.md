@@ -1,4 +1,4 @@
-## Git Operations Train
+## Git Operations Overview
 
 ![Git Dataflow](../Assets/images/git-ops-overview.png)
 
