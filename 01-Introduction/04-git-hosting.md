@@ -1,7 +1,7 @@
 ## Git Hosting
-Git hosting is a service, which offers storage place and git to manage 
-source code. This saves money from buying expensive hardware and saves also 
-time to configure git on a server. 
+Git hosting is a software service, which offers storage place and git to manage 
+and track source code. This saves money from buying expensive hardware and saves also 
+time to configure git on a local server. 
 
 ### Main competitors
 
