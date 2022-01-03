@@ -1,10 +1,20 @@
 @startuml
 skinparam lifelineStrategy solid
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+
+box Local #LightYellow
+participant "Local\nmain" as Local #White
+participant "Local\nhotfix" as Hotfix #White
+end box
+
+box Remote #LightGreen
+participant "Remote\nmain" as Remote #White
+end box
+
 'skinparam backgroundColor #EEEBDC
-skinparam handwritten true
-participant "Local Master" as Local
-participant "Remote Master" as Remote
-participant "Local Hotfix" as Hotfix
+'skinparam handwritten true
+
 
 == Setup ==
 Remote -> Remote: init
@@ -15,9 +25,10 @@ Remote -> Local: pull
 Local -> Local: add
 Local --> Local: test
 Local -> Local: commit
+Local -> Remote: push
 
 [-> Local: tag
-note right: V0.0.0.Milestone
+note right: V0.0.0.Sprint
 ...
 Local -> Remote: push --tags
 
@@ -48,7 +59,7 @@ Local -> Local: test
 Local -> Local: commit
 
 [-> Local: tag
-note right: V1.0.0.Milestone
+note right: V1.0.0.Sprint
 ...
 Local -> Remote: push
 
@@ -57,7 +68,7 @@ Local -> Remote: push
 Remote -> Local: pull
 ...
 
-[-> Hotfix: branch from tag 1.0.0
+[-> Hotfix: branch from tag V1.0.0
 Local ->o Hotfix: switch
 Hotfix ->o Hotfix: add
 Hotfix -->o Hotfix: test
@@ -72,6 +83,6 @@ Local --> Local: test
 Local -> Local: commit
 ...
 [-> Local: tag
-note right: V1.0.1.Milestone
+note right: V1.0.1.Sprint
 Local -> Remote: push
 @enduml
