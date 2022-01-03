@@ -4,8 +4,8 @@
 
 ![Git Objects](../Assets/images/git-objects-model.png)
 
-Git uses the SHA-1 hash of content to create references to commit, trees and
-blobs.
+Git uses the SHA-1 hash of the file content to create references to commit, 
+trees and blobs.
 
 -------------------------------------------------------------------------------
 ### Commit object
