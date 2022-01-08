@@ -19,13 +19,28 @@ $ type .git/refs/stash
 The stash is a sequence of blob, tree and commit objects. When the stash 
 command is applied, the following steps take place:
 
-1. A blob object is created for each of changed file 
-   - Tracked files
-   - Untracked files (with the -u option)
-   - Ignored files (with the -a option)
+1. A blob object is created for each
+   - Modified tracked file
+   - Untracked file (with the -u option)
+   - Ignored file (with the -a option)
 2. A tree object is created for each blob object from (1)
-3. A commit object is created for changes above (stash)
-4. A commit object is created for the index file
-5. A commit object is created for the untracked files (-u option)
-6. A commit object is created for the ignored files (-a option)
+3. A commit object is created for the tracked files
+4. A commit object is created for the untracked files
+5. A commit object is created as stash using the changes above
 
+Like commit objects after merging, the stash commit object might have 
+several parents.
+
+```shell
+PS C:\Workspace\demo\.git\objects\30> git cat-file e2ec -p
+tree 4984c1da7bd1e1e5ad45660e0dc183be624de8e9
+parent 1cb1d1549ceb4149dc5cc36e9ba3d06ca6f0bdc2 # Last commit
+parent 595518729d768588acd2068dc70605a415af26f1 # Tracked files
+parent 48708dc0278f7a470b5adee6f3c0097fceaa2ca2 # Untracked files
+author Branimir Georgiev <braboj@gmail.com> 1641674534 +0200
+committer Branimir Georgiev <braboj@gmail.com> 1641674534 +0200
+
+WIP on main: 1cb1d15 init
+```
+When the stashed changes are restored, git will follow the parents of the 
+stash commit to restore the files in the project folder. 
