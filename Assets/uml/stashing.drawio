@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2022-01-08T19:52:06.725Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.71 Safari/537.36" etag="SG1rBl8jI37pdNeK7gg3" version="16.2.4" type="github">
+  <diagram id="jsrZsA0znFVxUwFwbKDa" name="Page-1">
+    <mxGraphModel dx="1102" dy="882" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="WgGUxL19OkHdEcRR_t72-13" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="480" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-8" value="" style="rounded=0;whiteSpace=wrap;html=1;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="430" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-3" value="&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;&lt;span style=&quot;background-color: rgb(255 , 255 , 255)&quot;&gt;&lt;br&gt;&lt;br&gt;&lt;/span&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="40" width="380" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-6" value="git stash" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="40" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;sketch=1;curved=1;" edge="1" parent="1" source="WgGUxL19OkHdEcRR_t72-3" target="WgGUxL19OkHdEcRR_t72-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-12" value="&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;5. Create a commit object for the untracked files&lt;/pre&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="190" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-14" value="git stash -a" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="250" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-15" value="&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;&lt;pre style=&quot;font-family: &amp;#34;jetbrains mono&amp;#34; , monospace&quot;&gt;6. Create a commit object for the ignored files&lt;/pre&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="280" width="360" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-9" value="git stash -u" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;fontSize=15;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="160" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WgGUxL19OkHdEcRR_t72-17" value="&lt;pre&gt;&lt;pre&gt;&lt;font face=&quot;jetbrains mono, monospace&quot;&gt;1. Create blob object of the changed file&lt;br&gt;2. Create tree object to the changed file&lt;br&gt;3. Create a commit object for the stash using 1) and 2)&lt;br&gt;4. Create a commit object for the index &lt;br&gt;&lt;/font&gt;&lt;/pre&gt;&lt;/pre&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="70" width="370" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
