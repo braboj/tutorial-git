@@ -24,7 +24,7 @@
 - [Stashing](02-Concepts/07-git-stashing.md)
 - [Selectors](02-Concepts/08-git-selectors.md)
 - [Pathspec](02-Concepts/09-git-pathspec.md)
-- [Hooks](02-Concepts/10-git-hooks.md)
+- [Hooks](02-Concepts/10-git-refspec.md)
 
 ### Operations
 - [Help](03-Operations/01-Help/readme.md)
