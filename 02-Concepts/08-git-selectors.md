@@ -1,7 +1,7 @@
 ## Selectors
-Selectors are special type of operators used to select specific commits from 
-the commit history. The selection can then be used to either move the HEAD 
-back in history or to filter out specific commits.
+Selectors are special type of operators used to select single or 
+multiple commits from the commit history. The selection can then be used to 
+either move the HEAD back in history or in combination with diagnostic tools.
 
 -------------------------------------------------------------------------------
 ### Ancestry selectors
