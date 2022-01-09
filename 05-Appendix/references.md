@@ -1,43 +1,72 @@
 ## References
 
-________________________________________________________________________________
-### Description
-- https://en.wikipedia.org/wiki/Git
+### Books
+- http://git-scm.com/book/en/v2
+- https://git.seveas.net/
+- https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
+- http://shafiul.github.io/gitbook/index.html
+- http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html
+- https://happygitwithr.com/
 
 ________________________________________________________________________________
-### Visualization
-- https://learngitbranching.js.org/
+### Wikis
+- https://en.wikipedia.org/wiki/Git
+- https://git.wiki.kernel.org/index.php/Main_Page
 
 ________________________________________________________________________________
 ### Tutorials
+- https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html
 - http://guides.beanstalkapp.com/
+- https://medium.com/@willhayjr/the-architecture-and-history-of-git-a-distributed-version-control-system-62b17dd37742
+- https://www.sbf5.com/~cduan/technical/git/
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 - https://www.w3schools.com/git/
 - https://www.javatpoint.com/git-init
 - http://think-like-a-git.net/
-- https://blog.osteele.com/2008/05/my-git-workflow/
-- https://tomayko.com/blog/2008/the-thing-about-git
-- https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
+- https://www.golinuxcloud.com/git-head-caret-vs-tilde-at-sign-examples/
+- https://backlog.com/git-tutorial/reference/commands/
 - https://mincong.io/2018/04/28/git-index/
 - https://opensource.com/article/20/4/git-merge-conflict
-- https://backlog.com/git-tutorial/reference/commands/
 - https://stackoverflow.com/questions/35979642/what-is-git-tag-how-to-create-tags-how-to-checkout-git-remote-tags/35979751#35979751
 - http://shafiul.github.io/gitbook/1_the_git_object_model.html
 - https://mincong.io/2018/04/28/git-index/
+- https://www.metaltoad.com/blog/beginners-guide-git-bisect-process-elimination
+- https://www.golinuxcloud.com/git-head-caret-vs-tilde-at-sign-examples/
+- https://medium.com/@gabicle/git-ancestry-references-explained-bd3a84a0b821
+- https://kgrz.io/git-intro-to-pathspec.html
+- https://ohshitgit.com/
+- https://davidenunes.com/git-good/
+- https://www.linux.com/training-tutorials/how-rebase-git/
+- https://css-tricks.com/git-pathspecs-and-how-to-use-them
+- https://gitready.com/
+- https://tom.preston-werner.com/2009/05/19/the-git-parable.html
+- https://matthew-brett.github.io/curious-git/curious_git.html
 
-________________________________________________________________________________
-### Books
-- http://git-scm.com/book/en/v2
-- https://www.raywenderlich.com/books/advanced-git/v1.0/chapters/1-how-does-git-actually-work
+### Visualization
 
+- https://livablesoftware.com/tools-to-visualize-the-history-of-a-git-repository/
+- https://learngitbranching.js.org/
+- https://onlywei.github.io/explain-git-with-d3/
+- https://git-school.github.io/visualizing-git/
+- https://github.com/acaudwell/Gource/wiki/Controls
+- https://gmaster.io/
+- https://gitup.co/
 ________________________________________________________________________________
 ### Workflows
+- https://blog.osteele.com/2008/05/my-git-workflow/
+- https://tomayko.com/blog/2008/the-thing-about-git
+- https://dev.to/shahabbukhari/git-simplified-working-collaboratively-with-gitgithub-5349
 - https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow
 - https://nvie.com/posts/a-successful-git-branching-model/
 - https://gist.github.com/bryanbraun/8c93e154a93a08794291df1fcdce6918
 - https://gist.github.com/jbenet/ee6c9ac48068889b0912
 - https://www.toptal.com/software/trunk-based-development-git-flow
 - https://buddy.works/blog/5-types-of-git-workflows
+
+________________________________________________________________________________
+### Q&A
+- https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/
+- https://github.com/git/git/blob/master/Documentation/howto/revert-a-faulty-merge.txt
 
 ________________________________________________________________________________
 ### Criticism
