@@ -52,7 +52,7 @@
 - [Notes](05-Appendix/notes.md)
 - [Clients](05-Appendix/clients.md)
 
-# Contributors
+# Credits
  - [Branimir Georgiev](https://github.com/braboj)
  - [Marwan Rashed](https://github.com/marwan-rashed)
  - [Karim...](https://github.com/Karim06V)
