@@ -1,3 +1,59 @@
-Refspecs are used to map local branches to remote branches. Explain the 
-syntax and give some examples. They are used in the configuration file .
-git/config. 
+## Refspec
+The refspec is a special syntax used by git to map remote branches to the 
+local repository. 
+
+-------------------------------------------------------------------------------
+### Syntax
+```
+[+]＜src＞:＜dst＞  
+
++   : Fast-forward 
+src : Source location (remote branch)
+dst : Destination location (local branch)
+	 
+```
+
+-------------------------------------------------------------------------------
+### Branch mapping
+Refspecs are usually found in the .git/config file after ***cloning*** or 
+configuration with ***git remote***. 
+
+```shell
+Example:
+$ git config --local --edit
+
+...
+[remote "origin"]
+	url = https://github.com/braboj/tutorial-git.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+```
+
+In the example above the refspec is **fetch** and it maps all remote 
+branches from origin to the folder **refs/remotes/origin** in the local 
+repository.
+
+-------------------------------------------------------------------------------
+### Creating remote branches
+Local branches can also be mapped manually to remote branches using ***git 
+push*** and refspecs.
+
+```shell
+git push origin main:refs/heads/test_master
+```
+
+-------------------------------------------------------------------------------
+### Deleting remote branches
+Remote branches can be deleted by leaving source in the refspec empty.
+
+```shell
+# Delete the feature branch on the server
+git push origin :refs/heads/feature
+```
+
+-------------------------------------------------------------------------------
+### Commands accepting refspecs
+
+- git remote
+- git fetch
+- git pull
+- git push
