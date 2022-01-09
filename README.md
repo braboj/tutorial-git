@@ -24,7 +24,8 @@
 - [Stashing](02-Concepts/07-git-stashing.md)
 - [Selectors](02-Concepts/08-git-selectors.md)
 - [Pathspec](02-Concepts/09-git-pathspec.md)
-- [Hooks](02-Concepts/10-git-refspec.md)
+- [Refspec](02-Concepts/10-git-refspec.md)
+- [Hooks](02-Concepts/11-git-hooks.md)
 
 ### Operations
 - [Help](03-Operations/01-Help/readme.md)
@@ -32,7 +33,7 @@
 - [Configure](03-Operations/03-Configure/readme.md)
 - [Track](03-Operations/04-Track/readme.md)
 - [Branch](03-Operations/05-Branch/readme.md)
-- [Collaborate](03-Operations/06-Sync/readme.md)
+- [Sync](03-Operations/06-Sync/readme.md)
 - [Revert](03-Operations/07-Revert/readme.md)
 - [Inspect](03-Operations/08-Inspect/readme.md)
 - [Rewrite](03-Operations/09-Rewrite/readme.md)
@@ -43,6 +44,7 @@
 - [Feature](04-Workflows/02-feature.md)
 - [Git](04-Workflows/03-git.md)
 - [Fork](04-Workflows/04-fork.md)
+- [Comparison](04-Workflows/05-comparison.md)
 
 ### Appendix
 - [Dictionary](/05-Appendix/dictionary.md)
@@ -52,6 +54,7 @@
 
 # Contributors
  - [Branimir Georgiev](https://github.com/braboj)
+ - [Marwan Rashed](https://github.com/marwan-rashed)
  - [Karim...](https://github.com/Karim06V)
  - [Simeon...](https://github.com/3SGK3)
 
