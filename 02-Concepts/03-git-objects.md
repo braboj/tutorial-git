@@ -30,7 +30,7 @@ C:\WORKSPACE\TUTORIAL-GIT\.GIT\OBJECTS
 ```
 
 Generally speaking hash objects are binary files, whose names are generated 
-using a hash function named [SHA-1](https://en.wikipedia.org/wiki/SHA-1). 
+using the hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). 
 
 -------------------------------------------------------------------------------
 ### Object model
