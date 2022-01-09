@@ -11,6 +11,8 @@ back in history or to filter out specific commits.
 -------------------------------------------------------------------------------
 ### Ancestry selectors
 
+![Git Selectors](../Assets/images/git-selectors.png)
+
 #### ~
 The tilde operator is used to move vertically in a linear commit history. 
 This operator follows always the path of the first parent. In the 
@@ -33,7 +35,7 @@ parent by ^2 and C5 as third parent by ^3.
 
 #### ..
 The double dot operator is the difference between two sets A and B. If A 
-has {1, 2, 3} and B has {2, 3, 4} then the result of the double dot operator 
+has {1, 2, 3} and B has {1, 2, 4} then the result of the double dot operator 
 will be {4}. The double dot operator can be replaced with ^ or --not for 
 queries requiring more than 2 branches. 
 
@@ -43,7 +45,7 @@ $ git log refB ^refA          # Reachable from B but not from A
 $ git log refB --not refA     # Reachable from B but not from A
 ```
 
-
+![Git Selectors](../Assets/images/git-selectors-double-dot.png)
 
 #### ...
 The triple dot operator is the symmetric difference between two sets A and B.
@@ -52,8 +54,9 @@ operator will be {1, 4}. The symmetric difference returns elements unique to
 each set.
 
 ```shell
-git log --left-right master...experiment
+git log --left-right main...test
 ```
+![Git Selectors](../Assets/images/git-selectors-triple-dot.png)
 
 -------------------------------------------------------------------------------
 ### Reflog selectors
