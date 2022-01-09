@@ -24,13 +24,21 @@ $ git config --local --edit
 
 ...
 [remote "origin"]
-	url = https://github.com/braboj/tutorial-git.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+
+    # Repository link     
+    url = https://github.com/braboj/tutorial-git.git
+	
+    # Mapping for the fetch command
+    fetch = +refs/heads/*:refs/remotes/origin/*
+	
+    # Mapping for the push command
+    push = refs/heads/main:refs/heads/main
 ```
 
-In the example above the refspec is **fetch** and it maps all remote 
+In the example above the first refspec is **fetch** and it maps all remote 
 branches from origin to the folder **refs/remotes/origin** in the local 
-repository.
+repository. The second refspec will map the main branch from the local repo 
+to the main branch in the remote repo.
 
 -------------------------------------------------------------------------------
 ### Creating remote branches
