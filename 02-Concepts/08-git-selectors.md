@@ -6,8 +6,6 @@ back in history or to filter out specific commits.
 -------------------------------------------------------------------------------
 ### Ancestry selectors
 
-![Git Selectors](../Assets/images/git-selectors.png)
-
 #### ~
 The tilde operator is used to move vertically in a linear commit history. 
 This operator follows always the path of the first parent. In the 
@@ -63,3 +61,8 @@ $ git log "HEAD@{1}"
 $ git log "HEAD@{yesterday}"
 $ git log "HEAD@{2.months.ago}"
 ```
+
+-------------------------------------------------------------------------------
+### Practice
+
+![Git Selectors](../Assets/images/git-selectors.png)
