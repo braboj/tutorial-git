@@ -8,28 +8,30 @@ Selectors are special type of operators used to select specific commits from
 the commit history. The selection can then be used to either move the HEAD 
 back in history or to filter out specific commits.
 
-### Select parent
+### Ancestry selection
 
 ![Git Selectors](../Assets/images/git-selectors.png)
 
 #### ~
 The tilde operator is used to move vertically in a linear commit history. 
 This operator selects follows always the path of the first parent. In the 
-diagram above this would be C1, C2, C4, C5 and C6.
-
-Example:
-```shell
-$ git checkout HEAD~1   # Move HEAD to the parent (mother)
-$ git checkout HEAD~2   # Move HEAD to the grandparent (grandmother)
-```
+diagram above this would be C1, C2, C4, C5 and C6. Formally it references 
+the n-th first parent.
 
 #### ^
 The caret operator is useful to move horizontally in a non-linear commit 
-history. For example in the diagram above C3, C4, 
+history. For example in the diagram above C3, C4 and C5 are the parents of 
+C6. The commit C3 as first parent can be referenceed by ^1, C4 as second 
+parent by ^2 and C5 as third parent by ^3. Formally the caret 
+operator references the n-th parent.
 
-### Select range
+### Commit ranges
+
 
 #### ..
+The double dot operator resolves a range of commits that are reachable from 
+one commit but aren’t reachable from another.
+
 #### ...
 git log --left-right master...experiment
 
