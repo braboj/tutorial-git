@@ -1,11 +1,9 @@
 ## Objects
-Git objects are files with a specific structure consisting of type, size and 
-content. Git offers 4 types of object: **blob**, **tree**, **commit** and 
-**tag**. Git stores the objects in .git/objects.
 
-Each object has a unique 40 bytes long identification code. A hash function 
-is used to generate the code. Hash functions have the special property to 
-transform data sets of any size to data sets of a fixed size.
+Objects are data containers having a unique 40 digits long identification 
+code. A hash function is used to generate the code. Hash functions have the 
+special property to transform data sets of any size to data sets of a fixed 
+size.
 
 ```shell
 $ git log -1
@@ -13,11 +11,11 @@ commit db79ba36b521373fcfaff3c2e422326a59fe26f6 (HEAD -> main, origin/main, orig
 Author: Branimir Georgiev <-@->
 Date:   Sun Jan 9 20:05:15 2022 +0200
 ```
+
 In the example above the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is 
 also the identification code for the commit object. Investigating further 
-the objects directory shows that git takes the first two symbols to create a 
+the objects' folder shows that git takes the first two digits to create a 
 directory and the rest to create the object file. 
-
 
 ```
 $ tree /f ./git/objects
@@ -31,11 +29,15 @@ C:\WORKSPACE\TUTORIAL-GIT\.GIT\OBJECTS
 └───pack
 ```
 
-Generally speaking hash objects are files with a specific structure, whose 
-names are generated using a hash function called SHA-1. 
+Generally speaking hash objects are binary files, whose names are generated 
+using a hash function named [SHA-1](https://en.wikipedia.org/wiki/SHA-1). 
 
 -------------------------------------------------------------------------------
 ### Object model
+
+Git objects are files with a specific structure consisting of type, size and
+content. Git offers 4 types of object: **blob**, **tree**, **commit** and
+**tag**. 
 
 ![Git Objects](../Assets/images/git-objects-model.png)
 
