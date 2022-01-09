@@ -1,4 +1,6 @@
 ## Git Dataflow
+The following diagram shows an overview of the git data model and the 
+basic commands used to transfer data between the storage locations.
 
 ![Git Dataflow](../Assets/images/git-dataflow-diagram.png)
 
