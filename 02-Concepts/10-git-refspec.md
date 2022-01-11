@@ -54,7 +54,6 @@ git push origin main:refs/heads/test_master
 Remote branches can be deleted by leaving source in the refspec empty.
 
 ```shell
-# Delete the feature branch on the server
 git push origin :refs/heads/feature
 ```
 
