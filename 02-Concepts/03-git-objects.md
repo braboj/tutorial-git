@@ -42,7 +42,7 @@ content. Git offers 4 types of object: **blob**, **tree**, **commit** and
 ![Git Objects](../Assets/images/git-object-model.png)
 
 -------------------------------------------------------------------------------
-#### Tag objects
+### Tag objects
 Annotated tags contain some additional meta information about the name of the tag, who created it,  
 the date of the tagging and the object the tag refers to. The referenced object can be of any 
 type, including other tags.
@@ -58,7 +58,7 @@ tagger  braboj <66906831+braboj@users.noreply.github.com> 1641911532 +0200
 ```
 
 -------------------------------------------------------------------------------
-#### Commit object
+### Commit object
 Store the metadata about a commit, such as the author, the date of the commit
 and references to the parent and all the other changes represented by a tree object.
 
@@ -74,7 +74,7 @@ committer braboj <66906831+braboj@users.noreply.github.com> 1641905621 +0200
 ```
 
 -------------------------------------------------------------------------------
-#### Tree object
+### Tree object
 A collection of references to either child trees or blob objects. Trees in git represent 
 directories of the operating system.
 
@@ -95,7 +95,7 @@ $ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
 ```
 
 -------------------------------------------------------------------------------
-#### Blob objects
+### Blob objects
 Binary large objects or BLOBS are compressed files and the end of the tree
 structure. They are the snapshots of a given file after a change has been 
 added to the index.
