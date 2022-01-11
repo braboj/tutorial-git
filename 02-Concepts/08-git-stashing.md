@@ -10,7 +10,7 @@ reference to a temporary commit object reflecting the changes made to the
 work project.
 
 ```shell
-$ type .git/refs/stash
+$ cat .git/refs/stash
 095ad9c4de6932e47f2e59ea7c1e554274a52a37
 ```
 

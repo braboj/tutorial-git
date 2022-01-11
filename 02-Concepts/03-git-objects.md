@@ -39,26 +39,72 @@ Git objects are files with a specific structure consisting of type, size and
 content. Git offers 4 types of object: **blob**, **tree**, **commit** and
 **tag**. 
 
-![Git Objects](../Assets/images/git-objects-model.png)
+![Git Objects](../Assets/images/git-object-model.png)
+
+#### Tag objects
+Annotated tags contain some additional meta information about the name of the tag, who created it,  
+the date of the tagging and the object the tag refers to. The referenced object can be of any 
+type, including other tags.
+
+```shell
+$ git cat-file -p mytag
+
+object  3a7ed539ea18da12d5707001d7a4c176f8911240
+type    commit
+tag     mytag
+tagger  braboj <66906831+braboj@users.noreply.github.com> 1641911532 +0200
+
+```
 
 #### Commit object
-Store the metadata about a commit, such as the parent, the author, timestamps
-and references to the file tree of this commit.
+Store the metadata about a commit, such as the author, the date of the commit
+and references to the parent and all the other changes represented by a tree object.
+
+```shell
+$ git cat-file -p 3a7ed539ea18da12d5707001d7a4c176f8911240
+
+tree      da8d6f364612a07419ba0baf35dced6b52948c4f
+parent    1f8716a405a8c09ef92012e713d3c087ae0b2678
+author    braboj <66906831+braboj@users.noreply.github.com> 1641905621 +0200
+committer braboj <66906831+braboj@users.noreply.github.com> 1641905621 +0200
+
+(TUT-GIT) - Add banners
+```
 
 #### Tree object
-A collection of references to either child trees or blob objects. Trees in 
-git represent directories of the operating system.
+A collection of references to either child trees or blob objects. Trees in git represent 
+directories of the operating system.
+
+```shell
+$ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
+
+100644 blob b24d71e22373e5147f3c05c68a8742714a89b5d6    .gitignore
+040000 tree 6e4aac2af494fac5de9b31ec3e522afc62b693b3    01-Introduction
+040000 tree 34d3238ab9d7011ea10fd34ed90d0cc00ca1c5a6    02-Concepts
+040000 tree 9ccf616a57c67dad449ebe9927006f001644ff5d    03-Operations
+040000 tree 027b2a1a3ba3ce6ec61ac9438fb4760962d87919    04-Workflows
+040000 tree d998eef3e1ecdfe68401e464ba19024360553830    05-Appendix
+040000 tree b2c5547c1334a7462f3bb16f56868bf02ac6f12e    Assets
+100644 blob da746af85963471999b5ac8f6826a8bf841c1f7f    CONTRIBUTING.md
+100644 blob 4d4e68a8bdc24469d14f9bcff605396eb7de780c    LICENSE.md
+040000 tree 84232ef8e0c3532976caadf4ce719847f34cdc95    Playground
+100644 blob 676b59c77fb333b04d30b1b66574f08af226d57f    README.md
+```
 
 #### Blob objects
 Binary large objects or BLOBS are compressed files and the end of the tree
 structure. They are the snapshots of a given file after a change has been 
 added to the index.
 
-#### Tag objects
-Tag objects in structure resemble commit objects. Annotated tags contain 
-some additional information about the creator of the tag and the date of the 
-tagging and appear in the commit history as tag objects.
+```shell
+$ git cat-file -p b24d71e22373e5147f3c05c68a8742714a89b5d6
 
+# These are some examples of commonly ignored file patterns.
+# You should customize this list as applicable to your project.
+# Learn more about .gitignore:
+#     https://www.atlassian.com/git/tutorials/saving-changes/gitignore
+
+```
 -------------------------------------------------------------------------------
 ### Inspecting objects
 
