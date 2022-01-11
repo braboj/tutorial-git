@@ -11,7 +11,7 @@
 ```
 git add .               # Add current working directory
 git add src/            # Add src/ directory  
-git add src/ server/    # Add multiples paths
+git add src/ header/    # Add multiples paths
 ```
 
 -------------------------------------------------------------------------------
@@ -20,29 +20,21 @@ git add src/ server/    # Add multiples paths
 The asterics **(\*)** wildcard character matches any number of characters.
 
 ```
-git log '*.js'      # Show history of all javascript files
+git log '*.py'      # Show history of all python files
 git log '.*'        # Show history of all files and directories
-git log 'qa*.js'    # Show history of all javascript files starting with qa 
+git log 'qa*.py'    # Show history of all python files starting with qa 
 ```
 
-The ***(?)*** wildcard character can be used to match a single symbol.
+The question mark ***(?)*** can be used to match a single symbol.
 
 ```
-git ls-files '*.mp?'    # Files with 3 symbols and first two are mp
+git ls-files '*.mp?'    # Files with 3 symbols and first two are 'mp'
 ```
 
 The brackets ***[ ]*** can be used to match a single character out of a set. 
-The following command will match ***javascript*** or ***typescript*** files.
 
 ```
-git ls-files '*.mp[34]'  # Only mp3 and mp4 files
-```
-
-The result from a pattern can be inverted with the exclamation mark **(!)*** 
-symbol.  
-
-```
-git ls-files '!*.mp[34]'  # Every file except mp3 and mp4
+git ls-files '*.mp[34]'  # Match exactly mp3 and mp4 files
 ```
 
 -------------------------------------------------------------------------------
@@ -58,8 +50,8 @@ result of the matching process.
 top (/), exclude (!), icase, literal, glob, attr
   
 # Examples
-':(top)*.mp3'           # All mp3 files starting form the repo root 
-'*.jp* :(exclude)JPG'   # jpg and jpeg but not capital JPG
+':/*.mp3'               # All mp3 files starting form the repo root 
+':!*.md'                # Everything except md files
 ':(icase)*.jpg'         # Both lower and upper case for jpg
 ':(literal)Maybe?.mp3'  # File Maybe?.mp3 with ? in the name
 ':(attrib:!debug)*'     # All paths not having the attribute debug
