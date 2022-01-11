@@ -7,7 +7,7 @@ local repository.
 ```
 [+]＜src＞:＜dst＞  
 
-+   : Fast-forward 
++   : Force update of branch tip (fast forward)
 src : Source location (remote branch)
 dst : Destination location (local branch)
 	 
@@ -42,8 +42,8 @@ to the main branch in the remote repo.
 
 -------------------------------------------------------------------------------
 ### Creating remote branches
-Local branches can also be mapped manually to remote branches using ***git 
-push*** and refspecs.
+Local branches can also be used to create remote branchesusing ***git push*** 
+and refspecs.
 
 ```shell
 git push origin main:refs/heads/test_master
