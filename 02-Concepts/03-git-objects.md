@@ -1,9 +1,12 @@
-## Objects
+### Object Model
+
+![Git Objects](../Assets/images/git-object-model.png)
 
 Objects are data containers having a unique 40 digits long identification 
 code. A hash function is used to generate the code. Hash functions have the 
 special property to transform data sets of any size to data sets of a fixed 
-size.
+size. In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is 
+also the identification code for the commit object. 
 
 ```shell
 $ git log -1
@@ -12,10 +15,12 @@ Author: Branimir Georgiev <-@->
 Date:   Sun Jan 9 20:05:15 2022 +0200
 ```
 
-In the example above the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is 
-also the identification code for the commit object. Investigating further 
-the objects' folder shows that git takes the first two digits to create a 
-directory and the rest to create the object file. 
+
+-------------------------------------------------------------------------------
+### Object storage
+Git objects are binary files stored in ***.git/objects***, whose names are generated 
+using the hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). Git takes the 
+first two digits to create a directory and the rest to create the object file. 
 
 ```
 $ tree /f ./git/objects
@@ -28,18 +33,6 @@ C:\WORKSPACE\TUTORIAL-GIT\.GIT\OBJECTS
 ├───info
 └───pack
 ```
-
-Generally speaking hash objects are binary files, whose names are generated 
-using the hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). 
-
--------------------------------------------------------------------------------
-### Object model
-
-Git objects are files with a specific structure consisting of type, size and
-content. Git offers 4 types of object: **blob**, **tree**, **commit** and
-**tag**. 
-
-![Git Objects](../Assets/images/git-object-model.png)
 
 -------------------------------------------------------------------------------
 ### Tag objects
@@ -59,7 +52,7 @@ tagger  braboj <66906831+braboj@users.noreply.github.com> 1641911532 +0200
 
 -------------------------------------------------------------------------------
 ### Commit object
-Store the metadata about a commit, such as the author, the date of the commit
+Commit objects store the metadata about a commit, such as the author, the date of the commit
 and references to the parent and all the other changes represented by a tree object.
 
 ```shell
