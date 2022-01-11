@@ -2,11 +2,10 @@
 
 ![Git Objects](../Assets/images/git-object-model.png)
 
-Objects are data containers having a unique 40 digits long identification 
-code. A hash function is used to generate the code. Hash functions have the 
-special property to transform data sets of any size to data sets of a fixed 
-size. In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is 
-also the identification code for the commit object. 
+Objects are data containers having a unique 40 digits long identification code. A hash function 
+is used to generate the code. Hash functions have the special property to transform data sets of 
+any size to data sets of a fixed size. In the example below the value
+**db79ba36b521373fcfaff3c2e422326a59fe26f6** is also the identification code for the commit object. 
 
 ```shell
 $ git log -1
@@ -18,9 +17,9 @@ Date:   Sun Jan 9 20:05:15 2022 +0200
 
 -------------------------------------------------------------------------------
 ### Object storage
-Git objects are binary files stored in ***.git/objects***, whose names are generated 
-using the hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). Git takes the 
-first two digits to create a directory and the rest to create the object file. 
+Git objects are binary files stored in ***.git/objects***, whose names are generated using the 
+hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). Git takes the first two digits to 
+create a directory and the rest to create the object file. 
 
 ```
 $ tree /f ./git/objects
@@ -89,9 +88,8 @@ $ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
 
 -------------------------------------------------------------------------------
 ### Blob objects
-Binary large objects or BLOBS are compressed files and the end of the tree
-structure. They are the snapshots of a given file after a change has been 
-added to the index.
+Binary large objects or BLOBS are compressed files and the end of the tree structure. They are 
+the snapshots of a given file after a change has been added to the index.
 
 ```shell
 $ git cat-file -p b24d71e22373e5147f3c05c68a8742714a89b5d6
