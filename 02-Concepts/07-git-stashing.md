@@ -26,17 +26,18 @@ command is applied, the following steps take place:
 2. A tree object is created for each blob object from (1)
 3. A commit object is created for the tracked files
 4. A commit object is created for the untracked files
-5. A commit object is created as stash using the changes above
+5. A commit object is created representing the stashed changes
 
-Like commit objects after merging, the stash commit object might have 
-several parents.
+The last step creates a commit object with three parents: the original
+revision, the revision of the tracked files and the revision of the 
+untracked files.
 
 ```shell
 PS C:\Workspace\demo\.git\objects\30> git cat-file e2ec -p
 tree 4984c1da7bd1e1e5ad45660e0dc183be624de8e9
-parent 1cb1d1549ceb4149dc5cc36e9ba3d06ca6f0bdc2 # Last commit
-parent 595518729d768588acd2068dc70605a415af26f1 # Tracked files
-parent 48708dc0278f7a470b5adee6f3c0097fceaa2ca2 # Untracked files
+parent 1cb1d1549ceb4149dc5cc36e9ba3d06ca6f0bdc2 # Last revision
+parent 595518729d768588acd2068dc70605a415af26f1 # Revision of tracked files
+parent 48708dc0278f7a470b5adee6f3c0097fceaa2ca2 # Revision of untracked files
 author Branimir Georgiev <braboj@gmail.com> 1641674534 +0200
 committer Branimir Georgiev <braboj@gmail.com> 1641674534 +0200
 
