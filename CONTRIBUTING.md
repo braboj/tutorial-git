@@ -3,17 +3,24 @@
 -------------------------------------------------------------------------------
 ### Writing rules
 
-- Prefer simple over complex language
-- Prefer explicit over implicit description
 - Prefer short text over long text
-- Prefer images over text
+- Prefer simple to complex language
+- Prefer explicit over implicit description
+- Prefer images to text
 
 ## Commit messages
 
-https://www.conventionalcommits.org/en/v1.0.0/
+```
+# Syntax
 
--------------------------------------------------------------------------------
-### Writing Rules
+(<scope>) - <subject>
+<BLANK LINE>
+<body>
+<BLANK LINE>
+<footer>
+
+# Writing rules
+
 1. Capitalize the subject line
 2. Limit the subject size to 50 characters
 3. Do not end the subject line with a period
@@ -22,11 +29,9 @@ https://www.conventionalcommits.org/en/v1.0.0/
 6. Limit the body size to 80 characters
 7. Use body to anwswer why and what
 
--------------------------------------------------------------------------------
-### Example
+# Examples
 
-```
-Summarize changes in around 50 characters or less
+(Contributing) - Summarize changes in around 50 characters or less
 
 Explain the problem that this commit is solving. Focus on why you
 are making this change as opposed to how (the code explains that).
@@ -36,7 +41,7 @@ change? Here's the place to explain them.
 Further paragraphs come after blank lines.
 
  - Bullet points are okay, too
-
+ 
  - Typically a hyphen or asterisk is used for the bullet, preceded
    by a single space, with blank lines in between, but conventions
    vary here
@@ -47,6 +52,5 @@ like this:
 Resolves: #123
 See also: #456, #789
 ```
-
 
 
