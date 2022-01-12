@@ -7,8 +7,9 @@ basic commands used to transfer data between the storage locations.
 -------------------------------------------------------------------------------
 ### Repository
 It contains the files as well as the history of the changes made to those 
-files. The repository can be either **local** or **remote**. For git 
-both types of repositories are equivalent.
+files. The history is a collection of snapshots at different points of time.
+The repository can be either **local** or **remote**. For git both types of 
+repositories are equivalent.
 
 -------------------------------------------------------------------------------
 ### Workspace
