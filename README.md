@@ -41,11 +41,11 @@
 - [Automate](03-Operations/10-Automate/readme.md)
 
 ### Workflows
-- [Trunk](04-Workflows/01-trunk.md)
-- [Feature](04-Workflows/02-feature.md)
-- [Git](04-Workflows/03-git.md)
-- [Fork](04-Workflows/04-fork.md)
-- [Comparison](04-Workflows/05-comparison.md)
+- [Trunk](04-Workflows/01-trunk-workflow.md)
+- [Feature](04-Workflows/02-feature-workflow.md)
+- [Git](04-Workflows/03-git-workflow.md)
+- [Fork](04-Workflows/04-fork-workflow.md)
+- [Comparison](04-Workflows/05-workflow-comparison.md)
 
 ### Appendix
 - [Dictionary](/05-Appendix/dictionary.md)
