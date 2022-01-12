@@ -12,9 +12,10 @@ system:
 - Source code can easily be tagged, branched and merged
 - Facilitates the management of software projects
 
-Git is a distributed control systems, which means that the repository resides on the local 
-machine and can by synced with other repositories. This allows very flexible workflows compared 
-to centralized version control systems such as Subversion(SVN).  
+Git is a distributed control systems, which means that the repository 
+resides on the local machine and can be synced with other repositories. This 
+allows very flexible workflows compared  to centralized version control 
+systems such as Subversion (SVN).  
 
 ### Features
 

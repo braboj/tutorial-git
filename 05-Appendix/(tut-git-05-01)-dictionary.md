@@ -41,7 +41,7 @@ by combining the changes, or by selecting one change in favour of the other.
 ### Delta compression
 Most revision control software uses delta compression, which retains only the
 differences between successive versions of files. This allows for more efficient
-storage of many different versions of files.
+storage of many file versions.
 
 ### Downstream
 The flow of data from the original repository to the cloned repository.

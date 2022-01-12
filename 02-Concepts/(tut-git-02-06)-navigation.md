@@ -2,7 +2,7 @@
 
 Describe branches, how to move the HEAD with checkout and reset, how the 
 history diverges, how remote and local branches are synchronized. Use 
-graphics to explain the basic concepts, less words.
+graphics to explain the basic concepts, fewer words.
 
 ![Branch navigation](../Assets/images/git-branch-navigation.png)
 
