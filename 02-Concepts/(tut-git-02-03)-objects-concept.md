@@ -2,10 +2,12 @@
 
 ![Git Objects](../Assets/images/git-object-model.png)
 
-Objects are data containers having a unique 40 digits long identification code. A hash function 
-is used to generate the code. Hash functions have the special property to transform data sets of 
-any size to data sets of a fixed size. In the example below the value
-**db79ba36b521373fcfaff3c2e422326a59fe26f6** is also the identification code for the commit object. 
+Git is a system which allows file revisions to be addressed by unique identifiers. The 
+revisions are stored using objects. The objects are data containers having a 
+unique 40 digits long identification code. A hash function is used to generate the code. Hash 
+functions have the special property to transform data sets of any size to data sets of a fixed 
+size. In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is also the 
+identification code for the commit object. 
 
 ```shell
 $ git log -1
@@ -13,7 +15,6 @@ commit db79ba36b521373fcfaff3c2e422326a59fe26f6 (HEAD -> main, origin/main, orig
 Author: Branimir Georgiev <-@->
 Date:   Sun Jan 9 20:05:15 2022 +0200
 ```
-
 
 -------------------------------------------------------------------------------
 ### Object storage
