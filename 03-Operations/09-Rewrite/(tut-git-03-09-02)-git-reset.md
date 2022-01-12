@@ -5,6 +5,11 @@ Git reset will move the HEAD backward in history, unstage files and revert chang
 in the working directory. In its function it is the oppisite of the add and commit process
 combined.
 
+Example squashing:
+
+1. git reset --soft HEAD~10
+2. git commit -m 'aaaa'
+
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
