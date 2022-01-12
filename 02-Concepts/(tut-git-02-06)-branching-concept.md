@@ -21,5 +21,3 @@ by one.
 
 ### Rebase
 Combination of rewind, fast-forward and replay.
-
-![Branch navigation](../Assets/images/tree-progressing-git-rebase.png)
