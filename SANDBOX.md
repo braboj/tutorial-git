@@ -1,3 +1,5 @@
+<p align="center"> (source: https://davidenunes.com/git-good/) </p>
+
 # Git Commands
 
     $ git init --bare --shared=all test.git

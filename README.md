@@ -1,8 +1,6 @@
 <p align='center'>
- <img src='Assets/banners/git_illustration.png' />
+ <img src='Assets/banners/banner-bhai-branko.png' />
 </p>
-
-<p align="center"> (source: https://davidenunes.com/git-good/) </p>
 
 ## Table of contents
 
