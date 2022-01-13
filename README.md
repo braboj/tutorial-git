@@ -18,7 +18,7 @@
 - [Objects](02-Concepts/(tut-git-02-03)-objects.md)
 - [Index](02-Concepts/(tut-git-02-04)-index.md)
 - [References](02-Concepts/(tut-git-02-05)-references.md)
-- [Branching](02-Concepts/(tut-git-02-06)-navigation.md)
+- [Navigation](02-Concepts/(tut-git-02-06)-navigation.md)
 - [Merging](02-Concepts/(tut-git-02-07)-merging.md)
 - [Stashing](02-Concepts/(tut-git-02-08)-stash.md)
 - [Selectors](02-Concepts/(tut-git-02-09)-selectors.md)
