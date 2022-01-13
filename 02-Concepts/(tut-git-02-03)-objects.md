@@ -1,13 +1,18 @@
-### Object Model
+## Object Model
 
 ![Git Objects](../Assets/images/git-object-model.png)
 
-Git is a system which allows file revisions to be addressed by unique identifiers. The 
-revisions are stored using objects. The objects are data containers having a 
-unique 40 digits long identification code. A hash function is used to generate the code. Hash 
-functions have the special property to transform data sets of any size to data sets of a fixed 
-size. In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** is also the 
-identification code for the commit object. 
+Git is a content system similar to an index in a book. It allows content 
+to be addressed by pages. In git the page content is an object and the page 
+itself is the name of the object. 
+
+The objects are data containers having a unique 40 digits long 
+identification code. A hash function is used to generate the code. Hash 
+functions have the special property to transform data sets of any size to 
+data sets of a fixed size. 
+
+In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** 
+is also the identification code for the commit object. 
 
 ```shell
 $ git log -1
@@ -18,9 +23,10 @@ Date:   Sun Jan 9 20:05:15 2022 +0200
 
 -------------------------------------------------------------------------------
 ### Object storage
-Git objects are binary files stored in ***.git/objects***, whose names are generated using the 
-hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). Git takes the first two digits to 
-create a directory and the rest to create the object file. 
+Git objects are binary files stored in ***.git/objects***, whose names are 
+generated using the hash function [SHA-1](https://en.wikipedia.org/wiki/SHA-1). 
+Git takes the first two digits to create a directory and the rest to create 
+the object file. 
 
 ```
 $ tree /f ./git/objects
@@ -36,9 +42,10 @@ C:\WORKSPACE\TUTORIAL-GIT\.GIT\OBJECTS
 
 -------------------------------------------------------------------------------
 ### Tag objects
-Annotated tags contain some additional meta information about the name of the tag, who created it,  
-the date of the tagging and the object the tag refers to. The referenced object can be of any 
-type, including other tags.
+Annotated tags contain a tag message and some additional information about 
+the name of the tag, who created it, the date of the tagging and the object 
+the tag refers to. The referenced object can be of any type, including other 
+tags. Annotated tags are useful as snapshots for releases.
 
 ```shell
 $ git cat-file -p mytag
@@ -52,8 +59,9 @@ tagger  braboj <66906831+braboj@users.noreply.github.com> 1641911532 +0200
 
 -------------------------------------------------------------------------------
 ### Commit object
-Commit objects store the metadata about a commit, such as the author, the date of the commit
-and references to the parent and all the other changes represented by a tree object.
+Commit objects store the metadata about a commit, such as the author, the 
+date of the commit and references to the parent and all the other changes 
+represented by a tree object.
 
 ```shell
 $ git cat-file -p 3a7ed539ea18da12d5707001d7a4c176f8911240
@@ -68,8 +76,8 @@ committer braboj <66906831+braboj@users.noreply.github.com> 1641905621 +0200
 
 -------------------------------------------------------------------------------
 ### Tree object
-A collection of references to either child trees or blob objects. Trees in git represent 
-directories of the operating system.
+A collection of references to either child trees or blob objects. Trees in 
+git represent directories of the operating system.
 
 ```shell
 $ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
@@ -89,8 +97,9 @@ $ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
 
 -------------------------------------------------------------------------------
 ### Blob objects
-Binary large objects or BLOBS are compressed files and the end of the tree structure. They are 
-the snapshots of a given file after a change has been added to the index.
+Binary large objects or BLOBS are compressed files and the end of the tree 
+structure. They are the snapshots of a given file after a change has been 
+added to the index.
 
 ```shell
 $ git cat-file -p b24d71e22373e5147f3c05c68a8742714a89b5d6
