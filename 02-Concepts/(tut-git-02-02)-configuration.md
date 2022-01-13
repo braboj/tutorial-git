@@ -10,7 +10,7 @@ The ***local configuration*** file is placed in the .git folder under the name
 of this repository only.
 
 ```shell
-PS C:\Workspace\project\.git> cat config
+PS C:\Workspace\project\> git config --local --edit
 [core]
         repositoryformatversion = 0
         filemode = false
@@ -34,7 +34,7 @@ operating system used. The name of the file is ***.gitconfig***. Under Windows
 the file is placed in ***C:\users\\<username\>***.
 
 ```shell
-PS C:\users\luke> cat .\.gitconfig
+PS C:\Workspace\project\> git config --global --edit
 [filter "lfs"]
         clean = git-lfs clean -- %f
         smudge = git-lfs smudge -- %f
@@ -62,7 +62,7 @@ used. Its name is ***gitconfig*** and under Windows it is to be found in the
 installation folder of git.
 
 ```shell
-PS C:\Program Files\Git\etc\cat gitconfig
+PS C:\Workspace\project\> git config --system --edit
  
 [diff "astextplain"]
 	textconv = astextplain
