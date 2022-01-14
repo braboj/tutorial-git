@@ -1,10 +1,20 @@
 ## git bisect
-Find a bug using binary search. The command will detach the HEAD and move it to a revision in 
-the middle between a specified good and bad commit. The user is always required to update if the 
-bisection is good or bad to narrow down the results. The algorithm stops when only one 
-revision left after the bisection.
+Find a bug using binary search or new features using the binary search algorithm. The algorithm 
+will detach the HEAD and move it to a revision in the middle between a specified good and bad 
+commit until only one revision remains.
 
 ![Binary search](../../Assets/images/git-bisect.png)
+
+-------------------------------------------------------------------------------
+### Syntax
+```shell
+git bisect start  : Start the binary search 
+git bisect reset  : Stops the binary search
+git bisect good   : Marks the revision as good
+git bisect bad    : Marks the revision as bad
+git bisect new    : Marks the revision as new
+git bisect old    : Marks the revision as old
+```
 
 -------------------------------------------------------------------------------
 ### Examples
@@ -15,7 +25,7 @@ revision left after the bisection.
 * a0f2e3d 2022-01-14 | good [braboj]
 * 34a2157 2022-01-14 | good [braboj]
 
-# Start binary search
+# Start the binary search
 $ git bisect start
 
 # First bad commit
@@ -40,6 +50,6 @@ Date:   Fri Jan 14 10:51:51 2022 +0200
 
     bad
 
-# Stop binary search
+# Stop the binary search
 $ git bisect reset 
 ```
