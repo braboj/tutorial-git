@@ -50,7 +50,7 @@
 - [References](/05-Appendix/(tut-git-05-02)-references.md)
 - [Clients](05-Appendix/(tut-git-05-03)-clients.md)
 - [Notes](05-Appendix/(tut-git-05-04)-notes.md)
-- 
+
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
 - [License](LICENSE.md)
