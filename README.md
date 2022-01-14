@@ -24,7 +24,6 @@
 - [Selectors](02-Concepts/(tut-git-02-09)-selectors.md)
 - [Pathspec](02-Concepts/(tut-git-02-10)-pathspec.md)
 - [Refspec](02-Concepts/(tut-git-02-11)-refspec.md)
-- [Hooks](02-Concepts/(tut-git-02-12)-hooks.md)
 
 ### Operations
 - [Help](03-Operations/01-Help)
@@ -35,15 +34,6 @@
 - [Sync](03-Operations/06-Sync)
 - [Revert](03-Operations/07-Revert)
 - [Inspect](03-Operations/08-Inspect)
-- [Rewrite](03-Operations/09-Rewrite)
-- [Automate](03-Operations/10-Cleanup)
-
-### Workflows
-- [Trunk](04-Workflows/(tut-git-04-01)-trunk-workflow.md)
-- [Feature](04-Workflows/(tut-git-04-02)-feature-workflow.md)
-- [Git](04-Workflows/(tut-git-04-03)-git-workflow.md)
-- [Fork](04-Workflows/(tut-git-04-04)-fork-workflow.md)
-- [Comparison](04-Workflows/(tut-git-04-05)-workflow-comparison.md)
 
 ### Appendix
 - [Dictionary](/05-Appendix/(tut-git-05-01)-dictionary.md)
