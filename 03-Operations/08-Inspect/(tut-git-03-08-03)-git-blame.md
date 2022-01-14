@@ -4,19 +4,18 @@ Display useful information about a line in a file using the last revision which 
 -------------------------------------------------------------------------------
 ### Syntax
 ```
-Legend
-    []              : Optional
-    <>              : Required
+# Legend
+    []                  : Optional
 
-Options
--e                  : Show authors e-mail
--L <start, end>     : Show info about a range of lines
--L :<regexp>        : Show info about lines containing <regexp> 
--M                  : Detect lines moved or copied in the same file
--C                  : Detect Lines copied from another file
---show-stats        : Additional statistics
+# Options
+    -e                  : Show authors e-mail
+    -L <start, end>     : Show info about a range of lines
+    -L :<regexp>        : Show info about lines containing <regexp> 
+    -M                  : Detect lines moved or copied in the same file
+    -C                  : Detect Lines copied from another file
+    --show-stats        : Additional statistics
 
-$ git blame [options]
+$ git blame file [options] 
 ```
 
 -------------------------------------------------------------------------------
