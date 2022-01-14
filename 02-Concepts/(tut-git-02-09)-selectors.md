@@ -56,9 +56,26 @@ git log --left-right main...test
 The @ operator is used to browse the local reflog history relative to a 
 well-defined reference such as HEAD or a branch.
 
+- 1.minute.ago
+- 1.hour.ago
+- 1.day.ago or yesterday
+- 1.week.ago
+- 1.month.ago
+- 1.year.ago
+
 ```shell
+
+# Show all reflogs starting from entry #1
+$ git log "main@{now}"
+
+# Show all reflogs starting from entry #1
 $ git log "HEAD@{1}"
+
+# Show all reflogs starting from yesterday
+
 $ git log "HEAD@{yesterday}"
+
+# Show all reflogs starting from 2 months ago
 $ git log "HEAD@{2.months.ago}"
 ```
 
