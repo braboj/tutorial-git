@@ -1,7 +1,7 @@
 ## git bisect
 Find a bug using binary search or new features using the binary search algorithm. The algorithm 
 will detach the HEAD and move it to a revision in the middle between a specified good and bad 
-commit until only one revision remains.
+commit until all revisions are defined as either good or bad.
 
 ![Binary search](../../Assets/images/git-bisect.png)
 
