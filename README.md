@@ -37,10 +37,10 @@
 - [Inspect](03-Operations/08-Inspect)
 
 ### Appendix
-- [Dictionary](/05-Appendix/(tut-git-05-01)-dictionary.md)
-- [References](/05-Appendix/(tut-git-05-02)-references.md)
-- [Clients](05-Appendix/(tut-git-05-03)-clients.md)
-- [Notes](05-Appendix/(tut-git-05-04)-remarks.md)
+- [Dictionary](/04-Appendix/(tut-git-05-01)-dictionary.md)
+- [References](/04-Appendix/(tut-git-05-02)-references.md)
+- [Clients](04-Appendix/(tut-git-05-03)-clients.md)
+- [Notes](04-Appendix/(tut-git-05-04)-remarks.md)
 
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
