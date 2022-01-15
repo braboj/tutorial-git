@@ -6,13 +6,13 @@ of the branch are updated automatically after a commit.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git reflog [reflog selector]
+
 # Legend
     []  : Optional
 
 # Options
     ... : See "git log"
-
-$ git reflog [see reflog selector in chapter 'Concept']
 ```
 
 -------------------------------------------------------------------------------

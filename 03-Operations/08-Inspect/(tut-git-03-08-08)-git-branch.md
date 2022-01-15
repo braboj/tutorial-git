@@ -4,6 +4,8 @@ Use git branch to inspect the branches of the local and remote repos.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git branch [options]
+
 # Legend
   []  : Optional
 
@@ -11,8 +13,6 @@ Use git branch to inspect the branches of the local and remote repos.
   -a (--all)        # Show all branches
   -r (--remote)     # Show remote branches
   -v (--verbose)    # Verbose information switch
-
-$ git branch [options]
 ```
 
 -------------------------------------------------------------------------------

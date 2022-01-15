@@ -5,13 +5,17 @@ collection of files and directories in the current project.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git status [options]
+
+# Legend
+[]  : Optional
+
 # Options
---branch              : Show branch in short format
+--branch              : Show branches in short format
 --short               : Short format
 --long                : Long format
 --untracked           : Show also untracked files
 --ignored             : Show also ignored files
---ignore-submodules   : Ignore status of submodules 
 --verbose             : Turn on/off verbose information
 
 # Short format labels

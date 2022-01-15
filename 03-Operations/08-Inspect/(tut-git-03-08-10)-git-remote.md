@@ -4,14 +4,14 @@ Show info about remote references.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git remote [options]
+$ git remote show [remote]
+
 # Legend
   []  : Optional
   
 # Options
   -v (--verbose)  : Enable or disable verbose information
-  
-git remote [options]
-git remote show [remote]
 ```
 
 

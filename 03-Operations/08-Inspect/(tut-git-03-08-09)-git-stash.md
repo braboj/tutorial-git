@@ -4,11 +4,11 @@ Show stash entries and info about a specific stash entry.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git stash list               
+$ git stash show [stash-entry]
+
 # Legend
   [] : Optional
-
-git stash list                  : With options used by git log
-git stash show [stash-entry]    : With options used by git diff
 ```
 
 -------------------------------------------------------------------------------

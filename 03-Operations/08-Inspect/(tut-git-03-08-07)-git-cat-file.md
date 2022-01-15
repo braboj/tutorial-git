@@ -4,6 +4,8 @@ Use git branch to inspect the branches of the local and remote repos.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
+$ git cat-file [options] object
+
 # Legend
     []  : Optional
 
@@ -11,8 +13,6 @@ Use git branch to inspect the branches of the local and remote repos.
     -s  : Show object size
     -t  : Show object type 
     -p  : Show object content 
-
-$ git cat-file [options] object
 ```
 
 -------------------------------------------------------------------------------
