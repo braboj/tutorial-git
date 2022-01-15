@@ -4,7 +4,7 @@ reverting changes in remote repositories.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git revert <commit to revert> <options>
 
 # Legend

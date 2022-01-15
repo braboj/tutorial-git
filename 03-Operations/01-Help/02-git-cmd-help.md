@@ -3,7 +3,7 @@ Display help information about a git command.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git <command> --help  # Extended info
 $ git <command> -h      # Short info
 

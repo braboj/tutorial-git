@@ -9,7 +9,7 @@ Before merging ensure that:
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git merge <branch>
 
 # Legend

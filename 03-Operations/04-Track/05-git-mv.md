@@ -3,7 +3,7 @@ Move or rename a file or a directory and stage the changes.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git mv [<options>] <old pathspec> <new pathspec>
 
 # Legend

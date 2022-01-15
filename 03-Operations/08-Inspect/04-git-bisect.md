@@ -7,7 +7,7 @@ commit until all revisions are defined as either good or bad.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git bisect start  : Start the binary search 
 $ git bisect reset  : Stops the binary search
 $ git bisect good   : Marks the revision as good

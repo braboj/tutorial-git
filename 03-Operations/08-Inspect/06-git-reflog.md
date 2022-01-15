@@ -5,7 +5,7 @@ of the branch are updated automatically after a commit.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git reflog [<reflog selector>]
 
 # Legend

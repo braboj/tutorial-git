@@ -5,7 +5,7 @@ tags.
 -------------------------------------------------------------------------------
 
 ### Syntax
-```shell
+```
 $ git tag <tagname> -l | -d                
 $ git tag <tagname> <object>                 
 $ git tag <tagname> <object> -a -m <message>

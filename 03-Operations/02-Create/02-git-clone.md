@@ -4,7 +4,7 @@ supports several protocols such as Git, HTTP and HTTPS.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git clone --bare <repo-url>   # Copy repo as bare
 $ git clone <repo-url>          # Copy repo and create worktree
 

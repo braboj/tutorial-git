@@ -4,7 +4,7 @@ collection of files and directories in the current project.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git status [<options>]
 
 # Legend

@@ -3,7 +3,7 @@ Show information about files in the index and the working tree.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git ls-files [<options>]
 
 # Legend

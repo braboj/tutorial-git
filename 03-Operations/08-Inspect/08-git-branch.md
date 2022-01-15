@@ -3,7 +3,7 @@ Use git branch to inspect the branches of the local and remote repos.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git branch [<options>]
 
 # Legend

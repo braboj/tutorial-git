@@ -3,7 +3,7 @@ Remove untracked files from the working tree.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git clean <options> <pathspec>
 
 # Legend

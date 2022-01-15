@@ -4,7 +4,7 @@ commit is HEAD.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git restore <pathspec> <options>
 
 # Legend

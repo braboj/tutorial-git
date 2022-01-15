@@ -3,7 +3,7 @@ Adds or removes references to remote repositories.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 # Adds a new reference to a remote repo
 $ git remote add <alias> <remote-url>
 

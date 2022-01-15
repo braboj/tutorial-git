@@ -3,7 +3,7 @@ Show stash entries and info about a specific stash entry.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git stash list               
 $ git stash show [<stash-entry>]
 

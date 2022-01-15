@@ -10,7 +10,7 @@ branch is not yet ready to be committed before switching to another branch.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 # Sub-commands
 $ git stash push <options>      # Add to stash
 $ git stash pop                 # Remove from stash and apply

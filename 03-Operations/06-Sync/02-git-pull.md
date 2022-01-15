@@ -4,7 +4,7 @@ fetch and git merge.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git pull <remote repo> <branch>
 
 # Legend

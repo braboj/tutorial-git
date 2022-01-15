@@ -4,7 +4,7 @@ Creates, removes, copies or tracks branches.
 -------------------------------------------------------------------------------
 ### Syntax
 
-```shell
+```
 $ git branch
 $ git branch <new branch>
 $ git branch <any branch> -d

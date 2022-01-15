@@ -4,7 +4,7 @@ is ***origin***.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git push <remote> <branch> <options>
 
 # Legend

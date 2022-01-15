@@ -3,7 +3,7 @@ Displays the commit history of the repository.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git log [<options>] [<revision selector>]
 
 # Legend

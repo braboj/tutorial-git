@@ -3,7 +3,7 @@ Display useful information about a line in a file using the last revision which 
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git blame file [<options>]
  
 # Legend

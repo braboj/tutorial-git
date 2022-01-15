@@ -3,7 +3,7 @@ Show info about remote references.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git remote [<options>]
 $ git remote show [<remote reference>]
 

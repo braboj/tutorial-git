@@ -4,7 +4,7 @@ be either a new branch, tag or simply a commit object.
 
 -------------------------------------------------------------------------------
 ### Syntax
-```shell
+```
 $ git switch <branch>
 $ git switch --detach <commit object>
 
