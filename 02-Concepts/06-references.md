@@ -47,8 +47,8 @@ $ 3002ad0adb4c6b24caea57b5f0e4be0b09de89af
 
 -------------------------------------------------------------------------------
 ### heads
-This folder contains the branches. Each branch is a file with a 
-reference to a commit object inside it.
+This folder contains the branch tips. Each branch tip is a file with a reference 
+to a commit object inside it. 
 
 ```shell
 $ cat .git/refs/heads/main
@@ -57,8 +57,8 @@ $ cat .git/refs/heads/main
 
 -------------------------------------------------------------------------------
 ### remotes
-This folder is used to store the remote branches. The remote branch has 
-also a HEAD reference. If the hash value in the file ***origin / main*** 
+This folder is used to store the tips of the remote branches. The remote repo 
+has also a HEAD reference. If the hash value in the file ***origin / main*** 
 are is the same as the one in ***main***, then both branches are in sync.
 
 ```shell
