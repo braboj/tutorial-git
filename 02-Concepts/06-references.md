@@ -72,7 +72,8 @@ $ cat .git/refs/remotes/origin/main
 -------------------------------------------------------------------------------
 ### tags
 Tags are static labels for commit objects. Unlike the branches, they don't 
-change and are used as snapshots of the project in progress. 
+change and are used as snapshots of the project in progress. Tags can point to
+any object type including themselves.
 
 ```shell
 $ cat .git/refs/tags/V1.0.0.0
