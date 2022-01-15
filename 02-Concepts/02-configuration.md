@@ -1,4 +1,6 @@
 ## Configuration
+Git allows configuration on several levels. The configuration can be done
+directly in the configuration files or by using the command ***git config***.
 
 ![Configuration Model](../Assets/images/git-configuration-model.png)
 
@@ -6,11 +8,11 @@
 ### Local configuration
 
 The ***local configuration*** file is placed in the .git folder under the name
-***config***. The local configuration file is used to manage the parameters
-of this repository only.
+***config***. The local configuration file is used to manage only the parameters
+of the current repository.
 
 ```shell
-PS C:\Workspace\project\> git config --local --edit
+$ git config --local --edit
 [core]
         repositoryformatversion = 0
         filemode = false
@@ -31,27 +33,35 @@ PS C:\Workspace\project\> git config --local --edit
 
 The location of the ***global configuration*** file vary depending on the
 operating system used. The name of the file is ***.gitconfig***. Under Windows
-the file is placed in ***C:\users\\<username\>***.
+the file is placed in ***C:\users\\<username\>***. The global configuration is
+used to configure git for all repositories of the current user.
 
 ```shell
-PS C:\Workspace\project\> git config --global --edit
+$ git config --global --edit
 [filter "lfs"]
-        clean = git-lfs clean -- %f
-        smudge = git-lfs smudge -- %f
-        process = git-lfs filter-process
-        required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [user]
-        name = Luke Skywalker
-        email = luke@gmail.com
+	name = Branimir Georgiev
+	email = braboj@gmail.com
 [core]
-        longpaths = true
-        autocrlf = true
-        excludesfile = C:\\Users\\luke\\Documents\\gitignore_global.txt  
+	longpaths = true
+	autocrlf = true
+	excludesfile = C:\\Users\\braboj\\Documents\\gitignore_global.txt
+[credential]
+	helper = manager
+[gui]
+	recentrepo = C:/Workspace/Tutorials/Dart
+[credential "https://gitlab.com"]
+	provider = generic
+[init]
+	defaultBranch = main
 [alias]
 	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 	type = cat-file -t
-	dump = cat-file -p
-	        
+	dump = cat-file -p        
 ```
 
 -------------------------------------------------------------------------------
@@ -59,10 +69,11 @@ PS C:\Workspace\project\> git config --global --edit
 
 The ***system configuration*** file also depends on the operating system 
 used. Its name is ***gitconfig*** and under Windows it is to be found in the 
-installation folder of git.
+installation folder of git. The system configuration is used to configure git
+for all users and all repositories.
 
 ```shell
-PS C:\Workspace\project\> git config --system --edit
+$ git config --system --edit
  
 [diff "astextplain"]
 	textconv = astextplain
@@ -92,10 +103,5 @@ PS C:\Workspace\project\> git config --system --edit
 -------------------------------------------------------------------------------
 ### Practice
 
-1. Configure the username and email globally
-2. Configure the editor globally
-3. Configure the 
-
--------------------------------------------------------------------------------
-### References
-- <https://git-scm.com/docs/git-config>
+1. Configure the username and email for the current user
+2. Configure the editor for all users
