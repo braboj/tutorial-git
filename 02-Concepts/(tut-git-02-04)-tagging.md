@@ -1,5 +1,6 @@
 ## Tagging
-Tags are labels on revisions that don't change with new commits.
+Tags are named references that don't move with new commits. They represent a
+snapshot of the project at the time of the tagging.
 
 -------------------------------------------------------------------------------
 ### Tag types
