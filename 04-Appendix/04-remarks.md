@@ -14,12 +14,8 @@ all. It isn’t until you use the git commit command that the changes are
 recorded in your repo. You’ll need to use git add each time you update a file.
 
 #### 3
-Check your commit history in GitHub with https://github.
-com/<user>/<repository>/commits
-
-#### 4
 Browse repositories in BitBucket with https://bitbucket.org/repo/all
 
-#### 5
+#### 4
 Changing the user email might change the commit log by showing a different
 developer!!!
