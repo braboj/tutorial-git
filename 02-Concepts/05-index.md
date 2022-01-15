@@ -1,7 +1,8 @@
 ## Index
 
-The index is a binary file (generally kept in .git/index) containing a sorted
-list of path names, each with permissions and the hashcode of a blob object. 
+The index is a binary file in ***.git/index*** containing a sorted
+list of file names with their access mode and the hashcode of the corresponding
+blob object. 
 
 ```shell
 $ git ls-files --stage
@@ -13,15 +14,17 @@ $ git ls-files --stage
 -------------------------------------------------------------------------------
 ### Mode
 
-The first three digist denote the file type can have the values  
-ox100 (regular), 120 (symlink) and 160 (gitlink). The last digist denote the 
-access mode of the object. Git supports only 644 (rw- r-- r--) or 755 (rwx rw- 
-rw-).
+The first three digist denote the file type can have the values 100 (regular), 
+120 (symlink) and 160 (gitlink) in octal notation. The last digist denote the 
+access mode of the object. Git supports only 644 (rw- r-- r--) or 755 (rwx rw- rw-).
+The access mode follows the unix convention. The first triplet defines the owner
+permission, the second triplet the group permission and the last triplet the
+guest permissions.
 
 -------------------------------------------------------------------------------
 ### Stage
 
-The stage parameter is used when merging files. It has one of the following 
+The stage id is used when merging files. It has one of the following 
 values:
 
 - 0 (ok)
