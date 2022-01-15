@@ -3,10 +3,10 @@
 -------------------------------------------------------------------------------
 ### Writing rules
 
-- Prefer short text over long text
-- Prefer simple to complex language
-- Prefer explicit over implicit description
-- Prefer images to text
+- Short over long
+- Simple over complex
+- Explicit over implicit
+- Image over text
 
 ## Commit messages
 
