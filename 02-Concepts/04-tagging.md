@@ -1,5 +1,5 @@
 ## Tagging
-Tags are named references that don't move with new commits. They represent a
+Tags are named references that don't change with time. They represent a
 snapshot of the project at the time of the tagging.
 
 -------------------------------------------------------------------------------

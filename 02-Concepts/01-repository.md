@@ -1,8 +1,9 @@
 ## Repository
 
-The repository is a special folder with the name ***.git***, where git stores 
-files and the history of the changes, special files called references and 
-the repository configuration files. 
+The repository is a special folder with the name ***.git***, where git stores:
+- project files
+- history of the project files
+- configuration files
 
 -------------------------------------------------------------------------------
 ### Bare Repository
@@ -48,9 +49,6 @@ C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT
         ├───heads
         └───tags
 ```
-
-The latest versions of git support non-bare repositories to be used as 
-remote repositories.
 
 -------------------------------------------------------------------------------
 ### Practice

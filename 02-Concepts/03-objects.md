@@ -2,17 +2,17 @@
 
 ![Git Objects](../Assets/images/git-object-model.png)
 
-Git is a content system similar to an index in a book. It allows content 
-to be addressed by pages. In git the page content is an object and the page 
-itself is the name of the object. 
+Git is a sytem which allows content to be addressed similar to a book. In a 
+book the content is the text on a page and can be referenced by its page number. 
+Git offers something similar but instead of pages it uses special 40 digit 
+numbers as references. The content and the reference number make the git object.
 
-The objects are data containers having a unique 40 digits long 
-identification code. A hash function is used to generate the code. Hash 
+A hash function is used to generate the 40 digit reference number. Hash 
 functions have the special property to transform data sets of any size to 
-data sets of a fixed size. 
-
-In the example below the value **db79ba36b521373fcfaff3c2e422326a59fe26f6** 
-is also the identification code for the commit object. 
+data sets of a fixed size. A small change in the input data will generate a 
+big change in the output data. In the example below the value 
+**db79ba36b521373fcfaff3c2e422326a59fe26f6** is also the identification 
+code for the commit object. 
 
 ```shell
 $ git log -1
@@ -77,7 +77,7 @@ committer braboj <66906831+braboj@users.noreply.github.com> 1641905621 +0200
 -------------------------------------------------------------------------------
 ### Tree object
 A collection of references to either child trees or blob objects. Trees in 
-git represent directories of the operating system.
+git represent directories in the project folder.
 
 ```shell
 $ git cat-file -p da8d6f364612a07419ba0baf35dced6b52948c4f
