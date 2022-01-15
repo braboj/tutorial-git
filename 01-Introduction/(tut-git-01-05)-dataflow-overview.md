@@ -14,18 +14,16 @@ repositories are equivalent.
 -------------------------------------------------------------------------------
 ### Workspace
 The workspace or worktree is the project on the local machine's filesystem. 
-All the changes you made will remain in the working directory until they are 
+All the changes will remain in the working directory until they are 
 added to the staging area or discarded.
 
 -------------------------------------------------------------------------------
 ### Index
-
 The staging area or also index is the place where the developer gathers and 
 groups the changes before commit.
 
 -------------------------------------------------------------------------------
 ### Practice
-
 1. Create a remote repository on GitHub
 2. Clone the remote repository
 3. Create a new file test.txt and add it to the index
