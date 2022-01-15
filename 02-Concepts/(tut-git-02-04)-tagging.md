@@ -1,7 +1,5 @@
 ## Tagging
-Tags are labels on revisions that don't change with new commits like 
-the branch tips or the HEAD.
-
+Tags are labels on revisions that don't change with new commits,
 ## Tag types
 
 - Lightweight tags for local snapshots
