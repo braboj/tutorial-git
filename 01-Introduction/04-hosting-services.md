@@ -16,10 +16,9 @@ a local server.
 
 The comparison will be based on a practical approach by using the hosting 
 services with a demo project and the information from the official sites of 
-the hosting services.
+the hosting services. In the comparison only the offers for individuals and 
+small team sizes are relevant. Professionals looking for solutions involving 
+bigger teams or advanced features might have different selection criteria.
 
 ![Git Hosting Comparison](../Assets/images/git-hosting.png)
 
-In the comparison only the offers for individuals and small team
-sizes are relevant. Professionals looking for solutions involving bigger
-teams or advanced features might have different selection criteria.
