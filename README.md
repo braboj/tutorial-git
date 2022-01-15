@@ -16,14 +16,15 @@
 - [Repository](02-Concepts/(tut-git-02-01)-repository.md)
 - [Configuration](02-Concepts/(tut-git-02-02)-configuration.md)
 - [Objects](02-Concepts/(tut-git-02-03)-objects.md)
-- [Index](02-Concepts/(tut-git-02-04)-index.md)
-- [References](02-Concepts/(tut-git-02-05)-references.md)
-- [Navigation](02-Concepts/(tut-git-02-06)-navigation.md)
-- [Merging](02-Concepts/(tut-git-02-07)-merging.md)
-- [Stashing](02-Concepts/(tut-git-02-08)-stash.md)
-- [Selectors](02-Concepts/(tut-git-02-09)-selectors.md)
-- [Pathspec](02-Concepts/(tut-git-02-10)-pathspec.md)
-- [Refspec](02-Concepts/(tut-git-02-11)-refspec.md)
+- [Tagging](02-Concepts/(tut-git-02-04)-tagging.md)
+- [Index](02-Concepts/(tut-git-02-05)-index.md)
+- [References](02-Concepts/(tut-git-02-06)-references.md)
+- [Navigation](02-Concepts/(tut-git-02-07)-navigation.md)
+- [Merging](02-Concepts/(tut-git-02-08)-merging.md)
+- [Stashing](02-Concepts/(tut-git-02-09)-stashing.md)
+- [Selectors](02-Concepts/(tut-git-02-10)-selectors.md)
+- [Pathspec](02-Concepts/(tut-git-02-11)-pathspec.md)
+- [Refspec](02-Concepts/(tut-git-02-12)-refspec.md)
 
 ### Operations
 - [Help](03-Operations/01-Help)
@@ -34,13 +35,12 @@
 - [Sync](03-Operations/06-Sync)
 - [Revert](03-Operations/07-Revert)
 - [Inspect](03-Operations/08-Inspect)
-- [Rewrite](03-Operations/09-Rewrite)
 
 ### Appendix
 - [Dictionary](/05-Appendix/(tut-git-05-01)-dictionary.md)
 - [References](/05-Appendix/(tut-git-05-02)-references.md)
 - [Clients](05-Appendix/(tut-git-05-03)-clients.md)
-- [Notes](05-Appendix/(tut-git-05-04)-notes.md)
+- [Notes](05-Appendix/(tut-git-05-04)-remarks.md)
 
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
