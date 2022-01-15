@@ -1,4 +1,8 @@
 ---
+### Issue naming
+(TUT-GIT) - Issue text
+
+---
 ### Writing rules
 
 - Short over long
