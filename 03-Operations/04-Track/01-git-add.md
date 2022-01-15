@@ -8,13 +8,18 @@
 
 ### Syntax
 ```shell
-# Options
-#   -A (--all)          : Add all files in the working tree
-#   -f (--force)        : Add ignored files
-#   -i (--interactive)  : Interactive mode
-#   -e (--edit)         : Compare working tree with index
-
 $ git add <pathspec>     
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-A (--all)          : Add all files in the working tree
+-f (--force)        : Add ignored files
+-i (--interactive)  : Interactive mode
+-e (--edit)         : Compare working tree with index
 ```
 
 -------------------------------------------------------------------------------

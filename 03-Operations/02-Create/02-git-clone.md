@@ -7,6 +7,11 @@ supports several protocols such as Git, HTTP and HTTPS.
 ```shell
 $ git clone --bare <repo-url>   # Copy repo as bare
 $ git clone <repo-url>          # Copy repo and create worktree
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

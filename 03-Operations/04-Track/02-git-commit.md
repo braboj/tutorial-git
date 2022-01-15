@@ -4,7 +4,18 @@ work done.
 
 -------------------------------------------------------------------------------
 
+### Syntax
 ```shell
-git commit -m <message>   
+$ git commit -m <message>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+```
+
+### Examples
+```shell
+$ git commit -m 'Hello world!'
 ```
 

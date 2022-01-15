@@ -4,14 +4,16 @@ Show info about remote references.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-$ git remote [options]
-$ git remote show [remote]
+$ git remote [<options>]
+$ git remote show [<remote reference>]
 
 # Legend
-  []  : Optional
+[]  : Optional
+<>  : Replace
+|   : OR
   
 # Options
-  -v (--verbose)  : Enable or disable verbose information
+-v (--verbose)  : Enable or disable verbose information
 ```
 
 
@@ -24,8 +26,7 @@ origin  https://github.com/braboj/demo (fetch)
 origin  https://github.com/braboj/demo (push)
 
 # Show detailed info about remote repo with the name origin
-$ git remote show origin
-git remote show origin   
+$ git remote show origin  
 * remote origin
   Fetch URL: https://github.com/braboj/demo
   Push  URL: https://github.com/braboj/demo

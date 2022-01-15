@@ -7,6 +7,11 @@ be either a new branch, tag or simply a commit object.
 ```shell
 $ git checkout <branch>
 $ git checkout <commit object>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

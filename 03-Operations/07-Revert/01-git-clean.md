@@ -4,14 +4,19 @@ Remove untracked files from the working tree.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-# Options
-# -d            : Recurse directories
-# -e <pattern>  : Exclude files
-# -n            : Dry run  
-# -x            : Remove ignored files, except those with -e
-# -X            : Remove ignored files only
+$ git clean <options> <pathspec>
 
-$ git clean <options> <pathspec> 
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-d            : Recurse directories
+-e <pattern>  : Exclude files
+-n            : Dry run  
+-x            : Remove ignored files, except those with -e
+-X            : Remove ignored files only 
 ```
 
 -------------------------------------------------------------------------------

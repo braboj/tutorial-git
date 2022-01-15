@@ -4,23 +4,24 @@ Show information about files in the index and the working tree.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-$ git ls-files [options]
+$ git ls-files [<options>]
 
 # Legend
 []  : Optional
+<>  : Replace
+|   : OR
 
 # Options
-  -c (--cached)           : Show staged files
-  -s (--staged)           : Show hash, mode, stage num, file name
-  -d (--deleted)          : Show deleted files
-  -m (--modified)         : Show modified files
-  -i (--ignored)          : Show ignored files
-  -o (--others)           : Show untracked files
-  -u (--unmerged)         : Show unmerged files
-  -x (--exclude) pattern  : Exclude files with pattern
-  --recurse-submodule     : Show files from submodules
-  --abbrev                : Use short hash
-
+-c (--cached)           : Show staged files
+-s (--staged)           : Show hash, mode, stage num, file name
+-d (--deleted)          : Show deleted files
+-m (--modified)         : Show modified files
+-i (--ignored)          : Show ignored files
+-o (--others)           : Show untracked files
+-u (--unmerged)         : Show unmerged files
+-x (--exclude) pattern  : Exclude files with pattern
+--recurse-submodule     : Show files from submodules
+--abbrev                : Use short hash
 ```
 
 -------------------------------------------------------------------------------

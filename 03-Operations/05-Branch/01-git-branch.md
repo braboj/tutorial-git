@@ -5,17 +5,22 @@ Creates, removes, copies or tracks branches.
 ### Syntax
 
 ```shell
-# Options
-# -c (--copy)           : Copy branch
-# -d (--delete)         : Delete branch
-# -m (--move)           : Move branch
-# -u (--set-upstream)   : Start tracking of a remote branch
-# -f (--force)          : Force delete, move, copy
-
 $ git branch
 $ git branch <new branch>
 $ git branch <any branch> -d
 $ git branch <this branch> <-c, -m, -u> <other branch> 
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-c (--copy)           : Copy branch
+-d (--delete)         : Delete branch
+-m (--move)           : Move branch
+-u (--set-upstream)   : Start tracking of a remote branch
+-f (--force)          : Force delete, move, copy
 ```
 
 -------------------------------------------------------------------------------

@@ -5,11 +5,17 @@ is ***origin***.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-# Options
-# --tags        : Push commit history, branches and tags
-# -d (--delete) : Delete a reference on the remote repo
-
 $ git push <remote> <branch> <options>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-d (--delete) : Delete a reference on the remote repo
+--tags        : Push commit history, branches and tags
+--force       : Force update of the remote repo (caution!!!)
 ```
 
 -------------------------------------------------------------------------------

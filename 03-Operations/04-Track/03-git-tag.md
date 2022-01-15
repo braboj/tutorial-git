@@ -6,15 +6,20 @@ tags.
 
 ### Syntax
 ```shell
-# Options
-#   -a (--annotate)     : Annotate tag
-#   -m (--message)      : Tag message
-#   -d (--delete)       : Delete a tag
-#   -l (--list)         : List tags
-
-$ git tag <tagname> <-l or -d>                
+$ git tag <tagname> -l | -d                
 $ git tag <tagname> <object>                 
 $ git tag <tagname> <object> -a -m <message>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-a (--annotate)     : Annotate tag
+-m (--message)      : Tag message
+-d (--delete)       : Delete a tag
+-l (--list)         : List tags
 ```
 
 -------------------------------------------------------------------------------

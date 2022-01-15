@@ -6,6 +6,11 @@ Creates a new repository in a given project folder.
 ```shell
 $ git init <repo> --bare        # Create a repo folder
 $ git init <project>            # Create .git in the project folder
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

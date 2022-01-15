@@ -7,6 +7,11 @@ be either a new branch, tag or simply a commit object.
 ```shell
 $ git switch <branch>
 $ git switch --detach <commit object>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

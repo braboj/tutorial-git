@@ -8,13 +8,18 @@ Adds or removes references to remote repositories.
 $ git remote add <alias> <remote-url>
 
 # Adds or deletes a url from the reference 
-$ git remote set-url <--add> or <--delete> <alias> <remote-url>
+$ git remote set-url <--add> | <--delete> <alias> <remote-url>
 
 # Renames the reference to the remote repo
 $ git remote rename <old name> <new name>
 
 # Deletes the reference to the remote repo
 $ git remote remove <name>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

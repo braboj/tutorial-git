@@ -11,6 +11,11 @@ Before merging ensure that:
 ### Syntax
 ```shell
 $ git merge <branch>
+
+# Legend
+[]  : Optional
+<>  : Replace
+|   : OR
 ```
 
 -------------------------------------------------------------------------------

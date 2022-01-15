@@ -8,12 +8,12 @@ commit until all revisions are defined as either good or bad.
 -------------------------------------------------------------------------------
 ### Syntax
 ```shell
-git bisect start  : Start the binary search 
-git bisect reset  : Stops the binary search
-git bisect good   : Marks the revision as good
-git bisect bad    : Marks the revision as bad
-git bisect new    : Marks the revision as new
-git bisect old    : Marks the revision as old
+$ git bisect start  : Start the binary search 
+$ git bisect reset  : Stops the binary search
+$ git bisect good   : Marks the revision as good
+$ git bisect bad    : Marks the revision as bad
+$ git bisect new    : Marks the revision as new
+$ git bisect old    : Marks the revision as old
 ```
 
 -------------------------------------------------------------------------------
