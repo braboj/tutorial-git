@@ -1,6 +1,4 @@
-## Documentation
-
--------------------------------------------------------------------------------
+---
 ### Writing rules
 
 - Short over long
@@ -8,7 +6,8 @@
 - Explicit over implicit
 - Image over text
 
-## Commit messages
+---
+### Commit messages
 
 ```
 # Syntax
