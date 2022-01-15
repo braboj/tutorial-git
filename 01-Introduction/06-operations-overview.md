@@ -130,11 +130,22 @@ $ git status
 Inspect the commit history, check the author of the modifications, get the 
 repository status and other operations.
 
--------------------------------------------------------------------------------
-### 9. Rewrite
-Delete, modify or filter out parts of the commit history.
+```shell
+# Create a new alias for git log
+$ git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 
--------------------------------------------------------------------------------
-### 10. Automate
-Use advanced techniques to automate some of the git operations.
+# Get the last 5 entries
+$ git hist -5
 
+# Check the status of the working tree
+$ git status --short
+
+# Check the content of an object
+$ git cat-file -p HEAD
+
+# Show info about branches
+$ git branch -av
+
+# Show info about remote references
+$ git remote -v
+```
