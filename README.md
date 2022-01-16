@@ -40,7 +40,7 @@
 - [Dictionary](/04-Appendix/01-dictionary.md)
 - [References](/04-Appendix/02-references.md)
 - [Clients](04-Appendix/03-clients.md)
-- [Notes](04-Appendix/04-remarks.md)
+- [Remarks](04-Appendix/04-remarks.md)
 
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
