@@ -32,7 +32,7 @@ C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT.GIT
 
 The command ***git clone <project.git>*** will copy the bare repository
 ***project.git*** to a hidden .git folder, create a folder named project and 
-populate it with the project files from the latest commit.
+populate it with the project files using the history.
 
 ```
 git clone project.git
