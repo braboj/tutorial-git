@@ -2,10 +2,11 @@
 
 ![Git Objects](../Assets/images/git-object-model.png)
 
-Git is a sytem which allows content to be addressed similar to a book. In a 
-book the content is the text on a page and can be referenced by its page number. 
-Git offers something similar but instead of pages it uses special 40 digit 
-numbers as references. The content and the reference number make the git object.
+Git is a system which follows the project folder changes using snapshots. In Git the snapshots 
+are also called commit objects. Each snapshots represents the project at the moment of the commit. 
+The project itself is represented using trees objects for folders and blob objects for the content of 
+the files. The objects themselves are also called git hash objects. Each hash function has a unique
+ID consisting of 40 digits.
 
 A hash function is used to generate the 40 digit reference number. Hash 
 functions have the special property to transform data sets of any size to 
