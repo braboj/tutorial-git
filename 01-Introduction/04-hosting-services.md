@@ -6,7 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 
 -------------------------------------------------------------------------------
-### Hosting
+## Hosting
 
 Git hosting is a software service, which offers storage place and git as 
 technology to manage and track source code. This saves money from buying 
