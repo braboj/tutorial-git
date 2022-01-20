@@ -1,8 +1,3 @@
-<p align='center'>
- <img src='../Assets/banners/banner-bhai-branko.png' />
-</p>
-
-________________________________________________________________________________
 [**Up**](../README.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
