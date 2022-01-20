@@ -1,1 +1,0 @@
-Combination of reset, fast-forward and cherry-picking.

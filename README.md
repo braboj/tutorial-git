@@ -5,25 +5,26 @@
 ## Table of contents
 
 ### Introduction
-- [Overview](/01-Introduction/(tut-git-01-01)-git-features.md)
-- [Installation for Windows](/01-Introduction/(tut-git-01-02)-windows-installation.md)
-- [Installation for Linux](/01-Introduction/(tut-git-01-03)-linux-installation.md)
-- [Hosting Services](/01-Introduction/(tut-git-01-04)-hosting-services.md)
-- [Dataflow Diagram](01-Introduction/(tut-git-01-05)-dataflow-overview.md)
-- [Operations Overview](01-Introduction/(tut-git-01-06)-operations-overview.md)
+- [Overview](/01-Introduction/01-git-features.md)
+- [Installation for Windows](/01-Introduction/02-windows-installation.md)
+- [Installation for Linux](/01-Introduction/03-linux-installation.md)
+- [Hosting Services](/01-Introduction/04-hosting-services.md)
+- [Dataflow Diagram](01-Introduction/05-dataflow-overview.md)
+- [Operations Overview](01-Introduction/06-operations-overview.md)
 
 ### Concepts
-- [Repository](02-Concepts/(tut-git-02-01)-repository.md)
-- [Configuration](02-Concepts/(tut-git-02-02)-configuration.md)
-- [Objects](02-Concepts/(tut-git-02-03)-objects.md)
-- [Index](02-Concepts/(tut-git-02-04)-index.md)
-- [References](02-Concepts/(tut-git-02-05)-references.md)
-- [Navigation](02-Concepts/(tut-git-02-06)-navigation.md)
-- [Merging](02-Concepts/(tut-git-02-07)-merging.md)
-- [Stashing](02-Concepts/(tut-git-02-08)-stash.md)
-- [Selectors](02-Concepts/(tut-git-02-09)-selectors.md)
-- [Pathspec](02-Concepts/(tut-git-02-10)-pathspec.md)
-- [Refspec](02-Concepts/(tut-git-02-11)-refspec.md)
+- [Repository](02-Concepts/01-repository.md)
+- [Configuration](02-Concepts/02-configuration.md)
+- [Objects](02-Concepts/03-objects.md)
+- [Tagging](02-Concepts/04-tagging.md)
+- [Index](02-Concepts/05-index.md)
+- [References](02-Concepts/06-references.md)
+- [Navigation](02-Concepts/07-navigation.md)
+- [Merging](02-Concepts/08-merging.md)
+- [Stashing](02-Concepts/09-stashing.md)
+- [Selectors](02-Concepts/10-selectors.md)
+- [Pathspec](02-Concepts/11-pathspec.md)
+- [Refspec](02-Concepts/12-refspec.md)
 
 ### Operations
 - [Help](03-Operations/01-Help)
@@ -36,10 +37,10 @@
 - [Inspect](03-Operations/08-Inspect)
 
 ### Appendix
-- [Dictionary](/05-Appendix/(tut-git-05-01)-dictionary.md)
-- [References](/05-Appendix/(tut-git-05-02)-references.md)
-- [Clients](05-Appendix/(tut-git-05-03)-clients.md)
-- [Notes](05-Appendix/(tut-git-05-04)-notes.md)
+- [Dictionary](/04-Appendix/01-dictionary.md)
+- [References](/04-Appendix/02-references.md)
+- [Clients](04-Appendix/03-clients.md)
+- [Remarks](04-Appendix/04-remarks.md)
 
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
