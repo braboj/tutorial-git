@@ -7,10 +7,6 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-
-Git allows configuration on several levels. The configuration can be done
-directly in the configuration files or by using the command ***git config***.
-
 ![Configuration Model](../Assets/images/git-configuration-model.png)
 
 -------------------------------------------------------------------------------
