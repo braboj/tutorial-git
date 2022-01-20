@@ -1,5 +1,5 @@
 <p align='center'>
- <img src='../Assets/banners/banner-bhai-branko.png' />
+ <img src='../../Assets/banners/banner-bhai-branko.png' />
 </p>
 
 ________________________________________________________________________________
