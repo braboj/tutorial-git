@@ -1,6 +1,7 @@
 ## git tag
-Tags a commit with a suitable name. Git supports lightweight and annotated 
-tags. 
+Puts a label on a commit.  Git supports lightweight and annotated tags. The
+lightweight tags are used for local releases and the annotated tags for public
+releases.
 
 -------------------------------------------------------------------------------
 
