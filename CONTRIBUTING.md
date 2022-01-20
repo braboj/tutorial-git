@@ -1,11 +1,9 @@
----
-## Issue naming
+## Issues
+
 ```
 (TUT-GIT) - <text>
 ```
 
----
-## Writing rules
 ```
 1. Short over long
 2. Simple over complex
@@ -13,7 +11,7 @@
 4. Image over text
 ```
 
----
+
 ## Commit messages
 
 ```
@@ -22,7 +20,9 @@
 <body>
 <BLANK LINE>
 <footer>
+```
 
+```
 1. Capitalize the subject line
 2. Limit the subject size to 50 characters
 3. Do not end the subject line with a period
