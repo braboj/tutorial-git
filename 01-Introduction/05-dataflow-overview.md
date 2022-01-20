@@ -6,7 +6,7 @@ basic commands used to transfer data between the storage locations.
 
 -------------------------------------------------------------------------------
 ### Repository
-It contains the files as well as the history of the changes made to those 
+The repo contains the files as well as the history of the changes made to those 
 files. The history is a collection of snapshots at different points of time.
 The repository can be either **local** or **remote**. For git both types of 
 repositories are equivalent.
@@ -19,7 +19,7 @@ added to the staging area or discarded.
 
 -------------------------------------------------------------------------------
 ### Index
-The staging area or also index is the place where the developer gathers and 
+The index or also ***staging area*** is the place where the developer gathers and 
 groups the changes before commit.
 
 -------------------------------------------------------------------------------
