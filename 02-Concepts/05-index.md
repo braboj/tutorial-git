@@ -1,7 +1,7 @@
 ## Index
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction) |
-[**Concepts**](./) |
+[**Concepts**](../02-Concepts) |
 [**Operations**](../03-Operations) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________

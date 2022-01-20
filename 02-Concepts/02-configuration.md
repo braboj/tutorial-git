@@ -1,9 +1,9 @@
 ## Configuration
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction) |
-[**Concepts**](./) |
+[**Concepts**](../02-Concepts) |
 [**Operations**](../03-Operations) |
-[**Dictionary**](../04-Appendix/dictionary.md)  
+[**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
 Git allows configuration on several levels. The configuration can be done
