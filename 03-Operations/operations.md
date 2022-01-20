@@ -10,8 +10,6 @@ ________________________________________________________________________________
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-## Chapters
-
 - [Help](01-Help/help.md)
 - [Create](02-Create/create.md)
 - [Configure](03-Configure/config.md)

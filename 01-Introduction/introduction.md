@@ -10,8 +10,6 @@ ________________________________________________________________________________
 [**Dictionary**](../04-Appendix/dictionary.md)
 _______________________________________________________________________________
 
-## Chapters
-
 - [Git Features](01-git-features.md)
 - [Installing on Windows](02-windows-installation.md)
 - [Installing on Linux](03-linux-installation.md)

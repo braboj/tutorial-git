@@ -10,8 +10,6 @@ ________________________________________________________________________________
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-## Chapters
-
 - [Repository](01-repository.md)
 - [Configuration](02-configuration.md)
 - [Objects](03-objects.md)

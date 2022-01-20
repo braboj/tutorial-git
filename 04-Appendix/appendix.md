@@ -10,7 +10,6 @@ ________________________________________________________________________________
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-## Chapters
 - [Dictionary](dictionary.md)
 - [References](references.md)
 - [Clients](clients.md)
