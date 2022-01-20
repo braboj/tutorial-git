@@ -6,7 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 
 -------------------------------------------------------------------------------
-### Git Dataflow
+## Git Dataflow
 
 The following diagram shows an overview of the git data model and the 
 basic commands used to transfer data between the storage locations.

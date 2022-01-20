@@ -6,7 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 
 -------------------------------------------------------------------------------
-### Git Operations Overview
+## Git Operations Overview
 
 ![Git Dataflow](../Assets/images/git-ops-overview.png)
 
