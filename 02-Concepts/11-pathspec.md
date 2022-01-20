@@ -1,5 +1,4 @@
-## Pathspec
-
+[**Up**](concepts.md) | 
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,6 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Pathspec
 
 - A pathspec is a pattern used to match a path or a set of paths
 - A path is a file or a directory

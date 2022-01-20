@@ -1,5 +1,4 @@
-## Object Model
-
+[**Up**](concepts.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,6 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Object Model
 
 ![Git Objects](../Assets/images/git-object-model.png)
 

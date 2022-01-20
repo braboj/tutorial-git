@@ -3,6 +3,7 @@
 </p>
 
 ________________________________________________________________________________
+[**Up**](../../03-Operations/operations.md) |
 [**Content**](../../README.md) |
 [**Intro**](../../01-Introduction/introduction.md) |
 [**Concepts**](../../02-Concepts/concepts.md) |
@@ -12,3 +13,4 @@ ________________________________________________________________________________
 
 - [git push](01-git-push.md)
 - [git pull](02-git-pull.md)
+- [git fetch](03-git-fetch.md)

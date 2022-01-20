@@ -1,11 +1,12 @@
-## References
-
+[**Up**](concepts.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
+## References
 
 References are files, which store a revision of the referenced object. They 
 facilitate git operations by giving the revisions meaningful names. Revisions

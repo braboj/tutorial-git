@@ -1,5 +1,4 @@
-## Refspec
-
+[**Up**](concepts.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,6 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Refspec
 
 The refspec is a special syntax used by git to map remote branches to the 
 local repository. 

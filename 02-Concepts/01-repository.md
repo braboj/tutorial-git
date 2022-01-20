@@ -1,11 +1,12 @@
-## Repository
-
+[**Up**](concepts.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
+## Repository
 
 The repository is a special folder with the name ***.git***, where git stores:
 - project files

@@ -29,7 +29,7 @@
 ### Operations
 - [Help](03-Operations/01-Help/help.md)
 - [Create](03-Operations/02-Create/create.md)
-- [Configure](03-Operations/03-Configure/config.md)
+- [Configure](03-Operations/03-Configure/configure.md)
 - [Track](03-Operations/04-Track/track.md)
 - [Branch](03-Operations/05-Branch/branch.md)
 - [Sync](03-Operations/06-Sync/sync.md)

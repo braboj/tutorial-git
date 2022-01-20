@@ -1,5 +1,4 @@
-## Install on Linux
-
+[**Up**](introduction.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,6 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Install on Linux
 
 ### Ubuntu
     apt-get install git

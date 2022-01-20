@@ -1,5 +1,4 @@
-## Index
-
+[**Up**](concepts.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,6 +6,7 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Index
 
 The index is a binary file in ***.git/index*** containing a sorted
 list of file names with their access mode and the hashcode of the corresponding

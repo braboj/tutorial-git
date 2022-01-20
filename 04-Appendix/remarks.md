@@ -1,11 +1,12 @@
-## Git Notes
-
+[**Up**](appendix.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
+## Git Notes
 
 #### 1
 In Git, you cannot commit empty folders, because Git does not actually save

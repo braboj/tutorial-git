@@ -1,5 +1,4 @@
-## Dictionary
-
+[**Up**](appendix.md) |
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,8 +6,8 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
+## Dictionary
 (from <https://en.wikipedia.org/wiki/Version_control>)
-________________________________________________________________________________
 
 ### Blame
 A search for the author and revision that last modified a particular resource.
