@@ -1,5 +1,8 @@
-## Git Clients
+<p align='center'>
+ <img src='../Assets/banners/banner-bhai-branko.png' />
+</p>
 
+________________________________________________________________________________
 [**Content**](../README.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
@@ -7,9 +10,8 @@
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-- https://desktop.github.com/
-- https://www.sourcetreeapp.com/
-- https://tortoisegit.org/
-- https://www.gitkraken.com/
-- https://aurees.com/
-- https://gitextensions.github.io/
+## Chapters
+- [Dictionary](dictionary.md)
+- [References](references.md)
+- [Clients](clients.md)
+- [Remarks](remarks.md)

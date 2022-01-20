@@ -1,4 +1,7 @@
-## .gitignore file
+<p align='center'>
+ <img src='../Assets/banners/banner-bhai-branko.png' />
+</p>
+
 ________________________________________________________________________________
 [**Content**](../../README.md) |
 [**Intro**](../../01-Introduction/introduction.md) |
@@ -7,19 +10,8 @@ ________________________________________________________________________________
 [**Dictionary**](../../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-```shell
-# Ignore folders
-dist/
-
-# Ignore all log files
-*.log
-
-# Ignore .pyc, .pyo and .pyd files
-*.py[cod]
-
-# Ignore .mp3 and .mp4 files
-*.mp?
-
-```
-
-
+- [git add](01-git-add.md)
+- [git commit](02-git-commit.md)
+- [git tag](03-git-tag.md)
+- [git rm](04-git-rm.md)
+- [git mv](05-git-mv.md)

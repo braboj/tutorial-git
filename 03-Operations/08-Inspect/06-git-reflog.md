@@ -1,4 +1,12 @@
 ## git reflog
+________________________________________________________________________________
+[**Content**](../../README.md) |
+[**Intro**](../../01-Introduction/introduction.md) |
+[**Concepts**](../../02-Concepts/concepts.md) |
+[**Operations**](../../03-Operations/operations.md) |
+[**Dictionary**](../../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Show the history of operations on references such as branches, tags and 
 others. This is useful because some references such as the HEAD or the tip 
 of the branch are updated automatically after a commit.

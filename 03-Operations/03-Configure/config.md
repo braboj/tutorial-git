@@ -1,4 +1,7 @@
-## .gitignore file
+<p align='center'>
+ <img src='../Assets/banners/banner-bhai-branko.png' />
+</p>
+
 ________________________________________________________________________________
 [**Content**](../../README.md) |
 [**Intro**](../../01-Introduction/introduction.md) |
@@ -7,19 +10,7 @@ ________________________________________________________________________________
 [**Dictionary**](../../04-Appendix/dictionary.md)
 ________________________________________________________________________________
 
-```shell
-# Ignore folders
-dist/
-
-# Ignore all log files
-*.log
-
-# Ignore .pyc, .pyo and .pyd files
-*.py[cod]
-
-# Ignore .mp3 and .mp4 files
-*.mp?
-
-```
-
-
+- [git config](01-git-config.md)
+- [git remote](02-git-remote.md)
+- [git ignore](03-git-ignore.md)
+- [git variables](04-git-config-var.txt)

@@ -1,4 +1,12 @@
 ## git revert
+________________________________________________________________________________
+[**Content**](../../README.md) |
+[**Intro**](../../01-Introduction/introduction.md) |
+[**Concepts**](../../02-Concepts/concepts.md) |
+[**Operations**](../../03-Operations/operations.md) |
+[**Dictionary**](../../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Revert a previous commit by making a new one. This command is useful for 
 reverting changes in remote repositories.
 

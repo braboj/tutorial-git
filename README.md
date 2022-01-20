@@ -5,10 +5,10 @@
 ## Table of contents
 
 ### Introduction
-- [Overview](/01-Introduction/01-git-features.md)
-- [Installation for Windows](/01-Introduction/02-windows-installation.md)
-- [Installation for Linux](/01-Introduction/03-linux-installation.md)
-- [Hosting Services](/01-Introduction/04-hosting-services.md)
+- [Overview](01-Introduction/01-git-features.md)
+- [Installation for Windows](01-Introduction/02-windows-installation.md)
+- [Installation for Linux](01-Introduction/03-linux-installation.md)
+- [Hosting Services](01-Introduction/04-hosting-services.md)
 - [Dataflow Diagram](01-Introduction/05-dataflow-overview.md)
 - [Operations Overview](01-Introduction/06-operations-overview.md)
 
@@ -37,8 +37,8 @@
 - [Inspect](03-Operations/08-Inspect)
 
 ### Appendix
-- [Dictionary](/04-Appendix/dictionary.md)
-- [References](/04-Appendix/references.md)
+- [Dictionary](04-Appendix/dictionary.md)
+- [References](04-Appendix/references.md)
 - [Clients](04-Appendix/clients.md)
 - [Remarks](04-Appendix/remarks.md)
 

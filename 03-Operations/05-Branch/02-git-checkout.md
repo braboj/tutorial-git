@@ -1,4 +1,12 @@
 ## git checkout
+________________________________________________________________________________
+[**Content**](../../README.md) |
+[**Intro**](../../01-Introduction/introduction.md) |
+[**Concepts**](../../02-Concepts/concepts.md) |
+[**Operations**](../../03-Operations/operations.md) |
+[**Dictionary**](../../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Move the HEAD to a new location in the commit history. The new location can 
 be either a new branch, tag or simply a commit object. 
 

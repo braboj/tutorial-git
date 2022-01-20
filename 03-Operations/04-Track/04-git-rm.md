@@ -1,4 +1,12 @@
 ## git rm
+________________________________________________________________________________
+[**Content**](../../README.md) |
+[**Intro**](../../01-Introduction/introduction.md) |
+[**Concepts**](../../02-Concepts/concepts.md) |
+[**Operations**](../../03-Operations/operations.md) |
+[**Dictionary**](../../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Remove files from the index and the working directory and stage them for
 commit. This command is useful only when the files are part of the commit
 history.

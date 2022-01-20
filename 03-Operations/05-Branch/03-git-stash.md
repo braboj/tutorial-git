@@ -1,4 +1,12 @@
 ## git stash
+________________________________________________________________________________
+[**Content**](../../README.md) |
+[**Intro**](../../01-Introduction/introduction.md) |
+[**Concepts**](../../02-Concepts/concepts.md) |
+[**Operations**](../../03-Operations/operations.md) |
+[**Dictionary**](../../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Save temporarily the changes of a branch. This command is useful when the 
 branch is not yet ready to be committed before switching to another branch. 
 

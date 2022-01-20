@@ -1,10 +1,12 @@
 ## Pathspec
+
 [**Content**](../README.md) |
-[**Intro**](../01-Introduction) |
-[**Concepts**](../02-Concepts) |
-[**Operations**](../03-Operations) |
+[**Intro**](../01-Introduction/introduction.md) |
+[**Concepts**](../02-Concepts/concepts.md) |
+[**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
 
 - A pathspec is a pattern used to match a path or a set of paths
 - A path is a file or a directory

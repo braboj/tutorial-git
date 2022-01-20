@@ -1,10 +1,12 @@
 ## History navigation
+
 [**Content**](../README.md) |
-[**Intro**](../01-Introduction) |
-[**Concepts**](../02-Concepts) |
-[**Operations**](../03-Operations) |
+[**Intro**](../01-Introduction/introduction.md) |
+[**Concepts**](../02-Concepts/concepts.md) |
+[**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
 
 The references model allows git to navigate between branches and commits by 
 just replacing the referenced value. Git offers many commands for navigation,

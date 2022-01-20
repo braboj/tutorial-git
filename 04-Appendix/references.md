@@ -1,7 +1,12 @@
 ## References
-A collection of resources for further reading.
 
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction/introduction.md) |
+[**Concepts**](../02-Concepts/concepts.md) |
+[**Operations**](../03-Operations/operations.md) |
+[**Dictionary**](../04-Appendix/dictionary.md)
 ________________________________________________________________________________
+
 ### Books
 - http://git-scm.com/book/en/v2
 - https://git.seveas.net/
