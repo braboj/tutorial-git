@@ -4,9 +4,9 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
-________________________________________________________________________________
 
-## Git Hosting
+-------------------------------------------------------------------------------
+### Hosting
 
 Git hosting is a software service, which offers storage place and git as 
 technology to manage and track source code. This saves money from buying 

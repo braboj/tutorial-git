@@ -4,10 +4,8 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
-________________________________________________________________________________
 
-## Git Introduction
-
+-------------------------------------------------------------------------------
 ### Overview
 
 Git is a version control system used track changes of text files and to a 
@@ -20,6 +18,7 @@ system are:
 - Source code can easily be tagged, branched and merged
 - Facilitates the management of software projects
 
+-------------------------------------------------------------------------------
 ### Features
 Git is a distributed control systems, which means that the repository 
 resides on the local machine and can be synced with other repositories. This 

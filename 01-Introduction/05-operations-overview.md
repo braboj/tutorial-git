@@ -4,9 +4,9 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
-________________________________________________________________________________
 
-## Git Operations Overview
+-------------------------------------------------------------------------------
+### Git Operations Overview
 
 ![Git Dataflow](../Assets/images/git-ops-overview.png)
 

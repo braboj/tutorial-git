@@ -47,9 +47,9 @@ $ git ls-files --stage --abbrev
 100644 0235 0   01-Introduction/01-git-features.md
 100644 491c 0   01-Introduction/02-windows-installation.md
 100644 6c9b 0   01-Introduction/03-linux-installation.md
-100644 059a 0   01-Introduction/04-hosting-services.md
-100644 0f1a 0   01-Introduction/05-dataflow-overview.md
-100644 39b5 0   01-Introduction/06-operations-overview.md
+100644 059a 0   01-Introduction/03-hosting-services.md
+100644 0f1a 0   01-Introduction/04-dataflow-overview.md
+100644 39b5 0   01-Introduction/05-operations-overview.md
 ...
 ```
 
