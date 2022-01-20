@@ -22,12 +22,9 @@ $ git ls-files --stage
 -------------------------------------------------------------------------------
 ### Mode
 
-The first three digits denote the file type can have the values 100 (regular), 
-120 (symlink) and 160 (gitlink) in octal notation. The last digist denote the 
-access mode of the object. Git supports only 644 (rw- r-- r--) or 755 (rwx rw- rw-).
-The access mode follows the unix convention. The first triplet defines the owner
-permission, the second triplet the group permission and the last triplet the
-guest permissions.
+\<Mode\> = (AAABBB)
+  - AAA : Octal notation of the file type (100-regular, 120-symlink, 160-gitlink)
+  - BBB : Octal notation of the access mode (644-read, 755-read/write)
 
 -------------------------------------------------------------------------------
 ### Stage
