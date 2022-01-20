@@ -13,8 +13,7 @@ ________________________________________________________________________________
 Git is a system which follows the project folder history using snapshots. In Git the snapshots 
 are also called commit objects. Each snapshots represents the project at the moment of the commit. 
 The project itself is represented using trees objects for folders and blob objects for files. 
-The objects themselves are also called hash objects. Each hash object has a unique 40 digits
-reference number.
+Each hash object has a unique 40 digits reference number.
 
 A hash function is used to generate the 40 digit reference number. Hash 
 functions have the special property to transform data sets of any size to 
