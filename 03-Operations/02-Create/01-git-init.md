@@ -1,5 +1,5 @@
 ## git init
-________________________________________________________________________________
+
 [**Content**](../../README.md) |
 [**Intro**](../../01-Introduction/introduction.md) |
 [**Concepts**](../../02-Concepts/concepts.md) |
