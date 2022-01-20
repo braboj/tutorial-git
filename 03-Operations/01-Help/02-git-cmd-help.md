@@ -8,9 +8,11 @@ $ git <command> --help  # Extended info
 $ git <command> -h      # Short info
 
 # Legend
-[]  : Optional
-<>  : Replace
-|   : OR
+
+  []  : Optional
+  <>  : Replace
+  |   : OR
+  
 ```
 
 -------------------------------------------------------------------------------
