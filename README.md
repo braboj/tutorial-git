@@ -27,14 +27,14 @@
 - [Refspec](02-Concepts/12-refspec.md)
 
 ### Operations
-- [Help](03-Operations/01-Help)
-- [Create](03-Operations/02-Create)
-- [Configure](03-Operations/03-Configure)
-- [Track](03-Operations/04-Track)
-- [Branch](03-Operations/05-Branch)
-- [Sync](03-Operations/06-Sync)
-- [Revert](03-Operations/07-Revert)
-- [Inspect](03-Operations/08-Inspect)
+- [Help](03-Operations/01-Help/help.md)
+- [Create](03-Operations/02-Create/create.md)
+- [Configure](03-Operations/03-Configure/config.md)
+- [Track](03-Operations/04-Track/track.md)
+- [Branch](03-Operations/05-Branch/branch.md)
+- [Sync](03-Operations/06-Sync/sync.md)
+- [Revert](03-Operations/07-Revert/revert.md)
+- [Inspect](03-Operations/08-Inspect/inspect.md)
 
 ### Appendix
 - [Dictionary](04-Appendix/dictionary.md)
