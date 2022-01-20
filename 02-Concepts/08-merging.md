@@ -36,14 +36,14 @@ When two branches have changes in the same file, then git will analyse the
 files to determine how to combine the differences. The 3-way merge algorithm 
 uses a common ancestor and the two branch tips to perform the analysis.
 
-![Merge Fast Forward](../Assets/images/git-merge-3-way-concept.png)
-
 It looks for sections which are the same in two of the three revisions. This 
 indicates that the third revision is unique and the section will be added to 
 the merge result. Sections that are different in all three revisions are 
 marked as a conflict situation and left for the user to resolve.
 
-![Merge Fast Forward](../Assets/images/git-merge-3-way-example.png)
+![Merge Fast Forward](../Assets/images/git-merge-3-way-concept.png)
+
+
 
 -------------------------------------------------------------------------------
 ### Other merge strategies
