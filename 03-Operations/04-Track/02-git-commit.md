@@ -17,6 +17,7 @@ work done.
 $ git commit -m <message>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

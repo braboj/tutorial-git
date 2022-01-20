@@ -15,11 +15,13 @@ Remove untracked files from the working tree.
 $ git clean <options> <pathspec>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -d            : Recurse directories
 -e <pattern>  : Exclude files
 -n            : Dry run  

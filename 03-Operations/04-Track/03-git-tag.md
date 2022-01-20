@@ -20,11 +20,13 @@ $ git tag <tagname> <object>
 $ git tag <tagname> <object> -a -m <message>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -a (--annotate)     : Annotate tag
 -m (--message)      : Tag message
 -d (--delete)       : Delete a tag

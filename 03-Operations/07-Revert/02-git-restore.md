@@ -16,11 +16,13 @@ commit is HEAD.
 $ git restore <pathspec> <options>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -S (--staged)           : Restore the index
 -W (--worktree)         : Restore the project files
 -s (--source) <commit>  : Commit object used to restore   

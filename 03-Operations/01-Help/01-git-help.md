@@ -18,17 +18,16 @@ $ git help <command>    # Help info for command
 $ git help <guide>      # Help info for guides
 
 # Legend
-
-  []  : Optional
-  <>  : Replace
-  |   : OR
+-------------------------------------------------------------------------------
+[]  : Optional
+<>  : Replace
+|   : OR
 
 # Options
-
-  -a (--all)    : Show all commands
-  -c (--config) : Show all configuration variables
-  -g (--guides) : Show all guides
-  
+-------------------------------------------------------------------------------
+-a (--all)    : Show all commands
+-c (--config) : Show all configuration variables
+-g (--guides) : Show all guides
 ```
 
 -------------------------------------------------------------------------------

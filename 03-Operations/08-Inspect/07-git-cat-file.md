@@ -15,11 +15,13 @@ Use git branch to inspect the branches of the local and remote repos.
 $ git cat-file [<options>] object
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
 
 # Options
+-------------------------------------------------------------------------------
 -s  : Show object size
 -t  : Show object type 
 -p  : Show object content 

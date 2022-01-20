@@ -25,6 +25,7 @@ $ git remote rename <old name> <new name>
 $ git remote remove <name>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

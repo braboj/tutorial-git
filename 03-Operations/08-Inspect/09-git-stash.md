@@ -16,6 +16,7 @@ $ git stash list
 $ git stash show [<stash-entry>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

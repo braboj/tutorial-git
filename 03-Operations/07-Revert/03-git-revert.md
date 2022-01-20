@@ -16,11 +16,13 @@ reverting changes in remote repositories.
 $ git revert <commit to revert> <options>
 
 # Legend
+-------------------------------------------------------------------------------
   []  : Optional
   <>  : Replace
   |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -n (--no-commit)          : Update only the worktree and the index
 -m (--mainline) <parent>  : Parent number for reverting merges
 ```

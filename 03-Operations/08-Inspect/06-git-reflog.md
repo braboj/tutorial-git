@@ -17,11 +17,13 @@ of the branch are updated automatically after a commit.
 $ git reflog [<reflog selector>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
 
 # Filtering options
+-------------------------------------------------------------------------------
 -<num>                  : Show the last <num> entries
 --branches=<pattern>    : Show branches
 --merges | --no-merges  : Show all merge commits
@@ -35,6 +37,7 @@ $ git reflog [<reflog selector>]
 -L <start, end>:<file>  : Show all logs for lines <stat> to <end  
 
 # Formatting options
+-------------------------------------------------------------------------------
 --pretty=<format>         : oneline, medium, full, fuller, reference
 --pretty=format:<string>  : Custom format string
 --abbrev-commit           : Reduce hash code to 7 digits
@@ -43,6 +46,7 @@ $ git reflog [<reflog selector>]
 --children                : Show the children
 
 # Placeholders for format string
+-------------------------------------------------------------------------------
 %h, %H  : Commit hash
 %t, %H  : Tree hash
 %p, %P  : Parent hash

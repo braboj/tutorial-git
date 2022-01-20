@@ -16,6 +16,7 @@ fetch and git merge.
 $ git pull <remote repo> <branch>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

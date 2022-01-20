@@ -15,11 +15,13 @@ Displays the commit history of the repository.
 $ git log [<options>] [<revision selector>]
 
 # Legend
-  []  : Optional
-  <>  : Replace
-  |   : OR
+-------------------------------------------------------------------------------
+[]  : Optional
+<>  : Replace
+|   : OR
 
 # Filtering options
+-------------------------------------------------------------------------------
 -<num>                  : Show the last <num> entries
 --branches=<pattern>    : Show branches
 --merges | --no-merges  : Show all merge commits
@@ -33,12 +35,14 @@ $ git log [<options>] [<revision selector>]
 -L <start, end>:<file>  : Show all logs for lines <stat> to <end  
 
 # Sorting options
+-------------------------------------------------------------------------------
 --date-order
 --author-date-order
 --topo-order
 --reverse
 
 # Formatting options
+-------------------------------------------------------------------------------
 --pretty=<format>         : oneline, medium, full, fuller, reference
 --abbrev-commit           : Reduce hash code to 7 digits
 --oneline                 : Shorthand for pretty=oneline --abbrev-comit 

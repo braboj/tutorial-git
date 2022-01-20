@@ -21,6 +21,7 @@ Before merging ensure that:
 $ git merge <branch>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

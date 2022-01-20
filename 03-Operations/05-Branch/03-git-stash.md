@@ -20,6 +20,7 @@ branch is not yet ready to be committed before switching to another branch.
 ### Syntax
 ```
 # Sub-commands
+-------------------------------------------------------------------------------
 $ git stash push <options>      # Add to stash
 $ git stash pop                 # Remove from stash and apply
 $ git stash apply               # Apply from stash                       
@@ -27,11 +28,13 @@ $ git stash drop                # Remove an element from stash
 $ git stash clear               # Remove all stash entries
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -a (--all)        : Stash also untracked and ignored files
 -u (--untracked)  : Stash also untracked files
 -m (--message)    : Add context to stash entry

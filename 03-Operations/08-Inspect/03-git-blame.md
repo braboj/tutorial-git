@@ -15,11 +15,13 @@ Display useful information about a line in a file using the last revision which 
 $ git blame file [<options>]
  
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
 
 # Options
+-------------------------------------------------------------------------------
 -e                  : Show authors e-mail
 -L <start, end>     : Show info about a range of lines
 -L :<regexp>        : Show info about lines containing <regexp> 

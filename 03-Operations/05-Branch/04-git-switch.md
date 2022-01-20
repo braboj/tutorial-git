@@ -17,6 +17,7 @@ $ git switch <branch>
 $ git switch --detach <commit object>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

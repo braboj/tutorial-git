@@ -19,6 +19,7 @@ $ git branch <any branch> -d
 $ git branch <this branch> <-c, -m, -u> <other branch> 
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

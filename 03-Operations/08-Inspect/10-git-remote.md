@@ -16,11 +16,13 @@ $ git remote [<options>]
 $ git remote show [<remote reference>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -v (--verbose)  : Enable or disable verbose information
 ```
 

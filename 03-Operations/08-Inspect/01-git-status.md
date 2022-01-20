@@ -16,11 +16,13 @@ collection of files and directories in the current project.
 $ git status [<options>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 --branch              : Show branches in short format
 --short               : Short format with labels
 --long                : Long format

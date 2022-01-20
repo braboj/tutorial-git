@@ -15,11 +15,13 @@ Show information about files in the index and the working tree.
 $ git ls-files [<options>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
 
 # Options
+-------------------------------------------------------------------------------
 -c (--cached)           : Show staged files
 -s (--staged)           : Show hash, mode, stage num, file name
 -d (--deleted)          : Show deleted files

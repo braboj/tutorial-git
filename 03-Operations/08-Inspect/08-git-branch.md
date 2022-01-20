@@ -15,11 +15,13 @@ Use git branch to inspect the branches of the local and remote repos.
 $ git branch [<options>]
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
 
 # Options
+-------------------------------------------------------------------------------
 -a (--all)        # Show all branches
 -r (--remote)     # Show remote branches
 -v (--verbose)    # Verbose information switch

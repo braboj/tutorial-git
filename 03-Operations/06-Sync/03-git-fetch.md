@@ -22,6 +22,7 @@ $ git fetch <remote repo>           # Fetch remote repo
 $ git fetch <remote repo> <branch>  # Fetch a branch of the remote repo
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR

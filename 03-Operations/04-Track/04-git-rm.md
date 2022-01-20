@@ -17,11 +17,13 @@ history.
 $ git rm <pathspec> <options>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 --cached    : Remove from the index but keep the local copy
 -rm         : Recursive
 ```

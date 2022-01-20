@@ -17,6 +17,7 @@ $ git checkout <branch>
 $ git checkout <commit object>
 
 # Legend
+-------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
