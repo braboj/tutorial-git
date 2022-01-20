@@ -1,4 +1,10 @@
 ## Install on Windows
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)
+________________________________________________________________________________
 
 1. Browse to the official Git website: https://git-scm.com/downloads
 2. Click the download link for Windows and allow the download to complete.

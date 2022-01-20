@@ -1,4 +1,10 @@
 ## Stashing
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)
+________________________________________________________________________________
 
 The stash allows changes to be saved without committing broken or untested 
 code before switching to another branch.

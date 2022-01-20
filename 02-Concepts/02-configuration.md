@@ -1,4 +1,11 @@
 ## Configuration
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)  
+________________________________________________________________________________
+
 Git allows configuration on several levels. The configuration can be done
 directly in the configuration files or by using the command ***git config***.
 

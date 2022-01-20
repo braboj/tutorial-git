@@ -37,10 +37,10 @@
 - [Inspect](03-Operations/08-Inspect)
 
 ### Appendix
-- [Dictionary](/04-Appendix/01-dictionary.md)
-- [References](/04-Appendix/02-references.md)
-- [Clients](04-Appendix/03-clients.md)
-- [Remarks](04-Appendix/04-remarks.md)
+- [Dictionary](/04-Appendix/dictionary.md)
+- [References](/04-Appendix/references.md)
+- [Clients](04-Appendix/clients.md)
+- [Remarks](04-Appendix/remarks.md)
 
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)

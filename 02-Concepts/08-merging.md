@@ -1,4 +1,11 @@
 ## Merging
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Merging is a process of combining changes from different branches. Usually 
 this is required when people are working in parallel on the same source code.
 The file versions in each branch are compared and analysed line by line.

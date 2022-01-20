@@ -1,4 +1,11 @@
 ## Git Hosting
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)
+________________________________________________________________________________
+
 Git hosting is a software service, which offers storage place and git as 
 technology to manage and track source code. This saves money from buying 
 expensive hardware and saves also time from time-consuming configuration of 

@@ -1,4 +1,10 @@
 ## Index
+[**Content**](../README.md) |
+[**Intro**](../01-Introduction) |
+[**Concepts**](./) |
+[**Operations**](../03-Operations) |
+[**Dictionary**](../04-Appendix/dictionary.md)
+________________________________________________________________________________
 
 The index is a binary file in ***.git/index*** containing a sorted
 list of file names with their access mode and the hashcode of the corresponding
