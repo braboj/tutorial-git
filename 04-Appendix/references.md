@@ -4,7 +4,7 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 
 ## References
 
@@ -15,12 +15,12 @@ ________________________________________________________________________________
 - http://shafiul.github.io/gitbook/index.html
 - http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html
 - https://happygitwithr.com/
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Wikis
 - https://en.wikipedia.org/wiki/Git
 - https://git.wiki.kernel.org/index.php/Main_Page
 
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Tutorials
 - https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud
 - https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html
@@ -43,7 +43,7 @@ ________________________________________________________________________________
 - https://tom.preston-werner.com/2009/05/19/the-git-parable.html
 - https://matthew-brett.github.io/curious-git/curious_git.html
 
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Visualization
 
 - https://livablesoftware.com/tools-to-visualize-the-history-of-a-git-repository/
@@ -54,7 +54,7 @@ ________________________________________________________________________________
 - https://gmaster.io/
 - https://gitup.co/
 
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Workflows
 - https://blog.osteele.com/2008/05/my-git-workflow/
 - https://tomayko.com/blog/2008/the-thing-about-git
@@ -66,18 +66,18 @@ ________________________________________________________________________________
 - https://www.toptal.com/software/trunk-based-development-git-flow
 - https://buddy.works/blog/5-types-of-git-workflows
 
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Q&A
 - https://devconnected.com/how-to-delete-local-and-remote-tags-on-git/
 - https://github.com/git/git/blob/master/Documentation/howto/revert-a-faulty-merge.txt
 - https://opensource.com/article/20/4/git-merge-conflict
 - https://stackoverflow.com/questions/35979642/what-is-git-tag-how-to-create-tags-how-to-checkout-git-remote-tags/35979751#35979751
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Criticism
 - https://stevebennett.me/2012/02/24/10-things-i-hate-about-git/
 - https://tom-vykes.medium.com/the-worst-things-about-github-8e8efc60fae3
 
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 ### Hosting Services
 - https://jelvix.com/blog/bitbucket-vs-github-vs-gitlab
 - https://www.geeksforgeeks.org/difference-between-bitbucket-and-github/

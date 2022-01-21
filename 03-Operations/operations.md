@@ -4,7 +4,7 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
-________________________________________________________________________________
+-------------------------------------------------------------------------------
 
 - [Help](01-Help/help.md)
 - [Create](02-Create/create.md)
