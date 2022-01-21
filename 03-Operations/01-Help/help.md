@@ -1,13 +1,12 @@
-<p align='center'>
- <img src='../../Assets/banners/banner-bhai-branko.png' />
-</p>
-
-________________________________________________________________________________
-[**Up**](../../03-Operations/operations.md) |
-[**Content**](../../README.md) |
-[**Intro**](../../01-Introduction/introduction.md) |
-[**Concepts**](../../02-Concepts/concepts.md) |
-[**Dictionary**](../../04-Appendix/dictionary.md)
+[**Up**](../operations.md) |
+[**Help**](../01-Help/help.md) |
+[**Create**](../02-Create/create.md) |
+[**Configure**](../03-Configure/configure.md) |
+[**Track**](../04-Track/track.md) |
+[**Branch**](../05-Branch/branch.md) |
+[**Sync**](../06-Sync/sync.md) |
+[**Revert**](../07-Revert/revert.md) |
+[**Inspect**](../08-Inspect/inspect.md)
 ________________________________________________________________________________
 
 - [git help](01-git-help.md)
