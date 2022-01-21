@@ -47,16 +47,19 @@ $ git bisect bad HEAD
 
 # First good commit
 $ git bisect good 34a21
+
 Bisecting: 1 revision left to test after this (roughly 1 step)
-[8b5ce1918f88613614d0dfea8509446777ecf6cb] 3
+[8b5ce1918f88613614d0dfea8509446777ecf6cb] good
 
-# Mark as good
+# The returned revision is good (see above)
 $ git bisect good
-Bisecting: 0 revisions left to test after this (roughly 0 steps)
-[e04b8f53e471070089dc9c6b652e72b154fe4be9] 5
 
-# Mark as bad
+Bisecting: 0 revisions left to test after this (roughly 0 steps)
+[e04b8f53e471070089dc9c6b652e72b154fe4be9] bad
+
+# The returned revision is bad (see above)
 $ git bisect bad
+
 e04b8f53e471070089dc9c6b652e72b154fe4be9 is the first bad commit
 commit e04b8f53e471070089dc9c6b652e72b154fe4be9
 Author: braboj <66906831+braboj@users.noreply.github.com>
