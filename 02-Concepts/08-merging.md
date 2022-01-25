@@ -4,8 +4,8 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
--------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------
 ## Merging
 
 Merging is a process of combining changes from different branches. Usually 

@@ -16,7 +16,6 @@ lightweight tags are used for local releases and the annotated tags for public
 releases.
 
 -------------------------------------------------------------------------------
-
 ### Syntax
 ```
 $ git tag <tagname> -l | -d                

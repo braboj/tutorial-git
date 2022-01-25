@@ -12,6 +12,7 @@
 ### git config
 Configure, list, query or delete configuration parameters.
 
+-------------------------------------------------------------------------------
 ### Syntax
 ```
 $ git config [<option..>] [<parameter>] [<value>]

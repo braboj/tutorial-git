@@ -9,7 +9,6 @@
 [**Inspect**](../08-Inspect/inspect.md)
 
 -------------------------------------------------------------------------------
-
 ### git clone
 
 Copies an existing repository on the local machine. The cloning process 

@@ -4,8 +4,8 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
--------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------
 ## Refspec
 
 The refspec is a special syntax used by git to map remote branches to the 

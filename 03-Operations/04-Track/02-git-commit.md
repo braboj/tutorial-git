@@ -15,7 +15,6 @@ Saves the changes to the commit history with a short message describing the
 work done.
 
 -------------------------------------------------------------------------------
-
 ### Syntax
 ```
 $ git commit -m <message>

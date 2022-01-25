@@ -5,6 +5,7 @@
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 
+-------------------------------------------------------------------------------
 ## Repository
 
 The repository is a special folder with the name ***.git***, where git stores:

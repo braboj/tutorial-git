@@ -9,7 +9,6 @@
 [**Inspect**](../08-Inspect/inspect.md)
 
 -------------------------------------------------------------------------------
-
 ### git init
 
 Creates a new repository in a given project folder. 

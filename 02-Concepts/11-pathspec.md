@@ -4,8 +4,8 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
--------------------------------------------------------------------------------
 
+-------------------------------------------------------------------------------
 ## Pathspec
 
 - A pathspec is a pattern used to match a path or a set of paths

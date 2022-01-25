@@ -16,7 +16,6 @@
 - Ignored files are not added by default
 
 -------------------------------------------------------------------------------
-
 ### Syntax
 ```
 $ git add <pathspec>     

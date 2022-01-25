@@ -9,7 +9,6 @@
 [**Inspect**](../08-Inspect/inspect.md)
 
 -------------------------------------------------------------------------------
-
 ### git help
 
 Display help information about a git command or tutorial.

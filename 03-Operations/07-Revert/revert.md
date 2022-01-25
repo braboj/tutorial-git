@@ -7,6 +7,7 @@
 [**Sync**](../06-Sync/sync.md) |
 [**Revert**](../07-Revert/revert.md) |
 [**Inspect**](../08-Inspect/inspect.md)
+
 -------------------------------------------------------------------------------
 
 - [git clean](01-git-clean.md)
