@@ -5,7 +5,6 @@
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 
--------------------------------------------------------------------------------
 ## Install on Windows
 
 1. Browse to the official Git website: https://git-scm.com/downloads
