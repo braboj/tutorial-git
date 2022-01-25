@@ -4,6 +4,7 @@
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
+
 -------------------------------------------------------------------------------
 
 - [Repository](01-repository.md)
