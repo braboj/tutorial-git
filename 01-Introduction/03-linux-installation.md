@@ -5,6 +5,7 @@
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 
+-------------------------------------------------------------------------------
 ## Install on Linux
 
 ### Ubuntu
