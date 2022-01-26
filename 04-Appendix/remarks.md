@@ -26,4 +26,4 @@ Browse repositories in BitBucket with https://bitbucket.org/repo/all
 
 #### 4
 Changing the user email might change the commit log by showing a different
-developer!!!
+developer!

@@ -42,6 +42,17 @@
 - [Clients](04-Appendix/clients.md)
 - [Remarks](04-Appendix/remarks.md)
 
+### Selected references
+- [Git Internals](https://github.com/pluralsight/git-internals-pdf/releases)
+- [Flight rules for git](https://github.com/k88hudson/git-flight-rules)
+- [Think Like (a) Git](http://think-like-a-git.net/)
+- [The Thing About Git](https://tomayko.com/blog/2008/the-thing-about-git)
+- [Git Community Book](http://shafiul.github.io/gitbook/index.html)
+- [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html)
+- [Git Immersion](https://gitimmersion.com/index.html)
+- [Git How To](https://githowto.com/)
+
+
 ## Contribution
 - [Guidelines](CONTRIBUTING.md)
 - [License](LICENSE.md)
