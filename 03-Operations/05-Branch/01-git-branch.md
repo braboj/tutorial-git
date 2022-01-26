@@ -29,6 +29,7 @@ $ git branch <this branch> <-c, -m, -u> <other branch>
 |   : OR
   
 # Options
+-------------------------------------------------------------------------------
 -c (--copy)           : Copy branch
 -d (--delete)         : Delete branch
 -m (--move)           : Move branch
