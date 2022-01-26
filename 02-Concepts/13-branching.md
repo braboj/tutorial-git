@@ -6,7 +6,7 @@
 
 Branches can be created, renamed and deleted.
 
-![branch](../assets/images/git-branch.png)
+![branch](../Assets/images/git-branch.png)
 
 -------------------------------------------------------------------------------
 ### Create Branch
@@ -15,13 +15,13 @@ Create new **branch** means that git create a new pointer to the specific commit
 That means that creating branches doesn't change any thing in your repository.
 
 - after creating a new branch our repository looks like
-    > ![branch](../assets/images/new-branch.png)
+    > ![branch](../Assets/images/new-branch.png)
 
 - after making a new commit to our new branch our repository looks like
-    > ![branch](../assets/images/git-branch.png)
+    > ![branch](../Assets/images/git-branch.png)
 
 - if we make changes to main branch our repository will look like
-    > ![branch](../assets/images/git-branch-2.png)
+    > ![branch](../Assets/images/git-branch-2.png)
 
 -------------------------------------------------------------------------------
 ### Delete Branch
