@@ -20,11 +20,11 @@
 - [Index](02-Concepts/05-index.md)
 - [References](02-Concepts/06-references.md)
 - [Navigation](02-Concepts/07-navigation.md)
-- [Merging](02-Concepts/08-merging.md)
-- [Stashing](02-Concepts/09-stashing.md)
-- [Selectors](02-Concepts/10-selectors.md)
-- [Pathspec](02-Concepts/11-pathspec.md)
-- [Refspec](02-Concepts/12-refspec.md)
+- [Merging](02-Concepts/09-merging.md)
+- [Stashing](02-Concepts/10-stashing.md)
+- [Selectors](02-Concepts/11-selectors.md)
+- [Pathspec](02-Concepts/12-pathspec.md)
+- [Refspec](02-Concepts/13-refspec.md)
 
 ### Operations
 - [Help](03-Operations/01-Help/help.md)
