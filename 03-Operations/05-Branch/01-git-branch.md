@@ -45,7 +45,7 @@ $ git branch                      # Show branches and HEAD status
 $ git branch test                 # Create new branch test
 $ git branch test -m demo         # Move test to demo
 $ git branch demo -c test         # Copy demo to test
-$ git branch demo -d              # Delete branch demo
+$ git branch demo -d -f           # Delete branch demo without merge
 $ git branch test -u origin/test  # Track remote branch origin/test
 $ git branch -f test main         # Move tip of test to main
 ```
