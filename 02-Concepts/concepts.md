@@ -14,6 +14,7 @@
 - [Index](05-index.md)
 - [References](06-references.md)
 - [Navigation](07-navigation.md)
+- [Branching](08-branching.md)
 - [Merging](09-merging.md)
 - [Stashing](10-stashing.md)
 - [Selectors](11-selectors.md)
