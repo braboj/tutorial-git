@@ -20,6 +20,7 @@
 - [Index](02-Concepts/05-index.md)
 - [References](02-Concepts/06-references.md)
 - [Navigation](02-Concepts/07-navigation.md)
+- [Branching](02-Concepts/08-branching.md)
 - [Merging](02-Concepts/09-merging.md)
 - [Stashing](02-Concepts/10-stashing.md)
 - [Selectors](02-Concepts/11-selectors.md)
