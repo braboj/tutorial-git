@@ -55,7 +55,7 @@ will delete the branch only after the changes in the branch are merged. And
 the next command...
 
 ```
-git branch -D <branchName>
+git branch -d -f <branchName>
 ```
 will delete the branch even if there are unmerged commits. In this case the 
 commits will be orphaned and will be deleted by git during then next 
