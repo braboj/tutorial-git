@@ -2,49 +2,61 @@
 
 ### What exactly is a branch in Git ?
 
-**Branch** is a pointer to a specific commit (point) in your code.
+ - A **branch** is a pointer to a specific commit in the revision history.
+ - Branches allows parallel work on the same files
+ - Branches can be created, merged, renamed and deleted.
 
-Branches can be created, renamed and deleted.
-
-![branch](../Assets/images/git-branch.png)
-
--------------------------------------------------------------------------------
-### Create Branch
-
-Create new **branch** means that git create a new pointer to the specific commit.
-That means that creating branches doesn't change any thing in your repository.
-
-- after creating a new branch our repository looks like
-    > ![branch](../Assets/images/new-branch.png)
-
-- after making a new commit to our new branch our repository looks like
-    > ![branch](../Assets/images/git-branch.png)
-
-- if we make changes to main branch our repository will look like
-    > ![branch](../Assets/images/git-branch-2.png)
+![branch](../Assets/images/git-branch-overview.png)
 
 -------------------------------------------------------------------------------
-### Delete Branch
+### Creating and using branches
 
-Delete an existing **branch** means that git removes this pointer, if this branch has unmerged commits we will lost all of them.
+To **create a new branch** means that git will **create a refrence to a 
+specific commit**. As a branch is just a pointer, git doesn't change the 
+project history and it doesn't copy any files. This is why branching in git 
+is called a 'cheap' operation. With each change the branch tip will be 
+updated to point to the latest commit.
 
-Git has 2 commands to delete an existing branch
+- the initial state of the repository looks like this...
+    > ![Initial repo](../Assets/images/git-branch-before.png)
+  
+- after creating and switching to a new branch the repo changes to...
+    > ![New branch](../Assets/images/git-branch-new.png)
+
+- after making a new commit to the new branch the repo changes to...
+    > ![Change bugfix](../Assets/images/git-branch-change-bugfix.png)
+
+- after switching and committing to the main branch the repo changes to...
+    > ![Change main](../Assets/images/git-branch-change-main.png)
+
+- as final the branches are merged and the repo changes to...
+    > ![Merge branches](../Assets/images/git-branch-merge.png)
+  
+-------------------------------------------------------------------------------
+### Deleting branches
+
+To **delete a branch** means that git **removes only the named 
+reference** to the latest commit in this branch. Git offers 2 commands to 
+remove an existing branch...
 
 ```
 git branch -d <branchName>
 ```
-this command only delete the branch if there is no unmerged commits.
-
+will delete the branch only after the changes in the branch are merged. And 
+the next command...
 
 ```
 git branch -D <branchName>
 ```
-this command delete the branch anyway even there is unmerged commits.
+will delete the branch even if there are unmerged commits. In this case the 
+commits will be orphaned and will be deleted by git during then next 
+cleanup of the repository. The branch can thus be restored within a short 
+period of time, depending on count of the orphaned objects.
 
 -------------------------------------------------------------------------------
-### Rename Branch
+### Renaming branches
 
-Git enables us to rename any existing branch using the following command
+Any existing branch can be renamed using the following command
 ```
 git branch -m <branchName>
 ```
