@@ -9,7 +9,7 @@
 
 ### What exactly is a branch in Git ?
 
- - A **branch** is a pointer to a specific commit in the revision history.
+ - A branch is a pointer to a specific commit in the revision history.
  - Branches allows parallel work on the same files
  - Branches can be created, merged, renamed and deleted.
 
@@ -19,10 +19,12 @@
 ### Creating and using branches
 
 To **create a new branch** means that git will **create a refrence to a 
-specific commit**. As a branch is just a pointer, git doesn't change the 
+specific commit**. А branch is just a pointer and git doesn't change the 
 project history and it doesn't copy any files. This is why branching in git 
 is called a 'cheap' operation. With each change the branch tip will be 
-updated to point to the latest commit.
+updated to reference the latest commit.
+
+Here is an example workflow for git branches:
 
 - the initial state of the repository looks like this...
     > ![Initial repo](../Assets/images/git-branch-before.png)
