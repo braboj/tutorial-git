@@ -14,11 +14,11 @@
 - [Index](05-index.md)
 - [References](06-references.md)
 - [Navigation](07-navigation.md)
-- [Merging](08-merging.md)
-- [Stashing](09-stashing.md)
-- [Selectors](10-selectors.md)
-- [Pathspec](11-pathspec.md)
-- [Refspec](12-refspec.md)
+- [Merging](09-merging.md)
+- [Stashing](10-stashing.md)
+- [Selectors](11-selectors.md)
+- [Pathspec](12-pathspec.md)
+- [Refspec](13-refspec.md)
 
 
 
