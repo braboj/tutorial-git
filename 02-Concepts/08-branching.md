@@ -21,7 +21,7 @@
 To **create a new branch** means that git will **create a refrence to a 
 specific commit**. А branch is just a pointer and git doesn't change the 
 project history and it doesn't copy any files. This is why branching in git 
-is called a 'cheap' operation. With each change the branch tip will be 
+is called a 'cheap' operation. With each change the branch will be 
 updated to reference the latest commit.
 
 Here is an example workflow for git branches:
@@ -58,7 +58,7 @@ the next command...
 git branch -d -f <branchName>
 ```
 will delete the branch even if there are unmerged commits. In this case the 
-commits will be orphaned and will be deleted by git during then next 
+commits will be orphaned and will be deleted by git during the next 
 cleanup of the repository. The branch can thus be restored within a short 
 period of time, depending on count of the orphaned objects.
 
