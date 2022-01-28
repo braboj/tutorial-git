@@ -61,8 +61,6 @@
 ## Credits
  - [Branimir Georgiev](https://github.com/braboj)
  - [Marwan Rashed](https://github.com/marwan-rashed)
- - [Karim...](https://github.com/Karim06V)
- - [Simeon...](https://github.com/3SGK3)
 
 
 
