@@ -27,6 +27,14 @@
 
 ## Issues
 
+```
+(<project-tag>) - <subject>
+
+[<body>]
+
+[<footer>]
+```
+
 ***If resolved, this issue will \<your issue subject\> in \<your project\>***
 
 For example:
@@ -37,46 +45,40 @@ For example:
 - If resolved, this issue will **improve documentation in budget app**
 - If resolved, this issue will **fix the bug #123 in budget app**
 
-#### Syntax
+
+#### Examples
+
+> ##### Simple issue
+> ```
+> (BUDGET-APP) - Add new security component
+> ```
+> ##### Extended issue
+> ```
+> (BUDGET-APP) - Improve security component
+> 
+> - Certificate handling implemented
+> - Two-factor authentication implemented
+> ```
+> ##### Full issue
+> ```
+> (BUDGET-APP) - Improve security component
+> 
+> - Certificate handling implemented
+> - Two-factor authentication implemented
+> 
+> Related to: #1, #2, #3
+> See also: #4, #5, #6
+> ```
+
+## Commits
 
 ```
-(<project-tag>) - <subject>
+(<scope>) - <subject>
 
 [<body>]
 
 [<footer>]
 ```
-
-#### Examples
-
----
-##### Simple issue
-```
-(BUDGET-APP) - Add new security component
-```
-
----
-##### Extended issue
-```
-(BUDGET-APP) - Improve security component
-
-- Certificate handling implemented
-- Two-factor authentication implemented
-```
-
----
-##### Full issue
-```
-(BUDGET-APP) - Improve security component
-
-- Certificate handling implemented
-- Two-factor authentication implemented
-
-Related to: #1, #2, #3
-See also: #4, #5, #6
-```
-
-## Commits
 
 ***If applied, this commit will \<your subject line\> in \<your scope\>***
 
@@ -88,44 +90,27 @@ For example:
 - If applied, this commit will **release version 1.0.0**
 - If applied, this commit will **merge pull request #123 from user/branch**
 
-#### Syntax
-```
-(<scope>) - <subject>
-
-[<body>]
-
-[<footer>]
-```
 
 #### Examples
 
-
----
-####
-##### Simple commit
-
-```
-(Doc) - Add contributing guidelines
-```
-
----
-##### Extended commit message
-```
-(Doc) - Update contributing guidelines
-
-- Commit syntax extended
-- Formal symbols legend added
-```
-
----
-##### Full commit message
-```
-(Doc) - Update contributing guidelines
-
-- Commit syntax extended
-- Formal symbols legend added
-
-Resolves: #1, #2, #3
-See also: #4
-  
-```
+> ##### Simple commit message
+> ```
+> (Doc) - Add contributing guidelines
+> ```
+> ##### Extended commit message
+> ```
+> (Doc) - Update contributing guidelines
+> 
+> - Commit syntax extended
+> - Formal symbols legend added
+> ```
+> ##### Full commit message
+> ```
+> (Doc) - Update contributing guidelines
+> 
+> - Commit syntax extended
+> - Formal symbols legend added
+>
+> Resolves: #1, #2, #3
+> See also: #4
+> ```

@@ -24,7 +24,7 @@ public use.
 ```
 git init --bare project.git
 
-C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT.GIT
+C:\WORKSPACE\PROJECT.GIT
 ├───hooks
 ├───info
 ├───objects
@@ -45,7 +45,7 @@ populate it with the project files using the history.
 ```
 git clone project.git
 
-C:\WORKSPACE\TUTORIALS\TUTORIAL-GIT\PLAYGROUND\PROJECT
+C:\WORKSPACE\PROJECT
 │   readme.md
 └───.git
     ├───hooks

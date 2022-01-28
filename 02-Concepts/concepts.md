@@ -20,6 +20,6 @@
 - [Selectors](11-selectors.md)
 - [Pathspec](12-pathspec.md)
 - [Refspec](13-refspec.md)
-
+- [submodules and subtrees](14-submodules-and-subtrees.md)
 
 
