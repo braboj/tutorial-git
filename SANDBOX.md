@@ -1,7 +1,7 @@
 # Google Workflow
 Trunk-based development
 
-- Monotlithic codebase model
+- Monolithic codebase model
 - Central repository
 - Trunk based development
 - Single consistent view of the codebase
@@ -48,7 +48,7 @@ The refs/heads will be initialized
 git log
 git cat-file -p <hash-code>
 
-### 4. Ammend the commit
+### 4. Amend the commit
 A new commit object is created and the main branch points now to this new
 commit. The old commit object is not deleted
 

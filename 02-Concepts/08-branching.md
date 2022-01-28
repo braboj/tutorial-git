@@ -10,7 +10,7 @@
 ### What exactly is a branch in Git ?
 
  - A branch is a pointer to a specific commit in the revision history.
- - Branches allows parallel work on the same files
+ - Branches allow parallel work on the same files
  - Branches can be created, merged, renamed and deleted.
 
 ![branch](../Assets/images/git-branch-overview.png)
@@ -18,9 +18,9 @@
 -------------------------------------------------------------------------------
 ### Creating and using branches
 
-To **create a new branch** means that git will **create a refrence to a 
+To **create a new branch** means that git will **create a reference to a 
 specific commit**. А branch is just a pointer and git doesn't change the 
-project history and it doesn't copy any files. This is why branching in git 
+project history, and it doesn't copy any files. This is why branching in git 
 is called a 'cheap' operation. With each change the branch will be 
 updated to reference the latest commit.
 

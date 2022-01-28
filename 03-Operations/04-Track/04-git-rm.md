@@ -57,7 +57,7 @@ Changes to be committed:
         deleted:    test/t1.txt                    
         deleted:    test/t2/t2.txt
               
-# Remove file from index but keep the workfile
+# Remove file from index but keep on the local machine
 $ git rm README.md --cached
 rm 'README.md'
 

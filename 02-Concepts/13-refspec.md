@@ -51,7 +51,7 @@ to the main branch in the remote repo.
 
 -------------------------------------------------------------------------------
 ### Creating remote branches
-Local branches can also be used to create remote branchesusing ***git push*** 
+Local branches can also be used to create remote branches using ***git push*** 
 and refspecs.
 
 ```shell

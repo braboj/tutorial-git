@@ -11,7 +11,7 @@
 ![Git Objects](../Assets/images/git-object-model.png)
 
 Git is a system which follows the project folder history using snapshots. In Git the snapshots 
-are also called commit objects. Each snapshots represents the project at the moment of the commit. 
+are also called commit objects. Each snapshot represents the project at the moment of the commit. 
 The project itself is represented using trees objects for folders and blob objects for files. 
 Each hash object has a unique 40 digits reference number.
 

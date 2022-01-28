@@ -26,7 +26,7 @@ the diagram are not accessible using this operator.
 #### ^
 The caret operator is useful to move horizontally in a non-linear commit 
 history. For example in the diagram below C3, C4 and C5 are the parents of 
-C6. The commit C3 as first parent can be referenceed by ^1, C4 as second 
+C6. The commit C3 as first parent can be referenced by ^1, C4 as second 
 parent by ^2 and C5 as third parent by ^3. 
 
 ![Git Selectors](../Assets/images/git-selectors-caret.png)
