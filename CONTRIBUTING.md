@@ -15,6 +15,7 @@
 2. Simple over complex
 3. Explicit over implicit 
 4. Image over text
+5. Avoid using personal pronouns (I, you, we)
 
 ## Formatting rules
 
@@ -23,7 +24,6 @@
 3. Do not end the subject line with a period
 4. Use imperative mood in the subject line
 5. Use body to answer why and what
-
 
 ## Issues
 
