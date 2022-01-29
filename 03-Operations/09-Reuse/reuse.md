@@ -11,8 +11,5 @@
 
 -------------------------------------------------------------------------------
 
-- [git add](01-git-add.md)
-- [git commit](02-git-commit.md)
-- [git tag](03-git-tag.md)
-- [git rm](04-git-rm.md)
-- [git mv](05-git-mv.md)
+- [git submodule](01-git-submodule.md)
+- [git subtree](02-git-subtree.md)

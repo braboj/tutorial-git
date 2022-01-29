@@ -7,6 +7,7 @@
 [**Sync**](../06-Sync/sync.md) |
 [**Revert**](../07-Revert/revert.md) |
 [**Inspect**](../08-Inspect/inspect.md)
+[**Reuse**](../09-Reuse/reuse.md)
 
 -------------------------------------------------------------------------------
 

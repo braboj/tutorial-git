@@ -5,7 +5,7 @@
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 
-## Submodules and Subtrees
+## Integration of external repositories
 
 -------------------------------------------------------------------------------
 ### Submodules
@@ -14,11 +14,16 @@
 - **Submodule** is a reference to a specific commit (Manually updated) in another repository
 - Having a **submodule** is like install an external package in your project using NPM, Ruby Gems or any other package manager
 
+> NOTE: It is better to omit manually updated because it requires implicit 
+> knowledge of how it works.
+
 > ![submodule](../Assets/images/submodule.png)
 
 - A repository can have more than one submodule, Like more than one child repository for one parent repository.
 
 > ![submodules](../Assets/images/submodules.png)
+
+> NOTE: Only one picture is enough if no dynamic is involved.
 
 #### Why submodules !!
 - Separate code into different independent repositories
