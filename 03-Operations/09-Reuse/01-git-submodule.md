@@ -9,47 +9,49 @@
 [**Inspect**](../08-Inspect/inspect.md)
 
 -------------------------------------------------------------------------------
-### git status
+### git submodule
 
-Show information about the status of the working tree. The working tree is the
-collection of files and directories in the current project.
+Create a link to an external repository. The link can be either to the tip 
+of a branch or to a specific revision of the submodule. 
 
 -------------------------------------------------------------------------------
 ### Syntax
 ```
-$ git status [<options>]
+git submodule [<options>]
+git submodule add [<options>] <repository> [<path>]
+git submodule status [--cached] [--recursive] [<path>..]
+git submodule init [<path>..]
+git submodule deinit [-f|--force] (--all|[--] <path>..)
+git submodule update [<options>] [--] [<path>..]
+git submodule set-branch [<options>] [--] <path>
+git submodule set-url [--] <path> <newurl>
+git submodule summary [<options>] [--] [<path>..]
+git submodule foreach [--recursive] <command>
+git submodule sync [--recursive] [--] [<path>..]
+git submodule absorbgitdirs [--] [<path>..]
 
 # Legend
 -------------------------------------------------------------------------------
 []  : Optional
 <>  : Replace
 |   : OR
-  
+..  : Range
+
 # Options
 -------------------------------------------------------------------------------
---branch              : Show branches in short format
---short               : Short format with labels
---long                : Long format
---untracked           : Show also untracked files
---ignored             : Show also ignored files
---verbose             : Turn on/off verbose information
+--                  : Separator
+--quiet             :
+--cached            :
+--jobs <n>          :
+--recursive         :
+--force             :
+--all               :
 
-# Labels
-M   = modified
-T   = file type changed
-A   = added
-D   = deleted
-R   = renamed
-C   = copied
-U   = updated but unmerged
-??  = untracked
-!!  = ignored 
 ```
 
 -------------------------------------------------------------------------------
 ### Examples
 ```shell
-$ git status --short
-$ git status --short --branch
-$ git status --short --untracked --ignored
+$ git submodule add https://github.com/braboj/tutorial-git
+
 ```
