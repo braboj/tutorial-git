@@ -36,6 +36,7 @@
 - [Sync](03-Operations/06-Sync/sync.md)
 - [Revert](03-Operations/07-Revert/revert.md)
 - [Inspect](03-Operations/08-Inspect/inspect.md)
+- [Reuse](03-Operations/09-Reuse/reuse.md)
 
 ### Appendix
 - [Dictionary](04-Appendix/dictionary.md)
