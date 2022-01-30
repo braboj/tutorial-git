@@ -31,6 +31,7 @@ $ git config [<option..>] [<parameter>] [<value>]
   --global                  : Global scope
   --system                  : System scope
   --edit                    : Edit file
+  --file                    : Configuration file
   --list                    : Show paramters for a given scope
   --get <param>             : Get value of a parameter
   --get-all <param>         : Get all values of a parameter 
