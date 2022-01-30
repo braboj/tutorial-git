@@ -5,7 +5,7 @@
 [**Operations**](../03-Operations/operations.md) |
 [**Dictionary**](../04-Appendix/dictionary.md)
 
-## Reusing code
+## Subproject
 
 Very often a source code has to be **reused** in many projects. Code 
 which is reused is also called a **module**, a **library**, a **framework**, 
@@ -20,7 +20,8 @@ this: **submodule** and **subtree**.
 
 - A small footprint size
 - A submodule is a **reference to a specific commit** of another repository
-- A submodule **must be updated manually** with submodule commands
+- A submodule **must be updated manually** to clone the submodule
+- A special folder **.git/modules hosts the submodules objects** after update
 - A submodule **links a branch or a specific revision**
 - A repository can have **more than one** submodule
 - Submodules can be **nested**

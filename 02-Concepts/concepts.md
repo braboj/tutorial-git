@@ -20,6 +20,6 @@
 - [Selectors](11-selectors.md)
 - [Pathspec](12-pathspec.md)
 - [Refspec](13-refspec.md)
-- [Reusing](14-reusing.md)
+- [Subproject](14-subproject.md)
 
 
