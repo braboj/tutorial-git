@@ -30,11 +30,11 @@ $ git clone <repo-url>          # Copy repo and create worktree
 -------------------------------------------------------------------------------
 ### Examples
 ```shell
-$ git clone --bare <https://github.com/user/project.git>
-$ cd project.git
+$ git clone --bare <https://github.com/braboj/demo.git>
+$ cd demo.git
 $ dir
 
-$ git clone <https://github.com/user/project.git>
-$ cd project
+$ git clone <https://github.com/demo/demo.git>
+$ cd demo
 $ dir
 ```

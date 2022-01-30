@@ -53,18 +53,18 @@ git submodule absorbgitdirs [--] [<path>..]
 
 > ##### Add a submodule using the default branch
 > ```shell
-> $ git submodule add https://github.com/braboj/tutorial-git
+> $ git submodule add https://github.com/braboj/demo
 > ```
 
 -------------------------------------------------------------------------------
 > ##### Add a submodule using a specific branch
 > ```shell
-> $ git submodule add --branch main https://github.com/braboj/tutorial-git
+> $ git submodule add --branch main https://github.com/braboj/demo
 > ```
 -------------------------------------------------------------------------------
 > ##### Clone a repository having submodules
 > ```shell
-> $ git clone --recurse-submodules https://github.com/braboj/tutorial-git
+> $ git clone --recurse-submodules https://github.com/braboj/demo
 > ```
 
 -------------------------------------------------------------------------------
@@ -76,7 +76,7 @@ git submodule absorbgitdirs [--] [<path>..]
 -------------------------------------------------------------------------------
 > ##### Checkout to a tag or commit
 > ```shell
-> $ cd tutorial-git
+> $ cd demo
 > $ git checkout V1.0.0
 > $ git checkout 12345
 > ```
@@ -84,14 +84,14 @@ git submodule absorbgitdirs [--] [<path>..]
 -------------------------------------------------------------------------------
 > ##### Remove submodule
 > ```shell
-> $ git submodule deinit -f tutorial-git
-> $ rm -force -recurse .git/modules/tutorial-git
-> $ git rm -f tutorial-git
+> $ git submodule deinit -f demo
+> $ rm -force -recurse .git/modules/demo
+> $ git rm -f demo
 > $ git rm -f .gitmodules
 > ```
 
 -------------------------------------------------------------------------------
 > ##### Update submodule
 > ```shell
-> $ git submodule update --remote tutorial-git
+> $ git submodule update --remote demo
 > ```
