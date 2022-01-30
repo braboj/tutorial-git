@@ -136,4 +136,41 @@ git remote set-url --add --push origin "https://gitlab.com/braboj/git-tutorial.g
 
     PS> git config --global core.editor <editor + options>
 
+-------------------------------------------------------------------------------
+### git subtree
+
+Performs a full copy of the target including files and history. The result
+is a transparent view of the local project with its dependencies as if it is
+one single project.
+
+-------------------------------------------------------------------------------
+### Syntax
+```
+git subtree [<options>] -P <prefix> add <local-commit>
+git subtree [<options>] -P <prefix> add <repository> <remote-ref>
+git subtree [<options>] -P <prefix> merge <local-commit>
+git subtree [<options>] -P <prefix> split [<local-commit>]
+git subtree [<options>] -P <prefix> pull <repository> <remote-ref>
+git subtree [<options>] -P <prefix> push <repository> <refspec>
+
+# Legend
+-------------------------------------------------------------------------------
+[]  : Optional
+<>  : Replace
+|   : OR
+  
+# Options
+-------------------------------------------------------------------------------
+-q, --quiet  : Suppress unnecessary output messages on stderr.
+-d, --debug  : Produce even more unnecessary output messages on stderr.
+-P, --prefix : Specify the path in the repository to the subtree 
+```
+
+-------------------------------------------------------------------------------
+### Examples
+```shell
+$ git status --short
+$ git status --short --branch
+$ git status --short --untracked --ignored
+```
 

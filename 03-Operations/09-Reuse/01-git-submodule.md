@@ -62,7 +62,7 @@ git submodule absorbgitdirs [--] [<path>..]
 > $ git submodule add --branch main https://github.com/braboj/tutorial-git
 > ````
 -------------------------------------------------------------------------------
-> ##### Clone a repository with submodules and their children
+> ##### Clone a repository having submodules
 > ```shell
 > $ git clone --recurse-submodules https://github.com/braboj/tutorial-git
 > ````
@@ -74,17 +74,18 @@ git submodule absorbgitdirs [--] [<path>..]
 > ````
 
 -------------------------------------------------------------------------------
-> ##### Checkout submodule to a specific revisions
+> ##### Checkout to a tag or commit
 > ```shell
 > $ cd tutorial-git
 > $ git checkout V1.0.0
+> $ git checkout 12345
 > ````
 
 -------------------------------------------------------------------------------
 > ##### Remove submodule
 > ```shell
 > $ git submodule deinit -f tutorial-git
-> $ remove-item -force -recurse .git/modules/tutorial-git
+> $ rm -force -recurse .git/modules/tutorial-git
 > $ git rm -f tutorial-git
 > $ git rm -f .gitmodules
 > ````
