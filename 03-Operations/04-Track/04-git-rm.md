@@ -29,7 +29,8 @@ $ git rm <pathspec> <options>
 # Options
 -------------------------------------------------------------------------------
 --cached    : Remove from the index but keep the local copy
--rm         : Recursive
+-r          : Recursive
+-f          : Do by force
 ```
 
 -------------------------------------------------------------------------------
