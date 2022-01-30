@@ -65,6 +65,7 @@ See also: [git submodule](../03-Operations/09-Reuse/01-git-submodule.md)
 - Subtrees require a deeper understanding of git merging strategies
 - Special attention of not mixing project and subtree code in commits
 - A checkout to a different revision will affect all the project files
+- Not recommended when the amount of dependencies is too large.
 
 See also: [git subtree](../03-Operations/09-Reuse/02-git-subtree.md)
 
@@ -78,7 +79,7 @@ See also: [git subtree](../03-Operations/09-Reuse/02-git-subtree.md)
 
 > **Git subtrees** is more fit to a ***system-based development*** where the 
 > user wants to have a full copy all files and their history and the 
-> subtree will be updated frequently either by the maintainer or by the 
+> subtree will be changed frequently either by the maintainer or by the 
 > user himself.
 
 -------------------------------------------------------------------------------

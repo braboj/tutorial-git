@@ -9,15 +9,21 @@
 [**Inspect**](../08-Inspect/inspect.md)
 
 -------------------------------------------------------------------------------
-### git status
+### git subtree
 
-Show information about the status of the working tree. The working tree is the
-collection of files and directories in the current project.
+Performs a full copy of the target including files and history. The result 
+is a transparent view of the local project with its dependencies as if it is 
+one single project.
 
 -------------------------------------------------------------------------------
 ### Syntax
 ```
-$ git status [<options>]
+git subtree [<options>] -P <prefix> add <local-commit>
+git subtree [<options>] -P <prefix> add <repository> <remote-ref>
+git subtree [<options>] -P <prefix> merge <local-commit>
+git subtree [<options>] -P <prefix> split [<local-commit>]
+git subtree [<options>] -P <prefix> pull <repository> <remote-ref>
+git subtree [<options>] -P <prefix> push <repository> <refspec>
 
 # Legend
 -------------------------------------------------------------------------------
@@ -27,23 +33,9 @@ $ git status [<options>]
   
 # Options
 -------------------------------------------------------------------------------
---branch              : Show branches in short format
---short               : Short format with labels
---long                : Long format
---untracked           : Show also untracked files
---ignored             : Show also ignored files
---verbose             : Turn on/off verbose information
-
-# Labels
-M   = modified
-T   = file type changed
-A   = added
-D   = deleted
-R   = renamed
-C   = copied
-U   = updated but unmerged
-??  = untracked
-!!  = ignored 
+-q, --quiet  : Suppress unnecessary output messages on stderr.
+-d, --debug  : Produce even more unnecessary output messages on stderr.
+-P, --prefix : Specify the path in the repository to the subtree 
 ```
 
 -------------------------------------------------------------------------------
