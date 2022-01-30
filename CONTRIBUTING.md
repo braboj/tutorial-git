@@ -1,3 +1,6 @@
+## Workflow
+![Project workflow](Assets/images/project-workflow.png)
+
 ## Legend
 
 ```
@@ -73,7 +76,7 @@ For example:
 ## Commits
 
 ```
-(<scope>) - <subject>
+[(<scope>) -] <subject>
 
 [<body>]
 
@@ -93,20 +96,24 @@ For example:
 
 #### Examples
 
-> ##### Simple commit message
+> ##### Commit message
 > ```
-> (Doc) - Add contributing guidelines
+> Add contributing guidelines
 > ```
-> ##### Extended commit message
+> ##### Commit message with scope
 > ```
-> (Doc) - Update contributing guidelines
+> (Repo) - Add contributing guidelines
+> ```
+> ##### Commit message with scope and body
+> ```
+> (Repo) - Update contributing guidelines
 > 
 > - Commit syntax extended
 > - Formal symbols legend added
 > ```
-> ##### Full commit message
+> ##### Commit message with scope, body and footer
 > ```
-> (Doc) - Update contributing guidelines
+> (Repo) - Update contributing guidelines
 > 
 > - Commit syntax extended
 > - Formal symbols legend added
