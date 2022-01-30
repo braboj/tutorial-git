@@ -1,4 +1,4 @@
-[**Up**](../08-Inspect/inspect.md) |
+[**Up**](../09-Reuse/reuse.md) |
 [**Help**](../01-Help/help.md) |
 [**Create**](../02-Create/create.md) |
 [**Configure**](../03-Configure/configure.md) |

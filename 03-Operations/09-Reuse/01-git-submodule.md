@@ -1,4 +1,4 @@
-[**Up**](../08-Inspect/inspect.md) |
+[**Up**](../09-Reuse/reuse.md) |
 [**Help**](../01-Help/help.md) |
 [**Create**](../02-Create/create.md) |
 [**Configure**](../03-Configure/configure.md) |
@@ -40,18 +40,51 @@ git submodule absorbgitdirs [--] [<path>..]
 # Options
 -------------------------------------------------------------------------------
 --                  : Separator
---quiet             :
---cached            :
---jobs <n>          :
---recursive         :
---force             :
---all               :
-
+--branch            : Branch
+--init              : Initialize submodule
+--cached            : Show index entries
+--jobs <n>          : Number of threads to use
+--recursive         : Recursive search for nested submodules
+--force             : Force operation despite warnings 
+--all               : Peform on all submodules
 ```
-
 -------------------------------------------------------------------------------
 ### Examples
-```shell
-$ git submodule add https://github.com/braboj/tutorial-git
 
-```
+> ##### Add a submodule using the default branch
+> ```shell
+> $ git submodule add https://github.com/braboj/tutorial-git
+> ````
+
+-------------------------------------------------------------------------------
+> ##### Add a submodule using a specific branch
+> ```shell
+> $ git submodule add --branch main https://github.com/braboj/tutorial-git
+> ````
+-------------------------------------------------------------------------------
+> ##### Clone a repository with submodules and their children
+> ```shell
+> $ git clone --recurse-submodules https://github.com/braboj/tutorial-git
+> ````
+
+-------------------------------------------------------------------------------
+> ##### Configure git status to show summary of submodule changes
+> ```shell
+> $ git config --global status.submoduleSummary true
+> ````
+
+-------------------------------------------------------------------------------
+> ##### Checkout submodule to a specific revisions
+> ```shell
+> $ cd tutorial-git
+> $ git checkout V1.0.0
+> ````
+
+-------------------------------------------------------------------------------
+> ##### Remove submodule
+> ```shell
+> $ git submodule deinit -f tutorial-git
+> $ remove-item -force -recurse .git/modules/tutorial-git
+> $ git rm -f tutorial-git
+> $ git rm -f .gitmodules
+> ````
