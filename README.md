@@ -26,6 +26,7 @@
 - [Selectors](02-Concepts/11-selectors.md)
 - [Pathspec](02-Concepts/12-pathspec.md)
 - [Refspec](02-Concepts/13-refspec.md)
+- [Subproject](02-Concepts/14-subproject.md)
 
 ### Operations
 - [Help](03-Operations/01-Help/help.md)
