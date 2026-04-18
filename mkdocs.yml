@@ -1,4 +1,5 @@
 site_name: "Git Tutorial — Code with Branko"
+site_description: "Learn Git from concepts to daily commands — a practical tutorial by Branko"
 site_url: https://braboj.github.io/tutorial-git/
 repo_url: https://github.com/braboj/tutorial-git
 repo_name: braboj/tutorial-git
@@ -18,16 +19,23 @@ theme:
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
+  font:
+    text: Roboto
+    code: Roboto Mono
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
+    - navigation.footer
+    - navigation.indexes
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.tabs.link
   icon:
     repo: fontawesome/brands/github
+    logo: material/git
 
 plugins:
   - search
@@ -40,12 +48,25 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.tabbed:
       alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - admonition
   - pymdownx.details
   - attr_list
   - md_in_html
+  - def_list
+  - tables
   - toc:
       permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/braboj
+      name: Branko on GitHub
+
+copyright: "&copy; 2021–2026 Branimir Georgiev · Code with Branko"
 
 nav:
   - Home:
