@@ -68,6 +68,9 @@ extra:
 
 copyright: "&copy; 2021–2026 Branimir Georgiev · Code with Branko"
 
+extra_css:
+  - stylesheets/extra.css
+
 nav:
   - Home:
     - index.md
