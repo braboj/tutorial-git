@@ -89,15 +89,6 @@ All three offer free plans for individuals and small teams.
 
 The table below compares the free tiers of each provider.
 
-| Feature            | GitHub            | GitLab      | Bitbucket         |
-|--------------------|-------------------|-------------|-------------------|
-| Public repos       | Unlimited         | Unlimited   | Unlimited         |
-| Private repos      | Unlimited         | Unlimited   | Unlimited         |
-| Collaborators      | Unlimited         | 5           | 5                 |
-| CI/CD minutes      | 2 000 / month     | 400 / month | 50 / month        |
-| Storage            | 500 MB (packages) | 5 GB        | 1 GB (LFS)        |
-| Self-hosted option | No                | Yes         | Yes (Data Center) |
-
 ![Git Hosting Comparison](../assets/images/git-hosting.png)
 
 ## How Git Works
