@@ -1,7 +1,7 @@
 site_name: "Git Tutorial — Code with Branko"
-site_url: https://imbra-ltd.github.io/tutorial-git/
-repo_url: https://github.com/Imbra-Ltd/tutorial-git
-repo_name: Imbra-Ltd/tutorial-git
+site_url: https://braboj.github.io/tutorial-git/
+repo_url: https://github.com/braboj/tutorial-git
+repo_name: braboj/tutorial-git
 
 theme:
   name: material
@@ -142,3 +142,7 @@ nav:
     - References: 04-Appendix/references.md
     - Clients: 04-Appendix/clients.md
     - Remarks: 04-Appendix/remarks.md
+
+  - Test:
+    - Questions: Assets/test/test-questions.md
+    - Answers: Assets/test/test-answers.md

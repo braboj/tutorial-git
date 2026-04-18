@@ -1,5 +1,5 @@
 [**Up**](concepts.md) |
-[**Content**](../README.md) |
+[**Content**](../index.md) |
 [**Intro**](../01-Introduction/introduction.md) |
 [**Concepts**](../02-Concepts/concepts.md) |
 [**Operations**](../03-Operations/operations.md) |
@@ -68,7 +68,7 @@ See also: [git submodule](../03-Operations/09-Reuse/01-git-submodule.md)
 - A checkout to a different revision will affect all the project files
 - Not recommended when the amount of dependencies is too large.
 
-See also: [git subtree](../03-Operations/09-Reuse/02-git-subtree.md)
+<!-- See also: git subtree (page not yet available) -->
 
 -------------------------------------------------------------------------------
 ### Which to use?
