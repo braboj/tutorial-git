@@ -1,0 +1,127 @@
+@startuml git-dataflow
+
+' =============================================================
+' Git tutorial sequence diagram — data flow across workspace,
+' index, local repo, and remote repo.
+'
+' Design system tokens applied via skinparam below. Edit only the
+' content section (marked --- CONTENT ---) when updating the
+' sequence; leave the style block alone to keep the series
+' consistent.
+' =============================================================
+
+' --- STYLE -------------------------------------------------
+
+skinparam backgroundColor #FFFFFF
+skinparam shadowing false
+skinparam roundcorner 8
+skinparam defaultFontName "Helvetica"
+skinparam defaultFontSize 12
+skinparam defaultFontColor #2C2C2A
+
+skinparam sequence {
+  ArrowColor #444441
+  ArrowThickness 1
+  ArrowFontColor #2C2C2A
+  ArrowFontSize 12
+
+  LifeLineBorderColor #B4B2A9
+  LifeLineBackgroundColor transparent
+
+  ParticipantBackgroundColor #FFFFFF
+  ParticipantBorderColor #888780
+  ParticipantBorderThickness 0.5
+  ParticipantFontSize 14
+  ParticipantFontStyle Bold
+  ParticipantFontColor #2C2C2A
+  ParticipantPadding 12
+
+  BoxBorderColor transparent
+  BoxFontSize 13
+  BoxFontStyle Bold
+  BoxFontColor #2C2C2A
+  BoxPadding 12
+}
+
+' Transparent note chrome — kills the sticky-note fold and leaves
+' just the text floating in the left margin.
+skinparam note {
+  BackgroundColor transparent
+  BorderColor transparent
+  FontSize 12
+  FontColor #2C2C2A
+}
+
+' --- CONTENT -----------------------------------------------
+
+box "Local machine" #FAF4E8
+  participant "Workspace\n<size:11><font:monospaced>~/demo</font></size>" as WS
+  participant "Index\n<size:11><font:monospaced>.git/index</font></size>" as IX
+  participant "Local repo\n<size:11><font:monospaced>.git</font></size>" as LR
+end box
+
+box "Remote server" #EAF1F5
+  participant "Remote repo\n<size:11><font:monospaced>github</font></size>" as RR
+end box
+
+note left of WS
+Copy remote repo into
+local .git + workspace
+end note
+RR -> WS : <font:monospaced>git clone</font>
+
+note left of WS
+Developer edits files
+in the workspace
+end note
+WS -> WS : //edits//
+
+note left of WS
+Stage changes from
+workspace to index
+end note
+WS -> IX : <font:monospaced>git add</font>
+
+note left of WS
+Restore workspace
+files from the index
+end note
+IX -> WS : <font:monospaced>git restore</font>
+
+note left of WS
+Record staged snapshot
+to the local repo
+end note
+IX -> LR : <font:monospaced>git commit</font>
+
+note left of WS
+Restore index state
+from the local repo
+end note
+LR -> IX : <font:monospaced>git restore --staged</font>
+
+note left of WS
+Upload local commits
+to the remote
+end note
+LR -> RR : <font:monospaced>git push</font>
+
+note left of WS
+Download remote commits
+to the local repo
+end note
+RR -> LR : <font:monospaced>git fetch</font>
+
+note left of WS
+Advance workspace
+using local commits
+end note
+LR -> WS : <font:monospaced>git merge</font>
+
+note left of WS
+Fetch and merge
+in a single step
+end note
+RR -> WS : <font:monospaced>git pull</font>
+
+@enduml
