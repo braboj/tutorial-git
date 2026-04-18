@@ -21,5 +21,6 @@
 - [Pathspec](12-pathspec.md)
 - [Refspec](13-refspec.md)
 - [Subproject](14-subproject.md)
+- [Conflicts](15-conflicts.md)
 
 

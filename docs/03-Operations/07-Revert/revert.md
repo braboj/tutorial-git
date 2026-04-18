@@ -14,3 +14,4 @@
 - [git clean](01-git-clean.md)
 - [git restore](02-git-restore.md)
 - [git revert](03-git-revert.md)
+- [git reset](04-git-reset.md)

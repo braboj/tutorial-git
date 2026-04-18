@@ -21,3 +21,4 @@
 - [git branch](08-git-branch.md)
 - [git stash](09-git-stash.md)
 - [git remote](10-git-remote.md)
+- [git diff](11-git-diff.md)

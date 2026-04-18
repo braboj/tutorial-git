@@ -80,6 +80,8 @@ nav:
     - Pathspec: 02-Concepts/12-pathspec.md
     - Refspec: 02-Concepts/13-refspec.md
     - Subproject: 02-Concepts/14-subproject.md
+    - Conflicts: 02-Concepts/15-conflicts.md
+    - Branching Strategies: 02-Concepts/16-branching-strategies.md
 
   - Operations:
     - 03-Operations/operations.md
@@ -110,6 +112,8 @@ nav:
       - git stash: 03-Operations/05-Branch/03-git-stash.md
       - git switch: 03-Operations/05-Branch/04-git-switch.md
       - git merge: 03-Operations/05-Branch/05-git-merge.md
+      - git rebase: 03-Operations/05-Branch/06-git-rebase.md
+      - git cherry-pick: 03-Operations/05-Branch/07-git-cherry-pick.md
     - Sync:
       - 03-Operations/06-Sync/sync.md
       - git push: 03-Operations/06-Sync/01-git-push.md
@@ -120,6 +124,7 @@ nav:
       - git clean: 03-Operations/07-Revert/01-git-clean.md
       - git restore: 03-Operations/07-Revert/02-git-restore.md
       - git revert: 03-Operations/07-Revert/03-git-revert.md
+      - git reset: 03-Operations/07-Revert/04-git-reset.md
     - Inspect:
       - 03-Operations/08-Inspect/inspect.md
       - git status: 03-Operations/08-Inspect/01-git-status.md
@@ -132,6 +137,8 @@ nav:
       - git branch (inspect): 03-Operations/08-Inspect/08-git-branch.md
       - git stash (inspect): 03-Operations/08-Inspect/09-git-stash.md
       - git remote (inspect): 03-Operations/08-Inspect/10-git-remote.md
+      - git diff: 03-Operations/08-Inspect/11-git-diff.md
+      - git show: 03-Operations/08-Inspect/12-git-show.md
     - Reuse:
       - 03-Operations/09-Reuse/reuse.md
       - git submodule: 03-Operations/09-Reuse/01-git-submodule.md
