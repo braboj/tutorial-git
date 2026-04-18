@@ -1,16 +1,15 @@
-import nav from "../data/nav.json";
+import type { CollectionEntry } from "astro:content";
 
 export interface PageInfo {
   slug: string;
   title: string;
-  contentId: string;
+  id: string;
   section: string;
-  sectionPath: string;
   subsection?: string;
 }
 
 export interface SectionInfo {
-  tab: string;
+  title: string;
   path: string;
   pages: { slug: string; title: string; href: string }[];
   subsections?: {
@@ -20,97 +19,77 @@ export interface SectionInfo {
   }[];
 }
 
-export function getAllPages(): PageInfo[] {
-  const pages: PageInfo[] = [];
+/** Derive the URL slug from a content entry's frontmatter. */
+function entryToSlug(entry: CollectionEntry<"docs">): string {
+  const { section, subsection } = entry.data;
+  if (section === "operations" && subsection) {
+    return `operations/${subsection}`;
+  }
+  if (section === "test") {
+    // test-questions → test/questions
+    return entry.id.replace("-", "/");
+  }
+  return section;
+}
 
-  for (const section of nav.sections) {
-    // Section index page
-    if ("index" in section && section.index) {
-      pages.push({
-        slug: section.path.slice(1),
-        title: section.tab,
-        contentId: `${section.dir}/${section.index}`,
-        section: section.tab,
-        sectionPath: section.path,
-      });
-    }
+/** Build the full page list from content collection entries. */
+export function buildPages(entries: CollectionEntry<"docs">[]): PageInfo[] {
+  const sorted = [...entries].sort((a, b) => {
+    if (a.data.order !== b.data.order) return a.data.order - b.data.order;
+    return (a.data.subsectionOrder ?? 0) - (b.data.subsectionOrder ?? 0);
+  });
 
-    // Flat pages
-    if ("pages" in section && section.pages) {
-      for (const page of section.pages) {
-        pages.push({
-          slug: `${section.path.slice(1)}/${page.slug}`,
+  return sorted.map((entry) => ({
+    slug: entryToSlug(entry),
+    title: entry.data.title,
+    id: entry.id,
+    section: entry.data.section,
+    subsection: entry.data.subsection,
+  }));
+}
+
+/** Build section navigation info for the sidebar/tabs. */
+export function buildSections(entries: CollectionEntry<"docs">[]): SectionInfo[] {
+  const pages = buildPages(entries);
+  const sectionMap = new Map<string, SectionInfo>();
+
+  for (const page of pages) {
+    if (page.section === "operations") {
+      let section = sectionMap.get("operations");
+      if (!section) {
+        section = {
+          title: "Operations",
+          path: "/operations",
+          pages: [],
+          subsections: [],
+        };
+        sectionMap.set("operations", section);
+      }
+      if (page.subsection) {
+        section.subsections!.push({
           title: page.title,
-          contentId: `${section.dir}/${page.file}`,
-          section: section.tab,
-          sectionPath: section.path,
+          slug: page.subsection,
+          pages: [{ slug: page.slug, title: page.title, href: `/${page.slug}/` }],
+        });
+      }
+    } else if (page.section === "test") {
+      let section = sectionMap.get("test");
+      if (!section) {
+        section = { title: "Test", path: "/test", pages: [] };
+        sectionMap.set("test", section);
+      }
+      section.pages.push({ slug: page.slug, title: page.title, href: `/${page.slug}/` });
+    } else {
+      // Single-page sections: introduction, concepts, appendix
+      if (!sectionMap.has(page.section)) {
+        sectionMap.set(page.section, {
+          title: page.title,
+          path: `/${page.section}`,
+          pages: [{ slug: page.slug, title: page.title, href: `/${page.slug}/` }],
         });
       }
     }
-
-    // Subsections (Operations)
-    if ("subsections" in section && section.subsections) {
-      for (const sub of section.subsections) {
-        // Subsection index
-        if (sub.index) {
-          pages.push({
-            slug: `${section.path.slice(1)}/${sub.slug}`,
-            title: sub.title,
-            contentId: `${section.dir}/${sub.dir}/${sub.index}`,
-            section: section.tab,
-            sectionPath: section.path,
-            subsection: sub.title,
-          });
-        }
-
-        // Subsection pages
-        for (const page of sub.pages) {
-          pages.push({
-            slug: `${section.path.slice(1)}/${sub.slug}/${page.slug}`,
-            title: page.title,
-            contentId: `${section.dir}/${sub.dir}/${page.file}`,
-            section: section.tab,
-            sectionPath: section.path,
-            subsection: sub.title,
-          });
-        }
-      }
-    }
   }
 
-  return pages;
-}
-
-export function getSection(path: string): SectionInfo | undefined {
-  for (const section of nav.sections) {
-    if (section.path === path) {
-      const result: SectionInfo = {
-        tab: section.tab,
-        path: section.path,
-        pages: [],
-      };
-
-      if ("pages" in section && section.pages) {
-        result.pages = section.pages.map((p) => ({
-          slug: p.slug,
-          title: p.title,
-          href: `${section.path}/${p.slug}/`,
-        }));
-      }
-
-      if ("subsections" in section && section.subsections) {
-        result.subsections = section.subsections.map((sub) => ({
-          title: sub.title,
-          slug: sub.slug,
-          pages: sub.pages.map((p) => ({
-            slug: p.slug,
-            title: p.title,
-            href: `${section.path}/${sub.slug}/${p.slug}/`,
-          })),
-        }));
-      }
-
-      return result;
-    }
-  }
+  return Array.from(sectionMap.values());
 }

@@ -1,3 +1,0 @@
-- [git push](01-git-push.md)
-- [git pull](02-git-pull.md)
-- [git fetch](03-git-fetch.md)

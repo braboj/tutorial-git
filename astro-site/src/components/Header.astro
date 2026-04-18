@@ -32,7 +32,10 @@ const { currentPath = "/" } = Astro.props;
 <div class="site-tabs-bar">
   <nav class="site-tabs" aria-label="Main navigation">
     {site.tabs.map((tab) => {
-      const isActive = currentPath === tab.href || (tab.href !== "/" && currentPath.startsWith(tab.href));
+      // Match by section prefix: /operations/help/ highlights for any /operations/* path
+      const tabSection = tab.href.split("/").filter(Boolean)[0];
+      const currentSection = currentPath.split("/").filter(Boolean)[0];
+      const isActive = tab.href === "/" ? currentPath === "/" : tabSection === currentSection;
       return (
         <a
           href={tab.href}

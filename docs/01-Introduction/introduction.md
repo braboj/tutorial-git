@@ -1,6 +1,0 @@
-- [Git Features](01-git-features.md)
-- [Installing on Windows](02-windows-installation.md)
-- [Installing on Linux](03-linux-installation.md)
-- [Hosting Services](04-hosting-services.md)
-- [Dataflow Diagram](05-dataflow-overview.md)
-- [Operations Overview](06-operations-overview.md)

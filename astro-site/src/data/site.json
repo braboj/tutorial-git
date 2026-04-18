@@ -7,9 +7,9 @@
     { "label": "Home", "href": "/" },
     { "label": "Introduction", "href": "/introduction/" },
     { "label": "Concepts", "href": "/concepts/" },
-    { "label": "Operations", "href": "/operations/" },
+    { "label": "Operations", "href": "/operations/help/" },
     { "label": "Appendix", "href": "/appendix/" },
-    { "label": "Test", "href": "/test/" }
+    { "label": "Test", "href": "/test/questions/" }
   ],
   "tutorials": [
     { "label": "Azure", "href": "https://braboj.github.io/tutorial-azure/" },
