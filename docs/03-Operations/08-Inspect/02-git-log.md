@@ -25,7 +25,7 @@ $ git log [<options>] [<revision selector>]
 --author=<pattern>      : Show all logs by author
 --grep=<pattern>        : Show all logs matching pattern
 -L <pattern>:<file>     : Show all logs for a pattern in file
--L <start, end>:<file>  : Show all logs for lines <stat> to <end  
+-L <start, end>:<file>  : Show all logs for lines <start> to <end>
 
 # Sorting options
 -------------------------------------------------------------------------------
@@ -38,7 +38,7 @@ $ git log [<options>] [<revision selector>]
 -------------------------------------------------------------------------------
 --pretty=<format>         : oneline, medium, full, fuller, reference
 --abbrev-commit           : Reduce hash code to 7 digits
---oneline                 : Shorthand for pretty=oneline --abbrev-comit 
+--oneline                 : Shorthand for pretty=oneline --abbrev-commit
 --graph                   : Show history graph
 --parents                 : Show the parents 
 --children                : Show the children

@@ -63,7 +63,7 @@ $ cat .git/refs/heads/main
 ### remotes
 This folder is used to store the tips of the remote branches. The remote repo 
 has also a HEAD reference. If the hash value in the file ***origin / main*** 
-are is the same as the one in ***main***, then both branches are in sync.
+is the same as the one in ***main***, then both branches are in sync.
 
 ```shell
 $ cat .git/refs/remotes/origin/main

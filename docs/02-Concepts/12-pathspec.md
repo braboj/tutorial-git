@@ -17,7 +17,7 @@ git add src/ header/    # Add multiples paths
 -------------------------------------------------------------------------------
 ### Wildcards
 
-The asterics **(\*)** wildcard character matches any number of characters.
+The asterisks **(\*)** wildcard character matches any number of characters.
 
 ```
 git log '*.py'      # Show history of all python files
@@ -79,7 +79,7 @@ rather than wildcard symbols.
 
 -------------------------------------------------------------------------------
 ### glob
-Unix like matching when using the asterics (*) wildcard characters. In this 
+Unix like matching when using the asterisks (*) wildcard characters. In this 
 case glob will change the matching behavior as follows:
 
 - (*) will not match through directories
@@ -90,7 +90,7 @@ case glob will change the matching behavior as follows:
 Match folders using git attributes. Depending on the usecase git offers two 
 locations to define attributes:
 
-- .gitattribures (tracked)
+- .gitattributes (tracked)
 - .git/info/attributes (untracked)
 
 -------------------------------------------------------------------------------

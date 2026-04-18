@@ -37,7 +37,7 @@ $ git push origin
 $ git push origin main
 
 # Delete a tag on a remote repository
-$git push --delete origin V1.0.0
+$ git push --delete origin V1.0.0
 
 # Delete all tags with PowerShell
 $ git tag | foreach-object -process { git push origin -d $_ }
