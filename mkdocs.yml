@@ -84,6 +84,7 @@ nav:
     - Hosting Services: 01-Introduction/04-hosting-services.md
     - Dataflow Overview: 01-Introduction/05-dataflow-overview.md
     - Operations Overview: 01-Introduction/06-operations-overview.md
+    - Exercises: 01-Introduction/07-exercises.md
 
   - Concepts:
     - 02-Concepts/concepts.md
@@ -103,6 +104,7 @@ nav:
     - Subproject: 02-Concepts/14-subproject.md
     - Conflicts: 02-Concepts/15-conflicts.md
     - Branching Strategies: 02-Concepts/16-branching-strategies.md
+    - Exercises: 02-Concepts/17-exercises.md
 
   - Operations:
     - 03-Operations/operations.md
@@ -163,6 +165,7 @@ nav:
     - Reuse:
       - 03-Operations/09-Reuse/reuse.md
       - git submodule: 03-Operations/09-Reuse/01-git-submodule.md
+    - Exercises: 03-Operations/10-exercises.md
 
   - Appendix:
     - 04-Appendix/appendix.md
