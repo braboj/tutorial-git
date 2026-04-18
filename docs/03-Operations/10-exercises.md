@@ -11,6 +11,7 @@ order — later exercises build on skills from earlier ones.
 **Task:** Initialize a new repository, track files, and make your first commits.
 
 **Steps:**
+
 1. Create a new directory called `practice-repo` and initialize a git repository
 2. Configure your name and email for this repository
 3. Create a file called `README.md` with the text `# Practice Project`
@@ -20,7 +21,9 @@ order — later exercises build on skills from earlier ones.
 7. Stage only `app.py` and commit with the message `Add application entry point`
 8. Stage `notes.txt` and commit with the message `Add development notes`
 
-**Verify:** Run `git log --oneline` — you should see three commits in reverse
+**Verify:**
+
+Run `git log --oneline` — you should see three commits in reverse
 chronological order.
 
 ---
@@ -30,6 +33,7 @@ chronological order.
 **Task:** Use status, log, and diff to understand what changed and when.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 1
 2. Edit `app.py` — change the print message to `print("hello, world")`
 3. Run `git status` and note the file state
@@ -39,7 +43,9 @@ chronological order.
 7. Run `git log --oneline --all` to see the full history
 8. Run `git show HEAD` to inspect the latest commit in detail
 
-**Verify:** `git status` reports a clean working tree. `git log --oneline` shows
+**Verify:**
+
+`git status` reports a clean working tree. `git log --oneline` shows
 four commits.
 
 ---
@@ -49,6 +55,7 @@ four commits.
 **Task:** Create annotated and lightweight tags to mark specific commits.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 2
 2. Create an annotated tag `v1.0.0` on the current commit with the message
    `First stable release`
@@ -58,7 +65,9 @@ four commits.
 6. Run `git tag` to list all tags
 7. Run `git show v1.0.0` to inspect the annotated tag
 
-**Verify:** `git tag` lists both `v1.0.0` and `v1.1.0-beta`. `git show v1.0.0`
+**Verify:**
+
+`git tag` lists both `v1.0.0` and `v1.1.0-beta`. `git show v1.0.0`
 displays the tag metadata and the commit it points to.
 
 ---
@@ -68,6 +77,7 @@ displays the tag metadata and the commit it points to.
 **Task:** Use git rm and git mv to manage tracked files properly.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 3
 2. Remove `notes.txt` from tracking and from disk using `git rm`
 3. Commit with the message `Remove development notes`
@@ -75,7 +85,9 @@ displays the tag metadata and the commit it points to.
 5. Commit with the message `Rename app.py to main.py`
 6. Run `git log --oneline --follow main.py` to trace the rename history
 
-**Verify:** `ls` shows only `README.md` and `main.py`. `git log --follow main.py`
+**Verify:**
+
+`ls` shows only `README.md` and `main.py`. `git log --follow main.py`
 shows commits from before and after the rename.
 
 ---
@@ -85,6 +97,7 @@ shows commits from before and after the rename.
 **Task:** Create a feature branch, make changes, and merge back to main.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 4
 2. Create and switch to a branch called `feature/add-config`
 3. Create a file `config.yaml` with the text `debug: true`
@@ -94,7 +107,9 @@ shows commits from before and after the rename.
 7. Switch back to `main`
 8. Merge `feature/add-config` into `main`
 
-**Verify:** `git log --oneline --graph` shows the merge. `config.yaml` exists on
+**Verify:**
+
+`git log --oneline --graph` shows the merge. `config.yaml` exists on
 `main` with both lines.
 
 ---
@@ -104,6 +119,7 @@ shows commits from before and after the rename.
 **Task:** Use diff to compare branches before merging.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 5
 2. Create and switch to a branch called `feature/logging`
 3. Create a file `logger.py` with the text `import logging`
@@ -114,7 +130,9 @@ shows commits from before and after the rename.
 8. Run `git diff main..feature/logging --stat` for a summary
 9. Merge `feature/logging` into `main`
 
-**Verify:** `git diff main..feature/logging` produces no output after the merge
+**Verify:**
+
+`git diff main..feature/logging` produces no output after the merge
 (the branches point to the same commit or the merge commit includes all changes).
 
 ---
@@ -125,6 +143,7 @@ shows commits from before and after the rename.
 urgent fix.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 6
 2. Create and switch to a branch called `feature/docs`
 3. Edit `README.md` — add a line: `## Installation`
@@ -137,7 +156,9 @@ urgent fix.
 10. Switch back to `feature/docs` and restore your stashed changes
 11. Commit with the message `Add installation section to README`
 
-**Verify:** `git stash list` is empty. Both branches' work is committed.
+**Verify:**
+
+`git stash list` is empty. Both branches' work is committed.
 `config.yaml` has `debug: false` and `README.md` has the Installation heading.
 
 ---
@@ -147,6 +168,7 @@ urgent fix.
 **Task:** Create a merge conflict intentionally and resolve it.
 
 **Steps:**
+
 1. Continue in the `practice-repo` from Exercise 7
 2. On `main`, edit `main.py` — change the first line to `print("hello from main")`
 3. Stage and commit with the message `Update greeting on main`
@@ -158,7 +180,9 @@ urgent fix.
 9. Resolve the conflict by keeping the text `print("hello from both")`
 10. Stage the resolved file and complete the merge commit
 
-**Verify:** `git log --oneline --graph` shows the merge. `main.py` contains
+**Verify:**
+
+`git log --oneline --graph` shows the merge. `main.py` contains
 `print("hello from both")` on the first line.
 
 ---
@@ -168,6 +192,7 @@ urgent fix.
 **Task:** Use rebase to create a linear history instead of a merge commit.
 
 **Steps:**
+
 1. Create a fresh repository called `rebase-practice` and initialize it
 2. Create `index.html` with the text `<h1>Home</h1>`, stage, and commit
 3. Create a branch called `feature/about` and switch to it
@@ -177,7 +202,9 @@ urgent fix.
 7. Switch to `feature/about` and rebase onto `main`
 8. Switch to `main` and fast-forward merge `feature/about`
 
-**Verify:** `git log --oneline --graph` shows a straight line with no merge
+**Verify:**
+
+`git log --oneline --graph` shows a straight line with no merge
 commits. `index.html` and `about.html` both exist with their latest content.
 
 ---
@@ -188,6 +215,7 @@ commits. `index.html` and `about.html` both exist with their latest content.
 the entire branch.
 
 **Steps:**
+
 1. Continue in the `rebase-practice` repository from Exercise 9
 2. Create and switch to a branch called `feature/contact`
 3. Create `contact.html` with the text `<h1>Contact</h1>`, stage, and commit
@@ -198,7 +226,9 @@ the entire branch.
 7. Run `git log feature/contact --oneline` to find the hash of the title fix
 8. Cherry-pick that single commit onto `main`
 
-**Verify:** `git log --oneline` on `main` shows the cherry-picked commit.
+**Verify:**
+
+`git log --oneline` on `main` shows the cherry-picked commit.
 `index.html` contains `<h1>Home Page</h1>`. `contact.html` does not exist on
 `main`.
 
@@ -209,6 +239,7 @@ the entire branch.
 **Task:** Practice the three reset modes to understand what each one preserves.
 
 **Steps:**
+
 1. Create a fresh repository called `reset-practice` and initialize it
 2. Create `file.txt` with the text `line 1`, stage, and commit
 3. Add `line 2` to `file.txt`, stage, and commit
@@ -225,7 +256,9 @@ the entire branch.
 14. Use `git reflog` to find the lost commit and restore it with
     `git reset --hard <hash>`
 
-**Verify:** After the final recovery, `file.txt` contains all three lines and
+**Verify:**
+
+After the final recovery, `file.txt` contains all three lines and
 `git log --oneline` shows the restored commit.
 
 ---
@@ -235,6 +268,7 @@ the entire branch.
 **Task:** Handle conflicts during a rebase and complete the operation.
 
 **Steps:**
+
 1. Create a fresh repository called `conflict-rebase` and initialize it
 2. Create `shared.txt` with the text `original content`, stage, and commit
 3. Create and switch to a branch called `feature/update`
@@ -246,5 +280,7 @@ the entire branch.
 9. Stage the resolved file and run `git rebase --continue`
 10. Switch to `main` and fast-forward merge `feature/update`
 
-**Verify:** `git log --oneline --graph` shows a linear history with no merge
+**Verify:**
+
+`git log --oneline --graph` shows a linear history with no merge
 commits. `shared.txt` contains `merged content`.
