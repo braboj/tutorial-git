@@ -1,11 +1,3 @@
-[**Up**](concepts.md) |
-[**Content**](../index.md) |
-[**Intro**](../01-Introduction/introduction.md) |
-[**Concepts**](../02-Concepts/concepts.md) |
-[**Operations**](../03-Operations/operations.md) |
-[**Dictionary**](../04-Appendix/dictionary.md)
-
--------------------------------------------------------------------------------
 ## Stashing
 
 The stash allows changes to be saved without committing broken or untested 

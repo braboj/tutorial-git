@@ -1,11 +1,3 @@
-[**Up**](concepts.md) |
-[**Content**](../index.md) |
-[**Intro**](../01-Introduction/introduction.md) |
-[**Concepts**](../02-Concepts/concepts.md) |
-[**Operations**](../03-Operations/operations.md) |
-[**Dictionary**](../04-Appendix/dictionary.md)
-
--------------------------------------------------------------------------------
 ## Revision selectors
 
 Revision selectors (treeish) are special type of operators used to select single or 

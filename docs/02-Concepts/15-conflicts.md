@@ -1,11 +1,3 @@
-[**Up**](concepts.md) |
-[**Content**](../index.md) |
-[**Intro**](../01-Introduction/introduction.md) |
-[**Concepts**](../02-Concepts/concepts.md) |
-[**Operations**](../03-Operations/operations.md) |
-[**Dictionary**](../04-Appendix/dictionary.md)
-
--------------------------------------------------------------------------------
 ## Conflicts
 
 A merge conflict occurs when Git cannot automatically combine changes from

@@ -1,11 +1,3 @@
-[**Up**](concepts.md) |
-[**Content**](../index.md) |
-[**Intro**](../01-Introduction/introduction.md) |
-[**Concepts**](../02-Concepts/concepts.md) |
-[**Operations**](../03-Operations/operations.md) |
-[**Dictionary**](../04-Appendix/dictionary.md)
-
--------------------------------------------------------------------------------
 ## References
 
 References are files, which store a revision of the referenced object. They 

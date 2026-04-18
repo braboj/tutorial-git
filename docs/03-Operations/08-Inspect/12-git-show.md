@@ -1,11 +1,3 @@
-[**Up**](inspect.md) |
-[**Content**](../../index.md) |
-[**Intro**](../../01-Introduction/introduction.md) |
-[**Concepts**](../../02-Concepts/concepts.md) |
-[**Operations**](../operations.md) |
-[**Dictionary**](../../04-Appendix/dictionary.md)
-
--------------------------------------------------------------------------------
 ### git show
 
 Displays detailed information about a Git object. For commits, it shows the
