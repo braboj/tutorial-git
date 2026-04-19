@@ -88,6 +88,108 @@ $ git log "HEAD@{yesterday}"
 $ git log "HEAD@{2.months.ago}"
 ```
 
+## Merge Strategies
+
+Git automatically selects a merge strategy based on the branch history.
+Most of the time you don't need to choose one manually. You can force a
+specific strategy with the `-s` flag:
+
+```shell
+$ git merge -s <strategy> <branch>
+```
+
+### Recursive
+
+The default strategy when merging two branches. It performs a 3-way
+merge (see [Branching and Merging](03-branching-and-merging.md)) but
+can also handle situations where the two branches share **multiple
+common ancestors** — something that happens after criss-cross merges.
+
+```
+       A ← B ← C  (main)
+      ↗         ↖
+  base            merge
+      ↖         ↗
+       D ← E ← F  (feature)
+```
+
+In simple merges, there is one common ancestor. In criss-cross
+histories, there can be several. The recursive strategy builds a
+temporary merged ancestor from all of them and uses that as the base
+for the 3-way comparison.
+
+### Subtree
+
+Used when one branch represents a **subdirectory** of another. Git
+detects that the trees are nested and adjusts the paths before merging.
+
+```
+main:
+├── src/
+├── docs/
+└── lib/           ← this is actually the root of another repo
+
+lib-repo:
+├── parser.py
+└── utils.py
+```
+
+This is common when embedding an external library directly into a
+project without using submodules.
+
+```shell
+$ git merge -s subtree lib-branch
+```
+
+### Octopus
+
+Merges **more than two branches** at once in a single merge commit.
+Git uses this automatically when you pass multiple branch names to
+`git merge`. It only works if there are no conflicts — if any branch
+conflicts, Git stops and asks you to merge them one at a time.
+
+```
+before:   A ← B  (main, HEAD)
+               ↖   ↖   ↖
+                C    D    E  (feature-1, feature-2, feature-3)
+
+after:    A ← B ← M  (main, HEAD)
+              ↗  ↑  ↖
+             C   D   E
+```
+
+```shell
+$ git merge feature-1 feature-2 feature-3
+```
+
+### Ours
+
+Records a merge commit but **completely ignores** the other branch's
+changes. The result is identical to the current branch — the incoming
+branch's content is discarded. This is useful when you want to mark a
+branch as merged (so it doesn't show up as unmerged) without actually
+taking its changes.
+
+```
+before:   A ← B ← C  (main, HEAD)
+                    ↖
+                     D ← E  (abandoned-feature)
+
+after:    A ← B ← C ← M  (main, HEAD)    ← content is identical to C
+                    ↖   ↗
+                     D ← E
+```
+
+```shell
+$ git merge -s ours abandoned-feature
+```
+
+> **Note:** Do not confuse the **ours strategy** (`-s ours`) with the
+> **ours option** (`-X ours`). The strategy ignores the entire branch.
+> The option resolves individual conflicts by preferring the current
+> branch's side but still includes non-conflicting changes from the
+> other branch.
+
 ## Pathspec
 
 - A pathspec is a pattern used to match a path or a set of paths

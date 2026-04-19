@@ -1,16 +1,120 @@
-# Git tutorial figures — style rules
+# CLAUDE.md — Git Tutorial (Code with Branko)
 
-Every figure I produce follows these rules. Applies to draw.io XML, PlantUML, and SVG output.
+Instructions for Claude Code working in this repository.
 
-## Core principles
-- Flat only: no gradients, shadows, glows, or 3D effects.
-- Must read in grayscale — never rely on color alone.
-- Sentence case for prose labels. Filenames and acronyms keep their casing.
-- Two fonts: **Helvetica** for labels, **Courier New** for commands/hashes/filenames.
-- 0.5 px borders. Quiet chrome.
-- One visual grammar per figure — if it needs two, split into two figures.
+Quality conventions (git, docs, quality, scope) are defined in
+`docs/solid-ai-templates/` — a git submodule from
+[Imbra-Ltd/solid-ai-templates](https://github.com/Imbra-Ltd/solid-ai-templates).
+Key references:
+- `docs/solid-ai-templates/base/git.md` — git workflow, branching, PRs
+- `docs/solid-ai-templates/base/docs.md` — documentation rules, ADRs, writing style
+- `docs/solid-ai-templates/base/quality.md` — SOLID, readability, code style
+- `docs/solid-ai-templates/base/scope.md` — scope guard, session protocol
+- `docs/solid-ai-templates/frontend/static-site.md` — static site architecture
+- `docs/solid-ai-templates/stack/static-site-astro.md` — Astro-specific rules
 
-## Palettes
+Project-specific overrides and additions follow below.
+
+
+## Project identity
+
+- **Name**: tutorial-git (Git Tutorial — Code with Branko)
+- **Owner**: Branimir Georgiev — braboj
+- **Repo**: github.com/braboj/tutorial-git
+- **Stack**: Astro static site, Markdown content, draw.io diagrams
+- **Hosting**: GitHub Pages via GitHub Actions
+- **Domain**: braboj.github.io/tutorial-git (codewithbranko.com pending)
+
+
+## Project structure
+
+```
+chapters/                  # SSG-agnostic tutorial content (canonical)
+  01-introduction.md
+  02-building-blocks.md
+  03-branching-and-merging.md
+  04-deep-internals.md
+  05-playbook.md
+  06-appendix.md
+  07-glossary.md
+assets/
+  images/                  # PNG exports used in chapters
+  drawio/                  # draw.io source files (editable)
+  archive/                 # Superseded images (kept for ebook)
+  banners/
+  doc/
+  uml/
+astro-site/                # Astro build (imports from chapters/ and assets/)
+docs/                      # Legacy MkDocs content (reference, not active)
+  solid-ai-templates/      # Submodule — Imbra-Ltd/solid-ai-templates
+```
+
+
+## Scope guard override
+
+Extends `base/scope.md` with tutorial-specific boundaries:
+- One chapter per session is the default scope for content work
+- Diagram, exercise, and quiz changes within that chapter are in scope
+- Restructuring other chapters, creating new projects, or adding
+  infrastructure is out of scope unless explicitly requested
+
+
+## Content conventions
+
+### Chapter structure
+
+Every chapter follows this structure:
+
+1. Frontmatter (`title`, `section`, `order`)
+2. `## Overview` — what the chapter covers and why
+3. Content sections with `##` and `###` headings
+4. `## Exercises` — hands-on tasks with verification steps
+5. `## Quiz` — multiple-choice questions with answers at the bottom
+
+### Writing style
+
+- **American English** spelling (analyze, not analyse)
+- **Git** capitalised in prose, `git` lowercase in commands and code blocks
+- Concise, direct sentences — no filler, no preamble
+- Explain technical terms inline for beginners (e.g. "a hash — a unique identifier")
+- No `---` separators between subsections — headings provide separation
+- No inline Practice sections — all practice goes in Exercises
+- No emojis unless explicitly requested
+
+### Quiz formatting
+
+- Each option on a bullet line: `- A) ...`, `- B) ...`
+- Vary the correct answer positions — never all the same letter
+- Answers section at the bottom: `1. C — explanation`
+
+### Cross-references
+
+- Reference other chapters by file: `[Building Blocks](02-building-blocks.md)`
+- Reference sections within a chapter by heading anchor: `[Tag Object](#tag-object-labels)`
+
+### Images
+
+- Source files: `assets/drawio/` (`.drawio` format)
+- Exported PNGs: `assets/images/`
+- Reference from chapters: `![Alt text](../assets/images/filename.png)`
+- Superseded images move to `assets/archive/` — not deleted
+- ASCII diagrams in markdown serve as fallback and source of truth
+
+
+## Figure style rules
+
+Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
+
+### Core principles
+
+- Flat only: no gradients, shadows, glows, or 3D effects
+- Sentence case for prose labels — filenames and acronyms keep their casing
+- Two fonts: **Helvetica** for labels, **Courier New** for commands/hashes/filenames
+- 0.5 px borders — quiet chrome
+- One visual grammar per figure — if it needs two, split into two figures
+- Shapes (circle vs pill vs card) distinguish elements in grayscale
+
+### Palettes
 
 **A — Difficulty** (tier cards):
 - Beginner: fill `#EAF3DE`, border `#3B6D11`, text `#27500A`
@@ -19,23 +123,29 @@ Every figure I produce follows these rules. Applies to draw.io XML, PlantUML, an
 
 **B — Scoring** (comparison cells): same hex as A. Good / Neutral / Bad.
 
-**C — Categorical** (entity types):
-- Teal   `#E1F5EE` / `#0F6E56` / `#085041` — **tag** (annotated object)
-- Purple `#EEEDFE` / `#534AB7` / `#3C3489` — **commit**
-- Coral  `#FAECE7` / `#993C1D` / `#712B13` — **tree**
-- Gray   `#F1EFE8` / `#5F5E5A` / `#2C2C2A` — **blob** / leaf / neutral / `.git` chrome
-- Pink   `#FBEAF0` / `#72243E` / `#4B1528` — **references** (HEAD, Branch, lightweight tags)
+**C — Categorical** (convention-based, matches common Git tool colours):
+- Gray   `#F1F1F1` / `#888888` / `#2C2C2A` — **commit** (regular) / neutral
+- Blue   `#DBEAFE` / `#2563EB` / `#1E40AF` — **main branch** / stable refs
+- Green  `#DCFCE7` / `#16A34A` / `#15803D` — **feature branch** / active work
+- Purple `#EDE9FE` / `#7C3AED` / `#5B21B6` — **merge commit**
+- Yellow `#FEF9C3` / `#CA8A04` / `#854D0E` — **tag**
+- Coral  `#FAECE7` / `#993C1D` / `#712B13` — **tree** (object model diagrams)
+- Gray   `#F1EFE8` / `#5F5E5A` / `#2C2C2A` — **blob** / `.git` chrome (object model)
 
 Canonical assignment — never swap these across figures in the series.
+Convention rationale: blue = stable (GitHub, VS Code), green = active work
+(GitKraken), purple = merge (common in Git GUIs). Reduces cognitive load
+for readers who use Git tools.
 
 **D — Zone** (sequence-diagram backgrounds):
 - Local machine: `#FAF4E8`
 - Remote server: `#EAF1F5`
 
 **Neutral chrome** (all palettes):
-- Border `#D3D1C7`, primary text `#2C2C2A`, secondary text `#5F5E5A`, arrow stroke `#444441`, white card `#FFFFFF`.
+- Border `#D3D1C7`, primary text `#2C2C2A`, secondary text `#5F5E5A`,
+  arrow stroke `#444441`, white card `#FFFFFF`.
 
-## Typography
+### Typography
 
 | Use | Font | Size | Weight | Style |
 |---|---|---|---|---|
@@ -45,90 +155,79 @@ Canonical assignment — never swap these across figures in the series.
 | Captions, footnotes | Helvetica | 11–12 px | Regular | — |
 | Descriptive notes, placeholders | Helvetica | 11 px | Regular | Italic |
 
-Line height for stacked field lists: 20 px.
+### Arrow conventions
 
-## Four patterns
-
-Pick the closest fit. If content needs two, split.
-
-**1. Card grid** — overview pages, grouped by tier.
-- Cards 118 × 140 px, rx=7, 0.5 px tier-tinted border.
-- 130 px horizontal pitch. Tier rows: widest on top, narrowest on bottom (funnel).
-- Numeric badge (22 × 22 px circle) at top-left, title next to it, mono command list below.
-- Legend top-right: 10 × 10 px colored dots + labels.
-- Uses Palette A.
-
-**2. Sequence diagram** — use **PlantUML**, not draw.io. Auto-layout handles lifelines.
-- Drop the default sticky-note + yellow chrome. Transparent notes, `#FFFFFF` actors, `#888780` borders, `#444441` arrows.
-- Zones via `box "..." #FAF4E8 ... end box` (Palette D).
-- Commands inline: `<font:monospaced>git add</font>`. Non-command actions: `//edits//` (italic).
-
-**3. Comparison matrix** — products × tiers × features.
-- Canvas 1000 × 520 px. Label column 200 px. Tier column 80 px. Provider group 240 px.
-- Row heights: data 24 px, provider header 40 px, tier header 24 px.
-- Cell-merging rule: if all tiers of one provider share both value AND color, merge to one wide cell. Never merge across providers.
-- Provider header: bold name + muted score on second line. No fill, border only.
-- Uses Palette B.
-
-**4. Object reference** — schema cards showing entity fields + pointers. Two sub-forms:
-- **Schema-card form** (high detail): card has header (bold type + mono hash), divider at 30% opacity, mono field list. Used when reader needs to see internal fields.
-- **Reference-graph form** (low detail): small pills (100 × 40 px, rx=8), just type name inside. Used when only pointer relationships matter.
-- **Commit-chain panel variant**: side-by-side panels showing pointer movement over a command sequence. Gray commit circles (diameter 28) in a vertical chain, pink pill for branch on right of commit, italic pink "HEAD" on left when detached, merged `*main` pill when attached. Dashed arrow shows what moved.
-- Uses Palette C.
-
-## Arrow conventions
-
-- Solid 1 px `#444441`, 6 × 6 px chevron head. Labels in clear space, never on the line.
+- Solid 1 px `#444441`, 6 × 6 px chevron head. Labels in clear space, never
+  on the line.
+- **Parent direction**: commit arrows point from child to parent
+  (right-to-left in horizontal layouts). Matches Git's internal pointer
+  direction and the ASCII diagrams in the tutorial (`A ← B ← C`).
+- **Reference arrows** (branch/tag to commit): **dashed** (pattern `4 3`).
 - **Unlabeled** if meaning is obvious from endpoints.
-- **Italic `#5F5E5A` label** for named relationships (`attached`, `parent`, `subtree`).
-- **Dashed** (pattern `4 3`) for conditional or alternative paths.
-- **Self-loop** (small arc above box corner) for recursive references. Not a second same-type box.
+- **Italic `#5F5E5A` label** for named relationships (`attached`, `parent`).
+- **Self-loop** (small arc above box corner) for recursive references.
 
-## Component vocabulary
+### Component vocabulary
 
 - **Card**: rounded rect, rx=5–8, 0.5 px border, 10–12 px inner padding.
-- **Pill**: rounded rect with rx = height/2. For tags, short pointer labels.
+- **Pill**: rounded rect with rx = height/2. For branches, tags, short labels.
 - **Badge**: filled circle, 20–22 px diameter, bold numeral inside.
 - **Divider**: 0.5 px horizontal line at 30% opacity in parent's border color.
-- **Zone background**: solid rect behind actors (sequence diagrams only).
+- **Background card**: white (`#FFFFFF`) rounded rect with neutral border
+  (`#D3D1C7`, 0.5 px, rx=5) placed behind all diagram content. Ensures
+  readability on both light and dark page backgrounds. Export PNGs with
+  transparent background — the card provides the contrast.
 
-## draw.io style string templates
+### Commit-chain panel variant
+
+Gray commit circles (diameter 28), branch pills to the right of the
+commit they point to, italic "HEAD" label above the active branch pill.
+`*main` means HEAD is attached to main. Dashed arrow from pill to commit
+shows the reference relationship. Uses Palette C.
+
+### draw.io file conventions
+
+- Source files: `assets/drawio/<name>.drawio`
+- Naming: `git-<topic>-<variant>.drawio` (e.g. `git-branch-merge.drawio`)
+- Readable IDs: `card-commit-1`, `pill-main`, `arrow-3-2`
+- All cells `parent="1"`
+- XML-escape values: `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`
+
+### draw.io style string templates
 
 ```
-# Card (colored, tier or categorical):
-rounded=1;whiteSpace=wrap;html=1;fillColor=<fill>;strokeColor=<border>;strokeWidth=0.5;arcSize=7;shadow=0;
+# Commit circle (gray):
+ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;
 
-# Pill (shorter card, pill-rounded):
-rounded=1;whiteSpace=wrap;html=1;fillColor=<fill>;strokeColor=<border>;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=14;fontStyle=1;fontColor=<text>;fontFamily=Helvetica;verticalAlign=middle;align=center;
+# Merge commit circle (purple):
+ellipse;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;aspect=fixed;
 
-# Card title (bold sans):
-text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=<text>;fontFamily=Helvetica;
+# Main branch pill (blue):
+rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=14;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;
 
-# Field line (monospace):
-text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=11;fontColor=#2C2C2A;fontFamily=Courier New;
+# Feature branch pill (green):
+rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;
 
-# Italic caption / secondary:
-text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;
+# HEAD label:
+text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=<branch-border>;fontFamily=Helvetica;
 
-# Solid arrow:
+# Solid arrow (parent pointer):
 endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;
 
-# Dashed arrow:
+# Dashed arrow (reference):
 endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;
 
-# Divider line:
-shape=line;strokeColor=<border>;strokeWidth=0.5;opacity=30;
-
-# Legend dot (ellipse):
-ellipse;fillColor=<border>;strokeColor=none;
+# Background card:
+rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;
 ```
 
-## XML boilerplate
+### XML boilerplate
 
 ```xml
 <mxfile host="app.diagrams.net">
   <diagram id="..." name="...">
-    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1" pageWidth="..." pageHeight="..." math="0" shadow="0">
+    <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1"
+      pageWidth="..." pageHeight="..." math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -139,7 +238,12 @@ ellipse;fillColor=<border>;strokeColor=none;
 </mxfile>
 ```
 
-- All cells `parent="1"`.
-- Readable IDs: `card-commit`, `title-commit`, `arrow-commit-tree`.
-- XML-escape all values: `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`, `"` → `&quot;`. Newlines in values: `&#10;`.
-- Prefer generating `.drawio` files with a Python script for anything non-trivial — easier to edit and regenerate than hand-written XML.
+
+## Commands
+
+```bash
+# Astro site (from astro-site/)
+npm run dev       # develop — hot reload at localhost:4321
+npm run build     # production build to dist/
+npm run preview   # preview production build locally
+```

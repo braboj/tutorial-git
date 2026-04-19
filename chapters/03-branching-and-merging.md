@@ -14,50 +14,66 @@ features at once.
 
 ## Branching
 
-### What exactly is a branch in Git?
+As covered in [Building Blocks](02-building-blocks.md), a branch is a
+pointer to a specific commit. Creating a branch is a "cheap" operation —
+Git does not copy any files, it only creates a new reference. This
+section focuses on how branches are used in practice.
 
- - A branch is a pointer to a specific commit in the revision history.
- - Branches allow parallel work on the same files.
- - Branches can be created, merged, renamed and deleted.
+### Branch workflow
 
-![Branch overview](../assets/images/git-branch-overview.png)
+Here is an example workflow showing how branches are created, used, and
+merged.
 
-### Creating and using branches
+> **Note:** The diagrams below use "Master" — the old default branch
+> name. Modern Git uses `main`. The concepts are identical.
 
-To **create a new branch** means that git will **create a reference to a
-specific commit**. A branch is just a pointer and Git doesn't change the
-project history, and it doesn't copy any files. This is why branching in git
-is called a "cheap" operation. With each new commit, the branch pointer
-will be
-updated to reference the latest commit.
+**1. Initial state** — a linear history with three commits:
 
-Here is an example workflow for git branches:
+![Initial repo](../assets/images/git-branch-before.png)
 
-- the initial state of the repository looks like this...
+**2. Create a branch** — a new `bugfix` branch is created at the same
+commit. Both branches point to commit #3:
 
-  ![Initial repo](../assets/images/git-branch-before.png)
+![New branch](../assets/images/git-branch-new.png)
 
-- after creating and switching to a new branch the repo changes to...
+```shell
+$ git branch bugfix
+$ git switch bugfix
+```
 
-  ![New branch](../assets/images/git-branch-new.png)
+**3. Commit on the new branch** — commit #4 is added on `bugfix`.
+`main` stays at commit #3:
 
-- after making a new commit to the new branch the repo changes to...
+![Change bugfix](../assets/images/git-branch-change-bugfix.png)
 
-  ![Change bugfix](../assets/images/git-branch-change-bugfix.png)
+**4. Commit on main** — switching back to `main` and committing creates
+a divergence. Both branches now have commits the other doesn't:
 
-- after switching and committing to the main branch the repo changes to...
+![Change main](../assets/images/git-branch-change-main.png)
 
-  ![Change main](../assets/images/git-branch-change-main.png)
+```shell
+$ git switch main
+# ... make changes ...
+$ git commit -m "Update on main"
+```
 
-- finally, the branches are merged and the repo changes to...
+**5. Merge** — merging `bugfix` into `main` creates a merge commit (#6)
+that combines both lines of work:
 
-  ![Merge branches](../assets/images/git-branch-merge.png)
+![Merge branches](../assets/images/git-branch-merge.png)
+
+```shell
+$ git merge bugfix
+```
+
+After merging, the `bugfix` branch can be safely deleted — its changes
+are now part of `main`.
 
 ### Deleting branches
 
-To **delete a branch** means that git **removes only the named
-reference** to the latest commit in this branch. Git offers 2 commands to
-remove an existing branch...
+To **delete a branch** means that Git **removes only the named
+reference** to the latest commit in this branch. Git offers two commands
+to remove an existing branch:
 
 ```shell
 git branch -d <branchName>
@@ -89,9 +105,16 @@ git branch -m <oldName> <newName>
 
 Merging is a process of combining changes from different branches. Usually
 this is required when people are working in parallel on the same source code.
-The file versions in each branch are compared and analysed line by line.
+The file versions in each branch are compared and analyzed line by line.
+
+```shell
+$ git switch main              # switch to the branch you want to merge into
+$ git merge feature            # merge "feature" into "main"
+```
 
 ![Merge concept](../assets/images/git-merge-concept.png)
+
+Git chooses the merge strategy automatically based on the branch history:
 
 ### Fast-forward
 When the target branch has no new commits since the source branch was
@@ -100,17 +123,9 @@ commit on the source branch. No merge commit is created.
 
 ![Merge fast-forward](../assets/images/git-merge-fast-forward.png)
 
-### Rebase
-The rebasing command will copy commits from the current branch and replay
-them on top of another branch. Rebasing **must** be used only on local
-(unpushed) history — rebasing shared commits rewrites their hashes and
-causes conflicts for anyone who already has the originals.
-
-![Merge rebase](../assets/images/git-merge-rebase.png)
-
 ### 3-Way merge
 
-When both branches have diverged with new commits, Git will analyse the
+When both branches have diverged with new commits, Git will analyze the
 files to determine how to combine the differences. The 3-way merge algorithm
 uses a common ancestor and the two branch tips to perform the analysis.
 
@@ -121,12 +136,39 @@ marked as a conflict situation and left for the user to resolve.
 
 ![3-way merge concept](../assets/images/git-merge-3-way-concept.png)
 
-### Other merge strategies
+## Rebasing
 
- - Recursive 3-Way on two branches
- - Subtree on two branches
- - Octopus on more than two branches
- - Ours on more than two branches
+Rebasing is an **alternative to merging**. Instead of creating a merge
+commit, it replays your branch's commits on top of another branch,
+producing a linear history.
+
+```shell
+$ git switch feature           # switch to the branch you want to rebase
+$ git rebase main              # replay feature commits on top of main
+```
+
+```
+before:   A ← B ← C  (main)
+                    ↖
+                     D ← E  (feature, HEAD)
+
+after:    A ← B ← C  (main) ← D' ← E'  (feature, HEAD)
+```
+
+D' and E' are **new commits** — they have the same changes as D and E
+but different hashes because their parent changed. The original D and E
+become orphaned.
+
+> **Warning:** Rebasing **must** be used only on local (unpushed)
+> history. Rebasing shared commits rewrites their hashes and causes
+> conflicts for anyone who already has the originals.
+
+| | Merge | Rebase |
+|---|---|---|
+| History | Preserves the branch structure (non-linear) | Produces a straight line (linear) |
+| Creates | A merge commit with two parents | New copies of each commit |
+| Safe on shared branches? | Yes | No — rewrites commit hashes |
+| When to use | Combining finished work | Cleaning up local history before merging |
 
 ## Conflicts
 
@@ -441,28 +483,26 @@ All exercises use the `concepts-lab` repository created in
 [Building Blocks](02-building-blocks.md). If you skipped that chapter, create a new
 repository with at least one commit before starting.
 
+### Exercise 1: Branch Lifecycle
 
-### Exercise 1: Create, Switch, and Delete Branches
-
-**Task:** Practice the full branch lifecycle and observe how references change.
+**Task:** Practice creating, using, merging, and deleting a feature branch.
 
 **Steps:**
 
-1. In `concepts-lab`, confirm you are on the `main` branch with `git branch`
-2. Read `.git/refs/heads/main` and note the commit hash
-3. Create a new branch called `feature/greeting` using `git branch feature/greeting`
-4. Read `.git/refs/heads/feature/greeting` and confirm it points to the same commit
-5. Switch to the new branch with `git switch feature/greeting`
-6. Read `.git/HEAD` and confirm it now references `refs/heads/feature/greeting`
-7. Create a new file `greeting.txt`, stage, and commit it
-8. Read `.git/refs/heads/feature/greeting` again and confirm it advanced to the new commit
-9. Read `.git/refs/heads/main` and confirm it still points to the original commit
-10. Switch back to `main` and delete the branch with `git branch -d feature/greeting`
+1. In `concepts-lab`, confirm you are on `main` with `git branch`
+2. Create and switch to a branch called `feature/greeting` using `git branch feature/greeting` then `git switch feature/greeting`
+3. Create a file `greeting.txt` with the text `Hello from feature branch`
+4. Stage and commit with the message `Add greeting`
+5. Run `git log --oneline --all` to see both branches
+6. Switch back to `main` — confirm `greeting.txt` does not exist on `main`
+7. Merge the feature branch with `git merge feature/greeting`
+8. Confirm `greeting.txt` now exists on `main`
+9. Delete the feature branch with `git branch -d feature/greeting`
+10. Run `git branch` to confirm only `main` remains
 
 **Verify:**
 
-After deletion, the file `.git/refs/heads/feature/greeting` no longer exists. `git branch` lists only `main`. The commit created on the feature branch becomes unreachable.
-
+`git log --oneline --graph` shows the merge. `greeting.txt` exists on `main`. `git branch` lists only `main`.
 
 ### Exercise 2: Three-Way Merge with a Conflict
 
@@ -484,7 +524,6 @@ After deletion, the file `.git/refs/heads/feature/greeting` no longer exists. `g
 **Verify:**
 
 After the merge commit, `git log --oneline --graph` shows the two branches converging. `git ls-files --stage` shows a single stage-0 entry for `config.txt`. The file contains the resolved content with no conflict markers.
-
 
 ### Exercise 3: Stash and Restore Work in Progress
 
@@ -512,42 +551,42 @@ After `git stash pop`, `git status` shows `notes.txt` as a staged new file. `git
 **Q1.** What happens during a fast-forward merge?
 
 - A) Git creates a new merge commit with two parents
-- B) Git moves the target branch tip forward to the source branch tip — no merge commit is created
-- C) Git copies files from one branch to another
+- B) Git copies files from one branch to another
+- C) Git moves the target branch tip forward to the source branch tip — no merge commit is created
 - D) Git rebases the source branch onto the target branch
 
 **Q2.** In a 3-way merge, what are the three revisions Git compares?
 
 - A) HEAD, the index, and the working tree
-- B) The common ancestor, the current branch tip, and the incoming branch tip
-- C) The first commit, the last commit, and the tag
-- D) The local, global, and system configurations
+- B) The first commit, the last commit, and the tag
+- C) The local, global, and system configurations
+- D) The common ancestor, the current branch tip, and the incoming branch tip
 
 **Q3.** What does `git merge --abort` do?
 
 - A) Deletes the branch that caused the conflict
-- B) Restores the repository to the state before the merge began
-- C) Commits the merge with conflict markers still in the files
+- B) Commits the merge with conflict markers still in the files
+- C) Restores the repository to the state before the merge began
 - D) Reverts the last successful merge
 
 **Q4.** Why should you avoid rebasing commits that have already been pushed?
 
 - A) Rebase deletes the commits permanently
-- B) Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
-- C) Rebase only works on the main branch
-- D) Rebase cannot handle merge conflicts
+- B) Rebase only works on the main branch
+- C) Rebase cannot handle merge conflicts
+- D) Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
 
 **Q5.** What does `git stash push -u` do that `git stash push` does not?
 
-- A) It saves ignored files
+- A) It pushes the stash to the remote
 - B) It saves untracked files in addition to tracked changes
-- C) It pushes the stash to the remote
+- C) It saves ignored files
 - D) It creates an annotated stash entry
 
 ### Answers
 
-1. B — Git moves the target branch tip forward to the source branch tip — no merge commit is created
-2. B — The common ancestor, the current branch tip, and the incoming branch tip
-3. B — Restores the repository to the state before the merge began
-4. B — Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
+1. C — Git moves the target branch tip forward to the source branch tip — no merge commit is created
+2. D — The common ancestor, the current branch tip, and the incoming branch tip
+3. C — Restores the repository to the state before the merge began
+4. D — Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
 5. B — It saves untracked files in addition to tracked changes
