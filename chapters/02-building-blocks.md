@@ -206,6 +206,17 @@ Tags are **not** pushed automatically — you must run
 
 ### How Objects Relate
 
+The diagram below shows how objects and references connect. Objects
+(solid arrows) are immutable data stored in `.git/objects/`. References
+(dashed arrows) are named pointers stored in `.git/HEAD` and
+`.git/refs/` that give human-readable names to commits.
+
+![Object Model](../assets/images/git-object-model.png)
+
+Here is a concrete example showing two commits with their trees and
+blobs. Each commit is a full snapshot — commit N has four files,
+commit M has two:
+
 ```
   tag "v1.0"
       │
@@ -220,11 +231,8 @@ Tags are **not** pushed automatically — you must run
    └── blob  .gitignore
 ```
 
-A **tag** points to a **commit**. Each commit points to its **parent**
-(the previous commit) and to a root **tree** (the project directory at
-that moment). The tree points to **blobs** (files) and other **trees**
-(subdirectories). Following these references from any commit, Git can
-reconstruct the exact state of every file at that point in time.
+Following these references from any commit, Git can reconstruct the
+exact state of every file at that point in time.
 
 ### How Objects Are Identified
 
@@ -309,6 +317,7 @@ Add project documentation
 | `-t` | Object type | `commit`, `tree`, `blob`, or `tag` |
 | `-s` | Object size in bytes | `231` |
 | `-p` | Object content (pretty-print) | Depends on the type — see examples above |
+
 ## Index (Staging Area)
 
 The index is the area between your working tree and the repository. It
@@ -486,8 +495,8 @@ move — you stay on your current branch.
 
 ```
   A ← B ← C  (main, HEAD)
-       ↑       ↑
-     fix    feature
+       ↑      ↑
+      fix   feature
 ```
 
 A new branch can point to the current commit (`feature` at C) or to a
