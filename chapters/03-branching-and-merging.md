@@ -7,10 +7,10 @@ order: 3
 ## Overview
 
 This chapter covers the daily workflow of parallel development in Git —
-creating branches, combining work through merging, resolving conflicts,
-and temporarily shelving changes with the stash. These are the operations
-you will use most often when working with others or managing multiple
-features at once.
+creating branches, combining work through merging and rebasing,
+resolving conflicts, and temporarily shelving changes with the stash.
+These are the operations you will use most often when working with others
+or managing multiple features at once.
 
 ## Branching
 
@@ -23,9 +23,6 @@ section focuses on how branches are used in practice.
 
 Here is an example workflow showing how branches are created, used, and
 merged.
-
-> **Note:** The diagrams below use "Master" — the old default branch
-> name. Modern Git uses `main`. The concepts are identical.
 
 **1. Initial state** — a linear history with three commits:
 
@@ -40,6 +37,14 @@ commit. Both branches point to commit #3:
 $ git branch bugfix
 $ git switch bugfix
 ```
+
+The two commands above can be combined into one:
+
+```shell
+$ git switch -c bugfix
+```
+
+The `-c` flag creates the branch and switches to it in a single step.
 
 **3. Commit on the new branch** — commit #4 is added on `bugfix`.
 `main` stays at commit #3:
@@ -71,23 +76,15 @@ are now part of `main`.
 
 ### Deleting branches
 
-To **delete a branch** means that Git **removes only the named
-reference** to the latest commit in this branch. Git offers two commands
-to remove an existing branch:
+Deleting a branch removes only the named reference, not the commits.
 
 ```shell
-git branch -d <branchName>
+git branch -d <branchName>          # safe — only works if merged
+git branch -D <branchName>          # force — deletes even if unmerged
 ```
-will delete the branch only after the changes in the branch are merged. And
-the next command...
 
-```shell
-git branch -D <branchName>
-```
-will delete the branch even if there are unmerged commits. In this case the
-commits will be orphaned and will be deleted by Git during the next
-cleanup of the repository. The branch can thus be restored within a short
-period of time, depending on the number of orphaned objects.
+With `-D`, unmerged commits become orphaned and will be cleaned up by
+Git's garbage collector. Until then, the branch can be restored.
 
 ### Renaming branches
 
@@ -114,9 +111,10 @@ $ git merge feature            # merge "feature" into "main"
 
 ![Merge concept](../assets/images/git-merge-concept.png)
 
-Git chooses the merge strategy automatically based on the branch history:
+Git chooses the merge strategy automatically based on the branch history.
 
 ### Fast-forward
+
 When the target branch has no new commits since the source branch was
 created, Git simply moves the target branch tip forward to the latest
 commit on the source branch. No merge commit is created.
@@ -136,6 +134,37 @@ marked as a conflict situation and left for the user to resolve.
 
 ![3-way merge concept](../assets/images/git-merge-3-way-concept.png)
 
+### Forcing a merge commit
+
+Even when a fast-forward is possible, you can force Git to create a merge
+commit with `--no-ff`:
+
+```shell
+$ git merge --no-ff feature
+```
+
+This preserves the branch structure in history, making it clear that a
+set of commits came from a feature branch. Many teams require `--no-ff`
+merges so that the history shows when work was branched and integrated.
+
+### Squash merge
+
+A squash merge combines all commits from the source branch into a single
+change set but does not create a merge commit:
+
+```shell
+$ git merge --squash feature
+$ git commit -m "Add feature X"
+```
+
+The result is a single commit on the target branch containing all the
+changes. The source branch history is not linked — Git does not record
+that a merge happened, so you must delete the source branch manually
+afterward.
+
+Squash merges are useful when a feature branch contains many small or
+messy commits and you want a clean, single-commit result on `main`.
+
 ## Rebasing
 
 Rebasing is an **alternative to merging**. Instead of creating a merge
@@ -147,21 +176,17 @@ $ git switch feature           # switch to the branch you want to rebase
 $ git rebase main              # replay feature commits on top of main
 ```
 
-```
-before:   A ← B ← C  (main)
-                    ↖
-                     D ← E  (feature, HEAD)
+![Rebase](../assets/images/git-merge-rebase.png)
 
-after:    A ← B ← C  (main) ← D' ← E'  (feature, HEAD)
-```
-
-D' and E' are **new commits** — they have the same changes as D and E
-but different hashes because their parent changed. The original D and E
-become orphaned.
+The replayed commits (5', 6') are **new commits** — they have the same
+changes as the originals but different hashes because their parent
+changed. The original commits become orphaned.
 
 > **Warning:** Rebasing **must** be used only on local (unpushed)
 > history. Rebasing shared commits rewrites their hashes and causes
 > conflicts for anyone who already has the originals.
+
+The table below summarizes when to use each approach:
 
 | | Merge | Rebase |
 |---|---|---|
@@ -169,6 +194,34 @@ become orphaned.
 | Creates | A merge commit with two parents | New copies of each commit |
 | Safe on shared branches? | Yes | No — rewrites commit hashes |
 | When to use | Combining finished work | Cleaning up local history before merging |
+
+## Cherry-picking
+
+Cherry-picking copies a single commit from one branch onto another. Unlike
+merging, it does not bring over the full branch history — only the changes
+from the selected commit.
+
+```shell
+$ git cherry-pick abc1234
+```
+
+Git creates a **new commit** on the current branch with the same changes
+as `abc1234` but a different hash. The original commit remains on its
+branch untouched.
+
+![Cherry-pick](../assets/images/git-cherry-pick.png)
+
+Common use cases:
+
+ - **Backporting a fix** — applying a bug fix from `main` to a release
+   branch without merging all of `main`
+ - **Selective integration** — pulling one useful commit from a feature
+   branch that is not ready to merge in full
+
+> **Caution:** Cherry-picked commits are duplicates — the same change
+> exists in two places with different hashes. If the source branch is
+> later merged, Git usually handles this cleanly, but it can produce
+> confusing history. Prefer merging when possible.
 
 ## Conflicts
 
@@ -183,19 +236,16 @@ decide which changes to keep.
 
 ### When conflicts occur
 
-Conflicts can arise during any operation that combines work from different
-sources:
+Conflicts can arise during any operation that combines work from
+different sources:
 
- - **Merging** — `git merge` combines two branches and finds overlapping
-   changes in the same file region
- - **Rebasing** — `git rebase` replays commits on top of another branch,
-   and a replayed commit touches the same lines as an existing commit
- - **Cherry-picking** — `git cherry-pick` applies a single commit from
-   another branch that conflicts with the current state
- - **Pulling** — `git pull` fetches and merges remote changes that overlap
-   with local changes
- - **Stash application** — `git stash pop` or `git stash apply` restores
-   stashed changes that conflict with the current working tree
+| Operation | When it conflicts |
+|-----------|------------------|
+| `git merge` | Both branches changed the same lines |
+| `git rebase` | A replayed commit touches lines modified upstream |
+| `git cherry-pick` | The picked commit overlaps with the current state |
+| `git pull` | Remote changes overlap with local changes (see [Remote Repositories](04-remote-repositories.md)) |
+| `git stash pop` | Stashed changes conflict with the current working tree |
 
 ### How Git marks conflicts
 
@@ -224,184 +274,98 @@ name of the branch or commit being merged in.
 A single file can contain multiple conflict blocks if several regions
 of the file were changed by both branches.
 
-### Step-by-step resolution workflow
+### Conflicts during merge
 
-Resolving a conflict follows a predictable sequence:
+Resolving a merge conflict follows a predictable sequence:
 
-**1. Identify the conflicting files**
-
-After a failed merge, `git status` lists every file that needs attention:
+![Conflict resolution workflow](../assets/images/git-conflict-workflow.png)
 
 ```shell
-$ git status
-On branch main
-You have unmerged paths.
-
-Unmerged paths:
-  (use "git add <file>..." to mark resolution)
-        both modified:   src/config.yaml
-        both modified:   src/main.py
+$ git merge feature                  # 1. Git stops and reports conflicts
+$ git status                         # 2. Identify the conflicting files
+# ... edit each file, remove markers, keep/combine/rewrite content ...
+$ git add src/config.yaml            # 3. Stage each resolved file
+$ git commit                         # 4. Complete the merge
 ```
 
-Files marked as `both modified` contain conflict markers.
-
-**2. Open and understand the conflict markers**
-
-Open each conflicting file in an editor. Read both versions carefully.
-Understand what each branch intended before deciding how to resolve the
-conflict. Look at the surrounding context — the unchanged lines above and
-below the markers often clarify the intent of each change.
-
-**3. Edit to resolve**
-
-There are three common resolution strategies:
-
- - **Keep one side** — delete the markers and the content from the side
-   you do not want
- - **Combine both** — merge the two versions into a single coherent result
-   and remove all markers
- - **Rewrite** — discard both versions and write something entirely new
-   that satisfies the intent of both changes
-
-After editing the file must not contain any conflict markers. Any remaining
-`<<<<<<<`, `=======`, or `>>>>>>>` lines will cause problems.
-
-**4. Stage resolved files**
-
-Once a file is resolved, stage it to tell Git the conflict is handled:
+If the conflict is too complex or the merge was started by mistake,
+abort and return to the pre-merge state:
 
 ```shell
-git add src/config.yaml
-git add src/main.py
+$ git merge --abort
 ```
-
-**5. Complete the merge**
-
-After all conflicts are staged, finalize the merge with a commit:
-
-```shell
-git commit
-```
-
-Git pre-fills the commit message with merge information. You can accept
-the default or edit it to describe how the conflicts were resolved.
-
-### Aborting a conflicted merge
-
-If the conflicts are too complex or the merge was started by mistake,
-you can abandon it entirely:
-
-```shell
-git merge --abort
-```
-
-This restores the repository to the state it was in before the merge
-began. All conflict markers and staged resolutions are discarded. The
-working tree and index return to the pre-merge state.
-
-This command is safe — it does not delete any commits or branches.
 
 ### Conflicts during rebase
 
 Rebasing replays commits one at a time, so conflicts can occur at each
-step. The workflow differs slightly from a merge conflict:
+step. The same resolve-stage cycle repeats for every conflicting commit:
+
+![Rebase conflict workflow](../assets/images/git-conflict-rebase-workflow.png)
 
 ```shell
-$ git rebase main
-CONFLICT (content): Merge conflict in src/main.py
-error: could not apply abc1234... Add feature X
+$ git rebase main                    # 1. Git stops at the first conflict
+# ... edit the file, remove markers ...
+$ git add src/main.py                # 2. Stage the resolved file
+$ git rebase --continue              # 3. Replay the next commit
+# ... repeat 1-3 if more conflicts arise ...
 ```
 
-**1.** Resolve the conflict in the file as described above.
-
-**2.** Stage the resolved file:
+To abandon the rebase and return to the original state:
 
 ```shell
-git add src/main.py
+$ git rebase --abort
 ```
 
-**3.** Continue the rebase to process the next commit:
+To skip the current conflicting commit (dropping its changes):
 
 ```shell
-git rebase --continue
-```
-
-If more commits produce conflicts, Git stops again and the process
-repeats. To abandon the entire rebase and return to the original state:
-
-```shell
-git rebase --abort
-```
-
-To skip the current conflicting commit entirely (dropping its changes):
-
-```shell
-git rebase --skip
+$ git rebase --skip
 ```
 
 ### Using merge tools
 
-Git can launch a graphical or terminal-based merge tool to help resolve
-conflicts visually:
+Instead of editing conflict markers by hand, you can use a graphical
+merge tool. Most tools show three panes (base, ours, theirs) alongside
+a result pane.
 
 ```shell
-git mergetool
-```
-
-This opens each conflicting file in the configured tool. Popular merge
-tools include **vimdiff**, **meld**, **kdiff3**, **Beyond Compare**, and
-**VS Code**. To set a default tool:
-
-```shell
-git config --global merge.tool meld
-```
-
-Most merge tools display three panes — the base version (common ancestor),
-the current branch version, and the incoming branch version — alongside a
-result pane where you build the final output.
-
-After the tool saves the resolved file, Git marks it as resolved. Some
-tools create `.orig` backup files. To disable these:
-
-```shell
-git config --global mergetool.keepBackup false
+git mergetool                              # launch the configured tool
+git config --global merge.tool meld        # set a default (meld, kdiff3, VS Code, etc.)
+git config --global mergetool.keepBackup false   # disable .orig backup files
 ```
 
 ### Preventing conflicts
 
-Conflicts cannot be eliminated entirely, but their frequency and severity
-can be reduced:
+Conflicts cannot be eliminated, but a few habits keep them small and
+rare:
 
- - **Communicate** — coordinate with team members about who is working on
-   which files to avoid overlapping changes
- - **Keep branches short-lived** — the longer a branch diverges from the
-   main line, the higher the chance of conflicts
- - **Pull frequently** — regularly integrate upstream changes into your
-   branch with `git pull` or `git rebase` to stay close to the latest state
- - **Make small, focused commits** — smaller changes are easier to merge
-   and produce simpler conflicts when they do occur
- - **Avoid reformatting entire files** — whitespace-only or style-only
-   changes across a whole file create conflicts with every other branch
-   that touches that file
- - **Use `.gitattributes`** — define merge strategies for specific file
-   types (e.g., always accept ours for generated lock files)
+| Habit | Why it helps |
+|-------|-------------|
+| Keep branches short-lived | Less divergence means fewer overlapping changes |
+| Pull frequently | Staying close to `main` catches conflicts early |
+| Make small, focused commits | Smaller changes produce simpler conflicts |
+| Coordinate with teammates | Knowing who edits which files avoids surprises |
+| Avoid whole-file reformatting | Style-only changes conflict with every other branch |
 
 ### Practical example
 
 Two developers work on the same file. Alice changes a greeting on the
 `main` branch, and Bob changes it on a `feature` branch.
 
-**Initial file (`greeting.txt`) on both branches:**
+Initial file (`greeting.txt`) on both branches:
+
 ```text
 Hello, welcome to the project.
 ```
 
-**Alice's change on `main`:**
+Alice changes it on `main`:
+
 ```text
 Hello, welcome to the project! We are glad you are here.
 ```
 
-**Bob's change on `feature`:**
+Bob changes it on `feature`:
+
 ```text
 Hi there, welcome to the project.
 ```
@@ -445,6 +409,8 @@ The conflict is resolved and the repository history records the merge.
 The stash allows changes to be saved without committing broken or untested
 code before switching to another branch.
 
+![Stash workflow](../assets/images/git-stash.png)
+
 ### When to use the stash
 
 You are working on a feature branch and need to switch to `main` for an
@@ -452,30 +418,29 @@ urgent fix, but your changes are not ready to commit. The stash saves
 your working tree and index state, restores a clean working tree, and
 lets you come back later.
 
-### Basic usage
-
-```shell
-$ git stash push -m "wip: feature X"   # save changes with a label
-$ git stash list                        # list all stash entries
-$ git stash pop                         # restore latest stash and remove it
-$ git stash apply                       # restore latest stash but keep it
-$ git stash drop                        # delete latest stash entry
-```
-
-By default, `git stash` saves only tracked files. To include untracked
-files, add the `-u` flag:
-
-```shell
-$ git stash push -u -m "wip: including new files"
-```
-
 ### How it works internally
 
-Git stores each stash as a special commit object with three parents:
-the original revision, a snapshot of the index, and a snapshot of the
-working tree. When you run `git stash pop`, Git follows these parent
-references to restore the files. The stash reference is stored in
-`.git/refs/stash`.
+Git does not use a separate storage mechanism for stashes — it reuses
+the same commit objects that power the rest of the repository.
+
+![Stash internals](../assets/images/git-stash-internals.png)
+
+When you stash, your work may exist in two places: files you have
+edited but not staged (working tree), and files you have staged with
+`git add` but not committed (index). Git preserves both separately so
+that when you restore, staged files return to the index and unstaged
+files return to the working tree.
+
+A stash is a commit object **W** with two parents:
+
+| Commit | Contains | Points to |
+|--------|----------|-----------|
+| **W** | Working tree changes | HEAD and I |
+| **I** | Staged changes | HEAD |
+| **U** | Untracked files (only with `-u`) | — |
+
+`git stash pop` restores both snapshots and removes the stash entry.
+`git stash apply` does the same but keeps the entry for later reuse.
 
 ## Exercises
 
@@ -525,7 +490,68 @@ repository with at least one commit before starting.
 
 After the merge commit, `git log --oneline --graph` shows the two branches converging. `git ls-files --stage` shows a single stage-0 entry for `config.txt`. The file contains the resolved content with no conflict markers.
 
-### Exercise 3: Stash and Restore Work in Progress
+### Exercise 3: No-fast-forward and squash merge
+
+**Task:** Compare `--no-ff` and `--squash` merge strategies.
+
+**Steps:**
+
+1. In `concepts-lab`, create and switch to `feature/noff`
+2. Create a file `noff.txt`, stage and commit with the message `Add noff`
+3. Switch to `main` and run `git merge --no-ff feature/noff`
+4. Run `git log --oneline --graph` — note the merge commit even though fast-forward was possible
+5. Create and switch to `feature/squash`
+6. Create two files `squash1.txt` and `squash2.txt`, commit each separately
+7. Switch to `main` and run `git merge --squash feature/squash`
+8. Run `git status` — the changes are staged but not committed
+9. Commit with the message `Add squash files`
+10. Run `git log --oneline --graph` — note the single commit with no merge history
+
+**Verify:**
+
+The `--no-ff` merge shows a merge commit with two parents. The `--squash` merge shows a single flat commit. `git branch -d feature/squash` warns the branch is not fully merged because Git did not record a merge relationship.
+
+### Exercise 4: Cherry-pick a commit
+
+**Task:** Copy a single commit from one branch to another using cherry-pick.
+
+**Steps:**
+
+1. In `concepts-lab`, create and switch to `feature/cherry`
+2. Create a file `fix.txt` with the content `Bug fix`, commit with the message `Fix bug`
+3. Create a file `wip.txt` with the content `Not ready`, commit with the message `Work in progress`
+4. Run `git log --oneline` and note the hash of the `Fix bug` commit
+5. Switch to `main`
+6. Run `git cherry-pick <hash>` using the hash from step 4
+7. Run `git log --oneline` on `main` — the fix appears as a new commit
+8. Confirm `fix.txt` exists on `main` but `wip.txt` does not
+
+**Verify:**
+
+`git log --oneline` on `main` shows the cherry-picked commit with a different hash than the original. `fix.txt` exists, `wip.txt` does not. The `feature/cherry` branch is unchanged.
+
+### Exercise 5: Rebase a feature branch
+
+**Task:** Rebase a feature branch onto `main` to produce a linear history.
+
+**Steps:**
+
+1. In `concepts-lab`, create and switch to `feature/rebase`
+2. Create a file `rebase1.txt`, commit with the message `Add rebase1`
+3. Create a file `rebase2.txt`, commit with the message `Add rebase2`
+4. Switch to `main` and create a file `main-update.txt`, commit with the message `Update main`
+5. Run `git log --oneline --all --graph` — note the divergence
+6. Switch to `feature/rebase`
+7. Run `git rebase main`
+8. Run `git log --oneline --all --graph` — note the linear history
+9. Check that `main-update.txt` exists on `feature/rebase`
+10. Run `git log --oneline` and compare the hashes of your two feature commits with the originals from step 5
+
+**Verify:**
+
+The graph shows a straight line — no fork. The feature commits have new hashes because their parent changed. `main-update.txt` is present on the feature branch.
+
+### Exercise 6: Stash and restore work in progress
 
 **Task:** Use the stash to save uncommitted changes, switch branches, then restore them.
 
@@ -576,12 +602,26 @@ After `git stash pop`, `git status` shows `notes.txt` as a staged new file. `git
 - C) Rebase cannot handle merge conflicts
 - D) Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
 
-**Q5.** What does `git stash push -u` do that `git stash push` does not?
+**Q5.** What does `git merge --no-ff` do?
 
-- A) It pushes the stash to the remote
-- B) It saves untracked files in addition to tracked changes
-- C) It saves ignored files
-- D) It creates an annotated stash entry
+- A) Prevents the merge from happening
+- B) Creates a merge commit even when a fast-forward is possible
+- C) Merges without resolving conflicts
+- D) Deletes the source branch after merging
+
+**Q6.** What does `git cherry-pick` do?
+
+- A) Merges an entire branch into the current branch
+- B) Copies a single commit onto the current branch with a new hash
+- C) Moves a commit from one branch to another, removing it from the source
+- D) Reverts a specific commit
+
+**Q7.** What does a stash store internally?
+
+- A) A patch file in `.git/stash/`
+- B) A diff of the working tree only
+- C) Commit objects for the working tree, index, and optionally untracked files
+- D) A compressed archive of the entire repository
 
 ### Answers
 
@@ -589,4 +629,6 @@ After `git stash pop`, `git status` shows `notes.txt` as a staged new file. `git
 2. D — The common ancestor, the current branch tip, and the incoming branch tip
 3. C — Restores the repository to the state before the merge began
 4. D — Rebase rewrites commit hashes, causing conflicts for anyone who already has the originals
-5. B — It saves untracked files in addition to tracked changes
+5. B — Creates a merge commit even when a fast-forward is possible
+6. B — Copies a single commit onto the current branch with a new hash
+7. C — Commit objects for the working tree, index, and optionally untracked files

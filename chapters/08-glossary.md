@@ -1,7 +1,7 @@
 ---
 title: "Glossary"
 section: "glossary"
-order: 7
+order: 8
 ---
 
 ## Glossary

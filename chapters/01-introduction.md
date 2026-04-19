@@ -151,8 +151,8 @@ full history.
 
 Commands are grouped by experience level:
 
-- **Beginner** — Help, Create, Configure, Track, Branch
-- **Advanced** — Sync, Revert, Inspect, Reuse
+- **Beginner** — Help, Create, Configure, Track, Inspect
+- **Advanced** — Sync, Revert, Branch, Reuse
 - **Expert** — Rewrite and Cleanup (can destroy history — use with caution)
 
 ### Help

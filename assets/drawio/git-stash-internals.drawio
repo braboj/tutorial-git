@@ -1,0 +1,55 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="stash-internals" name="Stash internals">
+    <mxGraphModel dx="1106" dy="969" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580" pageHeight="340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="310" width="550" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="commit-head" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="HEAD" vertex="1">
+          <mxGeometry height="50" width="50" x="40" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="commit-index" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;aspect=fixed;" value="I" vertex="1">
+          <mxGeometry height="50" width="50" x="200" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="label-index" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="index snapshot" vertex="1">
+          <mxGeometry height="18" width="100" x="175" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="commit-w" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;aspect=fixed;" value="W" vertex="1">
+          <mxGeometry height="50" width="50" x="200" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="label-w" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="working tree snapshot" vertex="1">
+          <mxGeometry height="18" width="140" x="260" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="commit-u" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="U" vertex="1">
+          <mxGeometry height="50" width="50" x="200" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="label-u" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="untracked files (with -u)" vertex="1">
+          <mxGeometry height="18" width="170" x="260" y="222" as="geometry" />
+        </mxCell>
+        <mxCell id="pill-stash" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=12;fontStyle=1;fontColor=#854D0E;fontFamily=Courier New;verticalAlign=middle;align=center;" value="stash@{0}" vertex="1">
+          <mxGeometry height="30" width="100" x="400" y="138" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-i-head" edge="1" parent="1" source="commit-index" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="commit-head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-w-head" edge="1" parent="1" source="commit-w" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="commit-head">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-w-i" edge="1" parent="1" source="commit-w" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="commit-index">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-w-u" edge="1" parent="1" source="commit-w" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;" target="commit-u">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-stash-w" edge="1" parent="1" source="pill-stash" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;" target="commit-w">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-storage" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;" value="stored in &lt;font face=&quot;Courier New&quot;&gt;.git/refs/stash&lt;/font&gt;" vertex="1">
+          <mxGeometry height="18" width="170" x="390" y="172" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="conflict-rebase-workflow" name="Rebase conflict workflow">
+    <mxGraphModel dx="900" dy="560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="780" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="750" height="350" as="geometry" />
+        </mxCell>
+
+        <!-- Step 1: git rebase -->
+        <mxCell id="step-rebase" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git rebase" vertex="1">
+          <mxGeometry x="30" y="120" width="90" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: conflict? -->
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="conflict?" vertex="1">
+          <mxGeometry x="160" y="105" width="90" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- No conflict: next commit or done -->
+        <mxCell id="step-done" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="rebase&#xa;complete" vertex="1">
+          <mxGeometry x="175" y="30" width="60" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- Step 2: edit -->
+        <mxCell id="step-resolve" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="edit files&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;remove markers&lt;/i&gt;" vertex="1">
+          <mxGeometry x="290" y="115" width="100" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Step 3: stage -->
+        <mxCell id="step-stage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git add" vertex="1">
+          <mxGeometry x="430" y="120" width="70" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Step 4: continue -->
+        <mxCell id="step-continue" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#1E40AF;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git rebase&#xa;--continue" vertex="1">
+          <mxGeometry x="540" y="115" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Loop arrow: continue back to decision -->
+        <mxCell id="arr-loop" edge="1" parent="1" source="step-continue" target="decision" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="585" y="90" />
+              <mxPoint x="205" y="90" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-next" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="next commit" vertex="1">
+          <mxGeometry x="360" y="74" width="80" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Abort path -->
+        <mxCell id="step-abort" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#791F1F;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git rebase&#xa;--abort" vertex="1">
+          <mxGeometry x="290" y="250" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="label-abort" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#791F1F;fontFamily=Helvetica;" value="restores original state" vertex="1">
+          <mxGeometry x="400" y="256" width="160" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Skip path -->
+        <mxCell id="step-skip" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#854D0E;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git rebase&#xa;--skip" vertex="1">
+          <mxGeometry x="290" y="310" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="label-skip" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#854D0E;fontFamily=Helvetica;" value="drops this commit, continues" vertex="1">
+          <mxGeometry x="400" y="316" width="190" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows -->
+        <mxCell id="arr-rebase-decision" edge="1" parent="1" source="step-rebase" target="decision" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- No conflict: up -->
+        <mxCell id="arr-no-conflict" edge="1" parent="1" source="decision" target="step-done" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-no" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="no" vertex="1">
+          <mxGeometry x="170" y="82" width="30" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Yes conflict: right -->
+        <mxCell id="arr-yes-conflict" edge="1" parent="1" source="decision" target="step-resolve" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-yes" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="yes" vertex="1">
+          <mxGeometry x="250" y="110" width="30" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- resolve → stage -->
+        <mxCell id="arr-resolve-stage" edge="1" parent="1" source="step-resolve" target="step-stage" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- stage → continue -->
+        <mxCell id="arr-stage-continue" edge="1" parent="1" source="step-stage" target="step-continue" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- abort path -->
+        <mxCell id="arr-abort" edge="1" parent="1" source="step-resolve" target="step-abort" style="endArrow=classic;html=1;strokeColor=#A32D2D;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- skip path -->
+        <mxCell id="arr-skip" edge="1" parent="1" source="step-abort" target="step-skip" style="endArrow=classic;html=1;strokeColor=#CA8A04;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

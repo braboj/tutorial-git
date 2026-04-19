@@ -1,0 +1,70 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="conflict-workflow" name="Conflict resolution workflow">
+    <mxGraphModel dx="1106" dy="969" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="780" pageHeight="320" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="290" width="750" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="step-merge" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git merge" vertex="1">
+          <mxGeometry height="40" width="90" x="30" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="decision" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="conflict?" vertex="1">
+          <mxGeometry height="70" width="90" x="160" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="step-done-fast" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="merge&#xa;complete" vertex="1">
+          <mxGeometry height="44" width="60" x="175" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="step-identify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="git status&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;identify files&lt;/i&gt;" vertex="1">
+          <mxGeometry height="50" width="100" x="290" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="step-resolve" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="edit files&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;remove markers&lt;/i&gt;" vertex="1">
+          <mxGeometry height="50" width="100" x="430" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="step-stage" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git add" vertex="1">
+          <mxGeometry height="40" width="70" x="570" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="step-commit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#15803D;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git commit" vertex="1">
+          <mxGeometry height="40" width="70" x="680" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="step-abort" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#791F1F;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="git merge&#xa;--abort" vertex="1">
+          <mxGeometry height="40" width="100" x="290" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="label-abort" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#791F1F;fontFamily=Helvetica;" value="restores pre-merge state" vertex="1">
+          <mxGeometry height="28" width="170" x="400" y="226" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-merge-decision" edge="1" parent="1" source="step-merge" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="decision">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-no-conflict" edge="1" parent="1" source="decision" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="step-done-fast">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-no" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="no" vertex="1">
+          <mxGeometry height="18" width="30" x="170" y="82" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-yes-conflict" edge="1" parent="1" source="decision" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="step-identify">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-yes" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="yes" vertex="1">
+          <mxGeometry height="18" width="30" x="250" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-identify-resolve" edge="1" parent="1" source="step-identify" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="step-resolve">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-resolve-stage" edge="1" parent="1" source="step-resolve" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="step-stage">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-stage-commit" edge="1" parent="1" source="step-stage" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="step-commit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-abort" edge="1" parent="1" source="step-identify" style="endArrow=classic;html=1;strokeColor=#A32D2D;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="step-abort">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-escape" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#791F1F;fontFamily=Helvetica;" value="too complex?" vertex="1">
+          <mxGeometry height="18" width="90" x="340" y="178" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
