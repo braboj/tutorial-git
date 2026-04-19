@@ -11,8 +11,6 @@ const docs = defineCollection({
     title: z.string(),
     section: z.string(),
     order: z.number(),
-    subsection: z.string().optional(),
-    subsectionOrder: z.number().optional(),
   }),
 });
 

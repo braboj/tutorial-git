@@ -323,16 +323,20 @@ a:hover {
 
 .sidebar-toc ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.sidebar-toc li {
-  margin-bottom: var(--space-xs);
+.sidebar-toc > ul > li {
+  margin-bottom: var(--space-sm);
+}
+
+.sidebar-toc ul ul > li {
+  margin-bottom: 0;
 }
 
 .sidebar-toc a {
   color: var(--color-fg-muted);
-  display: block;
-  padding: var(--space-xs) 0;
 }
 
 .sidebar-toc a:hover,
@@ -343,6 +347,35 @@ a:hover {
 
 .sidebar-toc ul ul {
   padding-left: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.toc-details {
+  margin: 0;
+  padding: 0;
+}
+
+.toc-details summary {
+  list-style: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.toc-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.toc-details summary:hover::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.8em;
+  color: var(--color-fg-muted);
+}
+
+.toc-details[open] > summary:hover::after {
+  content: "−";
 }
 
 /* Content area */
@@ -436,6 +469,7 @@ a:hover {
 
 .content img {
   max-width: 100%;
+  height: auto;
   border-radius: 4px;
 }
 
@@ -475,7 +509,8 @@ a:hover {
 }
 
 .content pre {
-  background: var(--color-bg-alt);
+  background: #1e1e1e;
+  color: #e0e0e0;
   border-radius: 4px;
   padding: var(--space-md);
   margin-bottom: var(--space-lg);
@@ -483,6 +518,7 @@ a:hover {
 }
 
 .content pre code {
+  color: inherit;
   background: none;
   padding: 0;
   font-size: var(--font-size-sm);
