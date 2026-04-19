@@ -60,6 +60,22 @@ Extends `base/scope.md` with tutorial-specific boundaries:
 - Restructuring other chapters, creating new projects, or adding
   infrastructure is out of scope unless explicitly requested
 
+## End-of-session checklist
+
+Before ending a session, verify all of the following:
+
+1. **Dev journal** — update `docs/dev-journal.md` with a session entry
+   (date, tool, key changes, decisions, open issues)
+2. **ONBOARDING.md** — update `docs/ONBOARDING.md` if prerequisites,
+   setup steps, or project structure changed
+3. **PLAYBOOK.md** — update `docs/PLAYBOOK.md` if operational
+   workflows changed (diagram export, chapter review process, etc.)
+4. **solid-ai-templates** — check if upstream submodule needs updates
+   based on new patterns or conventions discovered during the session
+   (e.g. new scope rules, documentation rules, quality conventions)
+5. **Open issues** — close resolved GitHub issues, update or create
+   issues for remaining work
+
 
 ## Content conventions
 
