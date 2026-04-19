@@ -6,292 +6,400 @@ order: 7
 
 ## Overview
 
-This chapter is a sequence of hands-on workflows that build on each other.
-Start from Exercise 1 and work through in order — later exercises use
-repositories created in earlier ones. Each exercise includes verification
-steps so you can confirm the result before moving on.
+This chapter is a quick-reference collection of recipes for common
+Git tasks. Each recipe shows the problem, the commands to solve it,
+and what to watch out for.
 
-For command syntax, see [Appendix](08-appendix.md). For definitions, see
-[Glossary](09-glossary.md). For conceptual background, see
-[Building Blocks](02-building-blocks.md) and [Branching and Merging](03-branching-and-merging.md).
+For command syntax, see [Appendix](08-appendix.md). For definitions,
+see [Glossary](09-glossary.md).
 
----
+## Undoing changes
 
-### Exercise 1: First Repository
+### Discard unstaged changes to a file
 
-**Task:** Initialize a new repository, track files, and make your first commits.
+```shell
+$ git restore <file>
+```
 
-**Steps:**
+Reverts the file in your working tree to match the last commit.
+Uncommitted edits are lost.
 
-1. Create a new directory called `practice-repo` and initialize a git repository
-2. Configure your name and email for this repository
-3. Create a file called `README.md` with the text `# Practice Project`
-4. Stage the file and commit it with the message `Initial commit`
-5. Create a file called `app.py` with the text `print("hello")`
-6. Create a file called `notes.txt` with the text `TODO: add tests`
-7. Stage only `app.py` and commit with the message `Add application entry point`
-8. Stage `notes.txt` and commit with the message `Add development notes`
+### Unstage a file without losing changes
 
-**Verify:**
+```shell
+$ git restore --staged <file>
+```
 
-Run `git log --oneline` — you should see three commits in reverse
-chronological order.
+Removes the file from the index but keeps your edits in the working
+tree.
 
----
+### Undo the last commit but keep changes staged
 
-### Exercise 2: Inspecting History
+```shell
+$ git reset --soft HEAD~1
+```
 
-**Task:** Use status, log, and diff to understand what changed and when.
+The commit is removed but your changes stay in the index, ready to
+recommit.
 
-**Steps:**
+### Undo the last commit and unstage changes
 
-1. Continue in the `practice-repo` from Exercise 1
-2. Edit `app.py` — change the print message to `print("hello, world")`
-3. Run `git status` and note the file state
-4. Run `git diff` to see the unstaged change
-5. Stage the file, then run `git diff --staged` to see the staged change
-6. Commit with the message `Update greeting message`
-7. Run `git log --oneline --all` to see the full history
-8. Run `git show HEAD` to inspect the latest commit in detail
+```shell
+$ git reset HEAD~1
+```
 
-**Verify:**
+The default (`--mixed`). Changes go back to the working tree as
+unstaged edits.
 
-`git status` reports a clean working tree. `git log --oneline` shows
-four commits.
+### Undo the last commit and discard all changes
 
----
+```shell
+$ git reset --hard HEAD~1
+```
 
-### Exercise 3: Tagging a Release
+The commit and all changes are gone. Recover with `git reflog` if
+needed.
 
-**Task:** Create annotated and lightweight tags to mark specific commits.
+### Revert a commit without rewriting history
 
-**Steps:**
+```shell
+$ git revert <hash>
+```
 
-1. Continue in the `practice-repo` from Exercise 2
-2. Create an annotated tag `v1.0.0` on the current commit with the message
-   `First stable release`
-3. Edit `app.py` — add a second line: `print("goodbye")`
-4. Stage and commit with the message `Add farewell message`
-5. Create a lightweight tag `v1.1.0-beta` on this commit
-6. Run `git tag` to list all tags
-7. Run `git show v1.0.0` to inspect the annotated tag
+Creates a new commit that undoes the changes. Safe to use on shared
+branches.
 
-**Verify:**
+### Recover a lost commit
 
-`git tag` lists both `v1.0.0` and `v1.1.0-beta`. `git show v1.0.0`
-displays the tag metadata and the commit it points to.
+```shell
+$ git reflog                       # find the hash
+$ git branch recovered <hash>      # or: git reset --hard <hash>
+```
 
----
+Works as long as the reflog entry has not expired (default: 30 days).
 
-### Exercise 4: Removing and Moving Files
+## Branching
 
-**Task:** Use git rm and git mv to manage tracked files properly.
+### Create a branch and switch to it
 
-**Steps:**
+```shell
+$ git switch -c feature/name
+```
 
-1. Continue in the `practice-repo` from Exercise 3
-2. Remove `notes.txt` from tracking and from disk using `git rm`
-3. Commit with the message `Remove development notes`
-4. Rename `app.py` to `main.py` using `git mv`
-5. Commit with the message `Rename app.py to main.py`
-6. Run `git log --oneline --follow main.py` to trace the rename history
+### Delete a branch (local and remote)
 
-**Verify:**
+```shell
+$ git branch -d feature/name                # local (safe — only if merged)
+$ git branch -D feature/name                # local (force — even if unmerged)
+$ git push origin --delete feature/name     # remote
+```
 
-`ls` shows only `README.md` and `main.py`. `git log --follow main.py`
-shows commits from before and after the rename.
+### Rename the current branch
 
----
+```shell
+$ git branch -m new-name
+```
 
-### Exercise 5: Feature Branch Workflow
+### See which branches are merged into main
 
-**Task:** Create a feature branch, make changes, and merge back to main.
+```shell
+$ git branch --merged main
+```
 
-**Steps:**
+Safe to delete any branch listed here (except `main` itself).
 
-1. Continue in the `practice-repo` from Exercise 4
-2. Create and switch to a branch called `feature/add-config`
-3. Create a file `config.yaml` with the text `debug: true`
-4. Stage and commit with the message `Add configuration file`
-5. Add another line to `config.yaml`: `port: 8080`
-6. Stage and commit with the message `Add port setting`
-7. Switch back to `main`
-8. Merge `feature/add-config` into `main`
+## Merging
 
-**Verify:**
+### Merge a feature branch into main
 
-`git log --oneline --graph` shows the merge. `config.yaml` exists on
-`main` with both lines.
+```shell
+$ git switch main
+$ git merge feature/name
+```
 
----
+### Force a merge commit (no fast-forward)
 
-### Exercise 6: Comparing Branches with Diff
+```shell
+$ git merge --no-ff feature/name
+```
 
-**Task:** Use diff to compare branches before merging.
+### Squash a branch into a single commit
 
-**Steps:**
+```shell
+$ git merge --squash feature/name
+$ git commit -m "Add feature"
+```
 
-1. Continue in the `practice-repo` from Exercise 5
-2. Create and switch to a branch called `feature/logging`
-3. Create a file `logger.py` with the text `import logging`
-4. Stage and commit with the message `Add logger module`
-5. Edit `main.py` — add a line: `import logger`
-6. Stage and commit with the message `Integrate logger into main`
-7. Before merging, switch to `main` and run `git diff main..feature/logging`
-8. Run `git diff main..feature/logging --stat` for a summary
-9. Merge `feature/logging` into `main`
+### Abort a conflicted merge
 
-**Verify:**
+```shell
+$ git merge --abort
+```
 
-`git diff main..feature/logging` produces no output after the merge
-(the branches point to the same commit or the merge commit includes all changes).
+Returns everything to the pre-merge state.
 
----
+### Resolve a merge conflict
 
-### Exercise 7: Stashing Work in Progress
+```shell
+$ git status                        # identify conflicting files
+# ... edit each file, remove markers ...
+$ git add <file>                    # stage resolved file
+$ git commit                        # complete the merge
+```
 
-**Task:** Use stash to save incomplete work while switching branches for an
-urgent fix.
+## Rebasing
 
-**Steps:**
+### Rebase a feature branch onto main
 
-1. Continue in the `practice-repo` from Exercise 6
-2. Create and switch to a branch called `feature/docs`
-3. Edit `README.md` — add a line: `## Installation`
-4. Stage the change but do not commit
-5. An urgent fix is needed — stash your changes with the message `WIP: docs`
-6. Switch to `main` and create a branch called `hotfix/typo`
-7. Edit `config.yaml` — change `debug: true` to `debug: false`
-8. Stage and commit with the message `Fix: disable debug in production`
-9. Switch to `main` and merge `hotfix/typo`
-10. Switch back to `feature/docs` and restore your stashed changes
-11. Commit with the message `Add installation section to README`
+```shell
+$ git switch feature/name
+$ git rebase main
+```
 
-**Verify:**
+### Squash commits with interactive rebase
 
-`git stash list` is empty. Both branches' work is committed.
-`config.yaml` has `debug: false` and `README.md` has the Installation heading.
+```shell
+$ git rebase -i HEAD~3
+# change "pick" to "squash" for commits to combine
+```
 
----
+### Abort a conflicted rebase
 
-### Exercise 8: Resolving a Merge Conflict
+```shell
+$ git rebase --abort
+```
 
-**Task:** Create a merge conflict intentionally and resolve it.
+### Continue after resolving a rebase conflict
 
-**Steps:**
+```shell
+$ git add <file>
+$ git rebase --continue
+```
 
-1. Continue in the `practice-repo` from Exercise 7
-2. On `main`, edit `main.py` — change the first line to `print("hello from main")`
-3. Stage and commit with the message `Update greeting on main`
-4. Create and switch to a branch called `feature/greeting`
-5. Edit `main.py` — change the first line to `print("hello from feature")`
-6. Stage and commit with the message `Update greeting on feature`
-7. Switch to `main` and attempt to merge `feature/greeting`
-8. Git reports a conflict — open `main.py` and find the conflict markers
-9. Resolve the conflict by keeping the text `print("hello from both")`
-10. Stage the resolved file and complete the merge commit
+## Remote operations
 
-**Verify:**
+### Push a new branch and set up tracking
 
-`git log --oneline --graph` shows the merge. `main.py` contains
-`print("hello from both")` on the first line.
+```shell
+$ git push -u origin feature/name
+```
 
----
+### Pull with rebase (avoid merge commits)
 
-### Exercise 9: Rewriting History with Rebase
+```shell
+$ git pull --rebase origin main
+```
 
-**Task:** Use rebase to create a linear history instead of a merge commit.
+### Fix a rejected push
 
-**Steps:**
+```shell
+$ git pull origin main              # fetch + merge
+$ git push origin main              # retry
+```
 
-1. Create a fresh repository called `rebase-practice` and initialize it
-2. Create `index.html` with the text `<h1>Home</h1>`, stage, and commit
-3. Create a branch called `feature/about` and switch to it
-4. Create `about.html` with the text `<h1>About</h1>`, stage, and commit
-5. Add a second line `<p>Company info</p>` to `about.html`, stage, and commit
-6. Switch to `main` and add `<p>Welcome</p>` to `index.html`, stage, and commit
-7. Switch to `feature/about` and rebase onto `main`
-8. Switch to `main` and fast-forward merge `feature/about`
+### Force push safely (after rebase)
 
-**Verify:**
+```shell
+$ git push --force-with-lease origin feature/name
+```
 
-`git log --oneline --graph` shows a straight line with no merge
-commits. `index.html` and `about.html` both exist with their latest content.
+Never use `--force` on shared branches.
 
----
+### Sync a fork with upstream
 
-### Exercise 10: Cherry-Picking a Hotfix
+```shell
+$ git fetch upstream
+$ git switch main
+$ git merge upstream/main
+$ git push origin main
+```
 
-**Task:** Apply a specific commit from one branch to another without merging
-the entire branch.
+### Fetch and inspect before merging
 
-**Steps:**
+```shell
+$ git fetch origin
+$ git log main..origin/main --oneline    # what's new on remote
+$ git diff main origin/main              # line-by-line changes
+$ git merge origin/main                  # integrate when ready
+```
 
-1. Continue in the `rebase-practice` repository from Exercise 9
-2. Create and switch to a branch called `feature/contact`
-3. Create `contact.html` with the text `<h1>Contact</h1>`, stage, and commit
-4. Edit `index.html` — fix a typo by changing `<h1>Home</h1>` to
-   `<h1>Home Page</h1>`, stage, and commit with the message `Fix home page title`
-5. Add `<p>Email us</p>` to `contact.html`, stage, and commit
-6. Switch to `main` — you only need the title fix, not the contact page
-7. Run `git log feature/contact --oneline` to find the hash of the title fix
-8. Cherry-pick that single commit onto `main`
+## Cherry-picking
 
-**Verify:**
+### Apply a single commit from another branch
 
-`git log --oneline` on `main` shows the cherry-picked commit.
-`index.html` contains `<h1>Home Page</h1>`. `contact.html` does not exist on
-`main`.
+```shell
+$ git cherry-pick <hash>
+```
 
----
+### Cherry-pick without committing (stage only)
 
-### Exercise 11: Undoing Mistakes with Reset
+```shell
+$ git cherry-pick --no-commit <hash>
+```
 
-**Task:** Practice the three reset modes to understand what each one preserves.
+Useful when you want to modify the change before committing.
 
-**Steps:**
+## Stashing
 
-1. Create a fresh repository called `reset-practice` and initialize it
-2. Create `file.txt` with the text `line 1`, stage, and commit
-3. Add `line 2` to `file.txt`, stage, and commit
-4. Add `line 3` to `file.txt`, stage, and commit
-5. Run `git log --oneline` and note the three commit hashes
-6. Run `git reset --soft HEAD~1` — check `git status` and `git log`
-7. Observe that `line 3` is staged but the commit is gone
-8. Commit it again with the message `Re-add line 3`
-9. Run `git reset --mixed HEAD~1` — check `git status` and `git log`
-10. Observe that `line 3` is in the working directory but unstaged
-11. Stage and commit it again with the message `Re-add line 3 again`
-12. Run `git reset --hard HEAD~1` — check `git status` and the file contents
-13. Observe that `line 3` is gone from the file entirely
-14. Use `git reflog` to find the lost commit and restore it with
-    `git reset --hard <hash>`
+### Save work in progress
 
-**Verify:**
+```shell
+$ git stash push -m "description"
+```
 
-After the final recovery, `file.txt` contains all three lines and
-`git log --oneline` shows the restored commit.
+### Save including untracked files
 
----
+```shell
+$ git stash push -u -m "description"
+```
 
-### Exercise 12: Rebase Conflict Resolution
+### Restore the latest stash
 
-**Task:** Handle conflicts during a rebase and complete the operation.
+```shell
+$ git stash pop                     # restore and remove from stash
+$ git stash apply                   # restore but keep in stash
+```
 
-**Steps:**
+### List and drop stash entries
 
-1. Create a fresh repository called `conflict-rebase` and initialize it
-2. Create `shared.txt` with the text `original content`, stage, and commit
-3. Create and switch to a branch called `feature/update`
-4. Change `shared.txt` to `feature content`, stage, and commit
-5. Switch to `main` and change `shared.txt` to `main content`, stage, and commit
-6. Switch to `feature/update` and run `git rebase main`
-7. Git pauses with a conflict — open `shared.txt` and find the conflict markers
-8. Resolve by writing `merged content` as the file content
-9. Stage the resolved file and run `git rebase --continue`
-10. Switch to `main` and fast-forward merge `feature/update`
+```shell
+$ git stash list                    # show all entries
+$ git stash drop stash@{0}          # delete a specific entry
+$ git stash clear                   # delete all entries
+```
 
-**Verify:**
+## Tagging
 
-`git log --oneline --graph` shows a linear history with no merge
-commits. `shared.txt` contains `merged content`.
+### Create an annotated tag
+
+```shell
+$ git tag -a v1.0.0 -m "First release"
+```
+
+### Tag a past commit
+
+```shell
+$ git tag -a v0.9.0 -m "Beta release" <hash>
+```
+
+### Push tags to remote
+
+```shell
+$ git push origin v1.0.0            # single tag
+$ git push origin --tags            # all tags
+```
+
+### Delete a tag (local and remote)
+
+```shell
+$ git tag -d v1.0.0                 # local
+$ git push origin --delete v1.0.0   # remote
+```
+
+## Submodules
+
+### Add a submodule
+
+```shell
+$ git submodule add <url> <path>
+$ git commit -m "Add submodule"
+```
+
+### Clone a repo with submodules
+
+```shell
+$ git clone --recurse-submodules <url>
+```
+
+Or after a regular clone:
+
+```shell
+$ git submodule update --init --recursive
+```
+
+### Update a submodule to latest
+
+```shell
+$ git submodule update --remote
+$ git add <path>
+$ git commit -m "Update submodule"
+```
+
+### Remove a submodule
+
+```shell
+$ git submodule deinit <path>
+$ git rm <path>
+$ rm -rf .git/modules/<path>
+$ git commit -m "Remove submodule"
+```
+
+## Debugging
+
+### Find which commit introduced a bug
+
+```shell
+$ git bisect start
+$ git bisect bad                    # current commit has the bug
+$ git bisect good <hash>            # this older commit was fine
+# ... test each midpoint, mark good/bad ...
+$ git bisect reset                  # done — return to original branch
+```
+
+### Automated bisect with a test script
+
+```shell
+$ git bisect start HEAD <good-hash>
+$ git bisect run ./test.sh
+```
+
+### See who last changed each line
+
+```shell
+$ git blame <file>
+```
+
+### Search commit messages
+
+```shell
+$ git log --grep="fix" --oneline
+```
+
+### Search file contents across history
+
+```shell
+$ git log -S "functionName" --oneline
+```
+
+## Configuration
+
+### Set identity
+
+```shell
+$ git config --global user.name "Your Name"
+$ git config --global user.email "you@example.com"
+```
+
+### Set default branch name
+
+```shell
+$ git config --global init.defaultBranch main
+```
+
+### Set default pull strategy to rebase
+
+```shell
+$ git config --global pull.rebase true
+```
+
+### Create an alias
+
+```shell
+$ git config --global alias.hist "log --oneline --graph --all"
+```
+
+### See where a setting comes from
+
+```shell
+$ git config --list --show-origin
+```
