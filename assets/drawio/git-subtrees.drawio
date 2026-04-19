@@ -1,0 +1,62 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="subtrees" name="Subtrees">
+    <mxGraphModel dx="800" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580" pageHeight="280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="550" height="250" as="geometry" />
+        </mxCell>
+
+        <!-- Single repo zone -->
+        <mxCell id="zone-repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="30" y="30" width="510" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="label-repo" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Parent Repository (single repo, single history)" vertex="1">
+          <mxGeometry x="40" y="35" width="350" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Parent commits -->
+        <mxCell id="c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="50" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="110" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <!-- Squash merge commit (purple) -->
+        <mxCell id="c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="170" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="4" vertex="1">
+          <mxGeometry x="230" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-21" edge="1" parent="1" source="c2" target="c1" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-32" edge="1" parent="1" source="c3" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-43" edge="1" parent="1" source="c4" target="c3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Label on squash commit -->
+        <mxCell id="label-squash" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontStyle=2;fontColor=#7C3AED;fontFamily=Helvetica;" value="subtree add&lt;br&gt;(squash)" vertex="1">
+          <mxGeometry x="148" y="112" width="80" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Directory structure -->
+        <mxCell id="box-tree" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=top;align=left;spacingLeft=10;spacingTop=8;arcSize=10;" value="project/&lt;br&gt;├── src/&lt;br&gt;├── &amp;lt;subtree&amp;gt;/  ← &lt;font color=&quot;#15803D&quot;&gt;subtree files&lt;/font&gt;&lt;br&gt;└── README.md" vertex="1">
+          <mxGeometry x="310" y="65" width="210" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Note -->
+        <mxCell id="label-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;" value="Files are part of the parent repo.&lt;br&gt;No extra commands needed — standard&lt;br&gt;&lt;font face=&quot;Courier New&quot;&gt;git clone&lt;/font&gt; includes everything." vertex="1">
+          <mxGeometry x="310" y="165" width="220" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

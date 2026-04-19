@@ -24,13 +24,24 @@ update the submodule.
 ### Adding a submodule
 
 ```shell
-$ git submodule add https://github.com/user/lib.git libs/lib
+$ git submodule add https://github.com/user/lib.git <submodule>
 $ git commit -m "Add lib as submodule"
 ```
 
 This creates two entries:
 - `.gitmodules` — records the URL and path
 - A special directory entry in the index pointing to the pinned commit
+
+After adding, the project looks like this:
+
+```
+project/
+├── .gitmodules                ← URL and path for each submodule
+├── .git/modules/<submodule>/ ← submodule's Git database
+├── <submodule>/              ← submodule files
+│   └── ...
+└── src/
+```
 
 ### Cloning a repository with submodules
 
@@ -47,12 +58,12 @@ $ git submodule update --init --recursive
 ### Updating a submodule
 
 ```shell
-$ cd libs/lib
+$ cd <submodule>
 $ git fetch origin
 $ git switch main
 $ git pull
 $ cd ../..
-$ git add libs/lib
+$ git add <submodule>
 $ git commit -m "Update lib submodule"
 ```
 
@@ -62,19 +73,23 @@ Or update all submodules at once:
 $ git submodule update --remote
 ```
 
-### Advantages
+### Removing a submodule
 
-- Native to Git — no extra tools required
-- Small footprint — only stores a commit reference
-- Each submodule has its own independent history
-- Pin to a specific version without affecting the parent project
+```shell
+$ git submodule deinit <submodule>       # unregister the submodule
+$ git rm <submodule>                     # remove from index and working tree
+$ rm -rf .git/modules/<submodule>        # clean up cached module data
+$ git commit -m "Remove lib submodule"
+```
 
-### Drawbacks
+### Trade-offs
 
-- Requires extra commands (`submodule init`, `submodule update`)
-- Nested submodules are skipped by default (need `--recursive`)
-- Contributors must remember to initialize after cloning
-- Merging changes back from the parent into the submodule is awkward
+| Advantage                               | Drawback                                                  |
+|-----------------------------------------|-----------------------------------------------------------|
+| Native to Git — no extra tools          | Requires extra commands (`submodule init`, `update`)      |
+| Small footprint — commit reference only | Contributors must remember to initialize after cloning    |
+| Each submodule has independent history  | Nested submodules skipped by default (need `--recursive`) |
+| Pin to a specific version               | Merging changes back into the submodule is awkward        |
 
 ## Subtrees
 
@@ -88,7 +103,7 @@ managed with standard Git commands.
 ### Adding a subtree
 
 ```shell
-$ git subtree add --prefix=libs/lib https://github.com/user/lib.git main --squash
+$ git subtree add --prefix=<subtree> https://github.com/user/lib.git main --squash
 ```
 
 The `--squash` flag collapses the subtree's history into a single
@@ -97,7 +112,7 @@ commit, keeping the parent history clean.
 ### Pulling updates
 
 ```shell
-$ git subtree pull --prefix=libs/lib https://github.com/user/lib.git main --squash
+$ git subtree pull --prefix=<subtree> https://github.com/user/lib.git main --squash
 ```
 
 ### Pushing changes back
@@ -106,33 +121,38 @@ If you modify subtree files in the parent and want to push them back
 to the original repository:
 
 ```shell
-$ git subtree push --prefix=libs/lib https://github.com/user/lib.git main
+$ git subtree push --prefix=<subtree> https://github.com/user/lib.git main
 ```
 
-### Advantages
+### Removing a subtree
 
-- No extra commands for contributors — files are already in the repo
-- Works with standard `git clone`, `git pull`, `git push`
-- No `.gitmodules` or special metadata files
-- Supports older Git versions (pre-1.5.2)
+A subtree is just a directory — remove it like any other files:
 
-### Drawbacks
+```shell
+$ git rm -r <subtree>
+$ git commit -m "Remove lib subtree"
+```
 
-- Increases repository size — full copy of files and history
-- Must be careful not to mix parent and subtree changes in commits
-- Requires understanding of Git's merge strategies
-- Updating to a new version overwrites local subtree changes
+Unlike submodules, there is no metadata to clean up.
+
+### Trade-offs
+
+| Advantage                                   | Drawback                                           |
+|---------------------------------------------|----------------------------------------------------|
+| No extra commands — files are in the repo   | Increases repository size (full copy)              |
+| Works with standard `clone`, `pull`, `push` | Must not mix parent and subtree changes in commits |
+| No `.gitmodules` or metadata files          | Requires understanding of merge strategies         |
 
 ## Which to use?
 
-| Aspect | Submodules | Subtrees |
-|--------|-----------|----------|
-| Storage | Commit reference only | Full file copy |
-| Contributor setup | Must run `submodule init` | Nothing extra |
-| Update method | Manual (`submodule update`) | Standard (`subtree pull`) |
-| Pin to version | Yes — by commit hash | No — always latest at pull time |
-| Repo size impact | Minimal | Larger |
-| Best for | Libraries pinned to a version | Frequently modified dependencies |
+| Aspect            | Submodules                    | Subtrees                         |
+|-------------------|-------------------------------|----------------------------------|
+| Storage           | Commit reference only         | Full file copy                   |
+| Contributor setup | Must run `submodule init`     | Nothing extra                    |
+| Update method     | Manual (`submodule update`)   | Standard (`subtree pull`)        |
+| Pin to version    | Yes — by commit hash          | No — always latest at pull time  |
+| Repo size impact  | Minimal                       | Larger                           |
+| Best for          | Libraries pinned to a version | Frequently modified dependencies |
 
 Use **submodules** for component-based development where you depend on
 a specific version of an external repository and rarely modify the
@@ -143,11 +163,9 @@ project.
 ## Other tools
 
 - [google repo](https://gerrit.googlesource.com/git-repo/) — manages
-  many Git repositories as a single project
+  many Git repositories as a single project (used by Android)
 - [git subrepo](https://github.com/ingydotnet/git-subrepo#readme) —
   alternative to subtrees with cleaner UX
-- [git slave](https://sourceforge.net/p/gitslave/code/ci/master/tree) —
-  runs Git commands across multiple repositories
 
 ## Exercises
 
@@ -179,6 +197,9 @@ repository's files.
 
 **Task:** Simulate a fresh clone and verify submodules need explicit
 initialization.
+
+**Prerequisite:** `concepts-lab` must be pushed to GitHub (see
+[Remote Repositories](04-remote-repositories.md), Exercise 1).
 
 **Steps:**
 
