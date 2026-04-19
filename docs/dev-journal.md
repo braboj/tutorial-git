@@ -45,3 +45,41 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #78 — Export draw.io diagrams as PNGs for chapter 02
+
+### 2026-04-19 — Full tutorial review and expansion
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Reviewed and polished all 9 chapters to 10/10
+- Created chapter 04 (Remote Repositories) — remotes, cloning, fetch, pull, push, forking
+- Created chapter 05 (Subprojects) — split from deep internals, submodules and subtrees
+- Renamed chapter 06 from Deep Internals to Expert Topics
+- Added interactive rebase, git bisect, and hooks sections to chapter 06
+- Removed branching strategies from chapter 06 (team workflow, not Git scope)
+- Rewrote chapter 07 (Playbook) as ~50 recipe-based quick reference
+- Trimmed chapter 08 (Appendix) — removed command reference, added SSH key setup
+- Rewrote chapter 09 (Glossary) — 46 terms with chapter cross-references
+- Fixed chapter 01 difficulty tiers (Inspect=Beginner, Branch=Advanced)
+- Added object model diagram to chapter 02
+- Chapter 03: added --no-ff, --squash, cherry-pick, rebase diagram, conflict workflow diagrams, stash internals
+- Created 20+ draw.io diagrams in palette C style, all exported to PNG at 2x
+- Automated draw.io → PNG export pipeline (draw.io CLI)
+- Archived all old-style PNGs to assets/archive/
+- Closed 11 GitHub issues (#18, #19, #20, #28, #29, #30, #31, #40, #49, #70, #78)
+
+**Chapter structure after session:**
+```
+01-introduction.md
+02-building-blocks.md
+03-branching-and-merging.md
+04-remote-repositories.md      ← NEW
+05-subprojects.md              ← NEW (split from deep internals)
+06-expert-topics.md            ← renamed, overhauled
+07-playbook.md                 ← rewritten as recipes
+08-appendix.md                 ← trimmed + SSH
+09-glossary.md                 ← rewritten
+```
+
+**Open issues:**
+- #72 — Deploy as GitHub Page (Astro site scaffolded, not wired to chapters)
