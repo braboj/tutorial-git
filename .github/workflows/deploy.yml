@@ -1,4 +1,4 @@
-name: Deploy MkDocs to GitHub Pages
+name: Deploy Astro to GitHub Pages
 
 on:
   push:
@@ -21,22 +21,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: "22"
 
       - name: Install dependencies
-        run: |
-          pip install mkdocs-material
+        working-directory: astro-site
+        run: npm ci
+
+      - name: Create assets symlink
+        working-directory: astro-site/src/content
+        run: ln -s ../../../assets assets
 
       - name: Build site
-        run: mkdocs build --strict
+        working-directory: astro-site
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site/
+          path: astro-site/dist/
 
   deploy:
     needs: build
