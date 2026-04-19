@@ -6,10 +6,14 @@
   "tabs": [
     { "label": "Home", "href": "/" },
     { "label": "Introduction", "href": "/introduction/" },
-    { "label": "Concepts", "href": "/concepts/" },
-    { "label": "Operations", "href": "/operations/help/" },
+    { "label": "Building Blocks", "href": "/building-blocks/" },
+    { "label": "Branching", "href": "/branching-and-merging/" },
+    { "label": "Remotes", "href": "/remote-repositories/" },
+    { "label": "Subprojects", "href": "/subprojects/" },
+    { "label": "Expert", "href": "/expert-topics/" },
+    { "label": "Playbook", "href": "/playbook/" },
     { "label": "Appendix", "href": "/appendix/" },
-    { "label": "Test", "href": "/test/questions/" }
+    { "label": "Glossary", "href": "/glossary/" }
   ],
   "tutorials": [
     { "label": "Azure", "href": "https://braboj.github.io/tutorial-azure/" },

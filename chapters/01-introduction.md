@@ -31,34 +31,36 @@ share with others when you are ready.
 - **Branching** — work on separate ideas at the same time without interfering with each other
 - **Fast** — most operations happen on your own machine, with no waiting for a server
 
-## Install on Windows
+## Installation
 
-1. Browse to the official Git website: https://git-scm.com/downloads
-2. Click the download link for Windows and allow the download to complete.
-3. Browse to the download location
-4. Double-click the file to launch the installer.
-5. Follow the installation steps with the default options
-6. Open PowerShell after the installation
-7. Type `git --version` to test the installation
+Download Git from the official website: https://git-scm.com/downloads
 
-## Install on macOS
+After installation, open a terminal and verify with:
 
-Git ships with the Xcode Command Line Tools. If you prefer a standalone
-install, use Homebrew.
+```text
+$ git --version
+```
+
+### Windows
+
+1. Download the installer from the link above
+2. Run the installer with the default options
+3. Open PowerShell and verify
+
+### macOS
 
 **Option A — Xcode Command Line Tools (no extra software needed):**
 
-1. Open Terminal
-2. Type `git --version`
-3. If Git is not installed, macOS will prompt you to install the Command Line Tools — follow the dialog
+1. Open Terminal and type `git --version`
+2. If Git is not installed, macOS will prompt you to install the Command Line Tools — follow the dialog
 
 **Option B — Homebrew:**
 
-1. Install [Homebrew](https://brew.sh/) if you do not have it
-2. Run `brew install git`
-3. Type `git --version` to test the installation
+```text
+$ brew install git
+```
 
-## Install on Linux
+### Linux
 
 | Distribution    | Command                              |
 |-----------------|--------------------------------------|
@@ -155,232 +157,132 @@ Commands are grouped by experience level:
 - **Advanced** — Sync, Revert, Branch, Reuse
 - **Expert** — Rewrite and Cleanup (can destroy history — use with caution)
 
-### Help
+Each command group is covered in detail in the following chapters. The
+table below lists the most common commands in daily operations.
 
-Look up documentation for any command, guide or configuration option.
+| Command | What it does | Example |
+|---------|-------------|---------|
+| `git clone` | Copy a remote repository | `git clone https://github.com/user/repo.git` |
+| `git status` | Show working tree and index state | `git status` |
+| `git add` | Stage changes for the next commit | `git add README.md` |
+| `git commit` | Save a snapshot of staged changes | `git commit -m "Fix typo"` |
+| `git push` | Upload commits to a remote | `git push origin main` |
+| `git pull` | Download and integrate remote changes | `git pull origin main` |
+| `git log` | Show commit history | `git log --oneline` |
+| `git diff` | Show changes between commits or working tree | `git diff --staged` |
+| `git branch` | List or create branches | `git branch feature` |
+| `git switch` | Change the current branch | `git switch feature` |
+| `git merge` | Integrate another branch into the current one | `git merge feature` |
+| `git restore` | Discard or unstage changes | `git restore README.md` |
 
-```shell
-$ git help commit
-```
+Two things worth noting:
 
-### Create
-
-Start a new project from scratch or copy an existing one from a server.
-
-```shell
-$ git init
-$ git clone https://github.com/user/demo.git
-```
-
-### Configure
-
-Set your identity and create shortcuts for common commands.
-
-```shell
-$ git config --global user.email "user@mail.com"
-$ git config --global alias.hist "log --oneline --graph"
-```
-
-### Track
-
-Add your changes to the next save point, save them, and label important
-versions with a tag.
-
-```shell
-$ git add README.md
-$ git commit -m "Initial commit"
-$ git tag v1.0
-```
-
-> **Tip:** Create a `.gitignore` file to tell Git which files to skip —
-> build output, editor settings, credentials, and other files that should
-> not be tracked. Git will ignore them automatically.
-
-### Branch
-
-Work on features in isolation, then integrate them back. Use stash to
-set aside uncommitted changes temporarily.
-
-```shell
-$ git branch feature
-$ git switch feature
-$ git switch main
-$ git merge feature
-```
-
-> **Note:** Older tutorials and documentation use `git checkout` instead
-> of `git switch`. Both work, but `switch` (added in Git 2.23) is the
-> recommended command for changing branches.
-
-### Sync
-
-Share your work with others by pushing to and pulling from a remote repository.
-
-```shell
-$ git push origin main
-$ git pull origin main
-```
-
-### Revert
-
-Undo changes at different levels — discard edits you have not saved yet,
-remove files from the staging area, or reverse an entire commit.
-
-```shell
-$ git restore README.md
-$ git restore --staged README.md
-$ git revert HEAD
-```
-
-### Inspect
-
-Examine the commit history, check repository status, and compare changes.
-
-```shell
-$ git status
-$ git log --oneline
-$ git diff
-```
-
-### Reuse
-
-Include external repositories inside your project as submodules.
-
-```shell
-$ git submodule add https://github.com/user/lib.git
-$ git submodule update --init
-```
+- Use `git switch` (added in Git 2.23) to change branches. Older
+  tutorials use `git checkout` — both work, but `switch` is the
+  recommended command.
+- Create a `.gitignore` file to tell Git which files to skip — build
+  output, editor settings, credentials and other files that should not
+  be tracked.
 
 ## Exercises
 
-Hands-on exercises for the Introduction section. Use the reference pages
-in this chapter if you get stuck. Do not skip the verification steps.
+These exercises walk you through a complete Git workflow from start to
+finish. Each step builds on the previous one.
 
-### Exercise 1: Verify Your Git Installation
+### Exercise 1: Install Git
 
-**Task:** Confirm that Git is installed and check which version you are running.
+**Task:** Install Git and verify it works.
 
 **Steps:**
 
-1. Open a terminal (PowerShell on Windows, Terminal.app on macOS, or a shell on Linux)
-2. Run the command to display the installed Git version
-3. Run the command to display the built-in help overview
+1. Follow the installation instructions for your operating system above
+2. Open a terminal and run `git --version`
+3. Set your identity so Git can label your commits:
+   - `git config --global user.name "Your Name"`
+   - `git config --global user.email "you@example.com"`
 
-**Verify:**
-
-The version command prints a line starting with `git version` followed by
-a version number. The help command prints a list of common Git commands grouped
-by category.
+**Verify:** `git --version` prints a version number.
 
 ---
 
-### Exercise 2: Configure Your Identity
+### Exercise 2: Clone a Remote Repository
 
-**Task:** Set up the user name and email that Git will attach to every commit
-you make.
+**Task:** Get a copy of an existing repository from GitHub.
 
 **Steps:**
 
-1. Set your global user name using `git config`
-2. Set your global email address using `git config`
-3. Read back both values to confirm they are stored correctly
-4. Display the full list of configuration settings with `git config --list`
+1. Sign in to GitHub and create a new repository named `git-exercises`
+   — check "Add a README file"
+2. Copy the HTTPS URL of the repository
+3. In your terminal, run `git clone <url>`
+4. Enter the `git-exercises` directory
 
-**Verify:**
-
-The read-back commands print exactly the name and email you entered.
-Both entries also appear in the `--list` output.
+**Verify:** The directory contains a `README.md` file.
+`git log` shows one commit.
 
 ---
 
-### Exercise 3: Create a Local Repository
+### Exercise 3: Add and Commit a Change
 
-**Task:** Initialise a brand-new local Git repository and make your first commit.
+**Task:** Create a file, stage it, and commit it.
 
 **Steps:**
 
-1. Create a new directory called `git-exercises` and enter it
-2. Initialise a Git repository inside the directory
-3. Create a file called `hello.txt` with some text in it
-4. Check the status of the working tree
-5. Add the file to the staging area (index)
-6. Check the status again to see the file is staged
-7. Commit the staged file with the message `Add hello.txt`
+1. Create a file called `hello.txt` with some text in it
+2. Run `git status` — the file appears as untracked
+3. Run `git add hello.txt` to stage it
+4. Run `git status` — the file appears as staged
+5. Run `git commit -m "Add hello.txt"`
 
-**Verify:**
-
-Running `git log` shows one commit with the message `Add hello.txt`.
-Running `git status` reports a clean working tree with nothing to commit.
+**Verify:** `git log` shows two commits. `git status` reports a clean
+working tree.
 
 ---
 
-### Exercise 4: Track a Change Through the Pipeline
+### Exercise 4: Push to the Remote
 
-**Task:** Walk a change through all three locations — workspace, index
-and repository — to see how Git tracks it at each step.
+**Task:** Upload your local commit to GitHub.
 
 **Steps:**
 
-1. Inside the `git-exercises` repository, edit `hello.txt` and add a second line
-2. Run `git status` to see the file listed as modified (workspace)
-3. Run `git diff` to see the exact change
-4. Add the file to the index with `git add`
-5. Run `git status` again to see the file listed as staged (index)
-6. Run `git diff --staged` to see what will be committed
-7. Commit the change with a descriptive message
-8. Run `git log` to confirm the new commit appears in the local repository
+1. Run `git push`
+2. Refresh the repository page on GitHub
 
-**Verify:**
-
-`git status` reports a clean working tree. `git log` shows two commits
-in chronological order.
+**Verify:** `hello.txt` appears in the repository on GitHub.
 
 ---
 
-### Exercise 5: Inspect the Repository
+### Exercise 5: Pull from the Remote
 
-**Task:** Use several commands to look at the commit history and
-understand what Git recorded.
+**Task:** Edit a file on GitHub and pull the change to your local machine.
 
 **Steps:**
 
-1. Run `git log` to see the full commit history
-2. Run `git log --oneline` to see a compact, one-line-per-commit view
-3. Run `git show` to see the details of the latest commit — who made it,
-   when, the commit message, and exactly what changed
-4. Run `git status` to confirm there is nothing left to commit
+1. On GitHub, click `README.md` and edit it — add a line of text
+2. Commit the change directly on GitHub
+3. In your terminal, run `git pull`
+4. Open `README.md` locally
 
-**Verify:**
-
-`git log` shows two commits in order. `git show` displays the author,
-date, message and a summary of changes for the most recent commit.
-`git status` reports a clean working tree.
+**Verify:** The local file contains the line you added on GitHub.
+`git log` shows three commits.
 
 ---
 
-### Exercise 6: Connect to a Remote Repository
+### Exercise 6: Track a Change
 
-**Task:** Create a repository on a hosting service, link it to your local
-repository, and push your commits.
+**Task:** Modify a file and walk it through the full pipeline —
+workspace, index, repository, remote.
 
 **Steps:**
 
-1. Sign in to GitHub (or another hosting service from the reference page)
-2. Create a new empty repository named `git-exercises` — do not add a README
-   or any other files
-3. Copy the HTTPS URL of the new repository (you can also use SSH —
-   HTTPS is simpler to start with; SSH is covered in later chapters)
-4. In your local `git-exercises` repository, add the remote with
-   `git remote add origin <url>`
-5. Run `git remote -v` to confirm the remote is registered
-6. Push the local commits to the remote with `git push -u origin main`
-7. Refresh the repository page in the browser
+1. Edit `hello.txt` and add a second line
+2. Run `git diff` to see the change
+3. Run `git add hello.txt`
+4. Run `git diff --staged` to see what will be committed
+5. Run `git commit -m "Update hello.txt"`
+6. Run `git push`
 
-**Verify:**
-
-The hosting service shows all committed files and the full commit
-history matches what `git log` displays locally. Running `git branch -av`
-shows both the local and remote branch pointing to the same commit.
+**Verify:** `git log` shows four commits. GitHub shows the updated file.
 
 ## Quiz
 
@@ -415,19 +317,19 @@ they are shared with others?
 - C) A unique identifier that acts like a fingerprint for a snapshot
 - D) The name of the branch the commit belongs to
 
-**Q5.** Which command should you use to change branches in Git 2.23+?
+**Q5.** What is the purpose of the index (staging area)?
 
-- A) `git checkout`
-- B) `git branch`
-- C) `git switch`
-- D) `git merge`
+- A) To store the remote repository URL
+- B) To prepare which changes go into the next commit
+- C) To keep a backup of deleted files
+- D) To track which branches exist
 
-**Q6.** What is the purpose of a `.gitignore` file?
+**Q6.** How are commits connected to each other?
 
-- A) To delete files from the repository
-- B) To tell Git which files to skip and not track
-- C) To hide commits from the log
-- D) To prevent other users from cloning the repository
+- A) They share the same file names
+- B) Each commit points back to its parent, forming a chain
+- C) They are sorted alphabetically by message
+- D) The branch name links them together
 
 ### Answers
 
@@ -435,5 +337,5 @@ they are shared with others?
 2. B — A snapshot of everything in the index
 3. C — Every copy contains the complete project and its full history
 4. C — A unique identifier that acts like a fingerprint for a snapshot
-5. C — `git switch`
-6. B — To tell Git which files to skip and not track
+5. B — To prepare which changes go into the next commit
+6. B — Each commit points back to its parent, forming a chain

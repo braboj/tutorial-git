@@ -6,17 +6,55 @@ interface Heading {
 }
 
 const { headings = [] } = Astro.props as { headings: Heading[] };
+
+// Split into h2 sections with their h3+ children
+const sections: { heading: Heading; children: Heading[] }[] = [];
+for (const h of headings) {
+  if (h.depth === 2) {
+    sections.push({ heading: h, children: [] });
+  } else if (sections.length > 0) {
+    sections[sections.length - 1].children.push(h);
+  }
+}
 ---
 
-{headings.length > 0 && (
+{sections.length > 0 && (
   <aside class="sidebar-toc">
     <div class="sidebar-toc-title">Table of contents</div>
     <ul>
-      {headings.map((h) => (
-        <li style={h.depth > 2 ? `padding-left: ${(h.depth - 2) * 0.75}rem` : ""}>
-          <a href={`#${h.slug}`}>{h.text}</a>
-        </li>
-      ))}
+      {sections.map((s) =>
+        s.children.length === 0 ? (
+          <li>
+            <a href={`#${s.heading.slug}`}>{s.heading.text}</a>
+          </li>
+        ) : (
+          <li>
+            <details class="toc-details">
+              <summary>
+                <a href={`#${s.heading.slug}`} class="toc-section-link">{s.heading.text}</a>
+              </summary>
+              <ul>
+                {s.children.map((c) => (
+                  <li style={c.depth > 3 ? `padding-left: ${(c.depth - 3) * 0.75}rem` : ""}>
+                    <a href={`#${c.slug}`}>{c.text}</a>
+                  </li>
+                ))}
+              </ul>
+            </details>
+          </li>
+        )
+      )}
     </ul>
   </aside>
 )}
+
+<script>
+  document.querySelectorAll('.toc-section-link').forEach((link) => {
+    link.addEventListener('click', () => {
+      const details = link.closest('details');
+      if (details) {
+        details.open = !details.open;
+      }
+    });
+  });
+</script>

@@ -36,7 +36,7 @@ each time. This is the recommended method for frequent use.
 
 ### Generate a key
 
-```shell
+```text
 $ ssh-keygen -t ed25519 -C "you@example.com"
 ```
 
@@ -46,7 +46,7 @@ compromised.
 
 ### Add the key to the SSH agent
 
-```shell
+```text
 $ eval "$(ssh-agent -s)"             # start the agent
 $ ssh-add ~/.ssh/id_ed25519          # add your key
 ```
@@ -56,7 +56,7 @@ On Windows (Git Bash), use the same commands. On macOS, add
 
 ### Add the public key to GitHub
 
-```shell
+```text
 $ cat ~/.ssh/id_ed25519.pub          # copy this output
 ```
 
@@ -65,14 +65,14 @@ public key.
 
 ### Test the connection
 
-```shell
+```text
 $ ssh -T git@github.com
 Hi username! You've successfully authenticated...
 ```
 
 ### Switch a repository from HTTPS to SSH
 
-```shell
+```text
 $ git remote set-url origin git@github.com:user/repo.git
 ```
 
