@@ -34,10 +34,11 @@ chapters/                  # SSG-agnostic tutorial content (canonical)
   02-building-blocks.md
   03-branching-and-merging.md
   04-remote-repositories.md
-  05-deep-internals.md
-  06-playbook.md
-  07-appendix.md
-  08-glossary.md
+  05-subprojects.md
+  06-deep-internals.md
+  07-playbook.md
+  08-appendix.md
+  09-glossary.md
 assets/
   images/                  # PNG exports used in chapters
   drawio/                  # draw.io source files (editable)

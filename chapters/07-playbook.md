@@ -1,7 +1,7 @@
 ---
 title: "Playbook"
 section: "playbook"
-order: 6
+order: 7
 ---
 
 ## Overview
@@ -11,8 +11,8 @@ Start from Exercise 1 and work through in order — later exercises use
 repositories created in earlier ones. Each exercise includes verification
 steps so you can confirm the result before moving on.
 
-For command syntax, see [Appendix](07-appendix.md). For definitions, see
-[Glossary](08-glossary.md). For conceptual background, see
+For command syntax, see [Appendix](08-appendix.md). For definitions, see
+[Glossary](09-glossary.md). For conceptual background, see
 [Building Blocks](02-building-blocks.md) and [Branching and Merging](03-branching-and-merging.md).
 
 ---

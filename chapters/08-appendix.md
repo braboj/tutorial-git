@@ -1,13 +1,13 @@
 ---
 title: "Appendix"
 section: "appendix"
-order: 7
+order: 8
 ---
 
 ## Overview
 
 This appendix serves as a quick reference for Git commands, grouped by
-category. For hands-on practice, see [Playbook](06-playbook.md). For
+category. For hands-on practice, see [Playbook](07-playbook.md). For
 conceptual explanations, see [Building Blocks](02-building-blocks.md).
 
 ## Command Quick Reference

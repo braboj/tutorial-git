@@ -119,7 +119,7 @@ Git supports two URL protocols:
 | SSH      | `git@github.com:user/repo.git`     | Requires SSH key setup, no password prompts |
 
 HTTPS is simpler to start with. SSH is covered in the
-[Appendix](07-appendix.md).
+[Appendix](08-appendix.md).
 
 ## Fetching
 
