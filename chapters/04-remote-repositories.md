@@ -15,7 +15,9 @@ The basics of connecting to a remote were introduced in
 [Introduction](01-introduction.md) (Exercise 6). This chapter goes
 deeper into the mechanics and the workflows you will use daily.
 
-## Remotes
+![Remote flow](../assets/images/git-remote-flow.png)
+
+## Remote Branches
 
 A remote is a named reference to another repository, usually hosted on
 a service like GitHub, GitLab, or Bitbucket. When you clone a
@@ -47,10 +49,10 @@ $ git remote add upstream https://github.com/original/project.git
 This registers a new remote called `upstream`. You can choose any name,
 but `origin` and `upstream` are conventional:
 
-| Name | Convention |
-|------|-----------|
-| `origin` | Your own copy (the one you cloned or created) |
-| `upstream` | The original repository you forked from |
+| Name       | Convention                                    |
+|------------|-----------------------------------------------|
+| `origin`   | Your own copy (the one you cloned or created) |
+| `upstream` | The original repository you forked from       |
 
 ### Renaming and removing remotes
 
@@ -61,11 +63,69 @@ $ git remote remove upstream
 
 Removing a remote also deletes all its remote-tracking branches.
 
+### Checking sync status
+
+For every branch on a remote, Git keeps a local read-only reference
+called a remote-tracking branch. These follow the pattern
+`<remote>/<branch>`:
+
+```
+origin/main
+origin/feature
+upstream/main
+```
+
+As covered in [Building Blocks](02-building-blocks.md), these references
+live in `.git/refs/remotes/`. They are updated automatically by `fetch`
+and `pull`, never by your local commits.
+
+```shell
+$ git branch -vv
+```
+
+This shows each local branch, its tracking relationship, and whether
+it is ahead, behind, or diverged:
+
+```
+* main     abc1234 [origin/main] Latest commit message
+  feature  def5678 [origin/feature: ahead 2] Work in progress
+```
+
+| Status            | Meaning                                       |
+|-------------------|-----------------------------------------------|
+| ahead 2           | You have 2 local commits not yet pushed       |
+| behind 3          | The remote has 3 commits you have not fetched |
+| ahead 1, behind 2 | Both sides have new commits (diverged)        |
+
+## Cloning
+
+Cloning creates a local copy of a remote repository. It downloads the
+full history, sets up `origin` pointing to the source URL, creates
+remote-tracking branches for every remote branch, and checks out the
+default branch.
+
+![Clone](../assets/images/git-remote-clone.png)
+
+```shell
+$ git clone https://github.com/user/project.git
+$ git clone https://github.com/user/project.git my-folder   # custom directory name
+```
+
+Git supports two URL protocols:
+
+| Protocol | URL format                         | Notes                                       |
+|----------|------------------------------------|---------------------------------------------|
+| HTTPS    | `https://github.com/user/repo.git` | Works everywhere, prompts for credentials   |
+| SSH      | `git@github.com:user/repo.git`     | Requires SSH key setup, no password prompts |
+
+HTTPS is simpler to start with. SSH is covered in the
+[Appendix](07-appendix.md).
+
 ## Fetching
 
-Fetching downloads commits, branches, and tags from a remote without
-modifying your working tree or local branches. It updates the
-remote-tracking branches only.
+Fetching downloads commits, branches, and tags from a remote and
+updates the remote-tracking branches. It does not modify your working
+tree or local branches.
 
 ```shell
 $ git fetch origin             # fetch all branches from origin
@@ -84,54 +144,12 @@ $ git diff main origin/main    # line-by-line differences
 Fetching is always safe — it never changes your local branches or
 working tree.
 
-## Remote-tracking branches
-
-When you fetch, Git stores the state of each remote branch as a
-remote-tracking branch. These are read-only references that follow
-the pattern `<remote>/<branch>`:
-
-```
-origin/main
-origin/feature
-upstream/main
-```
-
-As covered in [Building Blocks](02-building-blocks.md), these references
-live in `.git/refs/remotes/`. They are updated automatically by `fetch`
-and `pull`, never by your local commits.
-
-### Checking sync status
-
-```shell
-$ git branch -vv
-```
-
-This shows each local branch, its tracking relationship, and whether
-it is ahead, behind, or diverged:
-
-```
-* main     abc1234 [origin/main] Latest commit message
-  feature  def5678 [origin/feature: ahead 2] Work in progress
-```
-
-- **ahead 2** — you have 2 local commits not yet pushed
-- **behind 3** — the remote has 3 commits you have not fetched
-- **ahead 1, behind 2** — both sides have new commits (diverged)
-
 ## Pulling
 
-Pulling combines two operations: fetch followed by merge. It downloads
-remote changes and immediately integrates them into your current branch.
+Pulling combines two operations in one command: fetch followed by merge.
 
 ```shell
-$ git pull origin main
-```
-
-This is equivalent to:
-
-```shell
-$ git fetch origin main
-$ git merge origin/main
+$ git pull origin main             # equivalent to fetch + merge
 ```
 
 ### Pull with rebase
@@ -205,30 +223,27 @@ this:
 
 ### Force pushing
 
-Force pushing overwrites the remote branch with your local branch,
-discarding any remote commits that are not in your local history:
+Force pushing overwrites the remote branch with your local history:
 
-```shell
-$ git push --force origin feature
-```
+| Command                       | Behavior                                              |
+|-------------------------------|-------------------------------------------------------|
+| `git push --force`            | Overwrites unconditionally — can discard others' work |
+| `git push --force-with-lease` | Fails if someone else pushed since your last fetch    |
 
-A safer alternative is `--force-with-lease`, which only succeeds if no
-one else has pushed since your last fetch:
-
-```shell
-$ git push --force-with-lease origin feature
-```
+Always prefer `--force-with-lease` over `--force`.
 
 > **Warning:** Never force push to shared branches like `main`. It
 > rewrites history for everyone and can cause data loss. Use force push
 > only on your own feature branches.
 
-## Forking workflow
+## Forking
 
 Forking is a hosting-platform feature (not a Git command) that creates
 your own copy of someone else's repository under your account. This is
 the standard way to contribute to projects you do not have write access
 to.
+
+![Forking workflow](../assets/images/git-remote-fork.png)
 
 ### Setup
 
@@ -273,24 +288,25 @@ fork. Do this regularly to avoid large divergences.
 
 All exercises use the `concepts-lab` repository from previous chapters.
 
-### Exercise 1: Inspect remotes
+### Exercise 1: Clone and inspect a repository
 
-**Task:** Explore the remote configuration of an existing repository.
+**Task:** Clone a repository and explore what Git sets up automatically.
 
 **Steps:**
 
-1. In `concepts-lab`, run `git remote -v` to list all remotes
-2. Run `git remote show origin` to see detailed information about the
-   remote — branches, tracking configuration, and push/pull URLs
-3. Run `git branch -vv` to see which local branches track which remote
-   branches
-4. Run `git ls-remote origin` to list all references on the remote
-   without fetching
+1. On GitHub, create a new repository called `clone-lab` with a README
+2. Clone it locally: `git clone <url> clone-lab`
+3. Enter the directory and run `git remote -v`
+4. Run `git branch -vv` to see the tracking relationship
+5. Run `git log --oneline` to confirm the initial commit is present
+6. List the remote-tracking branches: `git branch -r`
+7. Inspect `.git/refs/remotes/origin/` to see the tracking reference
 
 **Verify:**
 
-`git remote -v` shows the origin URL. `git branch -vv` shows tracking
-information for at least the `main` branch.
+`git remote -v` shows `origin` pointing to your GitHub URL.
+`git branch -vv` shows `main` tracking `origin/main`.
+`git branch -r` lists `origin/main`.
 
 ### Exercise 2: Fetch and inspect before merging
 
@@ -334,25 +350,44 @@ After merging, `git status` shows your branch is up to date with
 `git log --graph` shows the divergence and merge. `git status` reports
 the branch is up to date with `origin/main`.
 
-### Exercise 4: Fork and contribute
+### Exercise 4: Push with upstream tracking
 
-**Task:** Practice the forking workflow by contributing to a public
-repository.
+**Task:** Set up upstream tracking and verify it simplifies push/pull.
 
 **Steps:**
 
-1. Find a public repository on GitHub (or use a second account to
-   create one)
-2. Fork it using the GitHub "Fork" button
-3. Clone your fork locally with `git clone <your-fork-url>`
-4. Add the original repository as upstream:
+1. In `concepts-lab`, create and switch to a new branch `feature/tracking`
+2. Create a file `tracking.txt`, stage and commit
+3. Push with the `-u` flag: `git push -u origin feature/tracking`
+4. Run `git branch -vv` to confirm the tracking relationship
+5. Make another change, commit, and run `git push` with no arguments
+6. Confirm the push succeeded without specifying remote or branch
+
+**Verify:**
+
+`git branch -vv` shows `feature/tracking` tracking `origin/feature/tracking`.
+The second push works with no arguments.
+
+### Exercise 5: Fork and contribute
+
+**Task:** Practice the forking workflow using your own `concepts-lab`
+repository as the "original" project.
+
+**Steps:**
+
+1. On GitHub, open `concepts-lab` and click "Fork" to create a fork
+   under your own account (GitHub allows forking your own repos into
+   an organization, or you can use a second account)
+2. Clone the fork locally into a new directory:
+   `git clone <fork-url> concepts-lab-fork`
+3. Enter the directory and add the original as upstream:
    `git remote add upstream <original-url>`
-5. Verify with `git remote -v` — you should see both `origin` and
-   `upstream`
-6. Create a feature branch: `git switch -c feature/my-change`
-7. Make a small change, commit it, and push to your fork:
-   `git push -u origin feature/my-change`
-8. On GitHub, open a pull request from your fork's branch to the
+4. Verify with `git remote -v` — you should see both `origin` (fork)
+   and `upstream` (original)
+5. Create a feature branch: `git switch -c feature/fork-test`
+6. Create a file `fork-test.txt`, commit it, and push to your fork:
+   `git push -u origin feature/fork-test`
+7. On GitHub, open a pull request from the fork's branch to the
    original repository
 
 **Verify:**
@@ -362,28 +397,42 @@ original repository's GitHub page.
 
 ## Quiz
 
-**Q1.** What does `git fetch` do?
+**Q1.** What does `git clone` set up automatically?
+
+- A) Only the working tree — no remote or tracking branches
+- B) A local copy, an `origin` remote, and remote-tracking branches
+- C) A bare repository with no working tree
+- D) A fork on the hosting platform
+
+**Q2.** What does `git fetch` do?
 
 - A) Downloads remote changes and merges them into your branch
 - B) Downloads remote changes and updates remote-tracking branches only
 - C) Pushes local changes to the remote
 - D) Deletes remote branches that no longer exist
 
-**Q2.** What is the difference between `git pull` and `git fetch`?
+**Q3.** What is the difference between `git pull` and `git fetch`?
 
 - A) They are identical commands
 - B) `pull` only downloads; `fetch` also merges
 - C) `pull` fetches and then merges; `fetch` only downloads
 - D) `pull` works with tags; `fetch` works with branches
 
-**Q3.** Why might a `git push` be rejected?
+**Q4.** Why might a `git push` be rejected?
 
 - A) The remote repository is read-only
 - B) The remote branch has commits that your local branch does not have
 - C) Your local branch is ahead of the remote
 - D) You forgot to run `git add` first
 
-**Q4.** What does `git push -u origin feature` do that `git push origin
+**Q5.** What is the advantage of `--force-with-lease` over `--force`?
+
+- A) It is faster
+- B) It fails if someone else pushed since your last fetch
+- C) It pushes all branches at once
+- D) It creates a merge commit on the remote
+
+**Q6.** What does `git push -u origin feature` do that `git push origin
 feature` does not?
 
 - A) It creates the branch on the remote
@@ -391,7 +440,7 @@ feature` does not?
 - C) It sets up tracking so future pushes need no arguments
 - D) It pushes all branches at once
 
-**Q5.** In the forking workflow, what is the conventional name for the
+**Q7.** In the forking workflow, what is the conventional name for the
 original repository's remote?
 
 - A) origin
@@ -401,8 +450,10 @@ original repository's remote?
 
 ### Answers
 
-1. B — Downloads remote changes and updates remote-tracking branches only
-2. C — `pull` fetches and then merges; `fetch` only downloads
-3. B — The remote branch has commits that your local branch does not have
-4. C — It sets up tracking so future pushes need no arguments
-5. C — upstream
+1. B — A local copy, an `origin` remote, and remote-tracking branches
+2. B — Downloads remote changes and updates remote-tracking branches only
+3. C — `pull` fetches and then merges; `fetch` only downloads
+4. B — The remote branch has commits that your local branch does not have
+5. B — It fails if someone else pushed since your last fetch
+6. C — It sets up tracking so future pushes need no arguments
+7. C — upstream
