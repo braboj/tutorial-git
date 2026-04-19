@@ -32,11 +32,11 @@ Architecture overview and chronological session log for tutorial-git.
 - Refactored CLAUDE.md to reference solid-ai-templates submodule
 
 **Decisions:**
-- ADR: Convention-based colour palette (Option B) over original purple/pink palette — see CLAUDE.md Palette C
-- ADR: Arrows point from child to parent (matching Git's internal pointers)
-- ADR: White background card on all diagrams for dark theme compatibility
-- ADR: `git switch` taught as primary, `git checkout` mentioned as legacy in a note
-- ADR: Scope guard added — one chapter per session default
+- [ADR-001](decisions/001-colour-palette.md) — Convention-based colour palette (Option B)
+- [ADR-002](decisions/002-arrow-direction.md) — Parent-direction arrows in diagrams
+- [ADR-003](decisions/003-background-card.md) — White background card for dark themes
+- [ADR-004](decisions/004-git-switch.md) — git switch as primary, git checkout as legacy
+- [ADR-005](decisions/005-scope-guard.md) — Scope guard for agent-assisted sessions
 
 **Created outside tutorial-git:**
 - `projects/me-healthy/HEALTHY-ME.md` — new me! series project brief
