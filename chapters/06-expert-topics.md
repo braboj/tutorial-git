@@ -1,6 +1,6 @@
 ---
-title: "Deep Internals"
-section: "deep-internals"
+title: "Expert Topics"
+section: "expert-topics"
 order: 6
 ---
 

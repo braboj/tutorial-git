@@ -35,7 +35,7 @@ chapters/                  # SSG-agnostic tutorial content (canonical)
   03-branching-and-merging.md
   04-remote-repositories.md
   05-subprojects.md
-  06-deep-internals.md
+  06-expert-topics.md
   07-playbook.md
   08-appendix.md
   09-glossary.md
