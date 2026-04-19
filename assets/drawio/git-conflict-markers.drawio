@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="conflict-markers" name="Conflict markers">
+    <mxGraphModel dx="1106" dy="969" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="520" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="350" width="550" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Conflict markers in a file" vertex="1">
+          <mxGeometry height="24" width="250" x="30" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="marker-top" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;spacingLeft=10;" value="&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD" vertex="1">
+          <mxGeometry height="32" width="350" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zone-ours" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;spacingLeft=10;" value="mode=staging" vertex="1">
+          <mxGeometry height="40" width="350" x="30" y="92" as="geometry" />
+        </mxCell>
+        <mxCell id="label-ours" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;" value="ours (current branch)" vertex="1">
+          <mxGeometry height="30" width="100" x="390" y="97" as="geometry" />
+        </mxCell>
+        <mxCell id="marker-sep" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;spacingLeft=10;" value="=======" vertex="1">
+          <mxGeometry height="32" width="350" x="30" y="132" as="geometry" />
+        </mxCell>
+        <mxCell id="zone-theirs" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;spacingLeft=10;" value="mode=debug" vertex="1">
+          <mxGeometry height="40" width="350" x="30" y="164" as="geometry" />
+        </mxCell>
+        <mxCell id="label-theirs" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;" value="theirs (incoming)" vertex="1">
+          <mxGeometry height="30" width="100" x="390" y="169" as="geometry" />
+        </mxCell>
+        <mxCell id="marker-bottom" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;spacingLeft=10;" value="&gt;&gt;&gt;&gt;&gt;&gt;&gt; feature" vertex="1">
+          <mxGeometry height="32" width="350" x="30" y="204" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Resolution options:" vertex="1">
+          <mxGeometry height="24" width="150" x="30" y="256" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;" value="1. Keep one side — delete the other and all markers" vertex="1">
+          <mxGeometry height="20" width="420" x="30" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;" value="2. Combine both — merge the content and remove markers" vertex="1">
+          <mxGeometry height="20" width="420" x="30" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=12;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;" value="3. Rewrite — discard both and write something new" vertex="1">
+          <mxGeometry height="20" width="420" x="30" y="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

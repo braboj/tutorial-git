@@ -1,4 +1,0 @@
-- [git config](01-git-config.md)
-- [git remote](02-git-remote.md)
-- [git ignore](03-git-ignore.md)
-- [git variables](04-git-config-var.txt)

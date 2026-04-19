@@ -1,4 +1,0 @@
-- [Dictionary](dictionary.md)
-- [References](references.md)
-- [Clients](clients.md)
-- [Remarks](remarks.md)

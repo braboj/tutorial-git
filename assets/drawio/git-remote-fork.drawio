@@ -1,0 +1,76 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="fork-workflow" name="Forking workflow">
+    <mxGraphModel dx="922" dy="808" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="620" pageHeight="340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="310" width="590" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="zone-remote" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF1F5;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="120" width="550" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="label-remote" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="GitHub" vertex="1">
+          <mxGeometry height="20" width="80" x="40" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="zone-local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="130" width="550" x="30" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="label-local" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Local machine" vertex="1">
+          <mxGeometry height="20" width="120" x="40" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="box-original" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Original Repo&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;upstream&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="130" x="60" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="box-fork" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Your Fork&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;origin&lt;/i&gt;" vertex="1">
+          <mxGeometry height="60" width="130" x="380" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="box-local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Local Clone" vertex="1">
+          <mxGeometry height="60" width="130" x="380" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-fork" edge="1" parent="1" source="box-original" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="box-fork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-fork" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;" value="1. Fork" vertex="1">
+          <mxGeometry height="18" width="60" x="240" y="68" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-clone" edge="1" parent="1" source="box-fork" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="box-local">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="475" y="130" as="sourcePoint" />
+            <mxPoint x="475" y="220" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-clone" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="2. git clone" vertex="1">
+          <mxGeometry height="18" width="90" x="480" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-push" edge="1" parent="1" source="box-local" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="box-fork">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-push" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="3. git push" vertex="1">
+          <mxGeometry height="18" width="80" x="330" y="162" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-pr" edge="1" parent="1" source="box-fork" style="endArrow=classic;html=1;strokeColor=#7C3AED;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;exitX=0.3;exitY=0;exitDx=0;exitDy=0;entryX=0.7;entryY=0;entryDx=0;entryDy=0;" target="box-original">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="419" y="55" />
+              <mxPoint x="151" y="55" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-pr" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=0;fontColor=#7C3AED;fontFamily=Helvetica;" value="4. Pull Request" vertex="1">
+          <mxGeometry height="18" width="100" x="240" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-upstream" edge="1" parent="1" source="box-original" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="box-local">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="125" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-upstream" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="git fetch upstream" vertex="1">
+          <mxGeometry height="18" width="140" x="150" y="252" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

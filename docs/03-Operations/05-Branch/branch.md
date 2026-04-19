@@ -1,6 +1,0 @@
-- [git branch](01-git-branch.md)
-- [git checkout](02-git-checkout.md)
-- [git stash](03-git-stash.md)
-- [git switch](04-git-switch.md)
-- [git merge](05-git-merge.md)
-- [git cherry-pick](07-git-cherry-pick.md)

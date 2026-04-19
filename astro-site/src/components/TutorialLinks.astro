@@ -1,0 +1,14 @@
+---
+import site from "../data/site.json";
+---
+
+<aside class="sidebar-tutorials">
+  <div class="sidebar-tutorials-title">Other Tutorials</div>
+  <ul>
+    {site.tutorials.map((t) => (
+      <li>
+        <a href={t.href} target="_blank">{t.label}</a>
+      </li>
+    ))}
+  </ul>
+</aside>

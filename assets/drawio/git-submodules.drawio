@@ -1,0 +1,90 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="submodules" name="Submodules">
+    <mxGraphModel dx="800" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580" pageHeight="300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="550" height="270" as="geometry" />
+        </mxCell>
+
+        <!-- Parent repo zone -->
+        <mxCell id="zone-parent" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="30" y="30" width="240" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="label-parent" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Parent Repository" vertex="1">
+          <mxGeometry x="40" y="35" width="150" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Parent commits -->
+        <mxCell id="c1-p" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="50" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-p" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="110" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-p" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="170" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-21-p" edge="1" parent="1" source="c2-p" target="c1-p" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-32-p" edge="1" parent="1" source="c3-p" target="c2-p" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- .gitmodules box -->
+        <mxCell id="box-gitmodules" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#854D0E;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value=".gitmodules&lt;br&gt;&lt;i style=&quot;font-family:Helvetica;color:#5F5E5A&quot;&gt;URL + path&lt;/i&gt;" vertex="1">
+          <mxGeometry x="50" y="140" width="100" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Pinned commit ref -->
+        <mxCell id="box-pin" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#1E40AF;fontFamily=Courier New;verticalAlign=middle;align=center;arcSize=10;" value="libs/lib → abc123&lt;br&gt;&lt;i style=&quot;font-family:Helvetica;color:#5F5E5A&quot;&gt;pinned commit&lt;/i&gt;" vertex="1">
+          <mxGeometry x="50" y="200" width="150" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- External repo zone -->
+        <mxCell id="zone-external" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF1F5;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="310" y="30" width="230" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="label-external" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="External Repository" vertex="1">
+          <mxGeometry x="320" y="35" width="160" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- External commits -->
+        <mxCell id="c1-e" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="A" vertex="1">
+          <mxGeometry x="330" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c2-e" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="B" vertex="1">
+          <mxGeometry x="390" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="c3-e" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="C" vertex="1">
+          <mxGeometry x="450" y="80" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-ba" edge="1" parent="1" source="c2-e" target="c1-e" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-cb" edge="1" parent="1" source="c3-e" target="c2-e" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Pinned label on commit B -->
+        <mxCell id="label-pinned" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontStyle=2;fontColor=#2563EB;fontFamily=Helvetica;" value="pinned here" vertex="1">
+          <mxGeometry x="370" y="112" width="76" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Dashed arrow: pin → commit B -->
+        <mxCell id="arr-pin" edge="1" parent="1" source="box-pin" target="c2-e" style="endArrow=classic;html=1;strokeColor=#2563EB;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Note: not copied -->
+        <mxCell id="label-note" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="files not copied&lt;br&gt;until init + update" vertex="1">
+          <mxGeometry x="350" y="160" width="130" height="36" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

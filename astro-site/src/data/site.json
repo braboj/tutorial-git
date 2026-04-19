@@ -1,0 +1,27 @@
+{
+  "title": "Git Tutorial — Code with Branko",
+  "description": "Learn Git from concepts to daily commands — a practical tutorial by Branko",
+  "copyright": "© 2021–2026 Branimir Georgiev · Code with Branko",
+  "repo": "https://github.com/braboj/tutorial-git",
+  "tabs": [
+    { "label": "Home", "href": "/" },
+    { "label": "Introduction", "href": "/introduction/" },
+    { "label": "Concepts", "href": "/concepts/" },
+    { "label": "Operations", "href": "/operations/help/" },
+    { "label": "Appendix", "href": "/appendix/" },
+    { "label": "Test", "href": "/test/questions/" }
+  ],
+  "tutorials": [
+    { "label": "Azure", "href": "https://braboj.github.io/tutorial-azure/" },
+    { "label": "Dart", "href": "https://braboj.github.io/tutorial-dart/" },
+    { "label": "Docker", "href": "https://braboj.github.io/tutorial-docker/" },
+    { "label": "Exams", "href": "https://braboj.github.io/tutorial-exams/" },
+    { "label": "Microprocessor", "href": "https://braboj.github.io/tutorial-microprocessor/" },
+    { "label": "Modbus", "href": "https://braboj.github.io/tutorial-modbus/" },
+    { "label": "Networks", "href": "https://braboj.github.io/tutorial-networks/" },
+    { "label": "OpenSSL", "href": "https://braboj.github.io/tutorial-openssl/" },
+    { "label": "Operating Systems", "href": "https://braboj.github.io/tutorial-os/" },
+    { "label": "Python", "href": "https://braboj.github.io/tutorial-python/" },
+    { "label": "Testing", "href": "https://braboj.github.io/tutorial-testing/" }
+  ]
+}

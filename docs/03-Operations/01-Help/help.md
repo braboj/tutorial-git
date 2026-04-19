@@ -1,2 +1,0 @@
-- [git help](01-git-help.md)
-- [git cmd help](02-git-cmd-help.md)

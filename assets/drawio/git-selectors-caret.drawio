@@ -1,0 +1,95 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="selectors-caret" name="Caret selector">
+    <mxGraphModel dx="800" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="500" pageHeight="500" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="470" height="470" as="geometry" />
+        </mxCell>
+
+        <!-- Commits -->
+        <mxCell id="c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="C1" vertex="1">
+          <mxGeometry x="146" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="C2" vertex="1">
+          <mxGeometry x="146" y="120" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- C3 (^1) -->
+        <mxCell id="c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;aspect=fixed;" value="C3" vertex="1">
+          <mxGeometry x="96" y="220" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="label-c3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#1E40AF;fontFamily=Courier New;" value="^1" vertex="1">
+          <mxGeometry x="50" y="223" width="40" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- C4 (^2) -->
+        <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="C4" vertex="1">
+          <mxGeometry x="196" y="220" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="label-c4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#15803D;fontFamily=Courier New;" value="^2" vertex="1">
+          <mxGeometry x="196" y="252" width="28" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- C5 (^3) -->
+        <mxCell id="c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;aspect=fixed;" value="C5" vertex="1">
+          <mxGeometry x="296" y="220" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="label-c5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#854D0E;fontFamily=Courier New;" value="^3" vertex="1">
+          <mxGeometry x="330" y="223" width="40" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- C6 (merge) -->
+        <mxCell id="c6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;aspect=fixed;" value="C6" vertex="1">
+          <mxGeometry x="146" y="320" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="label-c6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="HEAD~1" vertex="1">
+          <mxGeometry x="50" y="323" width="80" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- C7 (HEAD) -->
+        <mxCell id="c7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="C7" vertex="1">
+          <mxGeometry x="146" y="410" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="label-c7" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="HEAD" vertex="1">
+          <mxGeometry x="60" y="413" width="80" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Parent arrows -->
+        <mxCell id="arr-c7-c6" edge="1" parent="1" source="c7" target="c6" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c6-c3" edge="1" parent="1" source="c6" target="c3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c6-c4" edge="1" parent="1" source="c6" target="c4" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c6-c5" edge="1" parent="1" source="c6" target="c5" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c3-c2" edge="1" parent="1" source="c3" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c4-c2" edge="1" parent="1" source="c4" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c5-c2" edge="1" parent="1" source="c5" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c2-c1" edge="1" parent="1" source="c2" target="c1" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="HEAD~1^1 = C3&lt;br&gt;HEAD~1^2 = C4&lt;br&gt;HEAD~1^3 = C5" vertex="1">
+          <mxGeometry x="340" y="310" width="120" height="50" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

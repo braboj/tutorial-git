@@ -1,0 +1,26 @@
+---
+import { getCollection, render } from "astro:content";
+import DocLayout from "../layouts/DocLayout.astro";
+import { buildPages } from "../lib/nav";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("docs");
+  const pages = buildPages(entries);
+
+  return pages.map((page) => {
+    const entry = entries.find((e) => e.id === page.id)!;
+    return {
+      params: { slug: page.slug },
+      props: { page, entry },
+    };
+  });
+}
+
+const { page, entry } = Astro.props;
+const { Content, headings } = await render(entry);
+const sectionPath = `/${page.section}/`;
+---
+
+<DocLayout title={page.title} headings={headings} currentPath={sectionPath}>
+  <Content />
+</DocLayout>

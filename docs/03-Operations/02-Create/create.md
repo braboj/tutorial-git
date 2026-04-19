@@ -1,2 +1,0 @@
-- [git init](01-git-init.md)
-- [git clone](02-git-clone.md)

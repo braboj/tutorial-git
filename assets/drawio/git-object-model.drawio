@@ -1,0 +1,91 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36">
+  <diagram id="object-model" name="Object model">
+    <mxGraphModel dx="625" dy="554" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="560" pageHeight="340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="310" width="530" x="15" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-tag" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=6;arcSize=10;" value="Tag" vertex="1">
+          <mxGeometry height="55" width="90" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="tag-desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="named label" vertex="1">
+          <mxGeometry height="16" width="90" x="40" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-commit" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=6;arcSize=10;" value="Commit" vertex="1">
+          <mxGeometry height="55" width="90" x="220" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="commit-desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="snapshot&amp;nbsp;&lt;div&gt;metadata&lt;/div&gt;" vertex="1">
+          <mxGeometry height="38" width="110" x="210" y="62" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-tree" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#712B13;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=6;arcSize=10;" value="Tree" vertex="1">
+          <mxGeometry height="55" width="90" x="220" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="tree-desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="directory listing" vertex="1">
+          <mxGeometry height="16" width="90" x="220" y="182" as="geometry" />
+        </mxCell>
+        <mxCell id="obj-blob" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=6;arcSize=10;" value="Blob" vertex="1">
+          <mxGeometry height="35" width="90" x="220" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-branch" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Branch" vertex="1">
+          <mxGeometry height="30" width="90" x="390" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="ref-head" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="HEAD" vertex="1">
+          <mxGeometry height="30" width="90" x="390" y="112" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-tag-commit" edge="1" parent="1" source="obj-tag" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="obj-commit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-parent" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="parent" vertex="1">
+          <mxGeometry height="16" width="40" x="330" y="52" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-commit-tree" edge="1" parent="1" source="obj-commit" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="obj-tree">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-tree-blob" edge="1" parent="1" source="obj-tree" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" target="obj-blob">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-tree-tree" edge="1" parent="1" source="obj-tree" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" target="obj-tree">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="176" />
+              <mxPoint x="190" y="199" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label-subdir" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="subdir" vertex="1">
+          <mxGeometry height="16" width="38" x="150" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-branch-commit" edge="1" parent="1" source="ref-branch" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;edgeStyle=orthogonalEdgeStyle;" target="obj-commit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-head-branch" edge="1" parent="1" source="ref-head" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;" target="ref-branch">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Objects" vertex="1">
+          <mxGeometry height="18" width="60" x="20" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-solid" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="── stored in .git/objects/" vertex="1">
+          <mxGeometry height="16" width="160" x="20" y="238" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-ref-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="References" vertex="1">
+          <mxGeometry height="18" width="80" x="20" y="265" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-dashed" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=10;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="╌╌ stored in .git/HEAD and .git/refs/" vertex="1">
+          <mxGeometry height="16" width="160" x="20" y="283" as="geometry" />
+        </mxCell>
+        <mxCell id="ExfScvuuNZ7uiJP0L8MA-2" edge="1" parent="1" source="obj-commit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.714;entryY=0.006;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.25;exitY=0;exitDx=0;exitDy=0;curved=1;" target="obj-commit">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="243" y="20" />
+              <mxPoint x="284" y="20" />
+              <mxPoint x="284" y="40" />
+              <mxPoint x="284" y="40" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,85 @@
+# Development Journal
+
+Architecture overview and chronological session log for tutorial-git.
+
+
+## Architecture
+
+- **Content**: Markdown files in `chapters/` (SSG-agnostic)
+- **Assets**: `assets/images/` (PNGs), `assets/drawio/` (source diagrams)
+- **Site**: Astro static site in `astro-site/` (not yet wired to chapters)
+- **Templates**: `docs/solid-ai-templates/` submodule for CLAUDE.md generation
+- **Hosting**: GitHub Pages via GitHub Actions
+
+
+## Sessions
+
+### 2026-04-19 — Chapter restructure and polish
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Reviewed and scored chapter 01 (introduction) — polished to 10/10
+- Split monolithic `02-concepts.md` into three chapters:
+  - `02-building-blocks.md` — repository, object model, index, references, history navigation
+  - `03-branching-and-merging.md` — branching, merging, conflicts, stashing
+  - `04-deep-internals.md` — revision selectors, pathspec, refspec, subprojects, config, branching strategies, garbage collection
+- Created `05-playbook.md` — 12 hands-on workflow exercises
+- Created `06-appendix.md` — command quick reference, clients, references, notes
+- Created `07-glossary.md` — extracted from appendix
+- Removed 13 old operation chapter files, replaced with consolidated structure
+- Added `assets/drawio/` with 5 branch workflow diagrams (Option B palette)
+- Refactored CLAUDE.md to reference solid-ai-templates submodule
+
+**Decisions:**
+- [ADR-001](decisions/001-colour-palette.md) — Convention-based colour palette (Option B)
+- [ADR-002](decisions/002-arrow-direction.md) — Parent-direction arrows in diagrams
+- [ADR-003](decisions/003-background-card.md) — White background card for dark themes
+- [ADR-004](decisions/004-git-switch.md) — git switch as primary, git checkout as legacy
+- [ADR-005](decisions/005-scope-guard.md) — Scope guard for agent-assisted sessions
+
+**Created outside tutorial-git:**
+- `projects/me-healthy/HEALTHY-ME.md` — new me! series project brief
+- `cross-cutting/SPIKE-DOCS-CHATBOT.md` — chatbot options for static docs
+- `solid-ai-templates/base/scope.md` — upstreamed scope guard template (PR #42 merged)
+
+**Open issues:**
+- #78 — Export draw.io diagrams as PNGs for chapter 02
+
+### 2026-04-19 — Full tutorial review and expansion
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Reviewed and polished all 9 chapters to 10/10
+- Created chapter 04 (Remote Repositories) — remotes, cloning, fetch, pull, push, forking
+- Created chapter 05 (Subprojects) — split from deep internals, submodules and subtrees
+- Renamed chapter 06 from Deep Internals to Expert Topics
+- Added interactive rebase, git bisect, and hooks sections to chapter 06
+- Removed branching strategies from chapter 06 (team workflow, not Git scope)
+- Rewrote chapter 07 (Playbook) as ~50 recipe-based quick reference
+- Trimmed chapter 08 (Appendix) — removed command reference, added SSH key setup
+- Rewrote chapter 09 (Glossary) — 46 terms with chapter cross-references
+- Fixed chapter 01 difficulty tiers (Inspect=Beginner, Branch=Advanced)
+- Added object model diagram to chapter 02
+- Chapter 03: added --no-ff, --squash, cherry-pick, rebase diagram, conflict workflow diagrams, stash internals
+- Created 20+ draw.io diagrams in palette C style, all exported to PNG at 2x
+- Automated draw.io → PNG export pipeline (draw.io CLI)
+- Archived all old-style PNGs to assets/archive/
+- Closed 11 GitHub issues (#18, #19, #20, #28, #29, #30, #31, #40, #49, #70, #78)
+
+**Chapter structure after session:**
+```
+01-introduction.md
+02-building-blocks.md
+03-branching-and-merging.md
+04-remote-repositories.md      ← NEW
+05-subprojects.md              ← NEW (split from deep internals)
+06-expert-topics.md            ← renamed, overhauled
+07-playbook.md                 ← rewritten as recipes
+08-appendix.md                 ← trimmed + SSH
+09-glossary.md                 ← rewritten
+```
+
+**Open issues:**
+- #72 — Deploy as GitHub Page (Astro site scaffolded, not wired to chapters)

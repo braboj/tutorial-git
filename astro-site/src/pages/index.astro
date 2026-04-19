@@ -1,0 +1,118 @@
+---
+import DocLayout from "../layouts/DocLayout.astro";
+
+const headings = [
+  { depth: 2, slug: "what-youll-learn", text: "What you'll learn" },
+  { depth: 2, slug: "learning-path", text: "Learning path" },
+  { depth: 2, slug: "quick-start", text: "Quick start" },
+  { depth: 2, slug: "about", text: "About" },
+  { depth: 2, slug: "selected-references", text: "Selected references" },
+];
+---
+
+<DocLayout title="Home" headings={headings} currentPath="/">
+  <h1 id="lets-learn-git">Let's Learn Git!</h1>
+
+  <p>
+    A hands-on tutorial that takes you from first commit to confident daily use.
+    Learn Git's concepts first, then apply them through practical command
+    references and real-world examples.
+  </p>
+
+  <h2 id="what-youll-learn">What you'll learn</h2>
+
+  <ul>
+    <li>
+      <strong>Concepts</strong> — Understand how Git actually works: objects,
+      references, branching, merging, conflict resolution, and branching strategies.
+    </li>
+    <li>
+      <strong>Operations</strong> — Master 30+ Git commands organized by workflow:
+      create, track, branch, sync, revert, and inspect.
+    </li>
+    <li>
+      <strong>Test yourself</strong> — 96 quiz questions to validate your
+      understanding and prepare for technical interviews.
+    </li>
+    <li>
+      <strong>Reference</strong> — Git dictionary, cheat sheets, client tools,
+      and curated external resources.
+    </li>
+  </ul>
+
+  <h2 id="learning-path">Learning path</h2>
+
+  <table>
+    <caption>Six stages from setup to mastery</caption>
+    <thead>
+      <tr>
+        <th>Stage</th>
+        <th>Topics</th>
+        <th>You'll be able to...</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Setup</strong></td>
+        <td>Installation, hosting services</td>
+        <td>Install Git and create a GitHub account</td>
+      </tr>
+      <tr>
+        <td><strong>2. Basics</strong></td>
+        <td>Repository, configuration, dataflow</td>
+        <td>Initialize repos, configure identity, understand staging</td>
+      </tr>
+      <tr>
+        <td><strong>3. Daily workflow</strong></td>
+        <td>add, commit, push, pull, status, log, diff</td>
+        <td>Track changes and collaborate with a remote</td>
+      </tr>
+      <tr>
+        <td><strong>4. Branching</strong></td>
+        <td>branch, checkout, merge, stash</td>
+        <td>Work on features in isolation and integrate them</td>
+      </tr>
+      <tr>
+        <td><strong>5. Advanced</strong></td>
+        <td>rebase, cherry-pick, reset, conflicts</td>
+        <td>Rewrite history, resolve conflicts, recover from mistakes</td>
+      </tr>
+      <tr>
+        <td><strong>6. Mastery</strong></td>
+        <td>Objects, references, selectors, refspec</td>
+        <td>Understand Git internals and debug complex situations</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 id="quick-start">Quick start</h2>
+
+  <p>New to Git? Start here:</p>
+
+  <ol>
+    <li><a href="/introduction/#install-on-windows">Install Git</a> on your machine</li>
+    <li><a href="/introduction/#git-dataflow">Understand the dataflow</a> — working directory, index, local repo, remote</li>
+    <li><a href="/operations/create/#git-init">Create your first repository</a></li>
+    <li><a href="/operations/track/#git-commit">Make your first commit</a></li>
+  </ol>
+
+  <h2 id="about">About</h2>
+
+  <p>
+    Created by <a href="https://github.com/braboj">Branimir Georgiev</a> and
+    <a href="https://github.com/marwan-rashed">Marwan Rashed</a>.
+  </p>
+  <p>
+    Part of <a href="https://codewithbranko.com">Code with Branko</a> — practical tutorials for developers.
+  </p>
+
+  <h2 id="selected-references">Selected references</h2>
+
+  <ul>
+    <li><a href="https://github.com/pluralsight/git-internals-pdf/releases">Git Internals</a> — deep dive into Git's object model</li>
+    <li><a href="https://github.com/k88hudson/git-flight-rules">Flight Rules for Git</a> — what to do when things go wrong</li>
+    <li><a href="http://think-like-a-git.net/">Think Like (a) Git</a> — graph theory perspective</li>
+    <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a> — the definitive reference</li>
+    <li><a href="https://githowto.com/">Git How To</a> — guided tour</li>
+  </ul>
+</DocLayout>

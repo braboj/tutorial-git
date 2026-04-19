@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="merge-3-way-concept" name="3-way merge concept">
+    <mxGraphModel dx="900" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="820" pageHeight="480" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="790" height="450" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="3-Way Merge" vertex="1">
+          <mxGeometry x="340" y="30" width="150" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Description -->
+        <mxCell id="desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=0;fontColor=#5F5E5A;fontFamily=Helvetica;spacingTop=0;" value="The algorithm compares A, B, and Base line by&lt;br&gt;line. If only one branch differs from the base,&lt;br&gt;the diverging line is merged. If both differ, a&lt;br&gt;conflict is reported." vertex="1">
+          <mxGeometry x="340" y="60" width="380" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Flow diagram: Base → A, Base → B, A → Merge, B → Merge -->
+        <mxCell id="node-base" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="Base" vertex="1">
+          <mxGeometry x="40" y="75" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-a" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;aspect=fixed;" value="A" vertex="1">
+          <mxGeometry x="160" y="35" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-b" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="B" vertex="1">
+          <mxGeometry x="160" y="115" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="node-merge" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#7C3AED;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;aspect=fixed;" value="Merge" vertex="1">
+          <mxGeometry x="270" y="75" width="50" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- Flow arrows -->
+        <mxCell id="arr-a-base" edge="1" parent="1" source="node-a" target="node-base" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-b-base" edge="1" parent="1" source="node-b" target="node-base" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-merge-a" edge="1" parent="1" source="node-merge" target="node-a" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-merge-b" edge="1" parent="1" source="node-merge" target="node-b" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Table -->
+        <!-- Header row -->
+        <mxCell id="th-label" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="3-Way" vertex="1">
+          <mxGeometry x="40" y="200" width="100" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="th-branch-a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Branch A" vertex="1">
+          <mxGeometry x="140" y="200" width="170" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="th-base" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Base" vertex="1">
+          <mxGeometry x="310" y="200" width="140" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="th-branch-b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Branch B" vertex="1">
+          <mxGeometry x="450" y="200" width="170" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="th-merged" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#EDE9FE;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#5B21B6;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Merged" vertex="1">
+          <mxGeometry x="620" y="200" width="170" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: Line 1 — only B changed → take B -->
+        <mxCell id="r1-label" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Line 1" vertex="1">
+          <mxGeometry x="40" y="236" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello')" vertex="1">
+          <mxGeometry x="140" y="236" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-base" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello')" vertex="1">
+          <mxGeometry x="310" y="236" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello there!')" vertex="1">
+          <mxGeometry x="450" y="236" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-merged" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello there!')" vertex="1">
+          <mxGeometry x="620" y="236" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: Line 2 — both A and B added different content → conflict -->
+        <mxCell id="r2-label" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Line 2" vertex="1">
+          <mxGeometry x="40" y="276" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="name = 'Branko'" vertex="1">
+          <mxGeometry x="140" y="276" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-base" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="" vertex="1">
+          <mxGeometry x="310" y="276" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('How are you?')" vertex="1">
+          <mxGeometry x="450" y="276" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-merged" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#A32D2D;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="merge conflict" vertex="1">
+          <mxGeometry x="620" y="276" width="170" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: Line 3 — only A added → take A -->
+        <mxCell id="r3-label" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="Line 3" vertex="1">
+          <mxGeometry x="40" y="316" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-a" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello $name')" vertex="1">
+          <mxGeometry x="140" y="316" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-base" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="" vertex="1">
+          <mxGeometry x="310" y="316" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-b" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="" vertex="1">
+          <mxGeometry x="450" y="316" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-merged" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=center;" value="print('Hello $name')" vertex="1">
+          <mxGeometry x="620" y="316" width="170" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

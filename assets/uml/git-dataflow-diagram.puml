@@ -1,0 +1,96 @@
+@startuml
+skinparam lifelineStrategy solid
+skinparam handwritten false
+skinparam ParticipantPadding 10
+skinparam BoxPadding 5
+skinparam SequenceMessageAlign center
+skinparam backgroundColor #EEEBDC
+
+
+'#############################################################################
+
+box \nLocal Machine\n #LightYellow
+    participant "<size:18>**Workspace**</size>\n C:\demo" as Workspace #White
+    participant "<size:18>**Index**</size>\n C:\demo\.git\index" as Index #White
+    participant "<size:18>**Local Repo**</size>\n C:\demo\.git" as Local #White
+end box
+
+box \nRemote Server\n #LightGreen
+    participant "<size:18>**Remote Repo**</size>\n GitHub / demo.git" as Remote #White
+end box
+
+'#############################################################################
+
+'Cloning
+Remote o-> Workspace : git clone https://github.com/user/demo.git
+note left
+    Copy the repo folder to a
+    hidden .git folder and
+    create the project files.
+end note
+
+'Work in progress
+Workspace o-> Workspace : Change files
+note left
+    The developer works
+    in the project folder
+end note
+
+'Staging
+Workspace o-> Index  : git add *
+note left
+    Add files or changes
+    to the staging area
+end note
+
+'Unstaging
+Index o-> Workspace  : git restore *
+note left
+    Restore project files
+    using the index
+end note
+
+'Commit
+Index o-> Local      : git commit -m 'Message'
+note left
+    Copy changes from the
+    index to the repository
+end note
+
+'Reverting
+Local o-> Index  :  restore * --staged
+note left
+    Restore the index
+    using the repository
+end note
+
+'Pushing
+Local o-> Remote     : git push
+note left
+    Copy the **local**
+    commit history to the
+    **remote** repo.
+end note
+
+'Fetching
+Remote o-> Local     : git fetch
+note left
+    Copy the **remote**
+    commit history to the
+    **local** repo.
+end note
+
+'Update
+Local o-> Workspace  : git merge
+note left
+    Update the working files
+    using the commit history
+end note
+
+'Pulling
+Remote o-> Workspace : git pull
+note left
+   Fetch and merge
+end note
+
+@enduml

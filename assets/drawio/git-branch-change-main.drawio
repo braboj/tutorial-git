@@ -1,0 +1,65 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="branch-change-main" name="branch-change-main">
+    <mxGraphModel dx="900" dy="500" grid="1" gridSize="10" page="1" pageWidth="700" pageHeight="300" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- Background card -->
+        <mxCell id="bg-card" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" vertex="1" parent="1">
+          <mxGeometry x="10" y="10" width="570" height="250" as="geometry"/>
+        </mxCell>
+        <!-- Commit 1 -->
+        <mxCell id="card-commit-1" value="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="40" y="120" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <!-- Commit 2 -->
+        <mxCell id="card-commit-2" value="2" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="130" y="120" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <!-- Commit 3 (fork point) -->
+        <mxCell id="card-commit-3" value="3" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <!-- Commit 5 (main branch, top) -->
+        <mxCell id="card-commit-5" value="5" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="350" y="50" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <!-- Commit 4 (bugfix branch, bottom) -->
+        <mxCell id="card-commit-4" value="4" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="350" y="190" width="28" height="28" as="geometry"/>
+        </mxCell>
+        <!-- Arrows: child points to parent -->
+        <mxCell id="arrow-2-1" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" source="card-commit-2" target="card-commit-1" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow-3-2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" source="card-commit-3" target="card-commit-2" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow-5-3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" source="card-commit-5" target="card-commit-3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow-4-3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" source="card-commit-4" target="card-commit-3" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- main pill (blue, at commit 5) -->
+        <mxCell id="pill-main" value="*main" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=14;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="47" width="80" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow-main-5" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;" edge="1" source="pill-main" target="card-commit-5" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- HEAD label -->
+        <mxCell id="label-head" value="HEAD" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#2563EB;fontFamily=Helvetica;" vertex="1" parent="1">
+          <mxGeometry x="410" y="25" width="80" height="20" as="geometry"/>
+        </mxCell>
+        <!-- bugfix pill (green, at commit 4) -->
+        <mxCell id="pill-bugfix" value="bugfix" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="410" y="187" width="90" height="34" as="geometry"/>
+        </mxCell>
+        <mxCell id="arrow-bugfix-4" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;" edge="1" source="pill-bugfix" target="card-commit-4" parent="1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
