@@ -33,7 +33,7 @@ Operational reference for common tasks in tutorial-git.
 - Place exercises at the end of the chapter under `## Exercises`
 - Each exercise has: **Task**, **Steps** (numbered), **Verify**
 - Exercises within a chapter use the same lab repository
-- Cross-chapter exercises go in `05-playbook.md`
+- Cross-topic recipes go in `07-playbook.md`
 
 ### 1.4 Adding quiz questions
 
@@ -54,6 +54,16 @@ Operational reference for common tasks in tutorial-git.
 4. Use readable IDs: `card-commit-1`, `pill-main`, `arrow-3-2`
 
 ### 2.2 Exporting as PNG
+
+**CLI (recommended for batch export):**
+
+```bash
+DRAWIO="/c/Program Files/draw.io/draw.io.exe"
+"$DRAWIO" --export --format png --scale 2 --transparent \
+  --output assets/images/<name>.png assets/drawio/<name>.drawio
+```
+
+**Manual (single diagram):**
 
 1. Open the `.drawio` file in draw.io
 2. File → Export as → PNG
@@ -105,8 +115,8 @@ automatically.
 ### 4.1 Branch and commit
 
 ```bash
-git checkout main && git pull
-git checkout -b docs/chapter-name
+git switch main && git pull
+git switch -c docs/chapter-name
 # ... make changes ...
 git add chapters/NN-slug.md
 git commit -m "docs: description of change"
@@ -122,7 +132,7 @@ git push -u origin docs/chapter-name
 ### 4.3 After merge
 
 ```bash
-git checkout main && git pull
+git switch main && git pull
 git branch -d docs/chapter-name
 git push origin --delete docs/chapter-name
 ```

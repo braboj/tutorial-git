@@ -52,11 +52,21 @@ is not yet wired to `chapters/`, so content may be placeholder.
 ## 5. Project context
 
 tutorial-git is part of the **Code with Branko** tutorial platform. It
-teaches Git from scratch — aimed at beginners with no prior experience.
+teaches Git across three difficulty tiers — Beginner (chapters 1-2),
+Advanced (chapters 3-5), and Expert (chapter 6). Chapters 7-9 are
+reference material (playbook, appendix, glossary).
 
 The content lives in `chapters/` as plain Markdown, independent of any
 static site generator. The Astro site in `astro-site/` consumes these
 files for the web version.
+
+```
+01-introduction.md         06-expert-topics.md
+02-building-blocks.md      07-playbook.md
+03-branching-and-merging.md 08-appendix.md
+04-remote-repositories.md  09-glossary.md
+05-subprojects.md
+```
 
 Chapter structure, writing conventions, and figure style rules are
 documented in `CLAUDE.md`. Quality conventions (git workflow, docs,
