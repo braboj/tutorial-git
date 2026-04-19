@@ -1,0 +1,31 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="config-model" name="Configuration model">
+    <mxGraphModel dx="1106" dy="969" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="460" pageHeight="280" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="250" width="430" x="10" y="10" as="geometry" />
+        </mxCell>
+        <mxCell id="layer-system" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=8;arcSize=8;" value="System" vertex="1">
+          <mxGeometry height="210" width="390" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="label-system" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="all users, all repos" vertex="1">
+          <mxGeometry height="18" width="390" x="30" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="layer-global" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=8;arcSize=8;" value="Global" vertex="1">
+          <mxGeometry height="140" width="310" x="70" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="label-global" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="current user, all repos" vertex="1">
+          <mxGeometry height="18" width="310" x="70" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="layer-local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=top;align=center;spacingTop=8;arcSize=8;" value="Local" vertex="1">
+          <mxGeometry height="70" width="200" x="120" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="label-local" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="current repo only (highest priority)" vertex="1">
+          <mxGeometry height="18" width="200" x="120" y="165" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

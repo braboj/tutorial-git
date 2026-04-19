@@ -1,0 +1,62 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="selectors-triple-dot" name="Triple-dot selector">
+    <mxGraphModel dx="800" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="400" pageHeight="340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="370" height="310" as="geometry" />
+        </mxCell>
+
+        <!-- Commit 1 (shared) -->
+        <mxCell id="c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="166" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Commit 2 (shared) -->
+        <mxCell id="c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="166" y="110" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Commit 3 (A only, highlighted) -->
+        <mxCell id="c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="96" y="190" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Commit 4 (B only, highlighted) -->
+        <mxCell id="c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="4" vertex="1">
+          <mxGeometry x="236" y="190" width="28" height="28" as="geometry" />
+        </mxCell>
+
+        <!-- Arrows (child→parent) -->
+        <mxCell id="arr-c2-c1" edge="1" parent="1" source="c2" target="c1" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c3-c2" edge="1" parent="1" source="c3" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c4-c2" edge="1" parent="1" source="c4" target="c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Labels -->
+        <mxCell id="label-a" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontStyle=0;fontColor=#1E40AF;fontFamily=Helvetica;" value="A = {1, 2, 3}" vertex="1">
+          <mxGeometry x="56" y="222" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="label-b" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=11;fontStyle=0;fontColor=#15803D;fontFamily=Helvetica;" value="B = {1, 2, 4}" vertex="1">
+          <mxGeometry x="200" y="222" width="100" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Result -->
+        <mxCell id="label-result" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="A...B = {3, 4}" vertex="1">
+          <mxGeometry x="110" y="265" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="label-desc" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="unique to each side (symmetric difference)" vertex="1">
+          <mxGeometry x="50" y="285" width="270" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

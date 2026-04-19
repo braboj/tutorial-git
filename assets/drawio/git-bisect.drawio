@@ -1,0 +1,169 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="bisect" name="Git bisect">
+    <mxGraphModel dx="800" dy="600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="580" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="550" height="350" as="geometry" />
+        </mxCell>
+
+        <!-- Row 1: Initial state — good at 1, bad at 5 -->
+        <mxCell id="label-r1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="Step 1" vertex="1">
+          <mxGeometry x="15" y="46" width="45" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="80" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="160" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="240" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;aspect=fixed;" value="4" vertex="1">
+          <mxGeometry x="320" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#791F1F;fontFamily=Helvetica;aspect=fixed;" value="5" vertex="1">
+          <mxGeometry x="400" y="40" width="28" height="28" as="geometry" />
+        </mxCell>
+        <!-- Arrows -->
+        <mxCell id="r1-a21" edge="1" parent="1" source="r1-c2" target="r1-c1" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-a32" edge="1" parent="1" source="r1-c3" target="r1-c2" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-a43" edge="1" parent="1" source="r1-c4" target="r1-c3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-a54" edge="1" parent="1" source="r1-c5" target="r1-c4" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Labels -->
+        <mxCell id="r1-good" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#15803D;fontFamily=Helvetica;" value="good" vertex="1">
+          <mxGeometry x="74" y="70" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-test" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#854D0E;fontFamily=Helvetica;" value="test?" vertex="1">
+          <mxGeometry x="234" y="70" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="r1-bad" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#791F1F;fontFamily=Helvetica;" value="bad" vertex="1">
+          <mxGeometry x="394" y="70" width="40" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow between rows -->
+        <mxCell id="arr-r1-r2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="commit 3 is good → bug is in 4-5" vertex="1">
+          <mxGeometry x="140" y="95" width="250" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Row 2: Narrowed — good at 3, bad at 5, test 4 -->
+        <mxCell id="label-r2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="Step 2" vertex="1">
+          <mxGeometry x="15" y="131" width="45" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#D3D1C7;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="80" y="125" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#D3D1C7;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="160" y="125" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="240" y="125" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#854D0E;fontFamily=Helvetica;aspect=fixed;" value="4" vertex="1">
+          <mxGeometry x="320" y="125" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#791F1F;fontFamily=Helvetica;aspect=fixed;" value="5" vertex="1">
+          <mxGeometry x="400" y="125" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-a21" edge="1" parent="1" source="r2-c2" target="r2-c1" style="endArrow=classic;html=1;strokeColor=#D3D1C7;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-a32" edge="1" parent="1" source="r2-c3" target="r2-c2" style="endArrow=classic;html=1;strokeColor=#D3D1C7;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-a43" edge="1" parent="1" source="r2-c4" target="r2-c3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-a54" edge="1" parent="1" source="r2-c5" target="r2-c4" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-good" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#15803D;fontFamily=Helvetica;" value="good" vertex="1">
+          <mxGeometry x="234" y="155" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-test" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#854D0E;fontFamily=Helvetica;" value="test?" vertex="1">
+          <mxGeometry x="314" y="155" width="40" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="r2-bad" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=0;fontColor=#791F1F;fontFamily=Helvetica;" value="bad" vertex="1">
+          <mxGeometry x="394" y="155" width="40" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Arrow between rows -->
+        <mxCell id="arr-r2-r3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="commit 4 is bad → first bad commit found" vertex="1">
+          <mxGeometry x="140" y="180" width="280" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Row 3: Result — commit 4 identified -->
+        <mxCell id="label-r3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="Result" vertex="1">
+          <mxGeometry x="15" y="216" width="45" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#D3D1C7;fontFamily=Helvetica;aspect=fixed;" value="1" vertex="1">
+          <mxGeometry x="80" y="210" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#D3D1C7;fontFamily=Helvetica;aspect=fixed;" value="2" vertex="1">
+          <mxGeometry x="160" y="210" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-c3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#15803D;fontFamily=Helvetica;aspect=fixed;" value="3" vertex="1">
+          <mxGeometry x="240" y="210" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-c4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=2;shadow=0;fontSize=14;fontStyle=1;fontColor=#791F1F;fontFamily=Helvetica;aspect=fixed;" value="4" vertex="1">
+          <mxGeometry x="320" y="210" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-c5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=14;fontStyle=1;fontColor=#791F1F;fontFamily=Helvetica;aspect=fixed;" value="5" vertex="1">
+          <mxGeometry x="400" y="210" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-a21" edge="1" parent="1" source="r3-c2" target="r3-c1" style="endArrow=classic;html=1;strokeColor=#D3D1C7;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-a32" edge="1" parent="1" source="r3-c3" target="r3-c2" style="endArrow=classic;html=1;strokeColor=#D3D1C7;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-a43" edge="1" parent="1" source="r3-c4" target="r3-c3" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-a54" edge="1" parent="1" source="r3-c5" target="r3-c4" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="r3-found" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=top;fontSize=10;fontStyle=1;fontColor=#A32D2D;fontFamily=Helvetica;" value="first bad" vertex="1">
+          <mxGeometry x="310" y="240" width="48" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="leg-good" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;aspect=fixed;" value="" vertex="1">
+          <mxGeometry x="80" y="280" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-good-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Good (no bug)" vertex="1">
+          <mxGeometry x="100" y="277" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-bad" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;aspect=fixed;" value="" vertex="1">
+          <mxGeometry x="220" y="280" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-bad-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Bad (has bug)" vertex="1">
+          <mxGeometry x="240" y="277" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-test" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;aspect=fixed;" value="" vertex="1">
+          <mxGeometry x="360" y="280" width="14" height="14" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-test-t" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Testing" vertex="1">
+          <mxGeometry x="380" y="277" width="60" height="18" as="geometry" />
+        </mxCell>
+
+        <!-- Summary -->
+        <mxCell id="summary" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="5 commits, 2 tests — binary search halves the range each step" vertex="1">
+          <mxGeometry x="80" y="310" width="380" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

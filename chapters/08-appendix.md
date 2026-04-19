@@ -303,6 +303,24 @@ git submodule update --init --recursive    # Initialize and fetch
 git submodule update --remote <path>       # Update to latest remote
 ```
 
+## Merge Strategies
+
+Git selects a merge strategy automatically. You can force one with
+`git merge -s <strategy>`.
+
+| Strategy | When Git uses it | What it does |
+|----------|-----------------|--------------|
+| `recursive` | Default for two branches | 3-way merge; handles multiple common ancestors (criss-cross) |
+| `ort` | Default in Git 2.34+ | Faster replacement for recursive; same behavior |
+| `octopus` | Default when merging 3+ branches | Merges all at once; fails if any conflicts |
+| `ours` | Manual only (`-s ours`) | Records merge but ignores incoming changes entirely |
+| `subtree` | Manual only (`-s subtree`) | Adjusts paths when one branch is a subdirectory of another |
+
+> **Note:** Do not confuse the **ours strategy** (`-s ours`) with the
+> **ours option** (`-X ours`). The strategy discards the entire branch.
+> The option resolves individual conflicts by preferring the current
+> branch but still includes non-conflicting changes.
+
 ## Git Clients
 
 - [GitHub Desktop](https://desktop.github.com/)
