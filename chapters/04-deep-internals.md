@@ -1,6 +1,6 @@
 ---
-title: "Advanced Concepts"
-section: "advanced"
+title: "Deep Internals"
+section: "deep-internals"
 order: 4
 ---
 
