@@ -353,7 +353,7 @@ $ git ls-files --stage
 Each line shows: `<mode> <blob-hash> <stage-flag> <file-path>`. The
 stage flag is `0` during normal operation — it changes to `1`, `2`, or
 `3` only during a merge conflict (covered in
-[Branching and Merging](03-branching-and-merging.md)).
+[Branching and Merging](../branching-and-merging/)).
 
 ### Understanding the Mode Field
 

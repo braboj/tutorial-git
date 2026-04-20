@@ -12,7 +12,7 @@ local and remote branches in sync. These are the operations that turn
 Git from a local history tool into a collaboration platform.
 
 The basics of connecting to a remote were introduced in
-[Introduction](01-introduction.md) (Exercise 6). This chapter goes
+[Introduction](../introduction/) (Exercise 6). This chapter goes
 deeper into the mechanics and the workflows you will use daily.
 
 ![Remote flow](../assets/images/git-remote-flow.png)
@@ -75,7 +75,7 @@ origin/feature
 upstream/main
 ```
 
-As covered in [Building Blocks](02-building-blocks.md), these references
+As covered in [Building Blocks](../building-blocks/), these references
 live in `.git/refs/remotes/`. They are updated automatically by `fetch`
 and `pull`, never by your local commits.
 
@@ -119,7 +119,7 @@ Git supports two URL protocols:
 | SSH      | `git@github.com:user/repo.git`     | Requires SSH key setup, no password prompts |
 
 HTTPS is simpler to start with. SSH is covered in the
-[Appendix](08-appendix.md).
+[Appendix](../appendix/).
 
 ## Fetching
 
@@ -176,7 +176,7 @@ $ git config --global pull.rebase true
 
 If the remote changes conflict with your local changes, Git stops and
 asks you to resolve the conflict — the same process described in
-[Branching and Merging](03-branching-and-merging.md#conflicts). After
+[Branching and Merging](../branching-and-merging/#conflicts). After
 resolving:
 
 ```text

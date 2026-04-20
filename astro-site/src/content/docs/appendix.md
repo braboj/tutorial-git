@@ -8,7 +8,7 @@ order: 8
 
 This appendix contains reference material that supports the tutorial
 chapters — merge strategies, Git clients, external resources, and
-notes. For step-by-step recipes, see the [Playbook](07-playbook.md).
+notes. For step-by-step recipes, see the [Playbook](../playbook/).
 For command help, run `git help <command>`.
 
 ## Merge Strategies

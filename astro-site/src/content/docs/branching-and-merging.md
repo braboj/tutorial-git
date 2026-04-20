@@ -14,7 +14,7 @@ or managing multiple features at once.
 
 ## Branching
 
-As covered in [Building Blocks](02-building-blocks.md), a branch is a
+As covered in [Building Blocks](../building-blocks/), a branch is a
 pointer to a specific commit. Creating a branch is a "cheap" operation —
 Git does not copy any files, it only creates a new reference. This
 section focuses on how branches are used in practice.
@@ -244,7 +244,7 @@ different sources:
 | `git merge` | Both branches changed the same lines |
 | `git rebase` | A replayed commit touches lines modified upstream |
 | `git cherry-pick` | The picked commit overlaps with the current state |
-| `git pull` | Remote changes overlap with local changes (see [Remote Repositories](04-remote-repositories.md)) |
+| `git pull` | Remote changes overlap with local changes (see [Remote Repositories](../remote-repositories/)) |
 | `git stash pop` | Stashed changes conflict with the current working tree |
 
 ### How Git marks conflicts
@@ -445,7 +445,7 @@ A stash is a commit object **W** with two parents:
 ## Exercises
 
 All exercises use the `concepts-lab` repository created in
-[Building Blocks](02-building-blocks.md). If you skipped that chapter, create a new
+[Building Blocks](../building-blocks/). If you skipped that chapter, create a new
 repository with at least one commit before starting.
 
 ### Exercise 1: Branch Lifecycle
