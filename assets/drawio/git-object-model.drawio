@@ -59,21 +59,6 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- commit → commit (parent) -->
-        <mxCell id="arrow-commit-parent" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;curved=1;" edge="1" parent="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="310" y="200" as="sourcePoint" />
-            <mxPoint x="310" y="200" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="310" y="160" />
-              <mxPoint x="280" y="160" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="label-parent" value="parent" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="265" y="140" width="50" height="20" as="geometry" />
-        </mxCell>
-
         <!-- commit → tree -->
         <mxCell id="arrow-commit-tree" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1" source="commit-card" target="tree-card">
           <mxGeometry relative="1" as="geometry" />

@@ -214,10 +214,10 @@ Tags are **not** pushed automatically — you must run
 
 ### How Objects Relate
 
-The diagram below shows how objects and references connect. Objects
-(solid arrows) are immutable data stored in `.git/objects/`. References
-(dashed arrows) are named pointers stored in `.git/HEAD` and
-`.git/refs/` that give human-readable names to commits.
+The diagram below shows how the four object types connect. A tag
+points to a commit, a commit points to a root tree, and a tree
+contains blobs (files) and other trees (subdirectories). All objects
+are immutable and stored in `.git/objects/`.
 
 ![Object Model](../assets/images/git-object-model.png)
 
