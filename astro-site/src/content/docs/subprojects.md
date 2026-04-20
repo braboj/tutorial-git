@@ -4,7 +4,7 @@ section: "subprojects"
 order: 5
 ---
 
-## Overview
+## 1. Overview
 
 Projects often depend on code from other repositories — shared
 libraries, frameworks, or configuration templates. Copying the code
@@ -12,7 +12,13 @@ manually means maintaining every copy independently. Git offers two
 built-in solutions to include external repositories: **submodules**
 and **subtrees**.
 
-## Submodules
+In this chapter you will learn:
+
+- How submodules embed a reference to an external repository at a pinned commit
+- How subtrees merge external repository content directly into your project
+- When to use submodules versus subtrees based on your workflow
+
+## 2. Submodules
 
 A submodule is a reference to a specific commit in another repository.
 Git stores only the URL and the commit hash — it does not copy the
@@ -91,7 +97,7 @@ $ git commit -m "Remove lib submodule"
 | Each submodule has independent history  | Nested submodules skipped by default (need `--recursive`) |
 | Pin to a specific version               | Merging changes back into the submodule is awkward        |
 
-## Subtrees
+## 3. Subtrees
 
 A subtree is a full copy of another repository — files and history —
 merged directly into a subdirectory of the parent project. Unlike
@@ -143,7 +149,7 @@ Unlike submodules, there is no metadata to clean up.
 | Works with standard `clone`, `pull`, `push` | Must not mix parent and subtree changes in commits |
 | No `.gitmodules` or metadata files          | Requires understanding of merge strategies         |
 
-## Which to use?
+## 4. Which to use?
 
 | Aspect            | Submodules                    | Subtrees                         |
 |-------------------|-------------------------------|----------------------------------|
@@ -160,7 +166,7 @@ dependency. Use **subtrees** for system-based development where you
 want a full copy of the code and expect to modify it alongside your
 project.
 
-## Other tools
+## 5. Other tools
 
 - [google repo](https://gerrit.googlesource.com/git-repo/) — manages
   many Git repositories as a single project (used by Android)

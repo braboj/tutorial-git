@@ -4,14 +4,21 @@ section: "appendix"
 order: 8
 ---
 
-## Overview
+## 1. Overview
 
 This appendix contains reference material that supports the tutorial
 chapters — merge strategies, Git clients, external resources, and
 notes. For step-by-step recipes, see the [Playbook](07-playbook.md).
 For command help, run `git help <command>`.
 
-## Merge Strategies
+In this chapter you will learn:
+
+- Merge strategies — when Git uses each strategy and how to force one
+- SSH key setup — generate keys, configure the agent, and connect to GitHub
+- Git clients — popular graphical tools for each platform
+- References — books, troubleshooting guides, visualizations, and workflow models
+
+## 2. Merge Strategies
 
 Git selects a merge strategy automatically. You can force one with
 `git merge -s <strategy>`.
@@ -29,7 +36,7 @@ Git selects a merge strategy automatically. You can force one with
 > The option resolves individual conflicts by preferring the current
 > branch but still includes non-conflicting changes.
 
-## SSH Key Setup
+## 3. SSH Key Setup
 
 SSH lets you authenticate with remotes without entering a password
 each time. This is the recommended method for frequent use.
@@ -76,7 +83,7 @@ Hi username! You've successfully authenticated...
 $ git remote set-url origin git@github.com:user/repo.git
 ```
 
-## Git Clients
+## 4. Git Clients
 
 | Client | Platform | Notes |
 |--------|----------|-------|
@@ -86,7 +93,7 @@ $ git remote set-url origin git@github.com:user/repo.git
 | [TortoiseGit](https://tortoisegit.org/) | Windows | Shell integration |
 | [Git Extensions](https://gitextensions.github.io/) | Windows | Lightweight, open source |
 
-## References
+## 5. References
 
 ### Books and tutorials
 
@@ -111,7 +118,7 @@ $ git remote set-url origin git@github.com:user/repo.git
 - [Trunk-Based Development](https://www.toptal.com/software/trunk-based-development-git-flow) — comparison with Git Flow
 - [OneFlow](https://www.endoflineblog.com/oneflow-a-git-branching-model-and-workflow) — simplified alternative to Git Flow
 
-## Notes
+## 6. Notes
 
 1. Git cannot commit empty folders. Add a placeholder file (e.g.
    `.gitkeep`) if you need an empty directory tracked.

@@ -4,7 +4,7 @@ section: "playbook"
 order: 7
 ---
 
-## Overview
+## 1. Overview
 
 This chapter is a quick-reference collection of recipes for common
 Git tasks. Each recipe shows the problem, the commands to solve it,
@@ -13,7 +13,21 @@ and what to watch out for.
 For command syntax, see [Appendix](../appendix/). For definitions,
 see [Glossary](../glossary/).
 
-## Undoing changes
+In this chapter you will learn:
+
+- How to undo changes at every level — unstage, reset, revert, and recover
+- Branching recipes — create, delete, rename, and inspect branches
+- Merging recipes — fast-forward, no-ff, squash, conflict resolution
+- Rebasing — linearize history and squash commits interactively
+- Remote operations — push, pull, force push safely, sync forks
+- Cherry-picking — apply individual commits across branches
+- Stashing — save and restore work in progress
+- Tagging — create, push, and delete annotated tags
+- Submodules — add, clone, update, and remove submodules
+- Debugging — bisect, blame, and search commit history
+- Configuration — identity, defaults, aliases, and diagnostics
+
+## 2. Undoing changes
 
 ### Discard unstaged changes to a file
 
@@ -78,7 +92,7 @@ $ git branch recovered <hash>      # or: git reset --hard <hash>
 
 Works as long as the reflog entry has not expired (default: 30 days).
 
-## Branching
+## 3. Branching
 
 ### Create a branch and switch to it
 
@@ -108,7 +122,7 @@ $ git branch --merged main
 
 Safe to delete any branch listed here (except `main` itself).
 
-## Merging
+## 4. Merging
 
 ### Merge a feature branch into main
 
@@ -147,7 +161,7 @@ $ git add <file>                    # stage resolved file
 $ git commit                        # complete the merge
 ```
 
-## Rebasing
+## 5. Rebasing
 
 ### Rebase a feature branch onto main
 
@@ -176,7 +190,7 @@ $ git add <file>
 $ git rebase --continue
 ```
 
-## Remote operations
+## 6. Remote operations
 
 ### Push a new branch and set up tracking
 
@@ -223,7 +237,7 @@ $ git diff main origin/main              # line-by-line changes
 $ git merge origin/main                  # integrate when ready
 ```
 
-## Cherry-picking
+## 7. Cherry-picking
 
 ### Apply a single commit from another branch
 
@@ -239,7 +253,7 @@ $ git cherry-pick --no-commit <hash>
 
 Useful when you want to modify the change before committing.
 
-## Stashing
+## 8. Stashing
 
 ### Save work in progress
 
@@ -268,7 +282,7 @@ $ git stash drop stash@{0}          # delete a specific entry
 $ git stash clear                   # delete all entries
 ```
 
-## Tagging
+## 9. Tagging
 
 ### Create an annotated tag
 
@@ -296,7 +310,7 @@ $ git tag -d v1.0.0                 # local
 $ git push origin --delete v1.0.0   # remote
 ```
 
-## Submodules
+## 10. Submodules
 
 ### Add a submodule
 
@@ -334,7 +348,7 @@ $ rm -rf .git/modules/<path>
 $ git commit -m "Remove submodule"
 ```
 
-## Debugging
+## 11. Debugging
 
 ### Find which commit introduced a bug
 
@@ -371,7 +385,7 @@ $ git log --grep="fix" --oneline
 $ git log -S "functionName" --oneline
 ```
 
-## Configuration
+## 12. Configuration
 
 ### Set identity
 

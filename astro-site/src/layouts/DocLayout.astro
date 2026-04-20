@@ -35,6 +35,7 @@ const { title, headings = [], currentPath = "/" } = Astro.props;
     <div class="site-main">
       <TableOfContents headings={headings} />
       <main class="content" id="main-content">
+        <h1>{title}</h1>
         <slot />
       </main>
       <TutorialLinks />

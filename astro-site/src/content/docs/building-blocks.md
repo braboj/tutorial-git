@@ -4,14 +4,22 @@ section: "building-blocks"
 order: 2
 ---
 
-## Overview
+## 1. Overview
 
 This chapter covers the internal building blocks of Git — how repositories
 are structured, how Git stores data as objects, and how references connect
 everything together. Understanding these internals will help you make sense
 of what Git commands actually do under the hood.
 
-## Repository
+In this chapter you will learn:
+
+- The difference between bare and non-bare repositories
+- How Git's object model stores files, directories, commits, and tags
+- How the index (staging area) prepares changes for commits
+- How references and HEAD connect names to commits
+- How to navigate and rewrite history with reset
+
+## 2. Repository
 
 A repository is a database that stores the complete history of a project
 as a series of snapshots (commits). Every commit records exactly what
@@ -83,7 +91,7 @@ The `.git` folder contains the same structure as a bare repository.
 The difference is that a non-bare repository also has a working tree
 next to it — the place where you do your actual work.
 
-## Object Model
+## 3. Object Model
 
 Every time you commit, Git takes a **snapshot** — a complete picture of
 every tracked file in your project at that moment. A snapshot is not a
@@ -318,7 +326,7 @@ Add project documentation
 | `-s` | Object size in bytes | `231` |
 | `-p` | Object content (pretty-print) | Depends on the type — see examples above |
 
-## Index (Staging Area)
+## 4. Index (Staging Area)
 
 The index is the area between your working tree and the repository. It
 holds a list of changes that are ready to be included in the next
@@ -388,7 +396,7 @@ and execute (1).
 So `100644` means "regular file, readable and writable by the owner"
 and `100755` means "executable file, runnable by anyone."
 
-## References
+## 5. References
 
 Every object in Git is identified by a 40-character hash, but humans
 don't think in hashes — we think in names like `main`, `feature/login`,
@@ -478,7 +486,7 @@ $ cat .git/refs/remotes/origin/main
 If this hash matches your local `refs/heads/main`, the branches are in
 sync. If they differ, one side has commits the other doesn't.
 
-## History Navigation
+## 6. History Navigation
 
 Navigating history in Git means moving two things: **HEAD** (your
 current position) and **branch tips** (where each branch points).

@@ -4,7 +4,7 @@ section: "remote-repositories"
 order: 4
 ---
 
-## Overview
+## 1. Overview
 
 This chapter covers how Git communicates with remote repositories —
 fetching changes others have made, pushing your own work, and keeping
@@ -15,9 +15,18 @@ The basics of connecting to a remote were introduced in
 [Introduction](../introduction/) (Exercise 6). This chapter goes
 deeper into the mechanics and the workflows you will use daily.
 
+In this chapter you will learn:
+
+- How remote branches and remote-tracking references work
+- How to clone a repository and what Git sets up automatically
+- How to fetch changes from a remote without modifying your working tree
+- How to pull remote changes and handle conflicts
+- How to push local commits to a remote branch
+- How forking workflows enable contribution to external projects
+
 ![Remote flow](../assets/images/git-remote-flow.png)
 
-## Remote Branches
+## 2. Remote Branches
 
 A remote is a named reference to another repository, usually hosted on
 a service like GitHub, GitLab, or Bitbucket. When you clone a
@@ -97,7 +106,7 @@ it is ahead, behind, or diverged:
 | behind 3          | The remote has 3 commits you have not fetched |
 | ahead 1, behind 2 | Both sides have new commits (diverged)        |
 
-## Cloning
+## 3. Cloning
 
 Cloning creates a local copy of a remote repository. It downloads the
 full history, sets up `origin` pointing to the source URL, creates
@@ -121,7 +130,7 @@ Git supports two URL protocols:
 HTTPS is simpler to start with. SSH is covered in the
 [Appendix](../appendix/).
 
-## Fetching
+## 4. Fetching
 
 Fetching downloads commits, branches, and tags from a remote and
 updates the remote-tracking branches. It does not modify your working
@@ -144,7 +153,7 @@ $ git diff main origin/main    # line-by-line differences
 Fetching is always safe — it never changes your local branches or
 working tree.
 
-## Pulling
+## 5. Pulling
 
 Pulling combines two operations in one command: fetch followed by merge.
 
@@ -185,7 +194,7 @@ $ git commit                    # if pulling with merge
 $ git rebase --continue         # if pulling with rebase
 ```
 
-## Pushing
+## 6. Pushing
 
 Pushing uploads your local commits to a remote branch. The remote
 branch is updated to match your local branch.
@@ -236,7 +245,7 @@ Always prefer `--force-with-lease` over `--force`.
 > rewrites history for everyone and can cause data loss. Use force push
 > only on your own feature branches.
 
-## Forking
+## 7. Forking
 
 Forking is a hosting-platform feature (not a Git command) that creates
 your own copy of someone else's repository under your account. This is
