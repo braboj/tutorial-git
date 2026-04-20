@@ -1,59 +1,105 @@
 <mxfile host="app.diagrams.net">
   <diagram id="object-types" name="Object Types">
     <mxGraphModel dx="1200" dy="700" grid="1" gridSize="10" page="1"
-      pageWidth="820" pageHeight="520" math="0" shadow="0">
+      pageWidth="920" pageHeight="560" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
 
         <!-- Background card -->
         <mxCell id="bg" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" vertex="1" parent="1">
-          <mxGeometry x="10" y="10" width="800" height="500" as="geometry" />
+          <mxGeometry x="10" y="10" width="900" height="540" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ELLIPSIS TOP ==================== -->
+        <mxCell id="dots-top" value="···" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#888888;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="30" width="40" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== PARENT COMMIT (gray) ==================== -->
+        <mxCell id="parent-card" value="&lt;b&gt;commit&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;1f871a&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="70" width="120" height="60" as="geometry" />
         </mxCell>
 
         <!-- ==================== TAG (yellow) ==================== -->
         <mxCell id="tag-card" value="&lt;b&gt;tag&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;v1.0&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FEF9C3;strokeColor=#CA8A04;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#854D0E;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="40" y="200" width="120" height="60" as="geometry" />
+          <mxGeometry x="60" y="210" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tag-desc" value="Named label" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="40" y="265" width="120" height="20" as="geometry" />
+          <mxGeometry x="60" y="185" width="120" height="20" as="geometry" />
         </mxCell>
 
         <!-- ==================== COMMIT (gray) ==================== -->
         <mxCell id="commit-card" value="&lt;b&gt;commit&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;3a7ed5&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="250" y="200" width="120" height="60" as="geometry" />
+          <mxGeometry x="250" y="210" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="commit-desc" value="Snapshot + metadata&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;tree, parent, author, message&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="225" y="265" width="170" height="35" as="geometry" />
+          <mxGeometry x="225" y="275" width="170" height="35" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== CHILD COMMIT (gray) ==================== -->
+        <mxCell id="child-card" value="&lt;b&gt;commit&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;a4f2c8&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
+          <mxGeometry x="250" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ELLIPSIS BOTTOM ==================== -->
+        <mxCell id="dots-bottom" value="···" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#888888;fontFamily=Helvetica;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="290" y="445" width="40" height="30" as="geometry" />
         </mxCell>
 
         <!-- ==================== ROOT TREE (coral) ==================== -->
         <mxCell id="tree-card" value="&lt;b&gt;tree&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;da8d6f (root)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#712B13;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="460" y="200" width="140" height="60" as="geometry" />
+          <mxGeometry x="490" y="210" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="tree-desc" value="Directory listing&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;entries: type, name, hash&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="445" y="265" width="170" height="35" as="geometry" />
+          <mxGeometry x="475" y="275" width="170" height="35" as="geometry" />
         </mxCell>
 
         <!-- ==================== SUB-TREE (coral) ==================== -->
         <mxCell id="subtree-card" value="&lt;b&gt;tree&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;6e4aa (src/)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAECE7;strokeColor=#993C1D;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#712B13;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="640" y="80" width="140" height="60" as="geometry" />
+          <mxGeometry x="740" y="100" width="140" height="60" as="geometry" />
         </mxCell>
 
         <!-- ==================== BLOB 1 (gray .git) ==================== -->
         <mxCell id="blob1-card" value="&lt;b&gt;blob&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;b24d7 (README.md)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="640" y="200" width="140" height="60" as="geometry" />
+          <mxGeometry x="740" y="210" width="140" height="60" as="geometry" />
         </mxCell>
 
         <!-- ==================== BLOB 2 (gray .git) ==================== -->
         <mxCell id="blob2-card" value="&lt;b&gt;blob&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;676b5 (.gitignore)&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1EFE8;strokeColor=#5F5E5A;strokeWidth=0.5;shadow=0;arcSize=8;fontSize=14;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;" vertex="1" parent="1">
-          <mxGeometry x="640" y="340" width="140" height="60" as="geometry" />
+          <mxGeometry x="740" y="340" width="140" height="60" as="geometry" />
         </mxCell>
         <mxCell id="blob-desc" value="File contents" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="640" y="405" width="140" height="20" as="geometry" />
+          <mxGeometry x="740" y="405" width="140" height="20" as="geometry" />
         </mxCell>
 
         <!-- ==================== ARROWS ==================== -->
+        <!-- dots-top → parent -->
+        <mxCell id="arrow-dots-parent" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="60" as="sourcePoint" />
+            <mxPoint x="310" y="70" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
+        <!-- parent → commit -->
+        <mxCell id="arrow-parent-commit" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1" source="parent-card" target="commit-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- commit → child -->
+        <mxCell id="arrow-commit-child" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1" source="commit-card" target="child-card">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- child → dots-bottom -->
+        <mxCell id="arrow-child-dots" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="310" y="430" as="sourcePoint" />
+            <mxPoint x="310" y="445" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+
         <!-- tag → commit -->
         <mxCell id="arrow-tag-commit" value="" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;" edge="1" parent="1" source="tag-card" target="commit-card">
           <mxGeometry relative="1" as="geometry" />
@@ -81,10 +127,10 @@
 
         <!-- ==================== LEGEND ==================== -->
         <mxCell id="legend-title" value="&lt;b&gt;All objects stored in .git/objects/&lt;/b&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#5F5E5A;fontFamily=Helvetica;" vertex="1" parent="1">
-          <mxGeometry x="40" y="440" width="250" height="20" as="geometry" />
+          <mxGeometry x="40" y="480" width="250" height="20" as="geometry" />
         </mxCell>
         <mxCell id="legend-hash" value="IDs are SHA-1 hashes (shortened)" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#888888;fontFamily=Helvetica;fontStyle=2;" vertex="1" parent="1">
-          <mxGeometry x="40" y="462" width="250" height="20" as="geometry" />
+          <mxGeometry x="40" y="502" width="250" height="20" as="geometry" />
         </mxCell>
 
       </root>
