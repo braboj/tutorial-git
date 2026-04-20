@@ -96,7 +96,19 @@ cd astro-site
 npm run dev       # http://localhost:4321
 ```
 
-### 3.2 Building for production
+### 3.2 Syncing chapters to the Astro site
+
+Chapters in `chapters/` are the canonical source. The Astro site reads
+copies from `astro-site/src/content/docs/`. After editing a chapter:
+
+1. Copy the file: `cp chapters/NN-slug.md astro-site/src/content/docs/slug.md`
+2. Fix cross-references — replace `(NN-slug.md)` with `(../slug/)`
+3. Verify the build: `npm run build`
+
+The filename in `content/docs/` drops the number prefix (e.g.
+`01-introduction.md` → `introduction.md`).
+
+### 3.3 Building for production
 
 ```bash
 cd astro-site
@@ -104,10 +116,10 @@ npm run build     # output in dist/
 npm run preview   # preview the production build
 ```
 
-### 3.3 Deployment
+### 3.4 Deployment
 
 Push to `main` — GitHub Actions builds and deploys to GitHub Pages
-automatically.
+automatically. The CI creates the assets symlink before building.
 
 
 ## 4. Git workflow

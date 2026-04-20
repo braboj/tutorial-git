@@ -6,7 +6,7 @@ How to set up and start contributing to tutorial-git.
 ## 1. Prerequisites
 
 - Git 2.23+ (for `git switch` / `git restore`)
-- Node.js 18+ and npm
+- Node.js 22+ and npm
 - A text editor with Markdown support
 - draw.io desktop (for editing diagrams)
 
@@ -16,8 +16,13 @@ How to set up and start contributing to tutorial-git.
 ```bash
 git clone --recurse-submodules https://github.com/braboj/tutorial-git.git
 cd tutorial-git
-cd astro-site && npm install && cd ..
+cd astro-site && npm install
+ln -s ../../../assets src/content/assets   # image symlink (Linux/macOS)
+cd ..
 ```
+
+On Windows, the symlink is created as a directory copy automatically.
+The symlink is gitignored — each developer creates it locally.
 
 If you cloned without `--recurse-submodules`:
 
@@ -33,8 +38,9 @@ cd astro-site
 npm run dev
 ```
 
-Open `http://localhost:4321` — the Astro dev server should start. The site
-is not yet wired to `chapters/`, so content may be placeholder.
+Open `http://localhost:4321` — the Astro dev server should start. All 9
+chapters are wired as single-page sections. The site is deployed to
+`braboj.github.io/tutorial-git/` via GitHub Actions.
 
 
 ## 4. Key files
