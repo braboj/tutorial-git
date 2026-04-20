@@ -10,8 +10,8 @@ This chapter is a quick-reference collection of recipes for common
 Git tasks. Each recipe shows the problem, the commands to solve it,
 and what to watch out for.
 
-For command syntax, see [Appendix](08-appendix.md). For definitions,
-see [Glossary](09-glossary.md).
+For command syntax, see [Appendix](../appendix/). For definitions,
+see [Glossary](../glossary/).
 
 ## Undoing changes
 

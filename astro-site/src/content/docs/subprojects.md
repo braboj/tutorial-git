@@ -199,7 +199,7 @@ repository's files.
 initialization.
 
 **Prerequisite:** `concepts-lab` must be pushed to GitHub (see
-[Remote Repositories](04-remote-repositories.md), Exercise 1).
+[Remote Repositories](../remote-repositories/), Exercise 1).
 
 **Steps:**
 
