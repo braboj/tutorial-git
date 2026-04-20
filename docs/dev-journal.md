@@ -7,7 +7,7 @@ Architecture overview and chronological session log for tutorial-git.
 
 - **Content**: Markdown files in `chapters/` (SSG-agnostic)
 - **Assets**: `assets/images/` (PNGs), `assets/drawio/` (source diagrams)
-- **Site**: Astro static site in `astro-site/` (not yet wired to chapters)
+- **Site**: Astro static site in `astro-site/` (wired to chapters via content collection)
 - **Templates**: `docs/solid-ai-templates/` submodule for CLAUDE.md generation
 - **Hosting**: GitHub Pages via GitHub Actions
 
@@ -83,3 +83,35 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #72 — Deploy as GitHub Page (Astro site scaffolded, not wired to chapters)
+
+### 2026-04-20 — Astro site wiring and content polish
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Wired all 9 chapters to Astro site as single-page sections
+- Removed operations subsections (10 files) and test pages (2 files)
+- Renamed concepts to building-blocks to match canonical chapter
+- Added assets symlink in `src/content/` for image resolution
+- Switched CI pipeline from MkDocs to Astro (Node.js 22)
+- Added `base: '/tutorial-git/'` for GitHub Pages deployment
+- Disabled Shiki syntax highlighting — dark terminal code blocks
+- Added hamburger menu for mobile nav (≤768px breakpoint)
+- Numbered h2 headings across all chapters, added learning objectives
+- Collapsible ToC — h2 visible, h3+ expandable on click
+- Improved nav visibility — darker tab bar, WCAG AA contrast
+- Teal underline on h2, muted h3 color for visual hierarchy
+- Consolidated installation instructions (download → table → verify)
+- Rewrote introduction exercises as linear flow (install → clone → add → commit → push → pull)
+- Updated quiz to test core concepts (index, commit chain)
+- Replaced object model diagram — vertical commit chain layout
+- Created object types draw.io diagram with concrete example data
+- Fixed broken cross-references in all chapters (file links → site URLs)
+- Removed 9 dead tutorial sidebar links (only Azure and Python live)
+- Updated home page, README (solid-ai-templates conformant)
+- Upstreamed README spec change to solid-ai-templates (merged Overview into Title)
+- Closed issues: #72, #83, #84, #88, #89, #90, #91, #92, #93, #94, #98
+
+**Open issues:**
+- #100 — Add search functionality
+- #101 — Evaluate hamburger vs horizontal scroll for mobile nav
