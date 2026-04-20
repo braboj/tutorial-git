@@ -93,7 +93,7 @@ Use Palette C (convention-based) from `CLAUDE.md`:
 
 ```bash
 cd astro-site
-npm run dev       # http://localhost:4321
+npm run dev       # http://localhost:4321/tutorial-git/
 ```
 
 ### 3.2 Syncing chapters to the Astro site
