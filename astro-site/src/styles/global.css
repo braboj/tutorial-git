@@ -260,6 +260,10 @@ a:hover {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .site-tabs {
   display: flex;
   padding: 0 var(--space-md);
@@ -333,7 +337,7 @@ a:hover {
 }
 
 .sidebar-toc ul ul > li {
-  margin-bottom: 0;
+  margin-bottom: var(--space-xs);
 }
 
 .sidebar-toc a {
@@ -562,14 +566,44 @@ a:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: #fff;
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+  }
+
+  .nav-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
   .site-tabs {
-    padding: 0 var(--space-sm);
+    display: none;
+    flex-direction: column;
+    padding: 0;
+    overflow-x: visible;
+  }
+
+  .site-tabs.open {
+    display: flex;
   }
 
   .site-tabs a {
-    font-size: 0.75rem;
-    padding: 0 var(--space-sm);
+    height: auto;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .site-tabs a.active {
+    border-bottom: none;
+    border-left: 3px solid var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
   }
 
   .content {

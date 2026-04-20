@@ -97,6 +97,11 @@ After editing a chapter in `chapters/`, copy it to
 - [Dev journal](docs/dev-journal.md)
 - [Playbook](docs/PLAYBOOK.md)
 
+## Credits
+
+- [Branimir Georgiev](https://github.com/braboj)
+- [Marwan Rashed](https://github.com/marwan-rashed)
+
 ## License
 
 [MIT](LICENSE.md)
