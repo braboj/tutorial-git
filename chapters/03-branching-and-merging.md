@@ -4,7 +4,7 @@ section: "branching-and-merging"
 order: 3
 ---
 
-## Overview
+## 1. Overview
 
 This chapter covers the daily workflow of parallel development in Git —
 creating branches, combining work through merging and rebasing,
@@ -12,7 +12,16 @@ resolving conflicts, and temporarily shelving changes with the stash.
 These are the operations you will use most often when working with others
 or managing multiple features at once.
 
-## Branching
+In this chapter you will learn:
+
+- How to create, rename, and delete branches
+- Merge strategies: fast-forward, 3-way, no-fast-forward, and squash
+- How rebasing produces a linear history
+- How to cherry-pick individual commits between branches
+- How to resolve merge and rebase conflicts
+- How to stash and restore work in progress
+
+## 2. Branching
 
 As covered in [Building Blocks](02-building-blocks.md), a branch is a
 pointer to a specific commit. Creating a branch is a "cheap" operation —
@@ -98,7 +107,7 @@ To rename a different branch:
 git branch -m <oldName> <newName>
 ```
 
-## Merging
+## 3. Merging
 
 Merging is a process of combining changes from different branches. Usually
 this is required when people are working in parallel on the same source code.
@@ -165,7 +174,7 @@ afterward.
 Squash merges are useful when a feature branch contains many small or
 messy commits and you want a clean, single-commit result on `main`.
 
-## Rebasing
+## 4. Rebasing
 
 Rebasing is an **alternative to merging**. Instead of creating a merge
 commit, it replays your branch's commits on top of another branch,
@@ -195,7 +204,7 @@ The table below summarizes when to use each approach:
 | Safe on shared branches? | Yes | No — rewrites commit hashes |
 | When to use | Combining finished work | Cleaning up local history before merging |
 
-## Cherry-picking
+## 5. Cherry-picking
 
 Cherry-picking copies a single commit from one branch onto another. Unlike
 merging, it does not bring over the full branch history — only the changes
@@ -223,7 +232,7 @@ Common use cases:
 > later merged, Git usually handles this cleanly, but it can produce
 > confusing history. Prefer merging when possible.
 
-## Conflicts
+## 6. Conflicts
 
 A merge conflict occurs when Git cannot automatically combine changes from
 two branches. This happens when both branches modify the same lines in the
@@ -404,7 +413,7 @@ git commit -m "Merge main into feature, combine greeting changes"
 
 The conflict is resolved and the repository history records the merge.
 
-## Stashing
+## 7. Stashing
 
 The stash allows changes to be saved without committing broken or untested
 code before switching to another branch.

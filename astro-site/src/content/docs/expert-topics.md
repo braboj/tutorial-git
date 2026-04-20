@@ -4,14 +4,25 @@ section: "expert-topics"
 order: 6
 ---
 
-## Overview
+## 1. Overview
 
 This chapter covers power-user topics — configuration layers, revision
 selectors, pathspec and refspec syntax, interactive rebase, bisect,
 hooks, and garbage collection. These concepts are not needed for daily
 Git use but become essential as projects and teams grow.
 
-## Configuration
+In this chapter you will learn:
+
+- How Git's layered configuration system works and how to customize it
+- How to use revision selectors (tilde, caret, ranges) to navigate commit history
+- How pathspec patterns filter files in Git commands
+- How refspec syntax maps local and remote references
+- How to rewrite commit history with interactive rebase
+- How to find the commit that introduced a bug using bisect
+- How to automate tasks with Git hooks
+- How garbage collection and the reflog protect and clean up orphaned commits
+
+## 2. Configuration
 
 ![Configuration Model](../assets/images/git-configuration-model.png)
 
@@ -69,7 +80,7 @@ $ git config --list --show-scope          # all settings with scope level
 When the same parameter is set at multiple levels, the most specific
 wins: local overrides global, global overrides system.
 
-## Revision Selectors
+## 3. Revision Selectors
 
 Revision selectors let you reference specific commits without knowing
 their hashes. They are used with `git log`, `git diff`, `git show`,
@@ -137,7 +148,7 @@ $ git show "HEAD@{yesterday}"      # where HEAD was yesterday
 $ git show "main@{2.weeks.ago}"    # where main was 2 weeks ago
 ```
 
-## Pathspec
+## 4. Pathspec
 
 A pathspec is a pattern that matches files or directories. Most Git
 commands that work with files accept pathspecs.
@@ -175,7 +186,7 @@ Signatures control the matching behavior. Syntax: `:(signature)pattern`
 
 Signatures can be combined: `':(top,icase)*.mp?'`
 
-## Refspec
+## 5. Refspec
 
 When you run `git fetch` or `git push`, Git needs to know which
 references on one side map to which references on the other. A refspec
@@ -216,7 +227,7 @@ $ git push origin :refs/heads/feature         # delete remote branch (empty src)
 $ git fetch origin main:refs/remotes/origin/main  # fetch one branch explicitly
 ```
 
-## Interactive Rebase
+## 6. Interactive Rebase
 
 Interactive rebase lets you edit, reorder, squash, or drop commits
 before sharing them. It rewrites history — use it only on local
@@ -261,7 +272,7 @@ Result: one commit with a combined message replacing all three.
 > **Warning:** Interactive rebase rewrites commit hashes. Never rebase
 > commits that have already been pushed to a shared branch.
 
-## Git Bisect
+## 7. Git Bisect
 
 `git bisect` performs a binary search through commit history to find
 the commit that introduced a bug. Instead of checking every commit,
@@ -299,7 +310,7 @@ $ git bisect run ./test.sh
 Git runs the script at each midpoint automatically and reports the
 first bad commit when done.
 
-## Hooks
+## 8. Hooks
 
 Hooks are scripts that Git runs automatically before or after specific
 events. They live in `.git/hooks/` and are not tracked by Git (each
@@ -352,7 +363,7 @@ $ git push --no-verify             # skip pre-push hook
 
 Use sparingly — hooks exist for a reason.
 
-## Garbage Collection
+## 9. Garbage Collection
 
 When you reset, rebase, or delete a branch, the commits that were on it
 don't disappear immediately. They become **orphaned** — they still exist

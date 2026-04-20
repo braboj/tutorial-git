@@ -6,6 +6,8 @@ order: 9
 
 ## Glossary
 
+A reference of key Git terms used throughout this tutorial, with links to the chapter where each concept is covered.
+
 | Term | Definition | Chapter |
 |------|-----------|---------|
 | Annotated tag | A tag object with author, date, and message — stored in `.git/objects/` | [2](02-building-blocks.md) |

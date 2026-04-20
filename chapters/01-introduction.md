@@ -4,7 +4,7 @@ section: "introduction"
 order: 1
 ---
 
-## Overview
+## 1. Overview
 
 Git is a version control system. It keeps a complete history of every change
 you make to your files, so you can go back to any earlier version at any time.
@@ -18,7 +18,15 @@ Why use version control?
 - Multiple people can work on the same project without overwriting each other
 - You can experiment on a separate branch and merge it back when it works
 
-## Features
+In this chapter you will learn:
+
+- What Git is and why version control matters
+- How to install Git on your platform
+- Where to host your repositories
+- How Git moves changes through workspace, index, and repository
+- The most common commands in daily operations
+
+## 2. Features
 
 Git is **open source** and free to use. Unlike older systems such as
 Subversion (SVN) where all history lives on a central server, Git is
@@ -31,34 +39,26 @@ share with others when you are ready.
 - **Branching** — work on separate ideas at the same time without interfering with each other
 - **Fast** — most operations happen on your own machine, with no waiting for a server
 
-## Installation
-
-Download Git from the official website: https://git-scm.com/downloads
-
-After installation, open a terminal and verify with:
-
-```text
-$ git --version
-```
+## 3. Installation
 
 ### Windows
 
-1. Download the installer from the link above
+1. Download the installer from https://git-scm.com/downloads
 2. Run the installer with the default options
-3. Open PowerShell and verify
+3. Open PowerShell and run `git --version`
 
 ### macOS
 
 **Option A — Xcode Command Line Tools (no extra software needed):**
 
-1. Open Terminal and type `git --version`
+1. Open Terminal and run `git --version`
 2. If Git is not installed, macOS will prompt you to install the Command Line Tools — follow the dialog
 
 **Option B — Homebrew:**
 
-```text
-$ brew install git
-```
+1. Install [Homebrew](https://brew.sh/) if you do not have it
+2. Run `brew install git`
+3. Run `git --version`
 
 ### Linux
 
@@ -73,7 +73,9 @@ $ brew install git
 | FreeBSD         | `pkg install git`                    |
 | Nix/NixOS       | `nix-env -i git`                     |
 
-## Hosting
+After installing, run `git --version` to verify.
+
+## 4. Hosting
 
 A Git hosting service stores your repositories online so you can access them
 from anywhere and collaborate with others. You do not need your own server —
@@ -93,7 +95,7 @@ The table below compares the free tiers of each provider.
 
 ![Git Hosting Comparison](../assets/images/git-hosting.png)
 
-## How Git Works
+## 5. How Git Works
 
 Git moves your changes through three locations before they are shared
 with others. The diagram below shows these locations and the commands
@@ -124,7 +126,7 @@ both as equals — there is no single authoritative copy. (The word "master"
 here means primary, not the branch name `master` — Git uses `main` as the
 default branch name.)
 
-### How a commit works
+### How a Commit Works
 
 When you run `git commit`, Git takes a snapshot of everything in the index
 and stores it permanently in the repository. Each snapshot is called a
@@ -147,7 +149,7 @@ In the diagram above, `D` is the latest commit. It points back to `C`,
 which points to `B`, and so on. Git follows these links to reconstruct the
 full history.
 
-## Command Overview
+## 6. Command Overview
 
 ![Command Overview](../assets/images/git-command-overview.png)
 
