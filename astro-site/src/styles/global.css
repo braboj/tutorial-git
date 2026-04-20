@@ -256,7 +256,7 @@ a:hover {
   position: sticky;
   top: var(--header-height);
   z-index: 99;
-  background: var(--color-primary);
+  background: var(--color-primary-dark);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
 }
 
@@ -269,7 +269,7 @@ a:hover {
 }
 
 .site-tabs a {
-  color: #ffffffe6;
+  color: rgba(255, 255, 255, 0.75);
   font-size: var(--font-size-sm);
   font-weight: 500;
   text-transform: uppercase;
@@ -289,7 +289,8 @@ a:hover {
 
 .site-tabs a.active {
   color: #fff;
-  border-bottom-color: var(--color-accent);
+  font-weight: 700;
+  border-bottom: 3px solid var(--color-accent);
 }
 
 /* Three-column layout */
