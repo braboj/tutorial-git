@@ -41,39 +41,31 @@ share with others when you are ready.
 
 ## 3. Installation
 
-### Windows
+### Download
 
-1. Download the installer from https://git-scm.com/downloads
-2. Run the installer with the default options
-3. Open PowerShell and run `git --version`
+Go to https://git-scm.com/downloads and download the installer for
+your operating system.
 
-### macOS
+### Install
 
-**Option A — Xcode Command Line Tools (no extra software needed):**
+| OS | How to install |
+|----|---------------|
+| Windows | Run the downloaded installer with the default options |
+| macOS | Run `xcode-select --install` in Terminal, or `brew install git` if you use Homebrew |
+| Ubuntu / Debian | `sudo apt-get install git` |
+| Fedora | `sudo dnf install git` |
+| Arch Linux | `sudo pacman -S git` |
 
-1. Open Terminal and run `git --version`
-2. If Git is not installed, macOS will prompt you to install the Command Line Tools — follow the dialog
+### Verify
 
-**Option B — Homebrew:**
+Open a terminal and run:
 
-1. Install [Homebrew](https://brew.sh/) if you do not have it
-2. Run `brew install git`
-3. Run `git --version`
+```text
+$ git --version
+git version 2.47.1
+```
 
-### Linux
-
-| Distribution    | Command                              |
-|-----------------|--------------------------------------|
-| Ubuntu / Debian | `apt-get install git`                |
-| Fedora 22+      | `dnf install git`                    |
-| Arch Linux      | `pacman -S git`                      |
-| openSUSE        | `zypper install git`                 |
-| Alpine          | `apk add git`                        |
-| Gentoo          | `emerge --ask --verbose dev-vcs/git` |
-| FreeBSD         | `pkg install git`                    |
-| Nix/NixOS       | `nix-env -i git`                     |
-
-After installing, run `git --version` to verify.
+If you see a version number, Git is installed.
 
 ## 4. Hosting
 
@@ -153,13 +145,15 @@ full history.
 
 ![Command Overview](../assets/images/git-command-overview.png)
 
-Commands are grouped by experience level:
+Commands are grouped by category and experience level:
 
-- **Beginner** — Help, Create, Configure, Track, Inspect
-- **Advanced** — Sync, Revert, Branch, Reuse
-- **Expert** — Rewrite and Cleanup (can destroy history — use with caution)
+| Level | Categories |
+|-------|-----------|
+| Beginner | Help, Create, Configure, Track, Inspect |
+| Advanced | Sync, Revert, Branch, Reuse |
+| Expert | Rewrite, Cleanup (can destroy history) |
 
-Each command group is covered in detail in the following chapters. The
+Each category is covered in detail in the following chapters. The
 table below lists the most common commands in daily operations.
 
 | Command | What it does | Example |
