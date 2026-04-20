@@ -48,4 +48,7 @@ Thumbs.db
 *.mov
 *.wmv
 
+# draw.io and image editor backup files
+*.bkp
+
 astro-site/src/content/assets

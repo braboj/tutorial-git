@@ -50,10 +50,10 @@ for (const h of headings) {
 
 <script>
   document.querySelectorAll('.toc-section-link').forEach((link) => {
-    link.addEventListener('click', () => {
+    link.addEventListener('click', (e) => {
       const details = link.closest('details');
-      if (details) {
-        details.open = !details.open;
+      if (details && !details.open) {
+        details.open = true;
       }
     });
   });

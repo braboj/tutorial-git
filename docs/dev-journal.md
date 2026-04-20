@@ -115,3 +115,36 @@ Architecture overview and chronological session log for tutorial-git.
 **Open issues:**
 - #100 — Add search functionality
 - #101 — Evaluate hamburger vs horizontal scroll for mobile nav
+
+### 2026-04-20 — Structural audit and CI improvements
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- License changed from MIT to CC BY-NC-SA 4.0
+- Removed old banner from README
+- Fixed localhost URL in README, ONBOARDING, PLAYBOOK, CLAUDE.md (`localhost:4321/tutorial-git/`)
+- Renamed semver tags: `V0.0.0.1` → `v0.0.1`, `V1.0.0` → `v1.0.0`, etc.
+- Added `.bkp` to .gitignore (draw.io temp files)
+- Moved 10 orphaned images to `assets/archive/`
+- Deleted `git-object-model-prototype.drawio` (unused prototype)
+- Deleted default Astro README (`astro-site/README.md`)
+- Added `rel="noopener noreferrer"` to external links in TutorialLinks.astro
+- Fixed ToC JS toggle — now only opens details on click, no longer fights native behavior
+- Split CI into `build.yml` (PR validation) and `deploy.yml` (push to main)
+- Pinned Node.js to 22.12.0 in both workflows
+- Added npm cache and lychee link checker to both workflows
+- Replaced generic issue template with 5 typed templates (epic, task, bug, incident, spike)
+
+**Decisions:**
+- [ADR-006](decisions/006-mobile-navigation.md) — Hamburger menu for mobile navigation
+
+**Issues closed:**
+- #100 — Search functionality (won't-fix — Ctrl+F sufficient for 9 chapters)
+- #101 — Mobile nav evaluation (hamburger menu, matching tutorial-azure)
+
+**Issues created:**
+- #105 — Eliminate dual-source content model with remark plugin
+
+**Open issues:**
+- #105 — Eliminate dual-source content model

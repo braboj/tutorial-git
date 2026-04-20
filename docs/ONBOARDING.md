@@ -38,7 +38,7 @@ cd astro-site
 npm run dev
 ```
 
-Open `http://localhost:4321` — the Astro dev server should start. All 9
+Open `http://localhost:4321/tutorial-git/` — the Astro dev server should start. All 9
 chapters are wired as single-page sections. The site is deployed to
 `braboj.github.io/tutorial-git/` via GitHub Actions.
 

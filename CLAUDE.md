@@ -261,7 +261,7 @@ rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWid
 
 ```bash
 # Astro site (from astro-site/)
-npm run dev       # develop — hot reload at localhost:4321
+npm run dev       # develop — hot reload at localhost:4321/tutorial-git/
 npm run build     # production build to dist/
 npm run preview   # preview production build locally
 ```

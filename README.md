@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="assets/banners/banner-bhai-branko.png" alt="Code with Branko — Git Tutorial" />
-</p>
-
 # Git Tutorial
 
 A hands-on Git tutorial for developers who want to go from first commit
@@ -21,7 +17,7 @@ $ ln -s ../../../assets src/content/assets   # image symlink (Linux/macOS)
 $ npm run dev
 ```
 
-Open [localhost:4321](http://localhost:4321) in your browser.
+Open [localhost:4321/tutorial-git/](http://localhost:4321/tutorial-git/) in your browser.
 
 On Windows, the symlink is created as a directory copy automatically.
 
@@ -104,4 +100,4 @@ After editing a chapter in `chapters/`, copy it to
 
 ## License
 
-[MIT](LICENSE.md)
+[CC BY-NC-SA 4.0](LICENSE.md)
