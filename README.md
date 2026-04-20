@@ -1,68 +1,102 @@
-<p align='center'>
- <img src='Assets/banners/banner-bhai-branko.png' />
+<p align="center">
+  <img src="assets/banners/banner-bhai-branko.png" alt="Code with Branko — Git Tutorial" />
 </p>
 
-## Table of contents
+# Git Tutorial
 
-### Introduction
-- [Overview](01-Introduction/01-git-features.md)
-- [Installation on Windows](01-Introduction/02-windows-installation.md)
-- [Installation on Linux](01-Introduction/03-linux-installation.md)
-- [Hosting Services](01-Introduction/04-hosting-services.md)
-- [Dataflow Diagram](01-Introduction/05-dataflow-overview.md)
-- [Operations Overview](01-Introduction/06-operations-overview.md)
+A hands-on Git tutorial for developers who want to go from first commit
+to confident daily use. It covers everything from installation to
+advanced topics like rebase, bisect, and submodules. The content is
+published as a static site built with Astro and deployed to GitHub Pages.
 
-### Concepts
-- [Repository](02-Concepts/01-repository.md)
-- [Configuration](02-Concepts/02-configuration.md)
-- [Objects](02-Concepts/03-objects.md)
-- [Tagging](02-Concepts/04-tagging.md)
-- [Index](02-Concepts/05-index.md)
-- [References](02-Concepts/06-references.md)
-- [Navigation](02-Concepts/07-navigation.md)
-- [Branching](02-Concepts/08-branching.md)
-- [Merging](02-Concepts/09-merging.md)
-- [Stashing](02-Concepts/10-stashing.md)
-- [Selectors](02-Concepts/11-selectors.md)
-- [Pathspec](02-Concepts/12-pathspec.md)
-- [Refspec](02-Concepts/13-refspec.md)
-- [Subproject](02-Concepts/14-subproject.md)
+## Quick start
 
-### Operations
-- [Help](03-Operations/01-Help/help.md)
-- [Create](03-Operations/02-Create/create.md)
-- [Configure](03-Operations/03-Configure/configure.md)
-- [Track](03-Operations/04-Track/track.md)
-- [Branch](03-Operations/05-Branch/branch.md)
-- [Sync](03-Operations/06-Sync/sync.md)
-- [Revert](03-Operations/07-Revert/revert.md)
-- [Inspect](03-Operations/08-Inspect/inspect.md)
-- [Reuse](03-Operations/09-Reuse/reuse.md)
+Prerequisites: [Node.js](https://nodejs.org/) 22+
 
-### Appendix
-- [Dictionary](04-Appendix/dictionary.md)
-- [References](04-Appendix/references.md)
-- [Clients](04-Appendix/clients.md)
-- [Remarks](04-Appendix/remarks.md)
+```text
+$ git clone https://github.com/braboj/tutorial-git.git
+$ cd tutorial-git/astro-site
+$ npm install
+$ ln -s ../../../assets src/content/assets   # image symlink (Linux/macOS)
+$ npm run dev
+```
 
-### Selected references
-- [Git Internals](https://github.com/pluralsight/git-internals-pdf/releases)
-- [Flight rules for git](https://github.com/k88hudson/git-flight-rules)
-- [Think Like (a) Git](http://think-like-a-git.net/)
-- [The Thing About Git](https://tomayko.com/blog/2008/the-thing-about-git)
-- [Git Community Book](http://shafiul.github.io/gitbook/index.html)
-- [Git Magic](http://www-cs-students.stanford.edu/~blynn/gitmagic/index.html)
-- [Git Immersion](https://gitimmersion.com/index.html)
-- [Git How To](https://githowto.com/)
+Open [localhost:4321](http://localhost:4321) in your browser.
 
+On Windows, the symlink is created as a directory copy automatically.
 
-## Contribution
-- [Guidelines](CONTRIBUTING.md)
-- [License](LICENSE.md)
+## Usage
 
-## Credits
- - [Branimir Georgiev](https://github.com/braboj)
- - [Marwan Rashed](https://github.com/marwan-rashed)
+Read the tutorial on the live site:
+[braboj.github.io/tutorial-git](https://braboj.github.io/tutorial-git/)
 
+Chapters can also be read directly as Markdown files in the `chapters/`
+directory.
 
+| # | Chapter | Topics |
+|---|---------|--------|
+| 1 | [Introduction](chapters/01-introduction.md) | What Git is, installation, how it works, command overview |
+| 2 | [Building Blocks](chapters/02-building-blocks.md) | Repositories, objects, references, HEAD, tags |
+| 3 | [Branching and Merging](chapters/03-branching-and-merging.md) | Branches, merge strategies, rebase, cherry-pick, conflicts, stash |
+| 4 | [Remote Repositories](chapters/04-remote-repositories.md) | Clone, push, pull, fetch, remote tracking, forking workflows |
+| 5 | [Subprojects](chapters/05-subprojects.md) | Submodules and subtrees |
+| 6 | [Expert Topics](chapters/06-expert-topics.md) | Configuration, selectors, refspecs, hooks, bisect |
+| 7 | [Playbook](chapters/07-playbook.md) | Step-by-step recipes for common tasks |
+| 8 | [Appendix](chapters/08-appendix.md) | Merge strategies, SSH setup, Git clients, references |
+| 9 | [Glossary](chapters/09-glossary.md) | Key terms and definitions |
 
+## Project structure
+
+```
+chapters/              # Canonical tutorial content (SSG-agnostic Markdown)
+assets/
+  images/              # PNG exports used in chapters
+  drawio/              # draw.io source files (editable)
+  banners/             # Banner images
+astro-site/            # Astro static site
+  src/
+    content/docs/      # Chapter copies for the Astro content collection
+    components/        # Astro components (Header, ToC, TutorialLinks)
+    layouts/           # Page layouts
+    pages/             # Route definitions
+    styles/            # Global CSS
+    data/              # Site configuration (site.json)
+docs/                  # Project docs, decisions, dev journal
+  solid-ai-templates/  # Submodule — quality conventions
+```
+
+## Development setup
+
+```text
+$ git clone https://github.com/braboj/tutorial-git.git
+$ cd tutorial-git/astro-site
+$ npm install
+$ npm run dev       # dev server with hot reload
+$ npm run build     # production build to dist/
+$ npm run preview   # preview production build
+```
+
+After editing a chapter in `chapters/`, copy it to
+`astro-site/src/content/docs/` to update the site.
+
+## Configuration reference
+
+| Key | Location | Description |
+|-----|----------|-------------|
+| `site` | `astro.config.mjs` | Base URL for the deployed site |
+| `base` | `astro.config.mjs` | Path prefix for GitHub Pages (`/tutorial-git/`) |
+| `trailingSlash` | `astro.config.mjs` | URL style — set to `always` |
+| `title` | `src/data/site.json` | Site title shown in header |
+| `tabs` | `src/data/site.json` | Navigation tab labels and hrefs |
+| `tutorials` | `src/data/site.json` | Links to other tutorials in the sidebar |
+
+## Links
+
+- [Live site](https://braboj.github.io/tutorial-git/)
+- [Contribution guide](docs/ONBOARDING.md)
+- [Dev journal](docs/dev-journal.md)
+- [Playbook](docs/PLAYBOOK.md)
+
+## License
+
+[MIT](LICENSE.md)
