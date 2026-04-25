@@ -33,8 +33,7 @@ jobs:
         run: npm ci
 
       - name: Create assets symlink
-        working-directory: astro-site/src/content
-        run: ln -s ../../../assets assets
+        run: mkdir -p astro-site/src/content && ln -s ../../../assets astro-site/src/content/assets
 
       - name: Build site
         working-directory: astro-site
