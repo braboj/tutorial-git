@@ -29,7 +29,7 @@
   --space-2xl: 3rem;
 
   /* Sizing */
-  --sidebar-width: 12rem;
+  --sidebar-width: 16rem;
   --header-height: 3rem;
   --tab-height: 2.5rem;
   --max-content: 50rem;
@@ -382,6 +382,77 @@ a:hover {
   content: "−";
 }
 
+/* Right sidebar — Playbook navigation */
+.playbook-nav {
+  position: sticky;
+  top: calc(var(--header-height) + var(--tab-height));
+  height: calc(100vh - var(--header-height) - var(--tab-height));
+  overflow-y: auto;
+  padding: var(--space-lg) var(--space-md);
+  border-left: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+}
+
+.playbook-nav-title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.playbook-nav-title a {
+  color: var(--color-fg-muted);
+}
+
+.playbook-nav-title a:hover,
+.playbook-nav-title a.active {
+  color: var(--color-primary-light);
+  text-decoration: none;
+}
+
+.playbook-nav-group {
+  margin-bottom: var(--space-md);
+}
+
+.playbook-nav-group-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-fg-faint);
+  margin-bottom: var(--space-xs);
+}
+
+.playbook-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.playbook-nav li {
+  margin-bottom: 1px;
+}
+
+.playbook-nav li a {
+  display: block;
+  color: var(--color-fg-muted);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: 3px;
+}
+
+.playbook-nav li a:hover {
+  color: var(--color-primary-light);
+  background: var(--color-bg-hover);
+  text-decoration: none;
+}
+
+.playbook-nav li a.active {
+  color: var(--color-primary);
+  background: var(--color-bg-alt);
+  font-weight: 500;
+}
+
 /* Content area */
 .content {
   padding: var(--space-xl) var(--space-2xl);
@@ -560,7 +631,8 @@ a:hover {
   }
 
   .sidebar-toc,
-  .sidebar-tutorials {
+  .sidebar-tutorials,
+  .playbook-nav {
     display: none;
   }
 }

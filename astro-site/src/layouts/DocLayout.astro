@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import TableOfContents from "../components/TableOfContents.astro";
+import PlaybookNav from "../components/PlaybookNav.astro";
 import TutorialLinks from "../components/TutorialLinks.astro";
 import Footer from "../components/Footer.astro";
 import site from "../data/site.json";
@@ -11,10 +12,12 @@ interface Props {
   description?: string;
   headings?: { depth: number; slug: string; text: string }[];
   currentPath?: string;
+  currentSection?: string;
   jsonLd?: Record<string, unknown>;
 }
 
-const { title, description, headings = [], currentPath = "/", jsonLd } = Astro.props;
+const { title, description, headings = [], currentPath = "/", currentSection = "", jsonLd } = Astro.props;
+const isPlaybook = currentSection === "playbook" || currentSection.startsWith("playbook/");
 const pageDescription = description || site.description;
 const pageTitle = `${title} — ${site.title}`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
@@ -54,6 +57,13 @@ const ogImage = new URL("/tutorial-git/images/og-banner.png", Astro.site);
     {jsonLd && (
       <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     )}
+
+    <script is:inline>
+      document.documentElement.setAttribute(
+        "data-theme",
+        localStorage.getItem("theme") || "light"
+      );
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -64,7 +74,11 @@ const ogImage = new URL("/tutorial-git/images/og-banner.png", Astro.site);
         <h1>{title}</h1>
         <slot />
       </main>
-      <TutorialLinks />
+      {isPlaybook ? (
+        <PlaybookNav currentSection={currentSection} />
+      ) : (
+        <TutorialLinks />
+      )}
     </div>
     <Footer />
   </body>

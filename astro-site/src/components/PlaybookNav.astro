@@ -1,0 +1,81 @@
+---
+interface Recipe {
+  slug: string;
+  title: string;
+}
+
+interface Props {
+  currentSection: string;
+}
+
+const { currentSection } = Astro.props;
+const base = import.meta.env.BASE_URL;
+
+const groups: { label: string; recipes: Recipe[] }[] = [
+  {
+    label: "Everyday",
+    recipes: [
+      { slug: "playbook/undoing-changes", title: "Undoing Changes" },
+      { slug: "playbook/diffing", title: "Diffing" },
+      { slug: "playbook/history", title: "History" },
+      { slug: "playbook/stashing", title: "Stashing" },
+    ],
+  },
+  {
+    label: "Branching and Merging",
+    recipes: [
+      { slug: "playbook/branching", title: "Branching" },
+      { slug: "playbook/merging", title: "Merging" },
+      { slug: "playbook/rebasing", title: "Rebasing" },
+      { slug: "playbook/cherry-picking", title: "Cherry-Picking" },
+    ],
+  },
+  {
+    label: "Remote",
+    recipes: [
+      { slug: "playbook/remote-operations", title: "Remote Operations" },
+      { slug: "playbook/remote-management", title: "Remote Management" },
+    ],
+  },
+  {
+    label: "Project Structure",
+    recipes: [
+      { slug: "playbook/tagging", title: "Tagging" },
+      { slug: "playbook/submodules", title: "Submodules" },
+      { slug: "playbook/subtrees", title: "Subtrees" },
+    ],
+  },
+  {
+    label: "Advanced",
+    recipes: [
+      { slug: "playbook/selectors", title: "Selectors" },
+      { slug: "playbook/hooks", title: "Hooks" },
+      { slug: "playbook/debugging", title: "Debugging" },
+      { slug: "playbook/configuration", title: "Configuration" },
+    ],
+  },
+];
+---
+
+<nav class="playbook-nav">
+  <div class="playbook-nav-title">
+    <a href={`${base}playbook/`} class={currentSection === "playbook" ? "active" : ""}>Playbook</a>
+  </div>
+  {groups.map((group) => (
+    <div class="playbook-nav-group">
+      <div class="playbook-nav-group-label">{group.label}</div>
+      <ul>
+        {group.recipes.map((r) => (
+          <li>
+            <a
+              href={`${base}${r.slug}/`}
+              class={currentSection === r.slug ? "active" : ""}
+            >
+              {r.title}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  ))}
+</nav>
