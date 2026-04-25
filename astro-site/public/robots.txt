@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://braboj.github.io/tutorial-git/sitemap-index.xml
+Sitemap: https://braboj.me/tutorial-git/sitemap-index.xml
