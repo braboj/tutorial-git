@@ -257,7 +257,6 @@ a:hover {
   top: var(--header-height);
   z-index: 99;
   background: var(--color-primary-dark);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
 }
 
 .nav-toggle {
@@ -266,7 +265,9 @@ a:hover {
 
 .site-tabs {
   display: flex;
+  align-items: flex-end;
   padding: 0 var(--space-md);
+  padding-top: var(--space-xs);
   max-width: calc(var(--max-content) + 2 * var(--sidebar-width) + 2 * var(--space-xl));
   margin: 0 auto;
 }
@@ -277,28 +278,23 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 0 var(--space-sm);
-  height: var(--tab-height);
+  padding: var(--space-xs) var(--space-sm);
   display: flex;
   align-items: center;
-  border-bottom: 2px solid transparent;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
-}
-
-.site-tabs a:last-child {
-  border-right: none;
+  border-radius: 4px 4px 0 0;
 }
 
 .site-tabs a:hover {
   color: #fff;
+  background: rgba(255, 255, 255, 0.1);
   text-decoration: none;
 }
 
 .site-tabs a.active {
-  color: #fff;
+  color: var(--color-fg);
   font-weight: 700;
-  border-bottom: 3px solid var(--color-accent);
+  background: var(--color-bg);
 }
 
 /* Three-column layout */
