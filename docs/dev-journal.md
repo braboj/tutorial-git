@@ -74,7 +74,7 @@ Architecture overview and chronological session log for tutorial-git.
 02-building-blocks.md
 03-branching-and-merging.md
 04-remote-repositories.md      ← NEW
-05-subprojects.md              ← NEW (split from deep internals)
+05-nested-repositories.md      ← NEW (split from deep internals)
 06-expert-topics.md            ← renamed, overhauled
 07-playbook.md                 ← rewritten as recipes
 08-appendix.md                 ← trimmed + SSH

@@ -267,7 +267,6 @@ a:hover {
 .site-tabs {
   display: flex;
   padding: 0 var(--space-md);
-  overflow-x: auto;
   max-width: calc(var(--max-content) + 2 * var(--sidebar-width) + 2 * var(--space-xl));
   margin: 0 auto;
 }
@@ -278,7 +277,7 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-sm);
   height: var(--tab-height);
   display: flex;
   align-items: center;
