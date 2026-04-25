@@ -1,0 +1,23 @@
+# Lychee link checker configuration
+# Runs against the Astro build output in astro-site/dist/
+
+# Remap the /tutorial-git/ base path to the dist root so that
+# root-relative links like /tutorial-git/introduction/ resolve
+# to dist/introduction/index.html
+remap = ["/tutorial-git/(.*) file:///$1"]
+
+# Skip external links in CI to avoid flaky failures from transient
+# network issues. Run with --include-mail to check mailto: links.
+exclude_path = []
+
+# Exclude external URLs to keep CI fast and deterministic
+exclude = [
+  "^https://",
+  "^http://",
+]
+
+# Accept 200 and 204
+accept = [200, 204]
+
+# No caching needed in CI
+no_progress = true
