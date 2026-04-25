@@ -96,17 +96,12 @@ cd astro-site
 npm run dev       # http://localhost:4321/tutorial-git/
 ```
 
-### 3.2 Syncing chapters to the Astro site
+### 3.2 Content source
 
-Chapters in `chapters/` are the canonical source. The Astro site reads
-copies from `astro-site/src/content/docs/`. After editing a chapter:
-
-1. Copy the file: `cp chapters/NN-slug.md astro-site/src/content/docs/slug.md`
-2. Fix cross-references — replace `(NN-slug.md)` with `(../slug/)`
-3. Verify the build: `npm run build`
-
-The filename in `content/docs/` drops the number prefix (e.g.
-`01-introduction.md` → `introduction.md`).
+Chapters in `chapters/` are the single source for the Astro site. No
+manual sync is needed. Cross-references use `NN-slug.md` format; the
+remark plugin in `astro-site/src/plugins/remark-rewrite-links.ts`
+rewrites them to Astro-compatible paths at build time.
 
 ### 3.3 Building for production
 
