@@ -7,6 +7,9 @@ exclude = [
   "^http://",
 ]
 
+# Skip the symlink directory to prevent recursive scanning
+exclude_path = ["astro-site/dist/tutorial-git"]
+
 # Accept 200 and 204
 accept = [200, 204]
 
