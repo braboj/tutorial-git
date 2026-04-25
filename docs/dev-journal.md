@@ -193,3 +193,50 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #106, #109, #110, #112–#114, #116–#119, #121–#123
+
+### 2026-04-25 — SEO, chapter names, link checker, marketing
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Fixed lychee link checker — symlink for Astro base path, exclude_path for recursive scan, remove symlink before artifact upload
+- Renamed chapter 05 from Subprojects to Nested Repositories (file, title, section, all cross-refs)
+- Fixed tab labels: Branching → Branching & Merging, Remotes → Remote Repos, Expert → Expert Topics, Introduction → Intro
+- Added inline `overflow:hidden` on tabs bar to prevent FOUC scrollbar flash
+- Reduced tab padding for 10-tab layout
+- Added SEO: unique meta descriptions per chapter, OG + Twitter Card tags, canonical URLs, JSON-LD (Course + Article), @astrojs/sitemap, robots.txt
+- Set canonical domain to braboj.me (was braboj.github.io)
+- Updated solid-ai-templates submodule to latest (7 merged PRs)
+- Updated GitHub repo description and topics (8 topics)
+- Submitted sitemap to Google Search Console
+
+**PRs merged:**
+- #124 — solid-ai-templates submodule update
+- #125 — Lychee link checker fix
+- #126 — Chapter names and tab labels
+- #128 — SEO optimization
+- #134 — Canonical domain fix
+- #136 — robots.txt sitemap URL fix
+- #137 — Lychee symlink exclude
+- #138 — Remove symlink before artifact upload
+
+**Issues closed:**
+- #112 — Chapter names (renamed to "Assess all chapter names")
+- #121 — Fix lychee link checker
+- #123 — SEO optimization
+- #130 — Submit sitemap to Google Search Console
+
+**Issues created:**
+- #127 — Explore heading styles: colors, separators, visual hierarchy
+- #129 — Split playbook into individual recipe pages for SEO
+- #130 — Submit sitemap to Google Search Console (closed)
+- #131 — Republish top chapters on Dev.to and Hashnode
+- #132 — Create YouTube companion videos
+- #133 — Start LinkedIn content plan
+- #135 — Migrate canonical domain to codewithbranko.com
+- #139 — Improve home page with tutorial motivation
+- #140 — Add AI chat widget for tutorial Q&A
+- solid-ai-templates#55 — Add SEO conventions to templates
+
+**Open issues:**
+- #106, #109, #110, #113, #114, #116–#119, #122, #127, #129, #131–#133, #135, #139, #140
