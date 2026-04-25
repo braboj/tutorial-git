@@ -258,6 +258,7 @@ a:hover {
   z-index: 99;
   background: var(--color-primary-dark);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset;
+  overflow: hidden;
 }
 
 .nav-toggle {
