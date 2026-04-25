@@ -280,3 +280,48 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #106, #109, #110, #113, #114, #116–#119, #122, #127, #131–#133, #135, #140, #147
+
+### 2026-04-25 — 360 audit, issue triage, nav automation spike
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Full 360 audit: content, Astro site, assets, issue tracker
+- Simplified label system from 22 labels to 8 (P0–P4 priority + bug/docs/feature)
+- Triaged all 29 open issues with priority labels
+- Created nav automation spike in imbra-spikes (`cross-cutting/SPIKE-TUTORIAL-NAV-AUTOMATION.md`)
+- Updated ONBOARDING.md and PLAYBOOK.md to reflect current project state
+
+**Audit findings:**
+- Content: all image refs and cross-chapter links valid; glossary missing "worktree"
+- Astro site: well-built; dark mode code blocks don't adapt; base path hardcoded
+- Assets: 1 orphaned drawio, 1 orphaned PNG, 16 .bkp temp files
+- README: broken ch07 link, stale copy instructions, domain mismatch
+- Issue tracker: 23 issues created in bulk with no priority — now triaged
+
+**Issues created:**
+- #151 — Add favicon
+- #152 — Add Open Graph meta tags
+- #153 — Split substantial playbook recipes into standalone pages
+- #154 — Improve thin playbook recipes in rebasing, stashing, and submodules
+- #155 — Review nested repositories chapter
+- #156 — Rename playbook index to 07-playbook.md
+- #157 — Fix outdated README
+- #158 — Add worktree to glossary
+- #159 — Fix dark mode styling for code blocks
+- #160 — Make base path portable for domain migration
+- #161 — Add lazy loading for images
+- #162 — Clean up orphaned assets and drawio backups
+
+**Decisions:**
+- Analytics: GSC for tutorials (free), Plausible for Wuseria
+- Playbook split rule: own page only if recipe has command + explanation + gotcha
+- Sequence #154 before #153 (improve content before splitting)
+- Sequence #156 before #157 (create file before fixing README link)
+
+**Open issues:**
+- P0: #156, #157, #162
+- P1: #153, #154, #155, #158
+- P2: #110, #151, #152, #159, #161
+- P3: #135, #160
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147
