@@ -1,5 +1,6 @@
 ---
 title: "Glossary"
+description: "Key Git terms and definitions — blob, branch, commit, HEAD, merge, rebase, remote, stash, tag, and more."
 section: "glossary"
 order: 9
 ---

@@ -19,8 +19,35 @@ export async function getStaticPaths() {
 const { page, entry } = Astro.props;
 const { Content, headings } = await render(entry);
 const sectionPath = `/${page.section}/`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": page.title,
+  "description": entry.data.description || "",
+  "author": {
+    "@type": "Person",
+    "name": "Branimir Georgiev",
+    "url": "https://github.com/braboj"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Branimir Georgiev"
+  },
+  "isPartOf": {
+    "@type": "Course",
+    "name": "Git Tutorial — Code with Branko",
+    "url": "https://braboj.github.io/tutorial-git/"
+  }
+};
 ---
 
-<DocLayout title={page.title} headings={headings} currentPath={sectionPath}>
+<DocLayout
+  title={page.title}
+  description={entry.data.description}
+  headings={headings}
+  currentPath={sectionPath}
+  jsonLd={jsonLd}
+>
   <Content />
 </DocLayout>

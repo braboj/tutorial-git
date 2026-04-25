@@ -1,5 +1,6 @@
 ---
 title: "Playbook"
+description: "Step-by-step recipes for common Git tasks — undoing changes, branching, merging, rebasing, stashing, tagging, and debugging."
 section: "playbook"
 order: 7
 ---

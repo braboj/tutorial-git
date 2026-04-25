@@ -1,5 +1,6 @@
 ---
 title: "Branching and Merging"
+description: "Create branches, merge and rebase changes, cherry-pick commits, resolve conflicts, and use the stash."
 section: "branching-and-merging"
 order: 3
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Expert Topics"
+description: "Power-user Git — configuration layers, revision selectors, pathspec, refspec, interactive rebase, bisect, hooks, and garbage collection."
 section: "expert-topics"
 order: 6
 ---
