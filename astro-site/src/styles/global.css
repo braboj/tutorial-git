@@ -282,7 +282,12 @@ a:hover {
   display: flex;
   align-items: center;
   border-bottom: 2px solid transparent;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   white-space: nowrap;
+}
+
+.site-tabs a:last-child {
+  border-right: none;
 }
 
 .site-tabs a:hover {
