@@ -1,0 +1,61 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="remote-merge" name="Merge after fetch">
+    <mxGraphModel dx="800" dy="560" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="780" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Background card -->
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="10" y="10" width="520" height="350" as="geometry" />
+        </mxCell>
+
+        <!-- Title -->
+        <mxCell id="label-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=14;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="git merge origin/main" vertex="1">
+          <mxGeometry x="30" y="20" width="200" height="24" as="geometry" />
+        </mxCell>
+
+        <!-- Local zone -->
+        <mxCell id="zone-local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry x="30" y="55" width="480" height="285" as="geometry" />
+        </mxCell>
+        <mxCell id="label-local" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Local machine" vertex="1">
+          <mxGeometry x="40" y="60" width="120" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Working Tree (highlighted - updated) -->
+        <mxCell id="box-worktree" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=1.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Working Tree&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;files updated&lt;/i&gt;" vertex="1">
+          <mxGeometry x="50" y="155" width="110" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Local Repo container -->
+        <mxCell id="box-local" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="Local Repo (.git)" vertex="1">
+          <mxGeometry x="230" y="90" width="260" height="230" as="geometry" />
+        </mxCell>
+
+        <!-- Branches (highlighted - ref updated) -->
+        <mxCell id="box-branches" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=1.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Branches&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;main &amp;#x2190; moved forward&lt;/i&gt;" vertex="1">
+          <mxGeometry x="250" y="130" width="110" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Remote-tracking (dimmed - not changed by merge) -->
+        <mxCell id="box-tracking" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;opacity=30;" value="Remote-tracking&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;unchanged&lt;/i&gt;" vertex="1">
+          <mxGeometry x="375" y="130" width="100" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Objects (dimmed) -->
+        <mxCell id="box-objects" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;opacity=30;" value=".git/objects&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;unchanged&lt;/i&gt;" vertex="1">
+          <mxGeometry x="290" y="210" width="150" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- merge arrow: branches → working tree -->
+        <mxCell id="arr-merge" edge="1" parent="1" source="box-branches" target="box-worktree" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=2;endFill=1;endSize=6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-merge" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="git merge" vertex="1">
+          <mxGeometry x="160" y="143" width="80" height="18" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
