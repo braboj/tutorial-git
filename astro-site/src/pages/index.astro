@@ -4,11 +4,11 @@ import DocLayout from "../layouts/DocLayout.astro";
 const base = import.meta.env.BASE_URL;
 
 const headings = [
-  { depth: 2, slug: "what-youll-learn", text: "What you'll learn" },
+  { depth: 2, slug: "why-this-tutorial", text: "Why This Tutorial" },
+  { depth: 2, slug: "what-youll-learn", text: "What You'll Learn" },
   { depth: 2, slug: "chapters", text: "Chapters" },
-  { depth: 2, slug: "quick-start", text: "Quick start" },
   { depth: 2, slug: "about", text: "About" },
-  { depth: 2, slug: "selected-references", text: "Selected references" },
+  { depth: 2, slug: "further-reading", text: "Further Reading" },
 ];
 
 const jsonLd = {
@@ -37,12 +37,45 @@ const jsonLd = {
 >
 
   <p>
-    A hands-on tutorial that takes you from first commit to confident daily use.
-    Learn Git's concepts first, then apply them through practical exercises
-    and real-world examples.
+    Git is everywhere — in every team, every deployment pipeline, and every
+    AI coding tool. Yet most developers learn it by memorizing commands
+    without understanding what happens underneath.
   </p>
 
-  <h2 id="what-youll-learn">What you'll learn</h2>
+  <p>
+    This tutorial takes a different approach. You learn the concepts first —
+    how Git stores data, how branches actually work, what a merge really
+    does — then apply that understanding through exercises and a 17-recipe
+    playbook you can reach for every day.
+  </p>
+
+  <h2 id="why-this-tutorial">Why This Tutorial</h2>
+
+  <ul>
+    <li>
+      <strong>Concepts before commands</strong> — understand the object model,
+      references, and the index so that every command makes sense instead of
+      feeling like magic.
+    </li>
+    <li>
+      <strong>Structured learning path</strong> — not a cheat sheet, not a
+      wall of text. Nine chapters that build on each other, with exercises
+      and quizzes to check your understanding.
+    </li>
+    <li>
+      <strong>Practical playbook</strong> — 17 recipe pages covering
+      everyday tasks, branching, remotes, debugging, and more. Look up
+      what you need, copy the commands, understand why they work.
+    </li>
+    <li>
+      <strong>Foundation for AI workflows</strong> — tools like Claude Code,
+      Cursor, and Copilot use Git under the hood. AI works best when you
+      know what you're asking for — understanding Git internals helps you
+      work with these tools effectively and catch mistakes.
+    </li>
+  </ul>
+
+  <h2 id="what-youll-learn">What You'll Learn</h2>
 
   <ul>
     <li>
@@ -116,24 +149,26 @@ const jsonLd = {
     </tbody>
   </table>
 
-  <h2 id="quick-start">Quick start</h2>
-
-  <p>New to Git? Start here:</p>
-
-  <ol>
-    <li><a href={`${base}introduction/#installation`}>Install Git</a> on your machine</li>
-    <li><a href={`${base}introduction/#how-git-works`}>Understand how Git works</a> — workspace, index, repository</li>
-    <li><a href={`${base}introduction/#exercises`}>Try the exercises</a> — clone, commit, push, pull</li>
-  </ol>
-
   <h2 id="about">About</h2>
+
+  <p>
+    This tutorial started as personal memo pages — quick notes I wrote for
+    myself because I kept forgetting how Git works. Over time, those notes grew into Markdown documents, then chapters
+    with diagrams and exercises, then an Astro site with quizzes, a
+    17-recipe playbook, and the structured tutorial you see now.
+    More than 200 hours of writing, rewriting, and refining.
+  </p>
+
+  <p>
+    If it helps you understand Git a little better, it was worth every hour.
+  </p>
 
   <ul>
     <li>Created by <a href="https://github.com/braboj">Branimir Georgiev</a> and <a href="https://github.com/marwan-rashed">Marwan Rashed</a></li>
-    <li>Part of <a href="https://codewithbranko.com">Code with Branko</a> — practical tutorials for developers</li>
+    <li>Part of <a href="https://codewithbranko.com">Code with Branko</a> — practical tutorials for developers by heart</li>
   </ul>
 
-  <h2 id="selected-references">Selected references</h2>
+  <h2 id="further-reading">Further Reading</h2>
 
   <ul>
     <li><a href="https://git-scm.com/book/en/v2">Pro Git Book</a> — the definitive reference</li>
