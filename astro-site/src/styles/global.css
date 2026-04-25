@@ -268,8 +268,13 @@ a:hover {
   display: flex;
   padding: 0 var(--space-md);
   overflow-x: auto;
+  scrollbar-width: none;
   max-width: calc(var(--max-content) + 2 * var(--sidebar-width) + 2 * var(--space-xl));
   margin: 0 auto;
+}
+
+.site-tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .site-tabs a {
