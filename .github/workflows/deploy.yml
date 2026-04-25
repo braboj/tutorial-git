@@ -39,6 +39,9 @@ jobs:
         working-directory: astro-site
         run: npm run build
 
+      - name: Create base path symlink for link checker
+        run: ln -s . astro-site/dist/tutorial-git
+
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
