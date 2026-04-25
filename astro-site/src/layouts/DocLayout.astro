@@ -8,11 +8,17 @@ import site from "../data/site.json";
 
 interface Props {
   title: string;
+  description?: string;
   headings?: { depth: number; slug: string; text: string }[];
   currentPath?: string;
+  jsonLd?: Record<string, unknown>;
 }
 
-const { title, headings = [], currentPath = "/" } = Astro.props;
+const { title, description, headings = [], currentPath = "/", jsonLd } = Astro.props;
+const pageDescription = description || site.description;
+const pageTitle = `${title} — ${site.title}`;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/tutorial-git/images/og-banner.png", Astro.site);
 ---
 
 <!doctype html>
@@ -20,14 +26,34 @@ const { title, headings = [], currentPath = "/" } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title} — {site.title}</title>
-    <meta name="description" content={site.description} />
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:site_name" content={site.title} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+
+    {jsonLd && (
+      <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    )}
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>

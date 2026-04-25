@@ -1,5 +1,6 @@
 ---
 title: "Appendix"
+description: "Reference material — merge strategies, SSH key setup, Git clients, and external resources."
 section: "appendix"
 order: 8
 ---

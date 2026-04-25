@@ -1,5 +1,6 @@
 ---
 title: "Introduction"
+description: "What Git is, how to install it, how it works internally, and an overview of the most common commands."
 section: "introduction"
 order: 1
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Building Blocks"
+description: "Git internals — repositories, the object model (blobs, trees, commits, tags), the staging area, references, and HEAD."
 section: "building-blocks"
 order: 2
 ---

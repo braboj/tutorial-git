@@ -10,9 +10,31 @@ const headings = [
   { depth: 2, slug: "about", text: "About" },
   { depth: 2, slug: "selected-references", text: "Selected references" },
 ];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Course",
+  "name": "Git Tutorial — Code with Branko",
+  "description": "A hands-on Git tutorial from first commit to confident daily use — concepts, exercises, and real-world examples.",
+  "url": "https://braboj.github.io/tutorial-git/",
+  "provider": {
+    "@type": "Person",
+    "name": "Branimir Georgiev",
+    "url": "https://github.com/braboj"
+  },
+  "educationalLevel": "Beginner to Advanced",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+};
 ---
 
-<DocLayout title="Let's Learn Git!" headings={headings} currentPath="/">
+<DocLayout
+  title="Let's Learn Git!"
+  description="A hands-on Git tutorial from first commit to confident daily use — concepts, exercises, and real-world examples."
+  headings={headings}
+  currentPath="/"
+  jsonLd={jsonLd}
+>
 
   <p>
     A hands-on tutorial that takes you from first commit to confident daily use.

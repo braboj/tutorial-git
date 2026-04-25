@@ -1,5 +1,6 @@
 ---
 title: "Nested Repositories"
+description: "Include external repositories in your project using Git submodules and subtrees — trade-offs, workflows, and commands."
 section: "nested-repositories"
 order: 5
 ---

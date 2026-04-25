@@ -1,5 +1,6 @@
 ---
 title: "Remote Repositories"
+description: "Work with remote repositories — clone, fetch, pull, push, remote tracking branches, and forking workflows."
 section: "remote-repositories"
 order: 4
 ---
