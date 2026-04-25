@@ -46,7 +46,7 @@ assets/
   banners/
   doc/
   uml/
-astro-site/                # Astro build (imports from chapters/ and assets/)
+astro-site/                # Astro build (reads directly from chapters/)
 docs/                      # Legacy MkDocs content (reference, not active)
   solid-ai-templates/      # Submodule — Imbra-Ltd/solid-ai-templates
 ```
@@ -109,6 +109,9 @@ Every chapter follows this structure:
 
 - Reference other chapters by file: `[Building Blocks](02-building-blocks.md)`
 - Reference sections within a chapter by heading anchor: `[Tag Object](#tag-object-labels)`
+- The remark plugin (`astro-site/src/plugins/remark-rewrite-links.ts`)
+  rewrites `NN-slug.md` links to `../slug/` at build time — no manual
+  sync needed
 
 ### Images
 
