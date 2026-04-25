@@ -240,3 +240,43 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #106, #109, #110, #113, #114, #116–#119, #122, #127, #129, #131–#133, #135, #139, #140
+
+### 2026-04-25 — Playbook split, new recipes, UX improvements, home page
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Split monolithic `07-playbook.md` into 11 individual recipe pages under `chapters/playbook/`
+- Added 6 new recipe pages: subtrees, hooks, remote management, diffing, history, selectors (17 total)
+- Organized playbook index into 5 sections: Everyday, Branching and Merging, Remote, Project Structure, Advanced
+- Extended remark link-rewriting plugin to handle subdirectory and sibling file links
+- Updated cross-references in glossary and appendix to point to specific recipe pages
+- Added draggable sidebar splitters (JS, session-only, teal highlight on hover)
+- Widened default sidebar from 12rem to 16rem
+- Switched from Google Fonts (Roboto) to system fonts — eliminates font FOUC entirely
+- Fixed theme FOUC — moved theme init from body to head
+- Added favicon link with correct base path
+- Increased tab button spacing to 0.75rem
+- Rewrote home page: added "Why This Tutorial" section, personal origin story, AI workflow messaging
+- Removed Quick start section (duplicated Introduction links)
+- Renamed "Selected references" to "Further Reading"
+- Fixed heading case to title case for consistency with chapters
+
+**PRs merged:**
+- #142 — Split playbook into individual recipe pages
+- #143 — Add 6 new playbook recipe pages
+- #144 — Playbook sidebar nav and FOUC fix
+- #145 — Resizable sidebars, system fonts, favicon fix
+- #148 — Home page rewrite with motivation and personal story
+
+**Issues closed:**
+- #129 — Split playbook into individual recipe pages
+- #139 — Improve home page with motivation
+- #146 — Fix font FOUC (switched to system fonts)
+
+**Issues created:**
+- #146 — Fix font FOUC (closed same session)
+- #147 — Add AI prompt guides for learning Git
+
+**Open issues:**
+- #106, #109, #110, #113, #114, #116–#119, #122, #127, #131–#133, #135, #140, #147
