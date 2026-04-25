@@ -5,7 +5,7 @@
   "repo": "https://github.com/braboj/tutorial-git",
   "tabs": [
     { "label": "Home", "href": "/" },
-    { "label": "Introduction", "href": "/introduction/" },
+    { "label": "Intro", "href": "/introduction/" },
     { "label": "Building Blocks", "href": "/building-blocks/" },
     { "label": "Branching & Merging", "href": "/branching-and-merging/" },
     { "label": "Remote Repos", "href": "/remote-repositories/" },

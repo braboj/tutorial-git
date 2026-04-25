@@ -276,8 +276,8 @@ a:hover {
   font-size: var(--font-size-sm);
   font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 0.02em;
-  padding: 0 var(--space-sm);
+  letter-spacing: 0.04em;
+  padding: 0 var(--space-md);
   height: var(--tab-height);
   display: flex;
   align-items: center;
