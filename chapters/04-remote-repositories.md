@@ -287,13 +287,13 @@ forward. No merge commit is created.
 
 If both sides have new commits, Git creates a merge commit, just like
 merging any two branches (see
-[Branching and Merging](03-branching-and-merging.md#merging)).
+[Branching and Merging](03-branching-and-merging.md#3-merging)).
 
 ### Handling conflicts
 
 If the remote changes conflict with your local changes, Git stops and
 asks you to resolve — the same process described in
-[Branching and Merging](03-branching-and-merging.md#conflicts). After
+[Branching and Merging](03-branching-and-merging.md#6-conflicts). After
 resolving:
 
 ```text
