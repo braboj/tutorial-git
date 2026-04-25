@@ -277,7 +277,7 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 0 var(--space-md);
+  padding: 0 var(--space-sm);
   height: var(--tab-height);
   display: flex;
   align-items: center;
