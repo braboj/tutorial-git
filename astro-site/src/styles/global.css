@@ -35,8 +35,8 @@
   --max-content: 50rem;
 
   /* Typography */
-  --font-text: "Roboto", system-ui, sans-serif;
-  --font-code: "Roboto Mono", ui-monospace, monospace;
+  --font-text: system-ui, -apple-system, sans-serif;
+  --font-code: ui-monospace, "Cascadia Code", "Fira Code", monospace;
   --font-size-sm: 0.8125rem;
   --font-size-base: 0.875rem;
   --font-size-lg: 1rem;
@@ -277,7 +277,7 @@ a:hover {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  padding: 0 var(--space-sm);
+  padding: 0 0.75rem;
   height: var(--tab-height);
   display: flex;
   align-items: center;
@@ -299,10 +299,24 @@ a:hover {
 /* Three-column layout */
 .site-main {
   display: grid;
-  grid-template-columns: var(--sidebar-width) minmax(0, 1fr) var(--sidebar-width);
+  grid-template-columns: var(--sidebar-width) 4px minmax(0, 1fr) 4px var(--sidebar-width);
   max-width: calc(var(--max-content) + 2 * var(--sidebar-width) + 2 * var(--space-xl));
   margin: 0 auto;
   min-height: calc(100vh - var(--header-height) - var(--tab-height));
+}
+
+/* Resize handles */
+.resize-handle {
+  width: 4px;
+  cursor: col-resize;
+  background: transparent;
+  transition: background 0.15s;
+  z-index: 10;
+}
+
+.resize-handle:hover,
+.resize-handle:active {
+  background: var(--color-primary-light);
 }
 
 /* Left sidebar — TOC */
@@ -382,76 +396,6 @@ a:hover {
   content: "−";
 }
 
-/* Right sidebar — Playbook navigation */
-.playbook-nav {
-  position: sticky;
-  top: calc(var(--header-height) + var(--tab-height));
-  height: calc(100vh - var(--header-height) - var(--tab-height));
-  overflow-y: auto;
-  padding: var(--space-lg) var(--space-md);
-  border-left: 1px solid var(--color-border);
-  font-size: var(--font-size-sm);
-}
-
-.playbook-nav-title {
-  font-size: var(--font-size-sm);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: var(--space-md);
-}
-
-.playbook-nav-title a {
-  color: var(--color-fg-muted);
-}
-
-.playbook-nav-title a:hover,
-.playbook-nav-title a.active {
-  color: var(--color-primary-light);
-  text-decoration: none;
-}
-
-.playbook-nav-group {
-  margin-bottom: var(--space-md);
-}
-
-.playbook-nav-group-label {
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  color: var(--color-fg-faint);
-  margin-bottom: var(--space-xs);
-}
-
-.playbook-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.playbook-nav li {
-  margin-bottom: 1px;
-}
-
-.playbook-nav li a {
-  display: block;
-  color: var(--color-fg-muted);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: 3px;
-}
-
-.playbook-nav li a:hover {
-  color: var(--color-primary-light);
-  background: var(--color-bg-hover);
-  text-decoration: none;
-}
-
-.playbook-nav li a.active {
-  color: var(--color-primary);
-  background: var(--color-bg-alt);
-  font-weight: 500;
-}
 
 /* Content area */
 .content {
@@ -632,7 +576,7 @@ a:hover {
 
   .sidebar-toc,
   .sidebar-tutorials,
-  .playbook-nav {
+  .resize-handle {
     display: none;
   }
 }
