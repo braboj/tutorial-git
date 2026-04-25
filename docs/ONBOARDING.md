@@ -40,7 +40,7 @@ npm run dev
 
 Open `http://localhost:4321/tutorial-git/` — the Astro dev server should start. All 9
 chapters are wired as single-page sections. The site is deployed to
-`braboj.github.io/tutorial-git/` via GitHub Actions.
+`braboj.me/tutorial-git/` via GitHub Actions.
 
 
 ## 4. Key files
@@ -68,7 +68,7 @@ files for the web version.
 
 ```
 01-introduction.md         06-expert-topics.md
-02-building-blocks.md      07-playbook.md
+02-building-blocks.md      playbook/          (17 recipe pages)
 03-branching-and-merging.md 08-appendix.md
 04-remote-repositories.md  09-glossary.md
 05-nested-repositories.md
