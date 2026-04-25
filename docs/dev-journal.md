@@ -148,3 +148,48 @@ Architecture overview and chronological session log for tutorial-git.
 
 **Open issues:**
 - #105 — Eliminate dual-source content model
+
+### 2026-04-25 — Single-source content and chapter 4 rewrite
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Merged PR #115 — single-source content model with remark plugin
+  - Content collection now reads from `chapters/` directly
+  - Remark plugin rewrites `NN-slug.md` links to `../slug/` at build time
+  - Deleted 9 duplicate files from `astro-site/src/content/docs/`
+  - Updated PLAYBOOK.md and CLAUDE.md
+- Rewrote chapter 04 (Remote Repositories) for beginner clarity
+  - Restructured: concepts first (remotes, tracking, config), commands after
+  - Added branch tracking configuration with full pull chain explanation
+  - Added `.git/refs/remotes/` tree view and `.git/config` refspec breakdown
+  - Reordered subsections: remote-tracking branches before managing remotes
+- Created 3 new zoom-in diagrams (fetch, merge, push)
+  - Each highlights what changes (thick border) and dims what stays the same
+- Redesigned flow diagram — remote-tracking inside Local Repo, connected arrows
+- Redesigned clone diagram — local-left/remote-right, checkout arrow, .git/config box
+- Polished all diagrams in draw.io desktop with consistent layout
+- Fixed CI: mkdir -p before assets symlink, lychee link checker disabled (#121)
+- Fixed cross-chapter anchor links (#3-merging, #6-conflicts)
+- Added new quiz questions testing the mental model (where remotes stored, what fetch changes)
+
+**Issues closed:**
+- #105 — Eliminate dual-source content model (PR #115)
+- #111 — Review images in Remote Repositories chapter (PR #120)
+
+**Issues created:**
+- #109 — Add interactive learning recommendations
+- #110 — Improve mobile ToC access from hamburger menu
+- #112 — Consider renaming Expert to Expert Topics
+- #113 — Add team workflow best practices section
+- #114 — Explore animated visualizations for Git concepts
+- #116 — Add cross-chapter learning journey narrative
+- #117 — Add feedback button for users without GitHub accounts
+- #118 — Add interactive console for hands-on practice
+- #119 — Hire designer for professional diagram illustrations
+- #121 — Fix lychee link checker for Astro base path
+- #122 — Review exercise design: self-contained vs cross-referenced
+- #123 — Add SEO optimization: meta tags, sitemap, structured data
+
+**Open issues:**
+- #106, #109, #110, #112–#114, #116–#119, #121–#123
