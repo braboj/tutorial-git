@@ -4,7 +4,7 @@
 # Remap the /tutorial-git/ base path to the dist root so that
 # root-relative links like /tutorial-git/introduction/ resolve
 # to dist/introduction/index.html
-remap = ["/tutorial-git/(.*) file:///$1"]
+remap = ["^/tutorial-git/(.*) /$1"]
 
 # Skip external links in CI to avoid flaky failures from transient
 # network issues. Run with --include-mail to check mailto: links.
