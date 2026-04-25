@@ -48,6 +48,9 @@ jobs:
           args: --root-dir astro-site/dist --config lychee.toml 'astro-site/dist/**/*.html'
           fail: true
 
+      - name: Remove symlink before upload
+        run: rm astro-site/dist/tutorial-git
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
