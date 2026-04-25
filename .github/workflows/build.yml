@@ -30,9 +30,11 @@ jobs:
         working-directory: astro-site
         run: npm run build
 
-      # TODO: Fix lychee configuration for Astro's base path and fragment links (#121)
-      # - name: Check links
-      #   uses: lycheeverse/lychee-action@v2
-      #   with:
-      #     args: --base ${{ github.workspace }}/astro-site/dist --root-dir ${{ github.workspace }}/astro-site/dist astro-site/dist
-      #     fail: true
+      - name: Create base path symlink for link checker
+        run: ln -s . astro-site/dist/tutorial-git
+
+      - name: Check links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --root-dir astro-site/dist --config lychee.toml 'astro-site/dist/**/*.html'
+          fail: true

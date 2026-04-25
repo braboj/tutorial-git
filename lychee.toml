@@ -1,0 +1,13 @@
+# Lychee link checker configuration
+# Runs against the Astro build output in astro-site/dist/
+
+# Exclude external URLs to keep CI fast and deterministic
+exclude = [
+  "^https://",
+  "^http://",
+]
+
+# Accept 200 and 204
+accept = [200, 204]
+
+no_progress = true
