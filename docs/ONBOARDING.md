@@ -71,7 +71,7 @@ files for the web version.
 02-building-blocks.md      07-playbook.md
 03-branching-and-merging.md 08-appendix.md
 04-remote-repositories.md  09-glossary.md
-05-subprojects.md
+05-nested-repositories.md
 ```
 
 Chapter structure, writing conventions, and figure style rules are

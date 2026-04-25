@@ -35,7 +35,7 @@ directory.
 | 2 | [Building Blocks](chapters/02-building-blocks.md) | Repositories, objects, references, HEAD, tags |
 | 3 | [Branching and Merging](chapters/03-branching-and-merging.md) | Branches, merge strategies, rebase, cherry-pick, conflicts, stash |
 | 4 | [Remote Repositories](chapters/04-remote-repositories.md) | Clone, push, pull, fetch, remote tracking, forking workflows |
-| 5 | [Subprojects](chapters/05-subprojects.md) | Submodules and subtrees |
+| 5 | [Nested Repositories](chapters/05-nested-repositories.md) | Submodules and subtrees |
 | 6 | [Expert Topics](chapters/06-expert-topics.md) | Configuration, selectors, refspecs, hooks, bisect |
 | 7 | [Playbook](chapters/07-playbook.md) | Step-by-step recipes for common tasks |
 | 8 | [Appendix](chapters/08-appendix.md) | Merge strategies, SSH setup, Git clients, references |

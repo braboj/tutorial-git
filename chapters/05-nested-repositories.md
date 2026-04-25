@@ -1,6 +1,6 @@
 ---
-title: "Subprojects"
-section: "subprojects"
+title: "Nested Repositories"
+section: "nested-repositories"
 order: 5
 ---
 

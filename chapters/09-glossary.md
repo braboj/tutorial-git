@@ -49,8 +49,8 @@ A reference of key Git terms used throughout this tutorial, with links to the ch
 | Revert | Create a new commit that undoes a previous commit's changes without rewriting history | [7](07-playbook.md) |
 | Squash merge | Combine all commits from a branch into a single change set on the target branch — no merge commit | [3](03-branching-and-merging.md) |
 | Stash | Save uncommitted changes temporarily so you can switch branches with a clean working tree | [3](03-branching-and-merging.md) |
-| Submodule | A reference to a specific commit in another repository — stores URL and hash, not files | [5](05-subprojects.md) |
-| Subtree | A full copy of another repository merged into a subdirectory of the parent project | [5](05-subprojects.md) |
+| Submodule | A reference to a specific commit in another repository — stores URL and hash, not files | [5](05-nested-repositories.md) |
+| Subtree | A full copy of another repository merged into a subdirectory of the parent project | [5](05-nested-repositories.md) |
 | Tag | A named reference to a commit — annotated (object with metadata) or lightweight (plain reference) | [2](02-building-blocks.md) |
 | Tree | Object that represents a directory — lists blobs and other trees with names and permissions | [2](02-building-blocks.md) |
 | Upstream | Conventional name for the original repository you forked from | [4](04-remote-repositories.md) |
