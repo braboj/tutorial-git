@@ -77,9 +77,17 @@ const base = import.meta.env.BASE_URL;
   const navToggle = document.getElementById("nav-toggle");
   const siteTabs = document.getElementById("site-tabs");
 
-  navToggle.addEventListener("click", () => {
+  navToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     const expanded = navToggle.getAttribute("aria-expanded") === "true";
     navToggle.setAttribute("aria-expanded", String(!expanded));
     siteTabs.classList.toggle("open");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (!siteTabs.classList.contains("open")) return;
+    if (navToggle.contains(e.target) || siteTabs.contains(e.target)) return;
+    navToggle.setAttribute("aria-expanded", "false");
+    siteTabs.classList.remove("open");
   });
 </script>
