@@ -2,9 +2,7 @@
 
 Instructions for Claude Code working in this repository.
 
-Quality conventions (git, docs, quality, scope) are defined in
-`docs/solid-ai-templates/` — a git submodule from
-[Imbra-Ltd/solid-ai-templates](https://github.com/Imbra-Ltd/solid-ai-templates).
+Quality conventions defined in `docs/solid-ai-templates/` (submodule).
 Key references:
 - `docs/solid-ai-templates/base/git.md` — git workflow, branching, PRs
 - `docs/solid-ai-templates/base/docs.md` — documentation rules, ADRs, writing style
@@ -16,17 +14,16 @@ Key references:
 Project-specific overrides and additions follow below.
 
 
-## Project identity
+## 1. Project
 
 - **Name**: tutorial-git (Git Tutorial — Code with Branko)
 - **Owner**: Branimir Georgiev — braboj
 - **Repo**: github.com/braboj/tutorial-git
 - **Stack**: Astro static site, Markdown content, draw.io diagrams
 - **Hosting**: GitHub Pages via GitHub Actions
-- **Domain**: braboj.github.io/tutorial-git (codewithbranko.com pending)
+- **Domain**: braboj.me/tutorial-git (codewithbranko.com pending)
 
-
-## Project structure
+### 1.1 Project structure
 
 ```
 chapters/                  # SSG-agnostic tutorial content (canonical)
@@ -48,41 +45,27 @@ assets/
   doc/
   uml/
 astro-site/                # Astro build (reads directly from chapters/)
-docs/                      # Legacy MkDocs content (reference, not active)
+docs/                      # Project docs, decisions, dev journal
   solid-ai-templates/      # Submodule — Imbra-Ltd/solid-ai-templates
 ```
 
 
-## Scope guard override
+## 2. Conventions
 
-Extends `base/scope.md` with tutorial-specific boundaries:
-- One chapter per session is the default scope for content work
-- Diagram, exercise, and quiz changes within that chapter are in scope
-- Restructuring other chapters, creating new projects, or adding
-  infrastructure is out of scope unless explicitly requested
+### 2.1 Git
 
-## End-of-session checklist
+Extends `docs/solid-ai-templates/base/git.md` with project-specific rules:
 
-Before ending a session, verify all of the following:
+- Feature branches: `feature/<short-description>`
+- Always run `git checkout main && git pull` before creating a new
+  feature branch
+- One commit per logical change
+- PR title: concise, under 70 characters
+- Delete feature branch after merge (local and remote)
 
-1. **Dev journal** — add a session entry to `docs/dev-journal.md`
-   (date, tool, key changes, PRs merged, issues closed/created, open issues)
-2. **CLAUDE.md** — update if project structure or conventions changed
-3. **README.md** — update if chapter list, links, or setup instructions changed
-4. **ONBOARDING.md** — update `docs/ONBOARDING.md` if prerequisites,
-   setup steps, or project structure changed
-5. **PLAYBOOK.md** — update `docs/PLAYBOOK.md` if operational
-   workflows or file paths changed
-6. **solid-ai-templates** — check if upstream submodule needs updates
-   based on new patterns or conventions discovered during the session
-   (e.g. new scope rules, documentation rules, quality conventions)
-5. **Open issues** — close resolved GitHub issues, update or create
-   issues for remaining work
+### 2.2 Content
 
-
-## Content conventions
-
-### Chapter structure
+#### Chapter structure
 
 Every chapter follows this structure:
 
@@ -92,7 +75,7 @@ Every chapter follows this structure:
 4. `## Exercises` — hands-on tasks with verification steps
 5. `## Quiz` — multiple-choice questions with answers at the bottom
 
-### Writing style
+#### Writing style
 
 - **American English** spelling (analyze, not analyse)
 - **Git** capitalised in prose, `git` lowercase in commands and code blocks
@@ -102,21 +85,24 @@ Every chapter follows this structure:
 - No inline Practice sections — all practice goes in Exercises
 - No emojis unless explicitly requested
 
-### Quiz formatting
+#### Quiz formatting
 
 - Each option on a bullet line: `- A) ...`, `- B) ...`
 - Vary the correct answer positions — never all the same letter
 - Answers section at the bottom: `1. C — explanation`
 
-### Cross-references
+### 2.3 Cross-references
 
 - Reference other chapters by file: `[Building Blocks](02-building-blocks.md)`
 - Reference sections within a chapter by heading anchor: `[Tag Object](#tag-object-labels)`
-- The remark plugin (`astro-site/src/plugins/remark-rewrite-links.ts`)
-  rewrites `NN-slug.md` links to `../slug/` at build time — no manual
-  sync needed
+- Markdown links must use the **URL path** (driven by `section` frontmatter),
+  not the filesystem path — the remark plugin
+  (`astro-site/src/plugins/remark-rewrite-links.ts`) rewrites links at
+  build time
+- Recipe pages live in `chapters/recipes/` but their URLs are
+  `/playbook/...` — link to them as `playbook/X.md`, not `recipes/X.md`
 
-### Images
+### 2.4 Images
 
 - Source files: `assets/drawio/` (`.drawio` format)
 - Exported PNGs: `assets/images/`
@@ -125,11 +111,11 @@ Every chapter follows this structure:
 - ASCII diagrams in markdown serve as fallback and source of truth
 
 
-## Figure style rules
+### 2.5 Figures
 
 Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
 
-### Core principles
+#### Core principles
 
 - Flat only: no gradients, shadows, glows, or 3D effects
 - Sentence case for prose labels — filenames and acronyms keep their casing
@@ -138,7 +124,7 @@ Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
 - One visual grammar per figure — if it needs two, split into two figures
 - Shapes (circle vs pill vs card) distinguish elements in grayscale
 
-### Palettes
+#### Palettes
 
 **A — Difficulty** (tier cards):
 - Beginner: fill `#EAF3DE`, border `#3B6D11`, text `#27500A`
@@ -169,7 +155,7 @@ for readers who use Git tools.
 - Border `#D3D1C7`, primary text `#2C2C2A`, secondary text `#5F5E5A`,
   arrow stroke `#444441`, white card `#FFFFFF`.
 
-### Typography
+#### Typography
 
 | Use | Font | Size | Weight | Style |
 |---|---|---|---|---|
@@ -179,7 +165,7 @@ for readers who use Git tools.
 | Captions, footnotes | Helvetica | 11–12 px | Regular | — |
 | Descriptive notes, placeholders | Helvetica | 11 px | Regular | Italic |
 
-### Arrow conventions
+#### Arrow conventions
 
 - Solid 1 px `#444441`, 6 × 6 px chevron head. Labels in clear space, never
   on the line.
@@ -191,7 +177,7 @@ for readers who use Git tools.
 - **Italic `#5F5E5A` label** for named relationships (`attached`, `parent`).
 - **Self-loop** (small arc above box corner) for recursive references.
 
-### Component vocabulary
+#### Component vocabulary
 
 - **Card**: rounded rect, rx=5–8, 0.5 px border, 10–12 px inner padding.
 - **Pill**: rounded rect with rx = height/2. For branches, tags, short labels.
@@ -202,14 +188,14 @@ for readers who use Git tools.
   readability on both light and dark page backgrounds. Export PNGs with
   transparent background — the card provides the contrast.
 
-### Commit-chain panel variant
+#### Commit-chain panel variant
 
 Gray commit circles (diameter 28), branch pills to the right of the
 commit they point to, italic "HEAD" label above the active branch pill.
 `*main` means HEAD is attached to main. Dashed arrow from pill to commit
 shows the reference relationship. Uses Palette C.
 
-### draw.io file conventions
+#### draw.io file conventions
 
 - Source files: `assets/drawio/<name>.drawio`
 - Naming: `git-<topic>-<variant>.drawio` (e.g. `git-branch-merge.drawio`)
@@ -217,7 +203,7 @@ shows the reference relationship. Uses Palette C.
 - All cells `parent="1"`
 - XML-escape values: `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`
 
-### draw.io style string templates
+#### draw.io style string templates
 
 ```
 # Commit circle (gray):
@@ -245,7 +231,7 @@ endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;da
 rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;
 ```
 
-### XML boilerplate
+#### XML boilerplate
 
 ```xml
 <mxfile host="app.diagrams.net">
@@ -263,7 +249,39 @@ rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWid
 ```
 
 
-## Commands
+## 3. Session protocol
+
+### 3.1 Scope guard
+
+Extends `base/scope.md` with tutorial-specific boundaries:
+- One chapter per session is the default scope for content work
+- Diagram, exercise, and quiz changes within that chapter are in scope
+- Restructuring other chapters, creating new projects, or adding
+  infrastructure is out of scope unless explicitly requested
+
+### 3.2 Startup
+
+Read all referenced template documents before starting work. Confirm
+session scope with the user.
+
+### 3.3 End of session
+
+Before ending a session, verify all of the following:
+
+1. **Dev journal** — add a session entry to `docs/dev-journal.md`
+   (date, tool, key changes, PRs merged, issues closed/created, open issues)
+2. **CLAUDE.md** — update if project structure or conventions changed
+3. **README.md** — update if chapter list, links, or setup instructions changed
+4. **ONBOARDING.md** — update `docs/ONBOARDING.md` if prerequisites,
+   setup steps, or project structure changed
+5. **PLAYBOOK.md** — update `docs/PLAYBOOK.md` if operational
+   workflows or file paths changed
+6. **solid-ai-templates** — check if upstream submodule needs updates
+7. **Open issues** — close resolved GitHub issues, update or create
+   issues for remaining work
+
+
+## 4. Commands
 
 ```bash
 # Astro site (from astro-site/)
