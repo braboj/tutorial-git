@@ -54,4 +54,4 @@ commit when done.
 - Use `git bisect log` to replay or share a bisect session.
 
 For blame, log search, and other debugging tools, see the
-[Debugging](debugging.md) recipe.
+[Debugging](../debugging/) recipe.

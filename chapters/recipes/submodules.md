@@ -43,6 +43,6 @@ $ git commit -m "Update submodule"
 
 ### Remove a submodule
 
-See [Remove a Submodule](remove-submodule.md) for a full
+See [Remove a Submodule](../remove-submodule/) for a full
 walkthrough — the three cleanup steps, what each does, and common
 gotchas.

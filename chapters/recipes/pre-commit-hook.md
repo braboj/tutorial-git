@@ -46,7 +46,7 @@ $ chmod +x .git/hooks/pre-commit
 ### Sharing pre-commit hooks
 
 Hooks in `.git/hooks/` are local and not committed. To share them
-with the team, see the [Hooks](hooks.md) recipe for the
+with the team, see the [Hooks](../hooks/) recipe for the
 `core.hooksPath` approach.
 
 ### Bypassing
