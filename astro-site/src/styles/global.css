@@ -84,6 +84,7 @@ body {
   color: var(--color-fg);
   background: var(--color-bg);
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -406,6 +407,8 @@ a:hover {
 .content {
   padding: var(--space-xl) var(--space-2xl);
   min-width: 0;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
 }
 
 /* Right sidebar — tutorial links */
@@ -505,6 +508,8 @@ a:hover {
   border-collapse: collapse;
   margin-bottom: var(--space-lg);
   font-size: var(--font-size-sm);
+  display: block;
+  overflow-x: auto;
 }
 
 .content caption {
