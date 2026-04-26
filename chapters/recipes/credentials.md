@@ -16,7 +16,7 @@ For SSH-based authentication, see [SSH Setup](../ssh-setup/).
 
 ### HTTPS vs SSH
 
-| | HTTPS | SSH |
+| Aspect | HTTPS | SSH |
 |---|---|---|
 | Setup | Simple — works immediately | Requires key generation and registration |
 | Authentication | Username + token (or password) | Private key on your machine |
@@ -78,6 +78,9 @@ or Linux Secret Service.
 $ git config --global credential.helper manager
 ```
 
+The exact value may differ by platform — older installations may use
+`manager-core` instead of `manager`.
+
 GCM is included with Git for Windows by default. On macOS and Linux,
 install it separately. It supports multi-factor authentication and
 OAuth flows for GitHub, GitLab, Bitbucket, and Azure DevOps.
@@ -97,8 +100,8 @@ every time.
 
 ### HTTPS personal access tokens
 
-GitHub, GitLab, and Bitbucket no longer accept account passwords for
-HTTPS Git operations. You need a **personal access token** (PAT)
+GitHub and many GitLab instances no longer accept account passwords
+for HTTPS Git operations. You need a **personal access token** (PAT)
 instead.
 
 To create one on GitHub:
