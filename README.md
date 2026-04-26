@@ -24,7 +24,7 @@ On Windows, the symlink is created as a directory copy automatically.
 ## Usage
 
 Read the tutorial on the live site:
-[braboj.github.io/tutorial-git](https://braboj.github.io/tutorial-git/)
+[braboj.me/tutorial-git](https://braboj.me/tutorial-git/)
 
 Chapters can also be read directly as Markdown files in the `chapters/`
 directory.
@@ -51,7 +51,6 @@ assets/
   banners/             # Banner images
 astro-site/            # Astro static site
   src/
-    content/docs/      # Chapter copies for the Astro content collection
     components/        # Astro components (Header, ToC, TutorialLinks)
     layouts/           # Page layouts
     pages/             # Route definitions
@@ -72,9 +71,6 @@ $ npm run build     # production build to dist/
 $ npm run preview   # preview production build
 ```
 
-After editing a chapter in `chapters/`, copy it to
-`astro-site/src/content/docs/` to update the site.
-
 ## Configuration reference
 
 | Key | Location | Description |
@@ -88,7 +84,7 @@ After editing a chapter in `chapters/`, copy it to
 
 ## Links
 
-- [Live site](https://braboj.github.io/tutorial-git/)
+- [Live site](https://braboj.me/tutorial-git/)
 - [Contribution guide](docs/ONBOARDING.md)
 - [Dev journal](docs/dev-journal.md)
 - [Playbook](docs/PLAYBOOK.md)
