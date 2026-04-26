@@ -106,20 +106,7 @@ over a local network. Each has a non-bare repository with a working
 tree. There is no central server — Bob pushes his changes directly
 into Alice's `.git/` directory.
 
-```text
-  Alice (non-bare)                    Bob (non-bare)
- ┌──────────────────┐              ┌──────────────────┐
- │  Working Tree    │              │  Working Tree    │
- │  files from A    │              │                  │
- │  + uncommitted   │              │                  │
- ├──────────────────┤              ├──────────────────┤
- │  .git/           │  git push    │  .git/           │
- │  main → B ───────│◄─────────────│  main → B        │
- │  (moved by push) │              │                  │
- └──────────────────┘              └──────────────────┘
-       ⚠ OUT OF SYNC
-   branch says B, files say A
-```
+![Direct push without a bare repo](../assets/images/git-bare-before.png)
 
 The problem: when Bob pushes his changes, Git updates the branch
 inside Alice's `.git/` to point to Bob's latest commit immediately.
@@ -135,18 +122,7 @@ directly? A popular solution to this kind of synchronization problem
 is to introduce an intermediary repository that both developers push
 to and pull from.
 
-```text
-  Alice (non-bare)        Shared hub (bare)        Bob (non-bare)
- ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
- │  Working Tree    │    │                  │    │  Working Tree    │
- │                  │    │  objects + refs  │    │                  │
- ├──────────────────┤    │  no working tree │    ├──────────────────┤
- │  .git/           │    │                  │    │  .git/           │
- │                  │◄───│                  │◄───│                  │
- └──────────────────┘    └──────────────────┘    └──────────────────┘
-       pull                                           push
-    (when ready)
-```
+![Bare repo as a shared hub](../assets/images/git-bare-after.png)
 
 This is called a **shared hub**. The shared hub is a bare repository — it has no
 working tree, only the Git internals. Its purpose is to hold commits and
