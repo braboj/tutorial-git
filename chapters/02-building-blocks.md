@@ -37,6 +37,9 @@ A repository can be **local** (on your machine) or **remote** (on a
 server like GitHub). Git treats both as equals — you can push to and
 pull from any repository you have access to.
 
+
+### Repository Layouts
+
 Typically, the layout of a **local** repository has a .git 
 folder with all the internals, and a working tree with your project. This type
 of layout is called a **non-bare repository**. The `.git` folder stores the 
@@ -100,7 +103,7 @@ $ git init --bare <directory-name>
 
 Imagine two developers — Alice and Bob — working on the same project
 over a local network. Each has a non-bare repository with a working
-tree. There is no central server — Bob sends his changes directly
+tree. There is no central server — Bob pushes his changes directly
 into Alice's `.git/` directory.
 
 ```text
@@ -110,7 +113,7 @@ into Alice's `.git/` directory.
  │  files from A    │              │                  │
  │  + uncommitted   │              │                  │
  ├──────────────────┤              ├──────────────────┤
- │  .git/           │  sends       │  .git/           │
+ │  .git/           │  git push    │  .git/           │
  │  main → B ───────│◄─────────────│  main → B        │
  │  (moved by push) │              │                  │
  └──────────────────┘              └──────────────────┘
@@ -118,19 +121,19 @@ into Alice's `.git/` directory.
    branch says B, files say A
 ```
 
-The problem: when Bob sends his changes, Git updates the branch
+The problem: when Bob pushes his changes, Git updates the branch
 inside Alice's `.git/` to point to Bob's latest commit immediately.
 But Alice's working tree is **not** updated — her files still reflect
 the old commit, plus whatever edits she has in progress. Alice's
-branch and her working tree are now out of sync. If she records a
-snapshot at this point, she unknowingly **reverts Bob's changes** —
-because her files do not contain them. Git prevents this by refusing
-to accept changes into a repository where someone is actively working.
+branch and her working tree are now out of sync. If she commits at
+this point, she unknowingly **reverts Bob's changes** — because her
+files do not contain them. Git prevents this by refusing to accept
+a push into a repository where someone is actively working.
 
 What if the two developers never touch each other's repositories
 directly? A popular solution to this kind of synchronization problem
-is to introduce an intermediary repository that both developers send
-changes to and download changes from.
+is to introduce an intermediary repository that both developers push
+to and pull from.
 
 ```text
   Alice (non-bare)        Shared hub (bare)        Bob (non-bare)
@@ -141,19 +144,19 @@ changes to and download changes from.
  │  .git/           │    │                  │    │  .git/           │
  │                  │◄───│                  │◄───│                  │
  └──────────────────┘    └──────────────────┘    └──────────────────┘
-      download                                         send
+       pull                                           push
     (when ready)
 ```
 
 This is called a **shared hub**. The shared hub is a bare repository — it has no
 working tree, only the Git internals. Its purpose is to hold commits and
-references, not to be edited directly. Because nobody edits files in it, 
+references, not to be edited directly. Because nobody edits files in it,
 updating a branch is always safe.
 
 With a bare repository in the middle, each developer works
-independently. Bob sends his changes to the bare repository whenever
-he is ready. Alice records her own snapshots first, then downloads
-Bob's changes from the bare repository when **she** is ready. No one
+independently. Bob pushes his changes to the bare repository whenever
+he is ready. Alice commits her own work first, then pulls Bob's
+changes from the bare repository when **she** is ready. No one
 reaches into anyone else's working tree. This is exactly how
 hosting services like GitHub and GitLab work — every repository on
 the server is bare.
