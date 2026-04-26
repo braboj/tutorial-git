@@ -100,8 +100,8 @@ $ git init --bare <directory-name>
 
 Imagine two developers — Alice and Bob — working on the same project
 over a local network. Each has a non-bare repository with a working
-tree. There is no central server — Bob has Alice's repository set as
-his remote and sends changes directly into her `.git/` directory.
+tree. There is no central server — Bob sends his changes directly
+into Alice's `.git/` directory.
 
 ```text
   Alice (non-bare)                    Bob (non-bare)
@@ -110,7 +110,7 @@ his remote and sends changes directly into her `.git/` directory.
  │  files from A    │              │                  │
  │  + uncommitted   │              │                  │
  ├──────────────────┤              ├──────────────────┤
- │  .git/           │  git push    │  .git/           │
+ │  .git/           │  sends       │  .git/           │
  │  main → B ───────│◄─────────────│  main → B        │
  │  (moved by push) │              │                  │
  └──────────────────┘              └──────────────────┘
@@ -118,18 +118,19 @@ his remote and sends changes directly into her `.git/` directory.
    branch says B, files say A
 ```
 
-The problem: when Bob pushes his changes, Git updates the branch
-inside Alice's `.git/` to point to Bob's latest commit immediately. But Alice's
-working tree is **not** updated — her files still reflect the old commit, plus 
-whatever edits she has in progress. Alice's branch and her working tree are 
-now out of sync. If she commits at this point, she unknowingly **reverts Bob's
-changes** — because her files do not contain them. Git prevents this by
-refusing to accept a push to a non-bare repository that has the target
-branch checked out.
+The problem: when Bob sends his changes, Git updates the branch
+inside Alice's `.git/` to point to Bob's latest commit immediately.
+But Alice's working tree is **not** updated — her files still reflect
+the old commit, plus whatever edits she has in progress. Alice's
+branch and her working tree are now out of sync. If she records a
+snapshot at this point, she unknowingly **reverts Bob's changes** —
+because her files do not contain them. Git prevents this by refusing
+to accept changes into a repository where someone is actively working.
 
-A popular solution to this kind of synchronization problem is to decouple the
-direct push/pull between two developers and introduce an intermediary 
-repository that both developers push to and pull from. 
+What if the two developers never touch each other's repositories
+directly? A popular solution to this kind of synchronization problem
+is to introduce an intermediary repository that both developers send
+changes to and download changes from.
 
 ```text
   Alice (non-bare)        Shared hub (bare)        Bob (non-bare)
@@ -140,7 +141,7 @@ repository that both developers push to and pull from.
  │  .git/           │    │                  │    │  .git/           │
  │                  │◄───│                  │◄───│                  │
  └──────────────────┘    └──────────────────┘    └──────────────────┘
-        pull                                           push
+      download                                         send
     (when ready)
 ```
 
@@ -151,8 +152,8 @@ updating a branch is always safe.
 
 With a bare repository in the middle, each developer works
 independently. Bob sends his changes to the bare repository whenever
-he is ready. Alice commits her own work first, then pulls Bob's
-changes from the bare repository when **she** is ready. No one
+he is ready. Alice records her own snapshots first, then downloads
+Bob's changes from the bare repository when **she** is ready. No one
 reaches into anyone else's working tree. This is exactly how
 hosting services like GitHub and GitLab work — every repository on
 the server is bare.
