@@ -457,3 +457,43 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - P2: #110, #151, #152, #159, #161, #171, #182
 - P3: #135, #160
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
+
+### 2026-04-26 — P1 backlog clearance: bare repos, credentials, packfiles, LFS, glossary, review
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Rewrote Chapter 2 Repository section with bare/non-bare explanation using
+  Alice-and-Bob scenario, before/after diagrams, silent overwrite diagram,
+  and core.bare flag subsection (#172)
+- New playbook recipe: bare repositories — create, clone, convert, local
+  remote walkthrough (#172)
+- New playbook recipe: credentials — credential helpers (cache, store, GCM),
+  HTTPS tokens, SSH vs HTTPS comparison, security considerations (#169)
+- New Expert Topics section 10: packfiles — loose objects, delta compression,
+  git gc/repack, .idx index, network transfer (#166)
+- New playbook recipe: Git LFS — pointer files, setup, tracking, migration,
+  hosting quotas, gotchas (#165)
+- Added worktree/workspace synonyms to glossary (#158)
+- Reviewed nested repositories chapter — fixed code block tag, cd depth,
+  subtree drawback wording, Google Repo capitalization, added recipe
+  cross-references (#155)
+- Created 3 draw.io diagrams with PNG exports: git-bare-before, git-bare-after,
+  git-bare-overwrite
+
+**PRs merged:**
+- #190 — Bare repositories recipe and chapter rewrite
+- #191 — Draw.io layout fixes
+- #192 — Credentials recipe
+- #193 — Packfiles section
+- #194 — Git LFS recipe
+- #195 — Worktree glossary entry
+- #196 — Nested repos chapter review
+
+**Issues closed:** #155, #158, #165, #166, #169, #172
+
+**Open issues:**
+- P1: none
+- P2: #110, #151, #152, #159, #161, #171, #182
+- P3: #135, #160
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
