@@ -497,3 +497,32 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - P2: #110, #151, #152, #159, #161, #171, #182
 - P3: #135, #160
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
+
+
+### 2026-04-26 — P2 bug fixes and UX improvements
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Fixed mobile nav not closing on outside tap (#171)
+- Fixed broken recipe-to-chapter cross-links in bare-repositories (CI fix)
+- Made code blocks respond to dark mode theme toggle (#159)
+- Added OG banner image for social sharing previews (#152)
+- Closed #161 — Astro 6 already adds lazy loading to Markdown images
+- Added floating mobile ToC button for in-page navigation (#110)
+- Added `.claude/` to `.gitignore`
+- Created branding exploration issue (#202)
+
+**PRs merged:**
+- #198 — Mobile nav outside click fix
+- #199 — Bare-repositories cross-link fix
+- #200 — Dark mode code blocks
+- #201 — OG banner image
+- #203 — Floating mobile ToC
+
+**Issues closed:** #110, #152, #159, #161, #171
+
+**Open issues:**
+- P2: #151, #182
+- P3: #135, #160, #202
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
