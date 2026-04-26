@@ -118,6 +118,12 @@ error or warning — because her files do not contain them.
 
 ![Silent overwrite of commit B](../assets/images/git-bare-overwrite.png)
 
+Git prevents this with a configuration flag called `core.bare`. When
+a repository is not bare, Git rejects incoming pushes to protect the
+working tree. Only bare repositories — where `core.bare` is set to
+`true` — accept pushes, because there is no working tree to
+desynchronize.
+
 What if the two developers never touch each other's repositories
 directly? A popular solution to this kind of synchronization problem
 is to introduce an intermediary repository that both developers push
