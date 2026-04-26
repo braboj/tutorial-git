@@ -284,9 +284,10 @@ Before ending a session, verify all of the following:
    setup steps, or project structure changed
 5. **PLAYBOOK.md** — update `docs/PLAYBOOK.md` if operational
    workflows or file paths changed
-6. **solid-ai-templates** — check if upstream submodule needs updates
-7. **Open issues** — close resolved GitHub issues, update or create
+6. **Open issues** — close resolved GitHub issues, update or create
    issues for remaining work
+7. Remaining checks (submodules, template feedback, flag gaps) are
+   inherited from `base/scope.md` — follow them
 
 
 ## 4. Commands
