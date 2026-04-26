@@ -68,7 +68,7 @@ files for the web version.
 
 ```
 01-introduction.md         06-expert-topics.md
-02-building-blocks.md      playbook/          (17 recipe pages)
+02-building-blocks.md      07-playbook/       (17 recipe pages)
 03-branching-and-merging.md 08-appendix.md
 04-remote-repositories.md  09-glossary.md
 05-nested-repositories.md

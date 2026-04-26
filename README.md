@@ -37,7 +37,7 @@ directory.
 | 4 | [Remote Repositories](chapters/04-remote-repositories.md) | Clone, push, pull, fetch, remote tracking, forking workflows |
 | 5 | [Nested Repositories](chapters/05-nested-repositories.md) | Submodules and subtrees |
 | 6 | [Expert Topics](chapters/06-expert-topics.md) | Configuration, selectors, refspecs, hooks, bisect |
-| 7 | [Playbook](chapters/07-playbook.md) | Step-by-step recipes for common tasks |
+| 7 | [Playbook](chapters/07-playbook/index.md) | Step-by-step recipes for common tasks |
 | 8 | [Appendix](chapters/08-appendix.md) | Merge strategies, SSH setup, Git clients, references |
 | 9 | [Glossary](chapters/09-glossary.md) | Key terms and definitions |
 

@@ -33,7 +33,7 @@ Operational reference for common tasks in tutorial-git.
 - Place exercises at the end of the chapter under `## Exercises`
 - Each exercise has: **Task**, **Steps** (numbered), **Verify**
 - Exercises within a chapter use the same lab repository
-- Cross-topic recipes go in `chapters/playbook/`
+- Cross-topic recipes go in `chapters/07-playbook/`
 
 ### 1.4 Adding quiz questions
 
