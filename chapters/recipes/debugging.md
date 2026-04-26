@@ -9,20 +9,8 @@ order: 80
 
 ### Find which commit introduced a bug
 
-```text
-$ git bisect start
-$ git bisect bad                    # current commit has the bug
-$ git bisect good <hash>            # this older commit was fine
-# ... test each midpoint, mark good/bad ...
-$ git bisect reset                  # done — return to original branch
-```
-
-### Automated bisect with a test script
-
-```text
-$ git bisect start HEAD <good-hash>
-$ git bisect run ./test.sh
-```
+Use [Git Bisect](git-bisect.md) for a full walkthrough of manual and
+automated binary search through commit history.
 
 ### See who last changed each line
 

@@ -46,12 +46,6 @@ $ git remote set-url origin git@github.com:<user>/<repo>.git
 
 ### Set up SSH authentication
 
-```text
-$ ssh-keygen -t ed25519 -C "you@example.com"
-$ eval "$(ssh-agent -s)"
-$ ssh-add ~/.ssh/id_ed25519
-$ ssh -T git@github.com                    # verify connection
-```
-
-Add the public key (`~/.ssh/id_ed25519.pub`) to your GitHub account
-under Settings > SSH Keys.
+See [SSH Setup](ssh-setup.md) for a full walkthrough — key
+generation, agent configuration, GitHub registration, and
+troubleshooting.

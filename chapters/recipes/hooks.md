@@ -9,38 +9,13 @@ order: 83
 
 ### Create a pre-commit hook
 
-```text
-$ cat > .git/hooks/pre-commit << 'EOF'
-#!/bin/sh
-# Reject commits that contain TODO
-if git diff --cached --quiet -S "TODO"; then
-  exit 0
-fi
-echo "Error: commit contains TODO"
-exit 1
-EOF
-$ chmod +x .git/hooks/pre-commit
-```
-
-The hook runs before every commit. A non-zero exit code aborts the
-commit.
+See [Pre-commit Hook](pre-commit-hook.md) for a full walkthrough —
+script creation, common checks, and sharing with the team.
 
 ### Create a commit-msg hook
 
-```text
-$ cat > .git/hooks/commit-msg << 'EOF'
-#!/bin/sh
-# Enforce minimum message length
-if [ $(wc -c < "$1") -lt 10 ]; then
-  echo "Error: commit message too short"
-  exit 1
-fi
-EOF
-$ chmod +x .git/hooks/commit-msg
-```
-
-Receives the commit message file as `$1`. Useful for enforcing
-message conventions.
+See [Commit-msg Hook](commit-msg-hook.md) for a full walkthrough —
+message validation, Conventional Commits enforcement, and examples.
 
 ### Share hooks with the team
 
