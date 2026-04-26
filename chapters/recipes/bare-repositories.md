@@ -117,10 +117,25 @@ $ git push /tmp/dev-alice main
 remote: error: refusing to update checked out branch: refs/heads/main
 ```
 
-Git refuses because the push would change the branch that the working
-tree is based on, leaving the working tree out of sync. This is
-exactly why central repositories are bare — they have no working tree
-to desynchronize.
+To understand why, imagine two developers — Alice and Bob — where
+Alice's repository is non-bare and Bob tries to push to it:
+
+1. Alice clones a repository and checks out `main`. Her working tree
+   has the files from commit `A`.
+2. Alice edits `report.txt` but has not committed yet.
+3. Bob pushes a new commit `B` to Alice's repository. Git updates
+   Alice's `main` branch to point to `B`.
+4. Now Alice's branch says `B`, but her working tree still has the
+   files from `A` — plus her uncommitted edits. Git has no way to
+   merge Bob's changes into Alice's working tree automatically.
+5. If Alice runs `git status`, she sees phantom differences — her
+   files look changed relative to `B`, even though she never touched
+   them. Her real edits are mixed in with the noise, and she could
+   lose work.
+
+Git prevents step 3 entirely. A bare repository avoids this problem
+because there is no working tree and no one editing files in it —
+updating the branch is always safe.
 
 If you need to accept pushes on a non-bare repository (rare), you
 can enable it:
