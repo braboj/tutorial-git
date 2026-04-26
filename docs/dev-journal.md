@@ -378,3 +378,45 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - P2: #110, #151, #152, #159, #161, #171
 - P3: #135, #160
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
+
+### 2026-04-26 — CLAUDE.md restructure, review process, ADRs
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Restructured CLAUDE.md with numbered sections (1–4) matching root repo convention
+  - Moved figure style rules under conventions (2.6) instead of separate top-level section
+  - Added git conventions (2.1), review section (2.2), session startup (3.2)
+  - Added cross-reference caveat: markdown links must use URL path, not filesystem path
+  - Fixed stale domain, docs/ description, duplicate checklist numbering
+- Made end-of-session checklist explicit — updated upstream `base/scope.md` and
+  `formats/agent.md` (both inline and reference models) with numbered checklist
+- Added review-before-merge rule to git conventions in three places:
+  upstream `base/git.md`, root imbra-spikes CLAUDE.md, and tutorial-git CLAUDE.md
+- Created ADR-007 (analytics: GSC for tutorials, Plausible for commercial) and
+  ADR-008 (playbook split rule: command + explanation + gotcha)
+- Experimented with Stop hook for session wrap-up reminders — removed in favour
+  of explicit CLAUDE.md checklist
+
+**PRs merged:**
+- #177 — Dev journal session 8 entry
+- #178 — Make end-of-session checklist explicit
+- #179 — Restructure CLAUDE.md with numbered sections
+- #180 — Add review section and review-before-merge rule
+- #181 — Add ADR-007 and ADR-008
+
+**Upstream PRs merged (solid-ai-templates):**
+- #57 — Make end-of-session checklist explicit in scope.md and agent.md
+- #59 — Add review-before-merge rule to base/git.md PR section
+
+**Upstream issues created (solid-ai-templates):**
+- #58 — Add 360-degree analysis template (four lenses: user, technical, market, discovery)
+
+**Issues created:**
+- #182 — Spike: assess Starlight as UI replacement (P2)
+
+**Open issues:**
+- P1: #153, #154, #155, #158, #165, #166, #169, #172
+- P2: #110, #151, #152, #159, #161, #171, #182
+- P3: #135, #160
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
