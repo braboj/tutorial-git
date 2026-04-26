@@ -1,0 +1,79 @@
+<mxfile host="Electron">
+  <diagram id="bare-overwrite" name="Silent overwrite of commit B">
+    <mxGraphModel dx="1094" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="760" pageHeight="380" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="360" width="740" x="10" y="10" as="geometry" />
+        </mxCell>
+
+        <!-- Commit A -->
+        <mxCell id="card-a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit A&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;original&lt;/i&gt;" vertex="1">
+          <mxGeometry height="200" width="180" x="40" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="file-a-readme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="readme.md" vertex="1">
+          <mxGeometry height="30" width="140" x="60" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="file-a-config" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="config.txt" vertex="1">
+          <mxGeometry height="30" width="140" x="60" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="file-a-report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="report.txt" vertex="1">
+          <mxGeometry height="30" width="140" x="60" y="180" as="geometry" />
+        </mxCell>
+
+        <!-- Commit B -->
+        <mxCell id="card-b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit B&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Bob&lt;/i&gt;" vertex="1">
+          <mxGeometry height="200" width="180" x="280" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="file-b-readme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="readme.md" vertex="1">
+          <mxGeometry height="30" width="140" x="300" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="file-b-config" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#15803D;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="config.txt ✎" vertex="1">
+          <mxGeometry height="30" width="140" x="300" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="file-b-report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="report.txt" vertex="1">
+          <mxGeometry height="30" width="140" x="300" y="180" as="geometry" />
+        </mxCell>
+
+        <!-- Commit C -->
+        <mxCell id="card-c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit C&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Alice&lt;/i&gt;" vertex="1">
+          <mxGeometry height="200" width="180" x="520" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="file-c-readme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="readme.md" vertex="1">
+          <mxGeometry height="30" width="140" x="540" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="file-c-config" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#791F1F;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="config.txt ⚠" vertex="1">
+          <mxGeometry height="30" width="140" x="540" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="file-c-report" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=1;fontColor=#15803D;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="report.txt ✎" vertex="1">
+          <mxGeometry height="30" width="140" x="540" y="180" as="geometry" />
+        </mxCell>
+
+        <!-- Parent arrows (child → parent) -->
+        <mxCell id="arr-b-a" edge="1" parent="1" source="card-b" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="card-a" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-c-b" edge="1" parent="1" source="card-c" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="card-b" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Main pill pointing to C -->
+        <mxCell id="pill-main" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;arcSize=20;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;" value="main" vertex="1">
+          <mxGeometry height="28" width="60" x="580" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="arr-main-c" edge="1" parent="1" source="pill-main" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;dashed=1;dashPattern=4 3;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="card-c" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend-changed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DCFCE7;strokeColor=#16A34A;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#15803D;fontFamily=Helvetica;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="✎ changed in this commit" vertex="1">
+          <mxGeometry height="26" width="190" x="40" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="legend-reverted" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#791F1F;fontFamily=Helvetica;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="⚠ Bob's change silently reverted" vertex="1">
+          <mxGeometry height="26" width="230" x="250" y="290" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

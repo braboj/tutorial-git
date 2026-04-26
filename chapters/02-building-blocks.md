@@ -37,19 +37,36 @@ A repository can be **local** (on your machine) or **remote** (on a
 server like GitHub). Git treats both as equals — you can push to and
 pull from any repository you have access to.
 
-Git supports two repository layouts:
+### Repository Layouts
 
-### Bare Repository
+Typically, the layout of a **local** repository has a `.git`
+folder with all the internals, and a working tree with your project. This type
+of layout is called a **non-bare repository**. The `.git` folder stores the
+full history and configuration. When you clone a repository, you get a
+non-bare repository by default.
 
-A **bare repository** is a Git repository without a working tree — it
-contains only the `.git` internals (objects, refs, config) and no
-checked-out files. Hosting services like GitHub and GitLab store repositories as bare
-on the server. When you edit a file through GitHub's web interface,
-GitHub creates a commit directly — it does not use a working tree.
+```text
+git clone project.git
 
-> **Note:** "bare" and "remote" are not the same thing. A remote is any
-> repository you connect to via URL. Remotes are *usually* bare, but a
-> remote can also be a regular repository on another machine.
+PROJECT/
+│   readme.md                # Working tree — your editable files
+└───.git                     # Repository internals
+    ├───hooks                # Event scripts
+    ├───info                 # Repository metadata
+    ├───objects              # All Git objects
+    │   ├───info             # Object storage metadata
+    │   └───pack             # Compressed object packs
+    └───refs                 # Named references
+        ├───heads            # Branch tips
+        └───tags             # Tag references
+```
+
+In contrast, the layout of remote repositories on hosting services like GitHub
+and GitLab is different — they are **bare repositories**. A
+**bare repository** has no working tree — only the Git internals
+(objects, refs, config) and no editable files. When you edit a file through
+GitHub's web interface, GitHub creates a commit directly — it does not use a
+working tree.
 
 ```text
 git init --bare project.git
@@ -65,32 +82,88 @@ PROJECT.GIT/
     └───tags    # Tag references
 ```
 
-### Non-bare Repository
+As a rule of thumb, if you see a `.git` folder, it's a regular repository with 
+a working tree. If you see a folder that ends with `.git` but has no `.git` 
+inside it, it's a bare repository.
 
-A **non-bare repository** (also called a regular or working repository)
-is what you get when you clone or run `git init`. It has a working tree
-where you create, edit and delete files, plus a hidden `.git` folder
-that stores the full history and configuration.
+Both `git clone` and `git init` can create either type of repository. By default,
+they create regular repositories with a working tree. To create a bare
+repository, use the `--bare` flag:
 
 ```text
-git clone project.git
+# creates a bare repository from a remote
+$ git clone --bare <repository-url>   
 
-PROJECT/
-│   readme.md                # Working tree — your editable files
-└───.git                     # Repository internals (same as bare)
-    ├───hooks                # Event scripts
-    ├───info                 # Repository metadata
-    ├───objects              # All Git objects
-    │   ├───info             # Object storage metadata
-    │   └───pack             # Compressed object packs
-    └───refs                 # Named references
-        ├───heads            # Branch tips
-        └───tags             # Tag references
+# creates a new bare repository locally
+$ git init --bare <directory-name>     
 ```
 
-The `.git` folder contains the same structure as a bare repository.
-The difference is that a non-bare repository also has a working tree
-next to it — the place where you do your actual work.
+### Why bare repositories exist
+
+Imagine two developers — Alice and Bob — working on the same project
+over a local network. Each has a non-bare repository with a working
+tree. There is no central server — Bob pushes his changes directly
+into Alice's `.git/` directory.
+
+![Direct push without a bare repo](../assets/images/git-bare-before.png)
+
+The problem: when Bob pushes his changes, Git updates the branch
+inside Alice's `.git/` to point to Bob's latest commit immediately.
+But Alice's working tree is **not** updated — her files still reflect
+the old commit, plus whatever edits she has in progress. Alice's
+branch and her working tree are now out of sync. If she commits at
+this point, she unknowingly **reverts Bob's changes** without any
+error or warning — because her files do not contain them.
+
+![Silent overwrite of commit B](../assets/images/git-bare-overwrite.png)
+
+What if the two developers never touch each other's repositories
+directly? A popular solution to this kind of synchronization problem
+is to introduce an intermediary repository that both developers push
+to and pull from.
+
+![Bare repo as a shared hub](../assets/images/git-bare-after.png)
+
+This is called a **shared hub**. The shared hub is a bare repository — it has no
+working tree, only the Git internals. Its purpose is to hold commits and
+references, not to be edited directly. Because nobody edits files in it,
+updating a branch is always safe.
+
+With a bare repository in the middle, each developer works
+independently. Bob pushes his changes to the bare repository whenever
+he is ready. Alice commits her own work first, then pulls Bob's
+changes from the bare repository when **she** is ready. No one
+reaches into anyone else's working tree. This is exactly how
+hosting services like GitHub and GitLab work — every repository on
+the server is bare.
+
+### The core.bare flag
+
+Git controls this with a configuration flag called `core.bare`, stored
+inside the repository's config file:
+
+```text
+$ cat project.git/config
+[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = true
+```
+
+In a non-bare repository, `bare = false` — the default. Git checks
+this flag when receiving a push: if it is `false`, the push is
+rejected to protect the working tree. Only bare repositories have
+`bare = true`, which tells Git there is no working tree and pushes
+are safe to accept. The `git init --bare` command sets this flag
+automatically.
+
+Now, when Bob pushes to Alice's repository, Git checks `core.bare` and
+rejects the push because it is not a bare repository. This prevents
+Alice from silently overwriting Bob's changes on her next commit.
+
+Bob must push to a shared hub (a bare repository) instead, and Alice must
+pull from it. This way, both developers have control over when they receive
+each other's changes, and there are no surprises.
 
 ## 3. Object Model
 

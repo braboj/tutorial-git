@@ -1,0 +1,71 @@
+<mxfile host="Electron">
+  <diagram id="bare-after" name="After — bare repo as hub">
+    <mxGraphModel dx="1094" dy="700" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="780" pageHeight="340" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="bg-card" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="320" width="760" x="10" y="10" as="geometry" />
+        </mxCell>
+
+        <!-- Alice zone -->
+        <mxCell id="zone-alice" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="270" width="200" x="30" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="label-alice" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Alice (non-bare)" vertex="1">
+          <mxGeometry height="20" width="150" x="40" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="box-alice-wt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Working&lt;br&gt;Tree" vertex="1">
+          <mxGeometry height="70" width="160" x="50" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="box-alice-git" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value=".git/" vertex="1">
+          <mxGeometry height="70" width="160" x="50" y="155" as="geometry" />
+        </mxCell>
+
+        <!-- Shared hub zone -->
+        <mxCell id="zone-bare" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF1F5;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="270" width="210" x="280" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="label-bare" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Shared hub (bare)" vertex="1">
+          <mxGeometry height="20" width="160" x="290" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="box-bare" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="objects + refs&lt;br&gt;&lt;i style=&quot;font-weight:normal;color:#5F5E5A&quot;&gt;no working tree&lt;/i&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="300" y="120" as="geometry" />
+        </mxCell>
+
+        <!-- Bob zone -->
+        <mxCell id="zone-bob" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FAF4E8;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;" value="" vertex="1">
+          <mxGeometry height="270" width="200" x="540" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="label-bob" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=top;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;" value="Bob (non-bare)" vertex="1">
+          <mxGeometry height="20" width="150" x="550" y="35" as="geometry" />
+        </mxCell>
+        <mxCell id="box-bob-wt" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value="Working&lt;br&gt;Tree" vertex="1">
+          <mxGeometry height="70" width="160" x="560" y="65" as="geometry" />
+        </mxCell>
+        <mxCell id="box-bob-git" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=1;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=middle;align=center;arcSize=10;" value=".git/" vertex="1">
+          <mxGeometry height="70" width="160" x="560" y="155" as="geometry" />
+        </mxCell>
+
+        <!-- Push arrow (Bob → bare) -->
+        <mxCell id="arr-bob-push" edge="1" parent="1" source="box-bob-git" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" target="box-bare" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-bob-push" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="push" vertex="1">
+          <mxGeometry height="18" width="50" x="490" y="172" as="geometry" />
+        </mxCell>
+
+        <!-- Pull arrow (bare → Alice) -->
+        <mxCell id="arr-alice-pull" edge="1" parent="1" source="box-bare" style="endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="box-alice-git" vertex="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="label-alice-pull" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=bottom;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;" value="pull" vertex="1">
+          <mxGeometry height="18" width="50" x="240" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="label-alice-ready" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=11;fontStyle=2;fontColor=#5F5E5A;fontFamily=Helvetica;" value="(when ready)" vertex="1">
+          <mxGeometry height="18" width="80" x="235" y="155" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
