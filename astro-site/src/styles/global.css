@@ -595,6 +595,10 @@ a:hover {
     border: 1px solid var(--color-border);
     border-radius: 4px;
     padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg);
   }
 
   .mobile-toc summary {
