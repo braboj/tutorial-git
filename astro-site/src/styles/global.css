@@ -572,11 +572,6 @@ a:hover {
   color: var(--color-fg-muted);
 }
 
-/* Mobile ToC — hidden on desktop, shown when sidebar disappears */
-.mobile-toc {
-  display: none;
-}
-
 /* Responsive */
 @media (max-width: 960px) {
   .site-main {
@@ -587,62 +582,6 @@ a:hover {
   .sidebar-tutorials,
   .resize-handle {
     display: none;
-  }
-
-  .mobile-toc {
-    display: block;
-    margin-bottom: var(--space-lg);
-    border: 1px solid var(--color-border);
-    border-radius: 4px;
-    padding: 0;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    background: var(--color-bg);
-  }
-
-  .mobile-toc summary {
-    padding: var(--space-sm) var(--space-md);
-    font-weight: 600;
-    font-size: var(--font-size-base);
-    color: var(--color-fg);
-    cursor: pointer;
-    list-style: none;
-  }
-
-  .mobile-toc summary::after {
-    content: "\25B6";
-    float: right;
-    font-size: 0.7em;
-    color: var(--color-fg-faint);
-    transition: transform 0.15s;
-  }
-
-  .mobile-toc[open] summary::after {
-    transform: rotate(90deg);
-  }
-
-  .mobile-toc summary::-webkit-details-marker {
-    display: none;
-  }
-
-  .mobile-toc ul {
-    list-style: none;
-    padding: 0 var(--space-md) var(--space-sm);
-  }
-
-  .mobile-toc li {
-    padding: var(--space-xs) 0;
-  }
-
-  .mobile-toc a {
-    color: var(--color-link);
-    text-decoration: none;
-    font-size: var(--font-size-sm);
-  }
-
-  .mobile-toc a:hover {
-    text-decoration: underline;
   }
 }
 
@@ -683,6 +622,28 @@ a:hover {
   .site-tabs a.active {
     border-bottom: none;
     border-left: 3px solid var(--color-accent);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-toc-label {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-toc-link {
+    padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-lg);
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    display: block;
+  }
+
+  .nav-toc-link:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 
