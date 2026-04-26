@@ -13,7 +13,7 @@ multiple developers push to. Hosting services like GitHub and GitLab
 store every repository as bare on the server.
 
 For the theory behind bare vs non-bare repositories, see
-[Building Blocks](../02-building-blocks.md#bare-repository).
+[Building Blocks](../02-building-blocks.md#2-repository).
 
 ### Create a bare repository
 

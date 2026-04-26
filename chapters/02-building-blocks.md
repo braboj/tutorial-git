@@ -37,15 +37,13 @@ A repository can be **local** (on your machine) or **remote** (on a
 server like GitHub). Git treats both as equals — you can push to and
 pull from any repository you have access to.
 
-Git supports two repository layouts:
+Git supports two repository layouts — **bare** and **non-bare**.
 
-### Bare Repository
-
-A **bare repository** is a Git repository without a working tree — it
-contains only the `.git` internals (objects, refs, config) and no
-checked-out files. Hosting services like GitHub and GitLab store repositories as bare
-on the server. When you edit a file through GitHub's web interface,
-GitHub creates a commit directly — it does not use a working tree.
+A **bare repository** has no working tree — only the Git internals
+(objects, refs, config) and no checked-out files. Hosting services like
+GitHub and GitLab store repositories as bare on the server. When you
+edit a file through GitHub's web interface, GitHub creates a commit
+directly — it does not use a working tree.
 
 > **Note:** "bare" and "remote" are not the same thing. A remote is any
 > repository you connect to via URL. Remotes are *usually* bare, but a
@@ -64,8 +62,6 @@ PROJECT.GIT/
     ├───heads   # Branch tips
     └───tags    # Tag references
 ```
-
-### Non-bare Repository
 
 A **non-bare repository** (also called a regular or working repository)
 is what you get when you clone or run `git init`. It has a working tree
