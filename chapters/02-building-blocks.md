@@ -125,10 +125,32 @@ The problem: when Bob pushes his changes, Git updates the branch
 inside Alice's `.git/` to point to Bob's latest commit immediately.
 But Alice's working tree is **not** updated — her files still reflect
 the old commit, plus whatever edits she has in progress. Alice's
-branch and her working tree are now out of sync. If she commits at
-this point, she unknowingly **reverts Bob's changes** without any
-error or warning — because her files do not contain them. Git prevents this by refusing to accept
-a push into a repository where someone is actively working.
+branch and her working tree are now out of sync. 
+
+If she commits at this point, she unknowingly **reverts Bob's changes**
+without any error or warning — because her files do not contain them.
+
+```text
+ Commit A          Commit B           Commit C
+ (original)        (Bob's work)       (Alice's commit)
+┌───────────┐    ┌───────────┐      ┌───────────┐
+│ readme.md │    │ readme.md │      │ readme.md │
+│ config.txt│    │ config.txt│ ←──  │ config.txt│  Bob's changes
+│           │    │ (changed) │  ⚠   │           │  silently gone
+└───────────┘    └───────────┘      └───────────┘
+
+    A ◄─────────── B ◄─────────── C
+                (Bob)          (Alice)
+                              main ──→ C
+```
+
+Alice's commit `C` is based on commit `B`, but its snapshot comes
+from Alice's working tree — which still has the files from `A`. The
+result: commit `C` contains Alice's edits but none of Bob's. Bob's
+changes from `B` are effectively undone.
+
+Git prevents this by refusing to accept a push into a repository
+where someone is actively working.
 
 What if the two developers never touch each other's repositories
 directly? A popular solution to this kind of synchronization problem
