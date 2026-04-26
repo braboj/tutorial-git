@@ -121,16 +121,20 @@ To understand why, remember that a push only updates the branch
 reference inside `.git/` — it does **not** touch the working tree.
 These are two separate operations, and only the first one happens.
 
-Imagine Alice and Bob, where Alice's repository is non-bare and Bob
-tries to push to it:
+Imagine Alice and Bob working on the same local network. Bob has
+Alice's repository configured as a remote (pointing directly at her
+machine, not at a server like GitHub). This means Bob can push
+commits straight into Alice's `.git/` directory — no fetch required
+on Alice's side.
 
-1. Alice clones a repository and checks out `main`. Her working tree
-   has the files from commit `A`.
+1. Alice checks out `main`. Her working tree has the files from
+   commit `A`.
 2. Alice edits `report.txt` but has not committed yet.
-3. Bob pushes a new commit `B` to Alice's repository. The push
-   updates the reference `.git/refs/heads/main` to point to `B` —
-   but Alice's working tree is not updated. Her files on disk are
-   still from commit `A`, plus her uncommitted edits.
+3. Bob runs `git push alice-machine main`, which writes his new
+   commit `B` directly into Alice's `.git/` and updates her
+   reference `.git/refs/heads/main` to point to `B` — but Alice's
+   working tree is not updated. Her files on disk are still from
+   commit `A`, plus her uncommitted edits.
 4. Alice's repository is now in a broken state:
    - `HEAD` → `main` → commit `B` (moved by the push)
    - Working tree → files from commit `A` + uncommitted edits (untouched)
