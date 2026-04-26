@@ -2,7 +2,7 @@
 name: Task
 about: Atomic implementable unit of work
 title: ""
-labels: enhancement
+labels: task
 assignees: ""
 ---
 
