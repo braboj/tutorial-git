@@ -2,7 +2,7 @@
 name: Spike
 about: Research or exploration — output is a decision or ADR
 title: ""
-labels: question
+labels: spike
 assignees: ""
 ---
 
