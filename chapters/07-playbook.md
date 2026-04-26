@@ -18,40 +18,40 @@ For definitions, see [Glossary](09-glossary.md).
 
 | Recipe | What you'll find |
 |--------|-----------------|
-| [Undoing Changes](recipes/undoing-changes.md) | Discard, unstage, reset, revert, and recover lost commits |
-| [Diffing](recipes/diffing.md) | Unstaged, staged, between branches, commits, and files |
-| [History](recipes/history.md) | Log formatting, filtering by author, date, and path |
-| [Stashing](recipes/stashing.md) | Save and restore work in progress |
+| [Undoing Changes](playbook/undoing-changes.md) | Discard, unstage, reset, revert, and recover lost commits |
+| [Diffing](playbook/diffing.md) | Unstaged, staged, between branches, commits, and files |
+| [History](playbook/history.md) | Log formatting, filtering by author, date, and path |
+| [Stashing](playbook/stashing.md) | Save and restore work in progress |
 
 ## Branching and Merging
 
 | Recipe | What you'll find |
 |--------|-----------------|
-| [Branching](recipes/branching.md) | Create, delete, rename, and inspect branches |
-| [Merging](recipes/merging.md) | Fast-forward, no-ff, squash, conflict resolution |
-| [Rebasing](recipes/rebasing.md) | Linearize history and squash commits interactively |
-| [Cherry-Picking](recipes/cherry-picking.md) | Apply individual commits across branches |
+| [Branching](playbook/branching.md) | Create, delete, rename, and inspect branches |
+| [Merging](playbook/merging.md) | Fast-forward, no-ff, squash, conflict resolution |
+| [Rebasing](playbook/rebasing.md) | Linearize history and squash commits interactively |
+| [Cherry-Picking](playbook/cherry-picking.md) | Apply individual commits across branches |
 
 ## Remote
 
 | Recipe | What you'll find |
 |--------|-----------------|
-| [Remote Operations](recipes/remote-operations.md) | Push, pull, force push safely, sync forks |
-| [Remote Management](recipes/remote-management.md) | Add, rename, remove remotes, switch URL, SSH setup |
+| [Remote Operations](playbook/remote-operations.md) | Push, pull, force push safely, sync forks |
+| [Remote Management](playbook/remote-management.md) | Add, rename, remove remotes, switch URL, SSH setup |
 
 ## Project Structure
 
 | Recipe | What you'll find |
 |--------|-----------------|
-| [Tagging](recipes/tagging.md) | Create, push, and delete annotated tags |
-| [Submodules](recipes/submodules.md) | Add, clone, update, and remove submodules |
-| [Subtrees](recipes/subtrees.md) | Add, pull, push, and remove subtrees |
+| [Tagging](playbook/tagging.md) | Create, push, and delete annotated tags |
+| [Submodules](playbook/submodules.md) | Add, clone, update, and remove submodules |
+| [Subtrees](playbook/subtrees.md) | Add, pull, push, and remove subtrees |
 
 ## Advanced
 
 | Recipe | What you'll find |
 |--------|-----------------|
-| [Selectors](recipes/selectors.md) | Tilde, caret, double-dot, triple-dot, reflog refs |
-| [Hooks](recipes/hooks.md) | Pre-commit, commit-msg, sharing hooks, bypassing |
-| [Debugging](recipes/debugging.md) | Bisect, blame, and search commit history |
-| [Configuration](recipes/configuration.md) | Identity, defaults, aliases, and diagnostics |
+| [Selectors](playbook/selectors.md) | Tilde, caret, double-dot, triple-dot, reflog refs |
+| [Hooks](playbook/hooks.md) | Pre-commit, commit-msg, sharing hooks, bypassing |
+| [Debugging](playbook/debugging.md) | Bisect, blame, and search commit history |
+| [Configuration](playbook/configuration.md) | Identity, defaults, aliases, and diagnostics |
