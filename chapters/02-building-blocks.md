@@ -37,21 +37,20 @@ A repository can be **local** (on your machine) or **remote** (on a
 server like GitHub). Git treats both as equals — you can push to and
 pull from any repository you have access to.
 
-
 ### Repository Layouts
 
-Typically, the layout of a **local** repository has a .git 
+Typically, the layout of a **local** repository has a `.git`
 folder with all the internals, and a working tree with your project. This type
-of layout is called a **non-bare repository**. The `.git` folder stores the 
-full history and configuration. When you clone a repository, you get a regular 
-repository with both the working tree and the `.git` folder.
+of layout is called a **non-bare repository**. The `.git` folder stores the
+full history and configuration. When you clone a repository, you get a
+non-bare repository by default.
 
 ```text
 git clone project.git
 
 PROJECT/
 │   readme.md                # Working tree — your editable files
-└───.git                     # Repository internals (same as bare)
+└───.git                     # Repository internals
     ├───hooks                # Event scripts
     ├───info                 # Repository metadata
     ├───objects              # All Git objects
@@ -62,15 +61,15 @@ PROJECT/
         └───tags             # Tag references
 ```
 
-In contrast, the layout of remote repositories on hosting services like GitHub 
-and GitLab is a little bit different — they are **bare repositories**. A 
+In contrast, the layout of remote repositories on hosting services like GitHub
+and GitLab is different — they are **bare repositories**. A
 **bare repository** has no working tree — only the Git internals
-(objects, refs, config) and no checked-out files. When you edit a file through 
-GitHub's web interface, GitHub creates a commit directly — it does not use a 
+(objects, refs, config) and no editable files. When you edit a file through
+GitHub's web interface, GitHub creates a commit directly — it does not use a
 working tree.
 
 ```text
-git clone --bare project.git
+git init --bare project.git
 
 PROJECT.GIT/
 ├───hooks       # Scripts that run on events (pre-commit, post-merge, etc.)
@@ -87,8 +86,8 @@ As a rule of thumb, if you see a `.git` folder, it's a regular repository with
 a working tree. If you see a folder that ends with `.git` but has no `.git` 
 inside it, it's a bare repository.
 
-Both git clone and git init can create either type of repository. By default, 
-they create regular repositories with a working tree. To create a bare 
+Both `git clone` and `git init` can create either type of repository. By default,
+they create regular repositories with a working tree. To create a bare
 repository, use the `--bare` flag:
 
 ```text
@@ -128,7 +127,7 @@ to and pull from.
 This is called a **shared hub**. The shared hub is a bare repository — it has no
 working tree, only the Git internals. Its purpose is to hold commits and
 references, not to be edited directly. Because nobody edits files in it,
-updating a branch is always safe. 
+updating a branch is always safe.
 
 With a bare repository in the middle, each developer works
 independently. Bob pushes his changes to the bare repository whenever
@@ -162,7 +161,7 @@ Now, when Bob pushes to Alice's repository, Git checks `core.bare` and
 rejects the push because it is not a bare repository. This prevents
 Alice from silently overwriting Bob's changes on her next commit.
 
-Bob must push to a shared hub (a bare repository) instead, and Alice must 
+Bob must push to a shared hub (a bare repository) instead, and Alice must
 pull from it. This way, both developers have control over when they receive
 each other's changes, and there are no surprises.
 
