@@ -16,16 +16,28 @@ $ git rebase main
 
 ### Squash commits with interactive rebase
 
+Squashing combines multiple commits into one, keeping history clean
+before merging a feature branch.
+
 ```text
 $ git rebase -i HEAD~3
-# change "pick" to "squash" for commits to combine
+# editor opens — change "pick" to "squash" (or "s") for commits to fold
+# save and close — a second editor opens to combine the messages
 ```
 
+If conflicts arise during the squash, resolve them and run
+`git rebase --continue`.
+
 ### Abort a conflicted rebase
+
+Restores the branch to its exact state before the rebase started.
+Use this when conflicts are too tangled to resolve cleanly.
 
 ```text
 $ git rebase --abort
 ```
+
+Any conflict resolutions you made during the rebase are discarded.
 
 ### Continue after resolving a rebase conflict
 
