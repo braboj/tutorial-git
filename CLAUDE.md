@@ -101,14 +101,20 @@ Every chapter follows this structure:
 
 ### 2.4 Cross-references
 
-- Reference other chapters by file: `[Building Blocks](02-building-blocks.md)`
 - Reference sections within a chapter by heading anchor: `[Tag Object](#tag-object-labels)`
-- Markdown links must use the **URL path** (driven by `section` frontmatter),
-  not the filesystem path — the remark plugin
-  (`astro-site/src/plugins/remark-rewrite-links.ts`) rewrites links at
-  build time
-- Recipe pages live in `chapters/recipes/` but their URLs are
-  `/playbook/...` — link to them as `playbook/X.md`, not `recipes/X.md`
+- The remark plugin (`astro-site/src/plugins/remark-rewrite-links.ts`)
+  rewrites `.md` links at build time — use the correct format depending
+  on source and target:
+
+| From → To | Link format | Example |
+|-----------|-------------|---------|
+| Chapter → chapter | `NN-slug.md` | `[Glossary](09-glossary.md)` → `../glossary/` |
+| Chapter → recipe | `playbook/slug.md` | `[Debugging](playbook/debugging.md)` → `../playbook/debugging/` |
+| Recipe → recipe | `../slug/` (raw URL) | `[Hooks](../hooks/)` — rewriter ignores it, browser resolves correctly |
+
+- **Never use `slug.md`** for recipe-to-recipe links — the sibling
+  rewriter turns it into `slug/` which resolves to
+  `/playbook/current/slug/` instead of `/playbook/slug/`
 
 ### 2.5 Images
 
