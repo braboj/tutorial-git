@@ -55,8 +55,8 @@
   --color-fg-muted: #aaaaaa;
   --color-fg-faint: #888888;
   --color-border: #ffffff1f;
-  --color-link: #4dd0e1;
-  --color-focus: #4dd0e1;
+  --color-link: #00bcd4;
+  --color-focus: #00bcd4;
   --color-code-bg: #2a2a2a;
   --color-code-fg: #e0e0e0;
 }
@@ -167,44 +167,6 @@ a:hover {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
-}
-
-/* Search box */
-.search-box {
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-.search-icon {
-  position: absolute;
-  left: 0.5rem;
-  color: #fff;
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.search-box input {
-  background: rgba(255, 255, 255, 0.15);
-  border: none;
-  border-radius: 3px;
-  color: #fff;
-  font-family: var(--font-text);
-  font-size: var(--font-size-sm);
-  padding: 0.35rem 0.5rem 0.35rem 2rem;
-  width: 10rem;
-  transition: background 0.2s, width 0.2s;
-}
-
-.search-box input::placeholder {
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.search-box input:focus-visible {
-  background: rgba(255, 255, 255, 0.25);
-  width: 14rem;
-  outline: 2px solid #fff;
-  outline-offset: 1px;
 }
 
 /* Theme toggle */
