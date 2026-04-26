@@ -138,7 +138,9 @@ reaches into anyone else's working tree. This is exactly how
 hosting services like GitHub and GitLab work — every repository on
 the server is bare.
 
-Git prevents this by design via a configuration flag called `core.bare`, stored
+### The core.bare flag
+
+Git controls this with a configuration flag called `core.bare`, stored
 inside the repository's config file:
 
 ```text
