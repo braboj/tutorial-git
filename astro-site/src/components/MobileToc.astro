@@ -10,49 +10,51 @@ const h2s = headings.filter((h) => h.depth === 2);
 ---
 
 {h2s.length > 0 && (
-  <div class="mobile-toc-bar" id="mobile-toc-bar">
-    <button class="mobile-toc-toggle" id="mobile-toc-toggle" aria-expanded="false">
-      <span>On this page</span>
-      <svg class="mobile-toc-chevron" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
-        <path d="M7 10l5 5 5-5z"/>
+  <div class="mobile-toc" id="mobile-toc">
+    <button class="mobile-toc-fab" id="mobile-toc-fab" aria-label="Table of contents" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
       </svg>
     </button>
-    <ul class="mobile-toc-list" id="mobile-toc-list">
-      {h2s.map((h) => (
-        <li>
-          <a href={`#${h.slug}`}>{h.text}</a>
-        </li>
-      ))}
-    </ul>
+    <div class="mobile-toc-overlay" id="mobile-toc-overlay">
+      <div class="mobile-toc-header">On this page</div>
+      <ul>
+        {h2s.map((h) => (
+          <li>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </div>
 )}
 
 <script is:inline>
   (function () {
-    var toggle = document.getElementById("mobile-toc-toggle");
-    var list = document.getElementById("mobile-toc-list");
-    var bar = document.getElementById("mobile-toc-bar");
-    if (!toggle || !list) return;
+    var fab = document.getElementById("mobile-toc-fab");
+    var overlay = document.getElementById("mobile-toc-overlay");
+    var toc = document.getElementById("mobile-toc");
+    if (!fab || !overlay) return;
 
-    toggle.addEventListener("click", function (e) {
+    fab.addEventListener("click", function (e) {
       e.stopPropagation();
-      var open = toggle.getAttribute("aria-expanded") === "true";
-      toggle.setAttribute("aria-expanded", String(!open));
-      list.classList.toggle("open");
+      var open = fab.getAttribute("aria-expanded") === "true";
+      fab.setAttribute("aria-expanded", String(!open));
+      overlay.classList.toggle("open");
     });
 
-    list.querySelectorAll("a").forEach(function (link) {
+    overlay.querySelectorAll("a").forEach(function (link) {
       link.addEventListener("click", function () {
-        toggle.setAttribute("aria-expanded", "false");
-        list.classList.remove("open");
+        fab.setAttribute("aria-expanded", "false");
+        overlay.classList.remove("open");
       });
     });
 
     document.addEventListener("click", function (e) {
-      if (!list.classList.contains("open")) return;
-      if (bar.contains(e.target)) return;
-      toggle.setAttribute("aria-expanded", "false");
-      list.classList.remove("open");
+      if (!overlay.classList.contains("open")) return;
+      if (toc.contains(e.target)) return;
+      fab.setAttribute("aria-expanded", "false");
+      overlay.classList.remove("open");
     });
   })();
 </script>
