@@ -22,6 +22,7 @@ In this chapter you will learn:
 - How to find the commit that introduced a bug using bisect
 - How to automate tasks with Git hooks
 - How garbage collection and the reflog protect and clean up orphaned commits
+- How packfiles compress objects for efficient storage and network transfer
 
 ## 2. Configuration
 
@@ -416,6 +417,109 @@ $ git branch recovered abc1234        # create a branch pointing to it
 
 Once a branch points to the commit again, it is no longer orphaned and
 will not be removed by garbage collection.
+
+## 10. Packfiles
+
+When you create a commit, Git stores each new blob, tree, and commit
+as a separate file in `.git/objects/`. These are called **loose
+objects** — one file per object, individually compressed with zlib.
+This works well for small repositories, but as history grows, thousands
+of small files waste disk space and slow down operations.
+
+Git solves this with **packfiles** — a single binary file that bundles
+many objects together using delta compression.
+
+### Loose objects vs packfiles
+
+```text
+# Loose objects — one file per object
+.git/objects/
+├── 3b/18e512dba79e...   # blob
+├── 5f/a3c201af34d2...   # tree
+├── a1/b2c3d4e5f678...   # commit
+└── ...                   # thousands more
+```
+
+```text
+# After packing — two files replace thousands
+.git/objects/pack/
+├── pack-abc123.pack      # all objects, delta-compressed
+└── pack-abc123.idx       # index for fast lookup
+```
+
+A `.pack` file contains the compressed object data. The `.idx` file
+is an index that maps each object hash to its offset inside the pack,
+so Git can find any object without scanning the entire file.
+
+### Delta compression
+
+Packfiles do not just concatenate objects — they use **delta
+compression**. When two objects are similar (for example, two versions
+of the same file), Git stores one in full and the other as a set of
+differences (a delta) relative to the first. This is especially
+effective for files that change incrementally across commits.
+
+```text
+$ git verify-pack -v .git/objects/pack/pack-abc123.idx
+a1b2c3d4 blob   1200  450  120
+f6e7d8c9 blob   80    65   570 1 a1b2c3d4
+```
+
+In this example, `f6e7d8c9` is stored as a delta against `a1b2c3d4`.
+Its original size is 80 bytes, but it takes only 65 bytes in the pack
+because Git stores just the differences.
+
+### When does packing happen?
+
+Git packs objects automatically during garbage collection:
+
+```text
+$ git gc                   # packs loose objects, removes unreachable ones
+$ git repack -a -d         # repack all objects, delete old packs
+```
+
+Packing also happens automatically when:
+
+- The number of loose objects exceeds `gc.auto` (default: 6700)
+- You run `git push` or `git fetch` — Git builds a packfile
+  specifically for network transfer
+
+### Packfiles and network transfer
+
+When you push or fetch, Git does not send loose objects one at a time.
+It builds a **thin packfile** — a temporary pack that contains only
+the objects the other side is missing, delta-compressed against objects
+both sides already have. This makes network operations fast even for
+large repositories.
+
+```text
+$ git push origin main
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 320 bytes | 320.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+```
+
+The "Delta compression" and "Compressing objects" lines show Git
+building the packfile for transfer.
+
+### Inspecting packfiles
+
+```text
+# List all packs
+$ ls .git/objects/pack/
+
+# Show pack contents with sizes and deltas
+$ git verify-pack -v .git/objects/pack/pack-abc123.idx
+
+# Count loose vs packed objects
+$ git count-objects -v
+count: 12          # loose objects
+packs: 1           # number of packfiles
+size-pack: 4820    # total packed size in KiB
+```
 
 ## Exercises
 
