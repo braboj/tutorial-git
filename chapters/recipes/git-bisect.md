@@ -52,3 +52,6 @@ commit when done.
 - If a midpoint commit cannot be tested (e.g. broken build), use
   `git bisect skip` to move past it.
 - Use `git bisect log` to replay or share a bisect session.
+
+For blame, log search, and other debugging tools, see the
+[Debugging](debugging.md) recipe.
