@@ -46,6 +46,6 @@ $ git remote set-url origin git@github.com:<user>/<repo>.git
 
 ### Set up SSH authentication
 
-See [SSH Setup](ssh-setup.md) for a full walkthrough — key
+See [SSH Setup](../ssh-setup/) for a full walkthrough — key
 generation, agent configuration, GitHub registration, and
 troubleshooting.

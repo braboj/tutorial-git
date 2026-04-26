@@ -51,5 +51,5 @@ $ chmod +x .git/hooks/commit-msg
 
 ### Sharing and bypassing
 
-Same as other hooks — see the [Hooks](hooks.md) recipe for
+Same as other hooks — see the [Hooks](../hooks/) recipe for
 `core.hooksPath` and `--no-verify`.

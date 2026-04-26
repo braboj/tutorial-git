@@ -9,7 +9,7 @@ order: 80
 
 ### Find which commit introduced a bug
 
-Use [Git Bisect](git-bisect.md) for a full walkthrough of manual and
+Use [Git Bisect](../git-bisect/) for a full walkthrough of manual and
 automated binary search through commit history.
 
 ### See who last changed each line

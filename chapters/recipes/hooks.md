@@ -9,12 +9,12 @@ order: 83
 
 ### Create a pre-commit hook
 
-See [Pre-commit Hook](pre-commit-hook.md) for a full walkthrough —
+See [Pre-commit Hook](../pre-commit-hook/) for a full walkthrough —
 script creation, common checks, and sharing with the team.
 
 ### Create a commit-msg hook
 
-See [Commit-msg Hook](commit-msg-hook.md) for a full walkthrough —
+See [Commit-msg Hook](../commit-msg-hook/) for a full walkthrough —
 message validation, Conventional Commits enforcement, and examples.
 
 ### Share hooks with the team

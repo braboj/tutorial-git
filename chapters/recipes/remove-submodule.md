@@ -41,5 +41,5 @@ $ git commit -m "Remove submodule"
 - **Nested submodules** — if the submodule itself contains submodules,
   you need to deinit recursively or clean up `.git/modules/` manually.
 
-For other submodule operations, see the [Submodules](submodules.md)
+For other submodule operations, see the [Submodules](../submodules/)
 recipe.
