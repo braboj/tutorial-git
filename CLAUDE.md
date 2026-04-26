@@ -61,9 +61,17 @@ Extends `docs/solid-ai-templates/base/git.md` with project-specific rules:
   feature branch
 - One commit per logical change
 - PR title: concise, under 70 characters
+- Before merging, review the diff — follow `base/review.md` priority
+  order and check CI passes
 - Delete feature branch after merge (local and remote)
 
-### 2.2 Content
+### 2.2 Review
+
+Follow `docs/solid-ai-templates/base/review.md` priority order:
+security → correctness → clarity → conventions. Apply
+`docs/solid-ai-templates/base/quality.md` as the standard.
+
+### 2.3 Content
 
 #### Chapter structure
 
@@ -91,7 +99,7 @@ Every chapter follows this structure:
 - Vary the correct answer positions — never all the same letter
 - Answers section at the bottom: `1. C — explanation`
 
-### 2.3 Cross-references
+### 2.4 Cross-references
 
 - Reference other chapters by file: `[Building Blocks](02-building-blocks.md)`
 - Reference sections within a chapter by heading anchor: `[Tag Object](#tag-object-labels)`
@@ -102,7 +110,7 @@ Every chapter follows this structure:
 - Recipe pages live in `chapters/recipes/` but their URLs are
   `/playbook/...` — link to them as `playbook/X.md`, not `recipes/X.md`
 
-### 2.4 Images
+### 2.5 Images
 
 - Source files: `assets/drawio/` (`.drawio` format)
 - Exported PNGs: `assets/images/`
@@ -111,7 +119,7 @@ Every chapter follows this structure:
 - ASCII diagrams in markdown serve as fallback and source of truth
 
 
-### 2.5 Figures
+### 2.6 Figures
 
 Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
 
