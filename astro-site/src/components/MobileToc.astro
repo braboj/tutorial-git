@@ -1,0 +1,60 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+const { headings = [] } = Astro.props as { headings: Heading[] };
+const h2s = headings.filter((h) => h.depth === 2);
+---
+
+{h2s.length > 0 && (
+  <div class="mobile-toc" id="mobile-toc">
+    <button class="mobile-toc-fab" id="mobile-toc-fab" aria-label="Table of contents" aria-expanded="false">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor" aria-hidden="true">
+        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+      </svg>
+    </button>
+    <div class="mobile-toc-overlay" id="mobile-toc-overlay">
+      <div class="mobile-toc-header">On this page</div>
+      <ul>
+        {h2s.map((h) => (
+          <li>
+            <a href={`#${h.slug}`}>{h.text}</a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
+<script is:inline>
+  (function () {
+    var fab = document.getElementById("mobile-toc-fab");
+    var overlay = document.getElementById("mobile-toc-overlay");
+    var toc = document.getElementById("mobile-toc");
+    if (!fab || !overlay) return;
+
+    fab.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = fab.getAttribute("aria-expanded") === "true";
+      fab.setAttribute("aria-expanded", String(!open));
+      overlay.classList.toggle("open");
+    });
+
+    overlay.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        fab.setAttribute("aria-expanded", "false");
+        overlay.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!overlay.classList.contains("open")) return;
+      if (toc.contains(e.target)) return;
+      fab.setAttribute("aria-expanded", "false");
+      overlay.classList.remove("open");
+    });
+  })();
+</script>
