@@ -111,11 +111,11 @@ Every chapter follows this structure:
 - ASCII diagrams in markdown serve as fallback and source of truth
 
 
-## 3. Figure style rules
+### 2.5 Figures
 
 Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
 
-### 3.1 Core principles
+#### Core principles
 
 - Flat only: no gradients, shadows, glows, or 3D effects
 - Sentence case for prose labels — filenames and acronyms keep their casing
@@ -124,7 +124,7 @@ Every figure follows these rules. Applies to draw.io XML, PlantUML, and SVG.
 - One visual grammar per figure — if it needs two, split into two figures
 - Shapes (circle vs pill vs card) distinguish elements in grayscale
 
-### 3.2 Palettes
+#### Palettes
 
 **A — Difficulty** (tier cards):
 - Beginner: fill `#EAF3DE`, border `#3B6D11`, text `#27500A`
@@ -155,7 +155,7 @@ for readers who use Git tools.
 - Border `#D3D1C7`, primary text `#2C2C2A`, secondary text `#5F5E5A`,
   arrow stroke `#444441`, white card `#FFFFFF`.
 
-### 3.3 Typography
+#### Typography
 
 | Use | Font | Size | Weight | Style |
 |---|---|---|---|---|
@@ -165,7 +165,7 @@ for readers who use Git tools.
 | Captions, footnotes | Helvetica | 11–12 px | Regular | — |
 | Descriptive notes, placeholders | Helvetica | 11 px | Regular | Italic |
 
-### 3.4 Arrow conventions
+#### Arrow conventions
 
 - Solid 1 px `#444441`, 6 × 6 px chevron head. Labels in clear space, never
   on the line.
@@ -177,7 +177,7 @@ for readers who use Git tools.
 - **Italic `#5F5E5A` label** for named relationships (`attached`, `parent`).
 - **Self-loop** (small arc above box corner) for recursive references.
 
-### 3.5 Component vocabulary
+#### Component vocabulary
 
 - **Card**: rounded rect, rx=5–8, 0.5 px border, 10–12 px inner padding.
 - **Pill**: rounded rect with rx = height/2. For branches, tags, short labels.
@@ -188,14 +188,14 @@ for readers who use Git tools.
   readability on both light and dark page backgrounds. Export PNGs with
   transparent background — the card provides the contrast.
 
-### 3.6 Commit-chain panel variant
+#### Commit-chain panel variant
 
 Gray commit circles (diameter 28), branch pills to the right of the
 commit they point to, italic "HEAD" label above the active branch pill.
 `*main` means HEAD is attached to main. Dashed arrow from pill to commit
 shows the reference relationship. Uses Palette C.
 
-### 3.7 draw.io file conventions
+#### draw.io file conventions
 
 - Source files: `assets/drawio/<name>.drawio`
 - Naming: `git-<topic>-<variant>.drawio` (e.g. `git-branch-merge.drawio`)
@@ -203,7 +203,7 @@ shows the reference relationship. Uses Palette C.
 - All cells `parent="1"`
 - XML-escape values: `&` → `&amp;`, `<` → `&lt;`, `>` → `&gt;`
 
-### 3.8 draw.io style string templates
+#### draw.io style string templates
 
 ```
 # Commit circle (gray):
@@ -231,7 +231,7 @@ endArrow=classic;html=1;strokeColor=#444441;strokeWidth=1;endFill=1;endSize=6;da
 rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;arcSize=5;
 ```
 
-### 3.9 XML boilerplate
+#### XML boilerplate
 
 ```xml
 <mxfile host="app.diagrams.net">
@@ -249,9 +249,9 @@ rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWid
 ```
 
 
-## 4. Session protocol
+## 3. Session protocol
 
-### 4.1 Scope guard
+### 3.1 Scope guard
 
 Extends `base/scope.md` with tutorial-specific boundaries:
 - One chapter per session is the default scope for content work
@@ -259,12 +259,12 @@ Extends `base/scope.md` with tutorial-specific boundaries:
 - Restructuring other chapters, creating new projects, or adding
   infrastructure is out of scope unless explicitly requested
 
-### 4.2 Startup
+### 3.2 Startup
 
 Read all referenced template documents before starting work. Confirm
 session scope with the user.
 
-### 4.3 End of session
+### 3.3 End of session
 
 Before ending a session, verify all of the following:
 
@@ -281,7 +281,7 @@ Before ending a session, verify all of the following:
    issues for remaining work
 
 
-## 5. Commands
+## 4. Commands
 
 ```bash
 # Astro site (from astro-site/)
