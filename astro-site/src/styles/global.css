@@ -672,3 +672,43 @@ a:hover {
     padding: var(--space-lg) var(--space-md);
   }
 }
+
+@media print {
+  .site-header-bar,
+  .site-tabs-bar,
+  .sidebar-toc,
+  .sidebar-tutorials,
+  .resize-handle,
+  .mobile-toc,
+  .site-footer,
+  .skip-link {
+    display: none !important;
+  }
+
+  .site-main {
+    display: block;
+  }
+
+  .content {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  pre {
+    white-space: pre-wrap;
+    border: 1px solid #ccc;
+  }
+
+  img {
+    break-inside: avoid;
+  }
+
+  h2, h3, h4 {
+    break-after: avoid;
+  }
+}
