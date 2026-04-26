@@ -3,10 +3,10 @@
     "collect": {
       "staticDistDir": "./astro-site/dist",
       "url": [
-        "/tutorial-git/",
-        "/tutorial-git/introduction/",
-        "/tutorial-git/building-blocks/",
-        "/tutorial-git/branching-and-merging/"
+        "/",
+        "/introduction/",
+        "/building-blocks/",
+        "/branching-and-merging/"
       ]
     },
     "assert": {
