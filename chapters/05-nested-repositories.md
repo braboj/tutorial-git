@@ -41,7 +41,7 @@ This creates two entries:
 
 After adding, the project looks like this:
 
-```
+```text
 project/
 ├── .gitmodules                ← URL and path for each submodule
 ├── .git/modules/<submodule>/ ← submodule's Git database
@@ -69,7 +69,7 @@ $ cd <submodule>
 $ git fetch origin
 $ git switch main
 $ git pull
-$ cd ../..
+$ cd ..
 $ git add <submodule>
 $ git commit -m "Update lib submodule"
 ```
@@ -147,7 +147,7 @@ Unlike submodules, there is no metadata to clean up.
 | Advantage                                   | Drawback                                           |
 |---------------------------------------------|----------------------------------------------------|
 | No extra commands — files are in the repo   | Increases repository size (full copy)              |
-| Works with standard `clone`, `pull`, `push` | Must not mix parent and subtree changes in commits |
+| Works with standard `clone`, `pull`, `push` | Mixing parent and subtree changes in one commit complicates `subtree push` |
 | No `.gitmodules` or metadata files          | Requires understanding of merge strategies         |
 
 ## 4. Which to use?
@@ -167,9 +167,14 @@ dependency. Use **subtrees** for system-based development where you
 want a full copy of the code and expect to modify it alongside your
 project.
 
+For step-by-step command references, see the playbook recipes:
+[Submodules](playbook/submodules.md),
+[Remove a Submodule](playbook/remove-submodule.md),
+[Subtrees](playbook/subtrees.md).
+
 ## 5. Other tools
 
-- [google repo](https://gerrit.googlesource.com/git-repo/) — manages
+- [Google Repo](https://gerrit.googlesource.com/git-repo/) — manages
   many Git repositories as a single project (used by Android)
 - [git subrepo](https://github.com/ingydotnet/git-subrepo#readme) —
   alternative to subtrees with cleaner UX
