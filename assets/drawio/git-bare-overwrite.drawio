@@ -23,7 +23,7 @@
         </mxCell>
 
         <!-- Commit B -->
-        <mxCell id="card-b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#DBEAFE;strokeColor=#2563EB;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#1E40AF;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit B&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Bob&lt;/i&gt;" vertex="1">
+        <mxCell id="card-b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit B&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Bob&lt;/i&gt;" vertex="1">
           <mxGeometry height="200" width="180" x="280" y="40" as="geometry" />
         </mxCell>
         <mxCell id="file-b-readme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="readme.md" vertex="1">
@@ -37,7 +37,7 @@
         </mxCell>
 
         <!-- Commit C -->
-        <mxCell id="card-c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FCEBEB;strokeColor=#A32D2D;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#791F1F;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit C&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Alice&lt;/i&gt;" vertex="1">
+        <mxCell id="card-c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F1F1F1;strokeColor=#888888;strokeWidth=0.5;shadow=0;fontSize=12;fontStyle=0;fontColor=#2C2C2A;fontFamily=Helvetica;verticalAlign=top;align=center;arcSize=8;" value="&lt;b&gt;Commit C&lt;/b&gt;&lt;br&gt;&lt;i style=&quot;color:#5F5E5A&quot;&gt;Alice&lt;/i&gt;" vertex="1">
           <mxGeometry height="200" width="180" x="520" y="40" as="geometry" />
         </mxCell>
         <mxCell id="file-c-readme" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWidth=0.5;shadow=0;fontSize=11;fontStyle=0;fontColor=#2C2C2A;fontFamily=Courier New;verticalAlign=middle;align=left;arcSize=5;spacingLeft=8;" value="readme.md" vertex="1">
