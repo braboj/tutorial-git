@@ -16,7 +16,7 @@ const jsonLd = {
   "@type": "Course",
   "name": "Git Tutorial — Code with Branko",
   "description": "A hands-on Git tutorial from first commit to confident daily use — concepts, exercises, and real-world examples.",
-  "url": "https://braboj.github.io/tutorial-git/",
+  "url": new URL(import.meta.env.BASE_URL, import.meta.env.SITE).toString(),
   "provider": {
     "@type": "Person",
     "name": "Branimir Georgiev",
