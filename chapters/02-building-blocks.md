@@ -88,18 +88,11 @@ The `.git` folder contains the same structure as a bare repository.
 The difference is that a non-bare repository also has a working tree
 next to it — the place where you do your actual work.
 
-A bare repository is designed to be a shared hub — it accepts pushes
-from other repositories. You cannot run `git add` or `git commit`
-inside it because there is no working tree to stage files from. All
-changes must arrive via `git push` from another repository.
-
-Pushing to a non-bare repository is rejected by default. The reason:
-a push updates the branch reference, but it does not touch the working
-tree. If Git allowed it, the person working in that repository would
-have files from the old commit while the branch points to the new one —
-their working tree and their branch would be out of sync, and any
-staged work could be silently lost. Bare repositories avoid this
-problem entirely because there is no working tree to desynchronize.
+A bare repository is designed to be a shared hub. Because it has no
+working tree, nobody edits files in it directly — it only receives
+changes sent from other repositories. A non-bare repository is the
+opposite: it is where you do your day-to-day work — editing files,
+recording snapshots, and browsing history.
 
 ## 3. Object Model
 
