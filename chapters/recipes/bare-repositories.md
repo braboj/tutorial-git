@@ -13,7 +13,7 @@ multiple developers push to. Hosting services like GitHub and GitLab
 store every repository as bare on the server.
 
 For the theory behind bare vs non-bare repositories, see
-[Building Blocks](../02-building-blocks.md#2-repository).
+[Building Blocks](../../building-blocks/#2-repository).
 
 ### Create a bare repository
 
@@ -121,7 +121,7 @@ Git refuses because a push updates the branch reference but not the
 working tree — this would leave the two out of sync and could cause
 the recipient to unknowingly revert the pushed changes on their next
 commit. For a full walkthrough of the problem, see
-[Building Blocks — Why bare repositories exist](../02-building-blocks.md#why-bare-repositories-exist).
+[Building Blocks — Why bare repositories exist](../../building-blocks/#why-bare-repositories-exist).
 
 If you need to accept pushes on a non-bare repository (rare), you
 can enable it:
