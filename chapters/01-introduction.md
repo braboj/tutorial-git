@@ -115,9 +115,7 @@ The repository stores the full history of your project as a series of
 snapshots called *commits*. Each commit records exactly what the project
 looked like at that moment. The repository can be **local** (on your
 machine) or **remote** (on a hosting service like GitHub). Git treats
-both as equals — there is no single authoritative copy. (The word "master"
-here means primary, not the branch name `master` — Git uses `main` as the
-default branch name.)
+both as equals — there is no single authoritative copy.
 
 ### How a Commit Works
 
