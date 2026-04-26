@@ -50,6 +50,7 @@ For definitions, see [Glossary](09-glossary.md).
 | [Submodules](playbook/submodules.md) | Add, clone, update, and remove submodules |
 | [Remove a Submodule](playbook/remove-submodule.md) | Step-by-step cleanup — deinit, git rm, cached data |
 | [Subtrees](playbook/subtrees.md) | Add, pull, push, and remove subtrees |
+| [Git LFS](playbook/lfs.md) | Track large files with pointer references and external storage |
 
 ## Advanced
 
