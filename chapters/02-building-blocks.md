@@ -118,22 +118,6 @@ error or warning — because her files do not contain them.
 
 ![Silent overwrite of commit B](../assets/images/git-bare-overwrite.png)
 
-Git prevents this with a configuration flag called `core.bare`, stored
-inside the repository's config file:
-
-```text
-$ cat project.git/config
-[core]
-    repositoryformatversion = 0
-    filemode = true
-    bare = true
-```
-
-When `bare = true`, Git accepts incoming pushes — there is no working
-tree to desynchronize. When `bare = false` (the default for non-bare
-repositories), Git rejects pushes to protect the working tree. The
-`git init --bare` command sets this flag automatically.
-
 What if the two developers never touch each other's repositories
 directly? A popular solution to this kind of synchronization problem
 is to introduce an intermediary repository that both developers push
@@ -153,6 +137,24 @@ changes from the bare repository when **she** is ready. No one
 reaches into anyone else's working tree. This is exactly how
 hosting services like GitHub and GitLab work — every repository on
 the server is bare.
+
+Git prevents this by design via a configuration flag called `core.bare`, stored
+inside the repository's config file:
+
+```text
+$ cat project.git/config
+[core]
+    repositoryformatversion = 0
+    filemode = true
+    bare = true
+```
+
+In a non-bare repository, `bare = false` — the default. Git checks
+this flag when receiving a push: if it is `false`, the push is
+rejected to protect the working tree. Only bare repositories have
+`bare = true`, which tells Git there is no working tree and pushes
+are safe to accept. The `git init --bare` command sets this flag
+automatically.
 
 ## 3. Object Model
 
