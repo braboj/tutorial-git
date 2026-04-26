@@ -37,36 +37,11 @@ A repository can be **local** (on your machine) or **remote** (on a
 server like GitHub). Git treats both as equals — you can push to and
 pull from any repository you have access to.
 
-Git supports two repository layouts — **bare** and **non-bare**.
-
-A **bare repository** has no working tree — only the Git internals
-(objects, refs, config) and no checked-out files. Hosting services like
-GitHub and GitLab store repositories as bare on the server. When you
-edit a file through GitHub's web interface, GitHub creates a commit
-directly — it does not use a working tree.
-
-> **Note:** "bare" and "remote" are not the same thing. A remote is any
-> repository you connect to via URL. Remotes are *usually* bare, but a
-> remote can also be a regular repository on another machine.
-
-```text
-git init --bare project.git
-
-PROJECT.GIT/
-├───hooks       # Scripts that run on events (pre-commit, post-merge, etc.)
-├───info        # Repository metadata (exclude patterns, etc.)
-├───objects     # All Git objects (blobs, trees, commits, tags)
-│   ├───info    # Object storage metadata
-│   └───pack    # Compressed object packs for efficiency
-└───refs        # Named references to commits
-    ├───heads   # Branch tips
-    └───tags    # Tag references
-```
-
-A **non-bare repository** (also called a regular or working repository)
-is what you get when you clone or run `git init`. It has a working tree
-where you create, edit and delete files, plus a hidden `.git` folder
-that stores the full history and configuration.
+Typically, the layout of a **local** repository has a .git 
+folder with all the internals, and a working tree with your project. This type
+of layout is called a **non-bare repository**. The `.git` folder stores the 
+full history and configuration. When you clone a repository, you get a regular 
+repository with both the working tree and the `.git` folder.
 
 ```text
 git clone project.git
@@ -84,9 +59,42 @@ PROJECT/
         └───tags             # Tag references
 ```
 
-The `.git` folder contains the same structure as a bare repository.
-The difference is that a non-bare repository also has a working tree
-next to it — the place where you do your actual work.
+In contrast, the layout of remote repositories on hosting services like GitHub 
+and GitLab is a little bit different — they are **bare repositories**. A 
+**bare repository** has no working tree — only the Git internals
+(objects, refs, config) and no checked-out files. When you edit a file through 
+GitHub's web interface, GitHub creates a commit directly — it does not use a 
+working tree.
+
+```text
+git clone --bare project.git
+
+PROJECT.GIT/
+├───hooks       # Scripts that run on events (pre-commit, post-merge, etc.)
+├───info        # Repository metadata (exclude patterns, etc.)
+├───objects     # All Git objects (blobs, trees, commits, tags)
+│   ├───info    # Object storage metadata
+│   └───pack    # Compressed object packs for efficiency
+└───refs        # Named references to commits
+    ├───heads   # Branch tips
+    └───tags    # Tag references
+```
+
+As a rule of thumb, if you see a `.git` folder, it's a regular repository with 
+a working tree. If you see a folder that ends with `.git` but has no `.git` 
+inside it, it's a bare repository.
+
+Both git clone and git init can create either type of repository. By default, 
+they create regular repositories with a working tree. To create a bare 
+repository, use the `--bare` flag:
+
+```text
+# creates a bare repository from a remote
+$ git clone --bare <repository-url>   
+
+# creates a new bare repository locally
+$ git init --bare <directory-name>     
+```
 
 ### Why bare repositories exist
 
@@ -102,36 +110,33 @@ his remote and sends changes directly into her `.git/` directory.
  │  files from A    │              │                  │
  │  + uncommitted   │              │                  │
  ├──────────────────┤              ├──────────────────┤
- │  .git/           │  git push   │  .git/           │
- │  main → B ───────│◄────────────│  main → B        │
+ │  .git/           │  git push    │  .git/           │
+ │  main → B ───────│◄─────────────│  main → B        │
  │  (moved by push) │              │                  │
  └──────────────────┘              └──────────────────┘
        ⚠ OUT OF SYNC
    branch says B, files say A
 ```
 
-The problem: when Bob sends his changes, Git updates the branch
-inside Alice's `.git/` to point to Bob's latest commit. But Alice's
-working tree is **not** updated — her files still reflect the old
-commit, plus whatever edits she has in progress. Alice's branch and
-her working tree are now out of sync. If she commits at this point,
-she unknowingly **reverts Bob's changes** — because her files do not
-contain them.
+The problem: when Bob pushes his changes, Git updates the branch
+inside Alice's `.git/` to point to Bob's latest commit immediately. But Alice's
+working tree is **not** updated — her files still reflect the old commit, plus 
+whatever edits she has in progress. Alice's branch and her working tree are 
+now out of sync. If she commits at this point, she unknowingly **reverts Bob's
+changes** — because her files do not contain them. Git prevents this by
+refusing to accept a push to a non-bare repository that has the target
+branch checked out.
 
-Git prevents this by refusing to accept changes sent to a non-bare
-repository that has the target branch checked out.
-
-The solution is to place a **bare repository** between the two
-developers. A bare repository has no working tree — it holds only
-objects and references. Because nobody edits files in it, updating a
-branch is always safe.
+A popular solution to this kind of synchronization problem is to decouple the
+direct push/pull between two developers and introduce an intermediary 
+repository that both developers push to and pull from. 
 
 ```text
   Alice (non-bare)        Shared hub (bare)        Bob (non-bare)
  ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
  │  Working Tree    │    │                  │    │  Working Tree    │
- │                  │    │  objects + refs   │    │                  │
- ├──────────────────┤    │  no working tree  │    ├──────────────────┤
+ │                  │    │  objects + refs  │    │                  │
+ ├──────────────────┤    │  no working tree │    ├──────────────────┤
  │  .git/           │    │                  │    │  .git/           │
  │                  │◄───│                  │◄───│                  │
  └──────────────────┘    └──────────────────┘    └──────────────────┘
@@ -139,9 +144,14 @@ branch is always safe.
     (when ready)
 ```
 
+This is called a **shared hub**. The shared hub is a bare repository — it has no
+working tree, only the Git internals. Its purpose is to hold commits and
+references, not to be edited directly. Because nobody edits files in it, 
+updating a branch is always safe.
+
 With a bare repository in the middle, each developer works
 independently. Bob sends his changes to the bare repository whenever
-he is ready. Alice commits her own work first, then downloads Bob's
+he is ready. Alice commits her own work first, then pulls Bob's
 changes from the bare repository when **she** is ready. No one
 reaches into anyone else's working tree. This is exactly how
 hosting services like GitHub and GitLab work — every repository on
