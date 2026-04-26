@@ -510,6 +510,7 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - Added OG banner image for social sharing previews (#152)
 - Closed #161 — Astro 6 already adds lazy loading to Markdown images
 - Added floating mobile ToC button for in-page navigation (#110)
+- Fixed horizontal overflow on mobile causing FAB to render off-screen
 - Added `.claude/` to `.gitignore`
 - Created branding exploration issue (#202)
 
@@ -519,6 +520,9 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - #200 — Dark mode code blocks
 - #201 — OG banner image
 - #203 — Floating mobile ToC
+- #204 — Session journal entry
+- #205 — Mobile ToC overflow fix (overflow-x: hidden on html)
+- #206 — Mobile overflow fix (overflow-x: hidden on body, table scroll)
 
 **Issues closed:** #110, #152, #159, #161, #171
 
