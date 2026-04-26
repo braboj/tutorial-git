@@ -62,11 +62,11 @@ const ogImage = new URL("/tutorial-git/images/og-banner.png", Astro.site);
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header currentPath={currentPath} />
-    <MobileToc headings={headings} />
     <div class="site-main">
       <TableOfContents headings={headings} />
       <div class="resize-handle" data-side="left"></div>
       <main class="content" id="main-content">
+        <MobileToc headings={headings} />
         <h1>{title}</h1>
         <slot />
       </main>
