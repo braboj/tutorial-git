@@ -36,7 +36,8 @@ chapters/                  # SSG-agnostic tutorial content (canonical)
   04-remote-repositories.md
   05-nested-repositories.md
   06-expert-topics.md
-  07-playbook/           (17 recipe pages)
+  07-playbook.md
+  recipes/               (17 recipe pages)
   08-appendix.md
   09-glossary.md
 assets/

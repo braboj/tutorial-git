@@ -14,7 +14,7 @@ A reference of key Git terms used throughout this tutorial, with links to the ch
 | Annotated tag | A tag object with author, date, and message — stored in `.git/objects/` | [2](02-building-blocks.md) |
 | Bare repository | A repository with no working tree — only `.git/` internals | [2](02-building-blocks.md) |
 | Bisect | Binary search through commit history to find the commit that introduced a bug | [6](06-expert-topics.md) |
-| Blame | Show which commit and author last modified each line of a file | [7](07-playbook/debugging.md) |
+| Blame | Show which commit and author last modified each line of a file | [7](recipes/debugging.md) |
 | Blob | Object that stores the raw contents of a single file | [2](02-building-blocks.md) |
 | Branch | A movable pointer to a commit, stored in `.git/refs/heads/` | [2](02-building-blocks.md) |
 | Cherry-pick | Copy a single commit from one branch onto another, creating a new commit with a different hash | [3](03-branching-and-merging.md) |
@@ -47,7 +47,7 @@ A reference of key Git terms used throughout this tutorial, with links to the ch
 | Remote-tracking branch | A read-only local reference that mirrors a remote branch (e.g. `origin/main`), updated by fetch and pull | [4](04-remote-repositories.md) |
 | Repository | The `.git/` directory containing all objects, references, and configuration for a project | [2](02-building-blocks.md) |
 | Reset | Move HEAD and optionally the branch tip to a different commit — `--soft`, `--mixed`, or `--hard` | [2](02-building-blocks.md) |
-| Revert | Create a new commit that undoes a previous commit's changes without rewriting history | [7](07-playbook/undoing-changes.md) |
+| Revert | Create a new commit that undoes a previous commit's changes without rewriting history | [7](recipes/undoing-changes.md) |
 | Squash merge | Combine all commits from a branch into a single change set on the target branch — no merge commit | [3](03-branching-and-merging.md) |
 | Stash | Save uncommitted changes temporarily so you can switch branches with a clean working tree | [3](03-branching-and-merging.md) |
 | Submodule | A reference to a specific commit in another repository — stores URL and hash, not files | [5](05-nested-repositories.md) |
