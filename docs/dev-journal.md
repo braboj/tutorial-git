@@ -530,3 +530,24 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - P2: #151, #182
 - P3: #135, #160, #202
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
+
+**Deep review, structural audit, and 360 analysis:**
+
+Ran three parallel agents: code review, structural audit (against solid-ai-templates),
+and 360 analysis (content, SEO, accessibility, UX, build/deploy).
+
+- Structural audit: full PASS — all conventions compliant
+- Code review: 7 issues found (2 P1, 3 P2, 2 P3)
+- 360 analysis: strong across all areas, gaps folded into the same 7 issues
+
+**Review fix PRs merged:**
+- #215 — Fix set:html XSS in Footer (#208), hardcoded JSON-LD URLs (#209),
+  dark mode link contrast (#210), unused search CSS (#211), custom 404 page (#212)
+- #216 — Print styles for chapters (#214)
+
+**Review issues closed:** #208, #209, #210, #211, #212, #213 (won't-fix), #214
+
+**Updated open issues:**
+- P2: #182
+- P3: #135, #160, #202
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #151, #167, #168, #170
