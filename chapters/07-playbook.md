@@ -40,6 +40,7 @@ For definitions, see [Glossary](09-glossary.md).
 | [Remote Management](playbook/remote-management.md) | Add, rename, remove remotes, switch URL, SSH setup |
 | [SSH Setup](playbook/ssh-setup.md) | Key generation, agent, GitHub registration, troubleshooting |
 | [Bare Repositories](playbook/bare-repositories.md) | Create, clone, convert, and use bare repos as local remotes |
+| [Credentials](playbook/credentials.md) | Credential helpers (cache, store, GCM), HTTPS tokens, security |
 
 ## Project Structure
 
