@@ -158,6 +158,14 @@ rejected to protect the working tree. Only bare repositories have
 are safe to accept. The `git init --bare` command sets this flag
 automatically.
 
+Now, when Bob pushes to Alice's repository, Git checks `core.bare` and
+rejects the push because it is not a bare repository. This prevents
+Alice from silently overwriting Bob's changes on her next commit.
+
+Bob must push to a shared hub (a bare repository) instead, and Alice must 
+pull from it. This way, both developers have control over when they receive
+each other's changes, and there are no surprises.
+
 ## 3. Object Model
 
 Every time you commit, Git takes a **snapshot** — a complete picture of
