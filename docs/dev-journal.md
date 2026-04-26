@@ -325,3 +325,56 @@ Architecture overview and chronological session log for tutorial-git.
 - P2: #110, #151, #152, #159, #161
 - P3: #135, #160
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147
+
+### 2026-04-26 — Issue refinement, P0 resolution, playbook restructure
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Refined 7 placeholder issues (#165–#171) with proper descriptions and acceptance criteria
+- Fixed title typos: #166 "packfes" → "packfiles", #168 "bunlding" → "bundling"
+- Reassessed priorities: #165 P0→P1, #171 added P2, #172 added P1
+- Restructured playbook chapter:
+  - Extracted `chapters/playbook/index.md` → `chapters/07-playbook.md` (chapter entry point)
+  - Renamed `chapters/playbook/` → `chapters/recipes/` (17 recipe pages)
+  - All chapters now follow `NN-name.md` pattern in filesystem
+  - URLs unchanged — Astro routes from `section` frontmatter, not directory names
+- Fixed README: updated domain from braboj.github.io to braboj.me, removed stale manual copy instruction, removed `content/docs/` from project structure
+- Removed orphaned assets: `git-conflict-markers.drawio`, `project-workflow.png`, 19 `.bkp` files
+- Fixed intro chapter: removed confusing "master" vs "main" parenthetical disclaimer
+- Fixed CI failure: markdown links must use URL path (`playbook/`) not filesystem path (`recipes/`) due to remark link rewriter
+
+**PRs merged:**
+- #173 — Rename playbook/ to 07-playbook.md + recipes/
+- #174 — Fix outdated README (domain, stale instruction, structure)
+- #175 — Remove orphaned assets and drawio backups
+- #176 — Fix unclear wording in intro chapter
+
+**Issues closed:**
+- #156 — Rename playbook index for consistent chapter numbering
+- #157 — Fix outdated README
+- #162 — Clean up orphaned assets and drawio backups
+- #164 — Unclear wording in intro chapter
+
+**Issues created:**
+- #172 — Explain the difference between non-bare and bare repositories (P1)
+
+**Chapter structure after session:**
+```
+01-introduction.md
+02-building-blocks.md
+03-branching-and-merging.md
+04-remote-repositories.md
+05-nested-repositories.md
+06-expert-topics.md
+07-playbook.md              ← extracted from playbook/index.md
+08-appendix.md
+09-glossary.md
+recipes/                    ← renamed from playbook/ (17 recipe pages)
+```
+
+**Open issues:**
+- P1: #153, #154, #155, #158, #165, #166, #169, #172
+- P2: #110, #151, #152, #159, #161, #171
+- P3: #135, #160
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
