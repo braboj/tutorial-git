@@ -55,4 +55,5 @@ A reference of key Git terms used throughout this tutorial, with links to the ch
 | Tag | A named reference to a commit — annotated (object with metadata) or lightweight (plain reference) | [2](02-building-blocks.md) |
 | Tree | Object that represents a directory — lists blobs and other trees with names and permissions | [2](02-building-blocks.md) |
 | Upstream | Conventional name for the original repository you forked from | [4](04-remote-repositories.md) |
-| Working tree | The checked-out files on disk that you edit directly — everything outside `.git/` | [2](02-building-blocks.md) |
+| Working tree | The checked-out files on disk that you edit directly — everything outside `.git/`. Also called *worktree* or *workspace* | [1](01-introduction.md), [2](02-building-blocks.md) |
+| Worktree | See *Working tree* | |
