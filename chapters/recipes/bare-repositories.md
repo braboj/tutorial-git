@@ -117,34 +117,11 @@ $ git push /tmp/dev-alice main
 remote: error: refusing to update checked out branch: refs/heads/main
 ```
 
-To understand why, remember that a push only updates the branch
-reference inside `.git/` — it does **not** touch the working tree.
-These are two separate operations, and only the first one happens.
-
-Imagine Alice and Bob working on the same network with **no bare
-repository in between** — no GitHub, no central server. Bob has
-Alice's non-bare repository configured as his remote, so he pushes
-directly into her `.git/` directory.
-
-1. Alice checks out `main`. Her working tree has the files from
-   commit `A`.
-2. Alice edits `report.txt` but has not committed yet.
-3. Bob runs `git push alice-machine main`, which writes his new
-   commit `B` directly into Alice's `.git/` and updates her
-   reference `.git/refs/heads/main` to point to `B` — but Alice's
-   working tree is not updated. Her files on disk are still from
-   commit `A`, plus her uncommitted edits.
-4. Alice's repository is now in a broken state:
-   - `HEAD` → `main` → commit `B` (moved by the push)
-   - Working tree → files from commit `A` + uncommitted edits (untouched)
-5. If Alice runs `git status`, Git compares her working tree against
-   commit `B`. Every file Bob changed shows up as a difference —
-   mixed in with Alice's real edits. She cannot tell which changes
-   are hers and which are artifacts of the branch moving under her.
-
-Git prevents step 3 entirely. A bare repository avoids this problem
-because there is no working tree — updating the branch reference is
-always safe when there are no files to desynchronize.
+Git refuses because a push updates the branch reference but not the
+working tree — this would leave the two out of sync and could cause
+the recipient to unknowingly revert the pushed changes on their next
+commit. For a full walkthrough of the problem, see
+[Building Blocks — Why bare repositories exist](../02-building-blocks.md#why-bare-repositories-exist).
 
 If you need to accept pushes on a non-bare repository (rare), you
 can enable it:

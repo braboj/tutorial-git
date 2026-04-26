@@ -88,11 +88,64 @@ The `.git` folder contains the same structure as a bare repository.
 The difference is that a non-bare repository also has a working tree
 next to it — the place where you do your actual work.
 
-A bare repository is designed to be a shared hub. Because it has no
-working tree, nobody edits files in it directly — it only receives
-changes sent from other repositories. A non-bare repository is the
-opposite: it is where you do your day-to-day work — editing files,
-recording snapshots, and browsing history.
+### Why bare repositories exist
+
+Imagine two developers — Alice and Bob — working on the same project
+over a local network. Each has a non-bare repository with a working
+tree. There is no central server — Bob has Alice's repository set as
+his remote and sends changes directly into her `.git/` directory.
+
+```text
+  Alice (non-bare)                    Bob (non-bare)
+ ┌──────────────────┐              ┌──────────────────┐
+ │  Working Tree    │              │  Working Tree    │
+ │  files from A    │              │                  │
+ │  + uncommitted   │              │                  │
+ ├──────────────────┤              ├──────────────────┤
+ │  .git/           │  git push   │  .git/           │
+ │  main → B ───────│◄────────────│  main → B        │
+ │  (moved by push) │              │                  │
+ └──────────────────┘              └──────────────────┘
+       ⚠ OUT OF SYNC
+   branch says B, files say A
+```
+
+The problem: when Bob sends his changes, Git updates the branch
+inside Alice's `.git/` to point to Bob's latest commit. But Alice's
+working tree is **not** updated — her files still reflect the old
+commit, plus whatever edits she has in progress. Alice's branch and
+her working tree are now out of sync. If she commits at this point,
+she unknowingly **reverts Bob's changes** — because her files do not
+contain them.
+
+Git prevents this by refusing to accept changes sent to a non-bare
+repository that has the target branch checked out.
+
+The solution is to place a **bare repository** between the two
+developers. A bare repository has no working tree — it holds only
+objects and references. Because nobody edits files in it, updating a
+branch is always safe.
+
+```text
+  Alice (non-bare)        Shared hub (bare)        Bob (non-bare)
+ ┌──────────────────┐    ┌──────────────────┐    ┌──────────────────┐
+ │  Working Tree    │    │                  │    │  Working Tree    │
+ │                  │    │  objects + refs   │    │                  │
+ ├──────────────────┤    │  no working tree  │    ├──────────────────┤
+ │  .git/           │    │                  │    │  .git/           │
+ │                  │◄───│                  │◄───│                  │
+ └──────────────────┘    └──────────────────┘    └──────────────────┘
+        pull                                           push
+    (when ready)
+```
+
+With a bare repository in the middle, each developer works
+independently. Bob sends his changes to the bare repository whenever
+he is ready. Alice commits her own work first, then downloads Bob's
+changes from the bare repository when **she** is ready. No one
+reaches into anyone else's working tree. This is exactly how
+hosting services like GitHub and GitLab work — every repository on
+the server is bare.
 
 ## 3. Object Model
 
