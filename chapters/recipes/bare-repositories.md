@@ -121,11 +121,10 @@ To understand why, remember that a push only updates the branch
 reference inside `.git/` — it does **not** touch the working tree.
 These are two separate operations, and only the first one happens.
 
-Imagine Alice and Bob working on the same local network. Bob has
-Alice's repository configured as a remote (pointing directly at her
-machine, not at a server like GitHub). This means Bob can push
-commits straight into Alice's `.git/` directory — no fetch required
-on Alice's side.
+Imagine Alice and Bob working on the same network with **no bare
+repository in between** — no GitHub, no central server. Bob has
+Alice's non-bare repository configured as his remote, so he pushes
+directly into her `.git/` directory.
 
 1. Alice checks out `main`. Her working tree has the files from
    commit `A`.
