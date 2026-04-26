@@ -117,25 +117,31 @@ $ git push /tmp/dev-alice main
 remote: error: refusing to update checked out branch: refs/heads/main
 ```
 
-To understand why, imagine two developers — Alice and Bob — where
-Alice's repository is non-bare and Bob tries to push to it:
+To understand why, remember that a push only updates the branch
+reference inside `.git/` — it does **not** touch the working tree.
+These are two separate operations, and only the first one happens.
+
+Imagine Alice and Bob, where Alice's repository is non-bare and Bob
+tries to push to it:
 
 1. Alice clones a repository and checks out `main`. Her working tree
    has the files from commit `A`.
 2. Alice edits `report.txt` but has not committed yet.
-3. Bob pushes a new commit `B` to Alice's repository. Git updates
-   Alice's `main` branch to point to `B`.
-4. Now Alice's branch says `B`, but her working tree still has the
-   files from `A` — plus her uncommitted edits. Git has no way to
-   merge Bob's changes into Alice's working tree automatically.
-5. If Alice runs `git status`, she sees phantom differences — her
-   files look changed relative to `B`, even though she never touched
-   them. Her real edits are mixed in with the noise, and she could
-   lose work.
+3. Bob pushes a new commit `B` to Alice's repository. The push
+   updates the reference `.git/refs/heads/main` to point to `B` —
+   but Alice's working tree is not updated. Her files on disk are
+   still from commit `A`, plus her uncommitted edits.
+4. Alice's repository is now in a broken state:
+   - `HEAD` → `main` → commit `B` (moved by the push)
+   - Working tree → files from commit `A` + uncommitted edits (untouched)
+5. If Alice runs `git status`, Git compares her working tree against
+   commit `B`. Every file Bob changed shows up as a difference —
+   mixed in with Alice's real edits. She cannot tell which changes
+   are hers and which are artifacts of the branch moving under her.
 
 Git prevents step 3 entirely. A bare repository avoids this problem
-because there is no working tree and no one editing files in it —
-updating the branch is always safe.
+because there is no working tree — updating the branch reference is
+always safe when there are no files to desynchronize.
 
 If you need to accept pushes on a non-bare repository (rare), you
 can enable it:
