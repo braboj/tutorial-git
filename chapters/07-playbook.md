@@ -38,6 +38,7 @@ For definitions, see [Glossary](09-glossary.md).
 |--------|-----------------|
 | [Remote Operations](playbook/remote-operations.md) | Push, pull, force push safely, sync forks |
 | [Remote Management](playbook/remote-management.md) | Add, rename, remove remotes, switch URL, SSH setup |
+| [SSH Setup](playbook/ssh-setup.md) | Key generation, agent, GitHub registration, troubleshooting |
 
 ## Project Structure
 
@@ -45,6 +46,7 @@ For definitions, see [Glossary](09-glossary.md).
 |--------|-----------------|
 | [Tagging](playbook/tagging.md) | Create, push, and delete annotated tags |
 | [Submodules](playbook/submodules.md) | Add, clone, update, and remove submodules |
+| [Remove a Submodule](playbook/remove-submodule.md) | Step-by-step cleanup — deinit, git rm, cached data |
 | [Subtrees](playbook/subtrees.md) | Add, pull, push, and remove subtrees |
 
 ## Advanced
@@ -53,5 +55,8 @@ For definitions, see [Glossary](09-glossary.md).
 |--------|-----------------|
 | [Selectors](playbook/selectors.md) | Tilde, caret, double-dot, triple-dot, reflog refs |
 | [Hooks](playbook/hooks.md) | Pre-commit, commit-msg, sharing hooks, bypassing |
+| [Pre-commit Hook](playbook/pre-commit-hook.md) | Script creation, common checks, sharing and bypassing |
+| [Commit-msg Hook](playbook/commit-msg-hook.md) | Message validation, Conventional Commits, examples |
 | [Debugging](playbook/debugging.md) | Bisect, blame, and search commit history |
+| [Git Bisect](playbook/git-bisect.md) | Binary search for the commit that introduced a bug |
 | [Configuration](playbook/configuration.md) | Identity, defaults, aliases, and diagnostics |
