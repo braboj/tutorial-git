@@ -91,31 +91,4 @@ const base = import.meta.env.BASE_URL;
     siteTabs.classList.remove("open");
   });
 
-  // Populate "On this page" section from the sidebar ToC
-  document.addEventListener("DOMContentLoaded", () => {
-    const sidebarToc = document.querySelector(".sidebar-toc");
-    if (!sidebarToc) return;
-    const topLinks = sidebarToc.querySelectorAll(":scope > ul > li");
-    if (topLinks.length === 0) return;
-
-    const label = document.createElement("div");
-    label.className = "nav-toc-label";
-    label.textContent = "On this page";
-    siteTabs.appendChild(label);
-
-    topLinks.forEach((li) => {
-      const source = li.querySelector(":scope > a, :scope > details > summary > a");
-      if (source) {
-        const link = document.createElement("a");
-        link.href = source.getAttribute("href");
-        link.textContent = source.textContent;
-        link.className = "nav-toc-link";
-        link.addEventListener("click", () => {
-          navToggle.setAttribute("aria-expanded", "false");
-          siteTabs.classList.remove("open");
-        });
-        siteTabs.appendChild(link);
-      }
-    });
-  });
 </script>

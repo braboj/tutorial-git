@@ -572,8 +572,75 @@ a:hover {
   color: var(--color-fg-muted);
 }
 
+/* Mobile ToC bar — hidden on desktop */
+.mobile-toc-bar {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 960px) {
+  .mobile-toc-bar {
+    display: block;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .mobile-toc-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: var(--space-sm) var(--space-md);
+    background: none;
+    border: none;
+    font-family: var(--font-text);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--color-fg);
+    cursor: pointer;
+  }
+
+  .mobile-toc-toggle:hover {
+    background: var(--color-bg-hover);
+  }
+
+  .mobile-toc-chevron {
+    transition: transform 0.15s;
+  }
+
+  .mobile-toc-toggle[aria-expanded="true"] .mobile-toc-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mobile-toc-list {
+    display: none;
+    list-style: none;
+    padding: 0 var(--space-md) var(--space-sm);
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .mobile-toc-list.open {
+    display: block;
+  }
+
+  .mobile-toc-list li {
+    padding: var(--space-xs) 0;
+  }
+
+  .mobile-toc-list a {
+    color: var(--color-link);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+  }
+
+  .mobile-toc-list a:hover {
+    text-decoration: underline;
+  }
+
   .site-main {
     grid-template-columns: 1fr;
   }
@@ -622,28 +689,6 @@ a:hover {
   .site-tabs a.active {
     border-bottom: none;
     border-left: 3px solid var(--color-accent);
-    background: rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-toc-label {
-    padding: var(--space-sm) var(--space-md);
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-toc-link {
-    padding: var(--space-xs) var(--space-md) var(--space-xs) var(--space-lg);
-    font-size: var(--font-size-sm);
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    display: block;
-  }
-
-  .nav-toc-link:hover {
     background: rgba(255, 255, 255, 0.1);
   }
 

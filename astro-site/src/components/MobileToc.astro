@@ -1,0 +1,58 @@
+---
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+const { headings = [] } = Astro.props as { headings: Heading[] };
+const h2s = headings.filter((h) => h.depth === 2);
+---
+
+{h2s.length > 0 && (
+  <div class="mobile-toc-bar" id="mobile-toc-bar">
+    <button class="mobile-toc-toggle" id="mobile-toc-toggle" aria-expanded="false">
+      <span>On this page</span>
+      <svg class="mobile-toc-chevron" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+        <path d="M7 10l5 5 5-5z"/>
+      </svg>
+    </button>
+    <ul class="mobile-toc-list" id="mobile-toc-list">
+      {h2s.map((h) => (
+        <li>
+          <a href={`#${h.slug}`}>{h.text}</a>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+<script is:inline>
+  (function () {
+    var toggle = document.getElementById("mobile-toc-toggle");
+    var list = document.getElementById("mobile-toc-list");
+    var bar = document.getElementById("mobile-toc-bar");
+    if (!toggle || !list) return;
+
+    toggle.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      list.classList.toggle("open");
+    });
+
+    list.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        toggle.setAttribute("aria-expanded", "false");
+        list.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+      if (!list.classList.contains("open")) return;
+      if (bar.contains(e.target)) return;
+      toggle.setAttribute("aria-expanded", "false");
+      list.classList.remove("open");
+    });
+  })();
+</script>

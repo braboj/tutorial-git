@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import TableOfContents from "../components/TableOfContents.astro";
 import TutorialLinks from "../components/TutorialLinks.astro";
 import Footer from "../components/Footer.astro";
+import MobileToc from "../components/MobileToc.astro";
 import site from "../data/site.json";
 
 interface Props {
@@ -61,6 +62,7 @@ const ogImage = new URL("/tutorial-git/images/og-banner.png", Astro.site);
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <Header currentPath={currentPath} />
+    <MobileToc headings={headings} />
     <div class="site-main">
       <TableOfContents headings={headings} />
       <div class="resize-handle" data-side="left"></div>
