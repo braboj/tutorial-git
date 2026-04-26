@@ -420,3 +420,40 @@ recipes/                    ← renamed from playbook/ (17 recipe pages)
 - P2: #110, #151, #152, #159, #161, #171, #182
 - P3: #135, #160
 - P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
+
+### 2026-04-26 — Playbook recipe improvements and splits
+
+**Tool:** Claude Code (Opus 4.6)
+
+**Key changes:**
+- Improved 6 thin recipes in rebasing, stashing, and submodules — added context,
+  explanations, and tips for beginners (#154)
+- Split 5 substantial recipes into standalone pages for better SEO (#153):
+  git bisect, pre-commit hook, commit-msg hook, SSH setup, remove submodule
+- Evaluated 4 borderline candidates — all kept grouped (insufficient substance)
+- Fixed 9 broken recipe-to-recipe cross-reference links (#187) — sibling rewriter
+  turns `slug.md` into `slug/` which resolves incorrectly from `/playbook/X/`
+- Documented link convention table in CLAUDE.md (chapter→chapter, chapter→recipe,
+  recipe→recipe patterns)
+- Updated end-of-session checklist upstream: added submodule update and template
+  feedback items to `base/scope.md`; tutorial-git now inherits from template
+
+**PRs merged:**
+- #185 — Inherit end-of-session checks from base/scope.md
+- #186 — Improve thin recipes and split substantial ones
+- #187 — Fix broken recipe-to-recipe cross-reference links
+- #188 — Add recipe-to-recipe link convention to CLAUDE.md
+
+**Upstream PRs merged (solid-ai-templates):**
+- #60 — Add submodule and template feedback checks to end-of-session audit
+
+**Upstream PRs merged (imbra-spikes):**
+- #37 — Bump solid-ai-templates and tutorial-git submodule pointers
+
+**Issues closed:** #153, #154
+
+**Open issues:**
+- P1: #155, #158, #165, #166, #169, #172
+- P2: #110, #151, #152, #159, #161, #171, #182
+- P3: #135, #160
+- P4: #106, #109, #113, #114, #116–#119, #122, #127, #131–#133, #140, #147, #167, #168, #170
