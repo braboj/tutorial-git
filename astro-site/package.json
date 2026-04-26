@@ -1,7 +1,7 @@
 {
   "name": "astro-site",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.1.0",
   "engines": {
     "node": ">=22.12.0"
   },
