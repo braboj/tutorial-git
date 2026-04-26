@@ -114,8 +114,9 @@ But Alice's working tree is **not** updated — her files still reflect
 the old commit, plus whatever edits she has in progress. Alice's
 branch and her working tree are now out of sync. If she commits at
 this point, she unknowingly **reverts Bob's changes** without any
-error or warning — because her files do not contain them. Git prevents this by refusing to accept
-a push into a repository where someone is actively working.
+error or warning — because her files do not contain them.
+
+![Silent overwrite of commit B](../assets/images/git-bare-overwrite.png)
 
 What if the two developers never touch each other's repositories
 directly? A popular solution to this kind of synchronization problem
@@ -127,7 +128,7 @@ to and pull from.
 This is called a **shared hub**. The shared hub is a bare repository — it has no
 working tree, only the Git internals. Its purpose is to hold commits and
 references, not to be edited directly. Because nobody edits files in it,
-updating a branch is always safe.
+updating a branch is always safe. 
 
 With a bare repository in the middle, each developer works
 independently. Bob pushes his changes to the bare repository whenever
