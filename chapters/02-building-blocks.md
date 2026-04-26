@@ -126,8 +126,8 @@ inside Alice's `.git/` to point to Bob's latest commit immediately.
 But Alice's working tree is **not** updated — her files still reflect
 the old commit, plus whatever edits she has in progress. Alice's
 branch and her working tree are now out of sync. If she commits at
-this point, she unknowingly **reverts Bob's changes** — because her
-files do not contain them. Git prevents this by refusing to accept
+this point, she unknowingly **reverts Bob's changes** without any
+error or warning — because her files do not contain them. Git prevents this by refusing to accept
 a push into a repository where someone is actively working.
 
 What if the two developers never touch each other's repositories
