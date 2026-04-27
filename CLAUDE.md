@@ -7,9 +7,15 @@ Key references:
 - `docs/solid-ai-templates/base/git.md` — git workflow, branching, PRs
 - `docs/solid-ai-templates/base/docs.md` — documentation rules, ADRs, writing style
 - `docs/solid-ai-templates/base/quality.md` — SOLID, readability, code style
+- `docs/solid-ai-templates/base/typescript.md` — type design, naming, strictness
+- `docs/solid-ai-templates/base/issues.md` — issue templates (epic, task, bug, incident, spike)
 - `docs/solid-ai-templates/base/scope.md` — scope guard, session protocol
+- `docs/solid-ai-templates/base/quality-gates.md` — three-layer gate model
+- `docs/solid-ai-templates/frontend/ux.md` — UX principles, WCAG 2.1 AA, accessibility testing
+- `docs/solid-ai-templates/frontend/quality.md` — CSS conventions, performance, SEO
 - `docs/solid-ai-templates/frontend/static-site.md` — static site architecture
 - `docs/solid-ai-templates/stack/static-site-astro.md` — Astro-specific rules
+- `docs/solid-ai-templates/stack/static-site-tutorial.md` — tutorial site conventions
 
 Project-specific overrides and additions follow below.
 
@@ -261,6 +267,68 @@ rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#D3D1C7;strokeWid
   </diagram>
 </mxfile>
 ```
+
+
+### 2.7 TypeScript
+
+Extends `docs/solid-ai-templates/base/typescript.md`:
+
+- `strict` mode enabled via `"extends": "astro/tsconfigs/strict"`
+- Content schema defined in `astro-site/src/content.config.ts` using Zod
+- Follow `base/typescript.md` rules in all `.ts` files (remark plugins,
+  content config, utility modules in `src/lib/`)
+- No `any` — use `unknown` and narrow, or define a proper type
+- Use `import type { ... }` for type-only imports
+
+### 2.8 Accessibility
+
+Extends `docs/solid-ai-templates/frontend/ux.md`:
+
+- Target: WCAG 2.1 AA
+- Minimum text contrast ratio: 4.5:1 (normal text), 3:1 (large text)
+- All interactive elements reachable and operable by keyboard
+- Images MUST have descriptive `alt` text; decorative images use `alt=""`
+- `aria-label` on icon-only links and buttons
+- Navigation menu MUST close on Escape and restore focus
+
+### 2.9 Code conventions
+
+Extends `docs/solid-ai-templates/stack/static-site-astro.md`:
+
+- Default to `.astro` components — zero JS shipped unless islands are used
+- MUST NOT use `set:html` — bypasses escaping; use `{expression}` instead
+- ESLint and Prettier are not yet configured — follow `base/quality.md`
+  style rules manually until tooling is added
+- `.astro` files: keep component scripts minimal, logic in `src/lib/`
+
+### 2.10 CI/CD
+
+Two GitHub Actions workflows:
+
+**`build.yml`** — triggers on pull requests to `main`
+- Checkout, setup Node (pinned to match `engines` in `package.json`),
+  npm ci, build
+
+**`deploy.yml`** — triggers on push to `main`
+- Same build steps, plus upload artifact and deploy to GitHub Pages
+
+### 2.11 Release process
+
+Follow `docs/solid-ai-templates/base/git.md` release process:
+1. `git checkout -b chore/release-vX.Y.Z`
+2. `git commit --allow-empty -m "chore: release vX.Y.Z"`
+3. Push, open PR, merge
+4. `git checkout main && git pull`
+5. `git tag vX.Y.Z && git push origin vX.Y.Z`
+
+Tags use semver: `v1.0.0` (lowercase v, three segments).
+
+### 2.12 Licensing
+
+- Tutorial content: CC BY-NC-SA 4.0
+- Allows copying and adapting with attribution
+- Prohibits commercial use without permission
+- Derivatives MUST use the same license
 
 
 ## 3. Session protocol
