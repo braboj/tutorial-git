@@ -11,6 +11,10 @@ Key references:
 - `docs/solid-ai-templates/base/issues.md` — issue templates (epic, task, bug, incident, spike)
 - `docs/solid-ai-templates/base/scope.md` — scope guard, session protocol
 - `docs/solid-ai-templates/base/quality-gates.md` — three-layer gate model
+- `docs/solid-ai-templates/base/testing.md` — test pyramid, coverage thresholds
+- `docs/solid-ai-templates/base/cicd.md` — pipeline stages, triggers, environments
+- `docs/solid-ai-templates/base/devsecops.md` — SAST, secret detection, SCA
+- `docs/solid-ai-templates/platform/github.md` — CodeQL, GitHub Actions, gitleaks
 - `docs/solid-ai-templates/frontend/ux.md` — UX principles, WCAG 2.1 AA, accessibility testing
 - `docs/solid-ai-templates/frontend/quality.md` — CSS conventions, performance, SEO
 - `docs/solid-ai-templates/frontend/static-site.md` — static site architecture
@@ -298,28 +302,48 @@ Extends `docs/solid-ai-templates/stack/static-site-astro.md`:
 - Default to `.astro` components — zero JS shipped unless islands are used
 - MUST NOT use `set:html` — bypasses escaping; use `{expression}` instead
 - ESLint and Prettier are not yet configured — follow `base/quality.md`
-  style rules manually until tooling is added
+  style rules manually; see `base/quality-gates.md` for the planned
+  tooling setup
 - `.astro` files: keep component scripts minimal, logic in `src/lib/`
 
 ### 2.10 CI/CD
 
-Two GitHub Actions workflows:
+Extends `docs/solid-ai-templates/base/cicd.md` and
+`docs/solid-ai-templates/platform/github.md`.
+
+Three GitHub Actions workflows + GitHub-native CodeQL:
 
 **`build.yml`** — triggers on pull requests to `main`
 - Checkout, setup Node (pinned to match `engines` in `package.json`),
-  npm ci, build
+  npm ci, build, lychee link checking
+- Permissions: `contents: read`
+
+**`lighthouse.yml`** — triggers on pull requests to `main`
+- Builds the site and runs Lighthouse CI against 4 pages
+- Accessibility < 90 fails the check (error); performance, SEO,
+  best practices < 90 warn
+- Reports uploaded as GitHub Actions artifacts
+- Permissions: `contents: read`
+- Config: `lighthouserc.json`
+
+**CodeQL** — GitHub default setup (no workflow file)
+- Analyzes JavaScript/TypeScript and GitHub Actions
+- Results in Security tab → Code scanning alerts
 
 **`deploy.yml`** — triggers on push to `main`
-- Same build steps, plus upload artifact and deploy to GitHub Pages
+- Same build steps as `build.yml`, plus upload artifact and deploy to
+  GitHub Pages
 
 ### 2.11 Release process
 
 Follow `docs/solid-ai-templates/base/git.md` release process:
 1. `git checkout -b chore/release-vX.Y.Z`
-2. `git commit --allow-empty -m "chore: release vX.Y.Z"`
-3. Push, open PR, merge
-4. `git checkout main && git pull`
-5. `git tag vX.Y.Z && git push origin vX.Y.Z`
+2. Bump `version` in `astro-site/package.json` to match
+3. Commit: `chore: release vX.Y.Z`
+4. Push, open PR, wait for CI, merge
+5. `git checkout main && git pull`
+6. `git tag vX.Y.Z && git push origin vX.Y.Z`
+7. `gh release create vX.Y.Z --title "vX.Y.Z" --notes "..."`
 
 Tags use semver: `v1.0.0` (lowercase v, three segments).
 
