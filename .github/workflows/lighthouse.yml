@@ -1,4 +1,4 @@
-name: Build Astro site (PR validation)
+name: Lighthouse CI
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  lighthouse:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,11 +33,8 @@ jobs:
         working-directory: astro-site
         run: npm run build
 
-      - name: Create base path symlink for link checker
-        run: ln -s . astro-site/dist/tutorial-git
-
-      - name: Check links
-        uses: lycheeverse/lychee-action@v2
+      - name: Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v12
         with:
-          args: --root-dir astro-site/dist --config lychee.toml 'astro-site/dist/**/*.html'
-          fail: true
+          configPath: ./lighthouserc.json
+          uploadArtifacts: true
