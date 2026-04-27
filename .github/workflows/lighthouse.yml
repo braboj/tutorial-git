@@ -47,8 +47,11 @@ jobs:
             const path = require('path');
             const dir = '.lighthouseci';
             const files = fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.startsWith('manifest'));
-            const rows = files.map(f => {
-              const r = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+            const rows = [];
+            for (const f of files) {
+              const raw = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+              const r = raw.lhr || raw;
+              if (!r.categories) continue;
               const rawUrl = r.finalDisplayedUrl || r.finalUrl || r.requestedUrl || '';
               const pagePath = rawUrl.startsWith('http') ? new URL(rawUrl).pathname : rawUrl || f;
               const scores = r.categories;
@@ -58,8 +61,8 @@ jobs:
                 const icon = s >= 90 ? '🟢' : s >= 50 ? '🟠' : '🔴';
                 return `${icon} ${s}`;
               };
-              return `| ${pagePath} | ${fmt('performance')} | ${fmt('accessibility')} | ${fmt('best-practices')} | ${fmt('seo')} |`;
-            });
+              rows.push(`| ${pagePath} | ${fmt('performance')} | ${fmt('accessibility')} | ${fmt('best-practices')} | ${fmt('seo')} |`);
+            }
             const body = [
               '## Lighthouse Results',
               '',
