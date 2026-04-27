@@ -30,6 +30,7 @@ Project-specific overrides and additions follow below.
 - **Owner**: Branimir Georgiev — braboj
 - **Repo**: github.com/braboj/tutorial-git
 - **Stack**: Astro static site, Markdown content, draw.io diagrams
+- **Model**: reference — base conventions in `docs/solid-ai-templates/`, project overrides inline
 - **Hosting**: GitHub Pages via GitHub Actions
 - **Domain**: braboj.me/tutorial-git (codewithbranko.com pending)
 
