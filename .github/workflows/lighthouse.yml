@@ -8,6 +8,8 @@ on:
 jobs:
   lighthouse:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -31,7 +33,59 @@ jobs:
         run: npm run build
 
       - name: Lighthouse CI
+        id: lhci
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./lighthouserc.json
           uploadArtifacts: true
+
+      - name: Post Lighthouse scores to PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const dir = '.lighthouseci';
+            const files = fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.startsWith('manifest'));
+            const rows = files.map(f => {
+              const r = JSON.parse(fs.readFileSync(path.join(dir, f), 'utf8'));
+              const url = new URL(r.finalUrl || r.requestedUrl);
+              const scores = r.categories;
+              const fmt = (cat) => {
+                if (!scores[cat]) return 'N/A';
+                const s = Math.round(scores[cat].score * 100);
+                const icon = s >= 90 ? '🟢' : s >= 50 ? '🟠' : '🔴';
+                return `${icon} ${s}`;
+              };
+              return `| ${url.pathname} | ${fmt('performance')} | ${fmt('accessibility')} | ${fmt('best-practices')} | ${fmt('seo')} |`;
+            });
+            const body = [
+              '## Lighthouse Results',
+              '',
+              '| Page | Performance | Accessibility | Best Practices | SEO |',
+              '|------|------------|---------------|----------------|-----|',
+              ...rows,
+              '',
+              '_Scores: 🟢 90+ · 🟠 50-89 · 🔴 0-49_'
+            ].join('\n');
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            const existing = comments.find(c => c.body.includes('## Lighthouse Results'));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: existing.id,
+                body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body,
+              });
+            }
