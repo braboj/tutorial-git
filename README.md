@@ -5,6 +5,13 @@ to confident daily use. It covers everything from installation to
 advanced topics like rebase, bisect, and submodules. The content is
 published as a static site built with Astro and deployed to GitHub Pages.
 
+- Chapters covering installation through expert topics (hooks, bisect, refspecs)
+- Step-by-step recipes for common Git tasks
+- Exercises with verification steps in every chapter
+- Quizzes at the end of each chapter
+- Concepts-first approach — object model and references before commands
+- Glossary of key terms cross-referenced to chapters
+
 ## Quick start
 
 Prerequisites: [Node.js](https://nodejs.org/) 22+
